@@ -2,6 +2,7 @@
 
 Apuntes
 
+Git Github Jekyll Markdown Netlify Web2Img
 [clon-151003-Publicar-pagina-web-en-GitHub-Pages.htm](https://fjfe.github.io/apt/clon-151003-Publicar-pagina-web-en-GitHub-Pages.htm)  
 [clon-Crea-sitio-web-con-Jekyll-y-GitHubPages.htm](https://fjfe.github.io/apt/clon-Crea-sitio-web-con-Jekyll-y-GitHubPages.htm)  
 [clon-Netlify-Drop-publicar-web-gratis-con-arrastrar-y-soltar.htm](https://fjfe.github.io/apt/clon-Netlify-Drop-publicar-web-gratis-con-arrastrar-y-soltar.htm)  
