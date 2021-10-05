@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg enable-background="new" version="1.0" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <filter id="filter922" x="0" y="0" width="1" height="1" color-interpolation-filters="sRGB">
+   <feBlend in2="BackgroundImage" mode="screen"/>
+  </filter>
+  <linearGradient id="linearGradient1053" x1="384" x2="416" y1="120" y2="120" gradientTransform="translate(0,640)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#e8e7e4" offset="0"/>
+   <stop stop-color="#fff" offset=".51105"/>
+   <stop stop-color="#c2bfba" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g transform="translate(0,-172)" display="none">
+  <text id="context" x="7.8559437" y="-279.69958" display="inline" enable-background="new" fill="#000000" font-family="Cantarell" font-size="18.301px" style="line-height:125%" xml:space="preserve"><tspan x="7.8559437" y="-279.69958">apps</tspan></text>
+  <text x="7.2647686" y="-253.90063" display="inline" enable-background="new" fill="#000000" font-family="Cantarell" font-size="18.301px" font-weight="bold" style="line-height:125%" xml:space="preserve"><tspan x="7.2647686" y="-253.90063">org.gnome.Contacts</tspan></text>
+  <rect x="9.2651e-8" y="172" width="128" height="128" display="inline" enable-background="accumulate" fill="#f0f0f0"/>
+  <g transform="matrix(.25 0 0 .25 6.9489e-8 225)" display="inline" enable-background="new" fill="#2864b0">
+   <rect x="96" y="-180" width="320" height="448" rx="32" ry="32" opacity=".1" style="paint-order:normal"/>
+   <rect x="48" y="-164" width="416" height="416" rx="32" ry="32" display="inline" enable-background="new" opacity=".1" style="paint-order:normal"/>
+   <rect x="32" y="-116" width="448" height="320" rx="32" ry="32" display="inline" enable-background="new" opacity=".1" style="paint-order:normal"/>
+   <circle cx="256" cy="44" r="240" opacity=".1" style="paint-order:normal"/>
+  </g>
+ </g>
+ <g transform="translate(0,-172)" display="none" filter="url(#filter922)">
+  <path d="m128-140c-8.1485 0-15.561 3.0198-21.199 8h-10.801v24 352c0 16 12.573 32 32.34 32h255.66c17.728 0 32-14.272 32-32v-64c17.728 0 32-14.278 32-32.014v-31.973c0-5.8441-1.5572-11.308-4.2695-16.014 2.7123-4.7062 4.2695-10.17 4.2695-16.014v-31.973c0-5.8441-1.5572-11.308-4.2695-16.014 2.7123-4.7062 4.2695-10.17 4.2695-16.014v-31.973c0-5.8441-1.5572-11.308-4.2695-16.014 2.7123-4.7062 4.2695-10.17 4.2695-16.014v-31.973c0-17.736-14.272-32.014-32-32.014 0-17.728-14.272-32-32-32z" display="inline" enable-background="new" fill="#010101" opacity=".15" style="paint-order:normal"/>
+ </g>
+ <g>
+  <rect x="96" y="24" width="16" height="24" rx="8" ry="8.0034" enable-background="new" fill="#f9f06b" style="paint-order:normal"/>
+  <rect x="96" y="40" width="16" height="24" rx="8" ry="8.0034" enable-background="new" fill="#26a269" style="paint-order:normal"/>
+  <rect x="96" y="56" width="16" height="24" rx="8" ry="8.0034" enable-background="new" fill="#8f5aa0" style="paint-order:normal"/>
+  <rect x="96" y="72" width="16" height="24" rx="8" ry="8.0034" enable-background="new" fill="#f66151" style="paint-order:normal"/>
+ </g>
+ <g transform="matrix(.25 0 0 .25 -2.6633e-5 -107)" enable-background="new">
+  <path d="m96 540v368h288c17.728 0 32-14.272 32-32v-304c0-17.728-14.272-32-32-32z" enable-background="new" fill="#1d60b5" style="paint-order:normal"/>
+  <path d="m104 620v280h280c17.728 0 32-14.272 32-32v-216c0-17.728-14.272-32-32-32z" enable-background="new" fill="url(#linearGradient1053)" style="paint-order:normal"/>
+  <path d="m96 540v336h288c17.728 0 32-14.272 32-32v-272c0-17.728-14.272-32-32-32z" enable-background="new" fill="#2864b0" style="paint-order:normal"/>
+  <path d="m96 460v408h288c17.728 0 32-14.272 32-32v-344c0-17.728-14.272-32-32-32z" enable-background="new" fill="#3584e4" style="paint-order:normal"/>
+  <path d="m104 460h8v408h-8z" enable-background="new" fill="#fff" opacity=".187" style="paint-order:normal"/>
+ </g>
+</svg>

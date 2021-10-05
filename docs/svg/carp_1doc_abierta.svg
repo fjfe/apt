@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 262 262" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient3287">
+   <stop offset="0"/>
+   <stop stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <filter id="filter3244" x="-.031409" y="-.049572" width="1.0628" height="1.0991" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="8.5596091"/>
+  </filter>
+  <filter id="filter3256" x="-.030444" y="-.05294" width="1.0609" height="1.1059" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="7.9019183"/>
+  </filter>
+  <filter id="filter3250" x="-.028427" y="-.062869" width="1.0567" height="1.1257" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="8.559528"/>
+  </filter>
+  <radialGradient id="radialGradient19041" cx="922.77" cy="191.71" r="398.09" gradientTransform="matrix(1 0 0 .5595 0 84.448)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient3287"/>
+  <radialGradient id="radialGradient19043" cx="922.77" cy="191.71" r="398.09" gradientTransform="matrix(.31194 0 0 .19664 -157.2 93.299)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient3287"/>
+  <radialGradient id="radialGradient19051" cx="922.77" cy="191.71" r="398.09" gradientTransform="matrix(.31678 0 0 .1053 -159.75 146.94)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient3287"/>
+ </defs>
+ <path transform="matrix(.31194 0 0 .35145 -157.2 63.62)" d="m594.21-29.62c-5.6108 0-10.125 4.2369-10.125 9.5v27.281h-48c-5.54 0-10 4.46-10 10v395.87h698.62v-395.87c0-5.54-4.46-10-10-10h-417.09v-27.281c0-5.2631-4.5142-9.5-10.125-9.5z" filter="url(#filter3244)" stroke="url(#radialGradient19041)" stroke-width="2.8"/>
+ <path d="m28.158 53.21c-1.7502 0-3.1584 1.4891-3.1584 3.3388v9.5879h-14.973c-1.7281 0-3.1194 1.5675-3.1194 3.5145v139.13h217.93v-139.13c0-1.947-1.3912-3.5145-3.1194-3.5145h-130.11v-9.5879c0-1.8497-1.4082-3.3388-3.1584-3.3388z" fill="#ffe680" stroke="url(#radialGradient19043)" stroke-width=".9271"/>
+ <rect transform="matrix(.31194 0 0 .35145 -157.2 63.62)" x="540.23" y="28.366" width="668.92" height="384.67" filter="url(#filter3256)" stroke="url(#radialGradient19041)" stroke-width="2.8"/>
+ <rect x="11.319" y="73.589" width="208.66" height="135.19" fill="#fff" stroke="url(#radialGradient19043)" stroke-width=".9271"/>
+ <path transform="matrix(.31678 0 0 .18814 -159.7 131.04)" d="m649.12 63.725 670.34 4.2426-93.338 345.07h-698.62l121.62-349.31z" filter="url(#filter3250)" stroke="url(#radialGradient19041)" stroke-width="2.8"/>
+ <path d="m45.88 143.04 212.35 0.7985-29.568 64.945h-221.31l38.527-65.743z" fill="#ffe680" stroke="url(#radialGradient19051)" stroke-width=".68369"/>
+</svg>

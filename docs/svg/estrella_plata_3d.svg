@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 -16 700 700" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <filter id="filter4139" x="-.13211" y="-.13857" width="1.2642" height="1.2771" color-interpolation-filters="sRGB">
+   <feGaussianBlur in="SourceGraphic" result="result6" stdDeviation="8"/>
+   <feComposite in="result6" in2="SourceGraphic" operator="xor" result="result10"/>
+   <feGaussianBlur result="result2" stdDeviation="8"/>
+   <feComposite in="result10" in2="SourceGraphic" operator="atop" result="result91"/>
+   <feComposite in="result2" in2="result91" operator="xor" result="result4"/>
+   <feGaussianBlur in="result4" result="result3" stdDeviation="4"/>
+   <feSpecularLighting result="result5" specularConstant="1.10000002" specularExponent="5" surfaceScale="18">
+    <feDistantLight azimuth="235" elevation="55"/>
+   </feSpecularLighting>
+   <feComposite in="result3" in2="result5" k1="0.5" k2="0.5" k3="1.1" operator="arithmetic" result="result7"/>
+   <feComposite in="result7" in2="SourceGraphic" operator="atop" result="fbSourceGraphic"/>
+   <feColorMatrix in="fbSourceGraphic" result="fbSourceGraphicAlpha" values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"/>
+   <feGaussianBlur in="fbSourceGraphic" result="blur" stdDeviation="4 4"/>
+   <feColorMatrix result="colormatrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 50 0 "/>
+   <feComposite in="colormatrix" in2="fbSourceGraphic" operator="in"/>
+  </filter>
+ </defs>
+ <g transform="translate(-56.29 109.14)">
+  <path transform="matrix(1.6055 0 0 1.6055 -34.086 -338.03)" d="m274.29 142.56c-28.357 0-37.559 128.79-60.5 145.46-22.942 16.668-148.27-14.38-157.04 12.59-8.7629 26.969 110.88 75.52 119.65 102.49 8.7629 26.969-59.495 136.57-36.554 153.24 22.942 16.668 106.09-82.119 134.45-82.119s111.5 98.787 134.45 82.119c22.942-16.668-45.317-126.27-36.554-153.24 8.7629-26.969 128.41-75.52 119.65-102.49-8.7629-26.969-134.1 4.0784-157.04-12.59-22.942-16.668-32.143-145.46-60.5-145.46z" filter="url(#filter4139)"/>
+ </g>
+</svg>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 310 310" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient3921">
+   <stop stop-color="#999" stop-opacity="0" offset="0"/>
+   <stop stop-color="#a7a7a7" offset=".26262"/>
+   <stop stop-color="#f8f8f8" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient3099">
+   <stop stop-color="#ccc" offset="0"/>
+   <stop stop-color="#1a1a1a" offset=".24948"/>
+   <stop stop-color="#fff" offset=".62323"/>
+   <stop stop-color="#666" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient4088" x1="17.667" x2="112.13" y1="118.52" y2="118.52" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient3099"/>
+  <linearGradient id="linearGradient4090" x1="-10.5" x2="113.5" y1="42.862" y2="130.36" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient3099"/>
+  <linearGradient id="linearGradient4096" x1="51.264" x2="76.986" y1="260.85" y2="260.85" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient3099"/>
+  <linearGradient id="linearGradient4098" x1="54.997" x2="78.591" y1="380.7" y2="369.4" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient3099"/>
+  <linearGradient id="linearGradient4102" x1="54.517" x2="74.345" y1="371.56" y2="376.17" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient3099"/>
+  <linearGradient id="linearGradient4104" x1="65.394" x2="66.866" y1="374.71" y2="374.98" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient3921"/>
+ </defs>
+ <g transform="translate(0,-747.36)">
+  <g transform="translate(104.89 2.018)">
+   <g transform="translate(-13.978,668.33)">
+    <path d="m51.272 371.08 12.818 12.818 12.818-12.818v-262.77h-25.636z" fill="url(#linearGradient4096)"/>
+    <path d="m67.156 371.09h-15.875l12.812 12.812z" fill="url(#linearGradient4098)"/>
+    <path d="m51.281 108.31v262.78h25.625v-262.78z" fill="url(#linearGradient4096)"/>
+    <path d="m67.142 371.09-3.08 12.79 0.03125 0.0312 12.812-12.812z" fill="url(#linearGradient4102)"/>
+    <path d="m65.938 371.09-2.1875 12.469 0.3125 0.3125 0.03125 0.0312 1-1 2.625-11.812h-1.7813z" fill="url(#linearGradient4104)"/>
+    <path d="m51.272 371.08 12.818 12.818 12.818-12.818v-262.77h-25.636z" fill="url(#linearGradient4096)"/>
+    <path d="m67.156 371.09h-15.875l12.812 12.812z" fill="url(#linearGradient4098)"/>
+    <path d="m51.281 108.31v262.78h25.625v-262.78z" fill="url(#linearGradient4096)"/>
+    <path d="m67.142 371.09-3.08 12.79 0.03125 0.0312 12.812-12.812z" fill="url(#linearGradient4102)"/>
+    <path d="m65.938 371.09-2.1875 12.469 0.3125 0.3125 0.03125 0.0312 1-1 2.625-11.812h-1.7813z" fill="url(#linearGradient4104)"/>
+    <ellipse transform="translate(0,4)" cx="64.09" cy="104.47" rx="47.427" ry="24.354" fill="url(#linearGradient4088)" fill-rule="evenodd"/>
+    <ellipse cx="64.09" cy="104.47" rx="47.427" ry="24.354" fill="url(#linearGradient4090)" fill-rule="evenodd"/>
+    <ellipse transform="translate(0,4)" cx="64.09" cy="104.47" rx="47.427" ry="24.354" fill="url(#linearGradient4088)" fill-rule="evenodd"/>
+    <ellipse cx="64.09" cy="104.47" rx="47.427" ry="24.354" fill="url(#linearGradient4090)" fill-rule="evenodd"/>
+   </g>
+  </g>
+ </g>
+</svg>

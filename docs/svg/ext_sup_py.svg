@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient-1" x1="24.715" x2="151.14" y1="22.898" y2="148.34" gradientTransform="scale(.99889 1.0011)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#387EB8" offset="0"/>
+   <stop stop-color="#366994" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient-2" x1="102.48" x2="238.26" y1="103.27" y2="231.91" gradientTransform="scale(.99889 1.0011)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#FFE052" offset="0"/>
+   <stop stop-color="#FFC331" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g transform="translate(128.16 166.9)">
+  <path d="m126.92 0.072276c-64.832 4.62e-6 -60.784 28.115-60.784 28.115l0.07227 29.127h61.868v8.7453h-86.442s-41.486-4.7049-41.486 60.711c-4.63e-6 65.416 36.21 63.097 36.21 63.097h21.61v-30.356s-1.1649-36.21 35.632-36.21h61.362s34.475 0.5573 34.475-33.319v-56.014c0-5e-6 5.2343-33.897-62.518-33.897zm-34.114 19.587c6.1554-5e-6 11.13 4.975 11.13 11.13 1e-5 6.1554-4.975 11.13-11.13 11.13-6.1554 5e-6 -11.13-4.975-11.13-11.13-5e-6 -6.1554 4.975-11.13 11.13-11.13z" fill="url(#linearGradient-1)"/>
+  <path d="m128.76 254.13c64.832 0 60.784-28.115 60.784-28.115l-0.0723-29.127h-61.868v-8.7453h86.442s41.486 4.7049 41.486-60.711c2e-5 -65.416-36.21-63.097-36.21-63.097h-21.61v30.356s1.1649 36.21-35.632 36.21h-61.362s-34.475-0.55729-34.475 33.319v56.014s-5.2343 33.897 62.518 33.897zm34.114-19.587c-6.1554 0-11.13-4.975-11.13-11.13s4.975-11.13 11.13-11.13 11.13 4.975 11.13 11.13c3e-5 6.1554-4.975 11.13-11.13 11.13z" fill="url(#linearGradient-2)"/>
+ </g>
+</svg>

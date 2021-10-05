@@ -1,0 +1,19 @@
+<svg version="1.1" viewBox="0 0 465 465" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <filter color-interpolation-filters="sRGB" height="3.86568" y="-1.43284" width="1.06682" x="-0.03341" id="filter4328" >
+   <feGaussianBlur id="feGaussianBlur4330" stdDeviation="4.99919" />
+  </filter>
+  <filter color-interpolation-filters="sRGB" height="2.31667" y="-0.65833" width="1.0307" x="-0.01535" id="filter4220" >
+   <feGaussianBlur id="feGaussianBlur4222" stdDeviation="2.29693" />
+  </filter>
+ </defs>
+<g>
+  <path fill="#ffa000" stroke-width="7" stroke-linecap="round" stroke-miterlimit="4" stroke-dashoffset="0"   id="path3350" d="m46.59954,65.06846l93.21934,0c15.7258,-0.82304 18.61638,5.95025 22.81669,10.88994l14.74763,18.59764c1.19974,1.50075 2.35846,2.05667 4.90331,2.04456l237.11359,0c11.80105,0 18.96301,7.94778 18.96301,18.963l0,262.72669c0,5.5144 -4.43941,9.9539 -9.95382,9.9539l-390.81893,0c-5.51443,0 -9.95384,-4.4395 -9.95384,-9.9539l0,-294.25882c0,-10.22939 7.68584,-18.96301 18.96302,-18.96301z"/>
+  <path opacity="0.386" fill="#000000" stroke-width="7" stroke-linecap="round" stroke-miterlimit="4" stroke-dashoffset="0" filter="url(#filter4328)" d="m35.12986,389.16276l395.73993,0c12.52719,0 20.12985,0.06059 20.12985,0.14457l0,1.8484c0,0.04204 -4.71258,0.07588 -10.56631,0.07588l-414.86701,0c-5.85375,0 -10.56632,-0.03384 -10.56632,-0.07588l0,-1.8484c0,-0.07799 8.15878,-0.14457 20.12986,-0.14457z" id="path4224"  />
+  <path opacity="0.755" fill="#000000" stroke-width="7" stroke-linecap="round" stroke-miterlimit="4" stroke-dashoffset="0" filter="url(#filter4220)"   id="path4160" d="m49.28879,379.36121c179.38416,-0.4579 187.74545,-0.55323 367.14519,-0.01014c11.62154,0.03514 18.6603,0.34004 18.65073,0.71366c0.00563,-0.20773 -0.01689,8.63289 -0.01723,8.4269c0.00025,0.18561 -4.37021,0.39851 -9.7993,0.47871c-265.23794,3.91816 -119.54754,3.20658 -384.81861,-0.02737c-5.42977,-0.06622 -9.80069,-0.26737 -9.80049,-0.45385c-0.00024,0.22156 -0.01858,-8.64449 -0.01396,-8.42417c-0.00676,-0.34701 7.54947,-0.67531 18.65368,-0.70365l0,-0.0001z"  />
+  <path fill="#ffca28" stroke-width="7" stroke-linecap="round" stroke-miterlimit="4" stroke-dashoffset="0" d="m46.59954,116.87125l372.80056,0c11.80105,0 18.96301,7.94779 18.96301,18.96301l0,242.45603c0,5.5144 -4.43941,9.9539 -9.95382,9.9539l-390.81893,0c-5.51443,0 -9.95384,-4.4395 -9.95384,-9.9539l0,-242.45603c0,-10.22939 7.68584,-18.96301 18.96302,-18.96301z" id="rect3347"  />
+  <rect fill="#ffa000" stroke-width="7" stroke-linecap="round" stroke-miterlimit="4" stroke-dashoffset="0" id="rect4358" width="374.05457" height="3.14331" x="45.97253" y="365.19309"/>
+  <rect fill="#ffa000" stroke-width="7" stroke-linecap="round" stroke-miterlimit="4" stroke-dashoffset="0" y="355.05779" x="45.97253" height="3.14331" width="374.05457" id="rect4360"/>
+  <rect fill="#ffa000" stroke-width="7" stroke-linecap="round" stroke-miterlimit="4" stroke-dashoffset="0" id="rect4362" width="374.05457" height="3.14331" x="45.97253" y="344.92244"/>
+</g>
+</svg>

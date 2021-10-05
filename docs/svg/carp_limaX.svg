@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1052.4 744.09"
+    version="1.1"
+  >
+  <defs>
+    <filter
+        id="filter3789"
+      >
+      <feGaussianBlur
+          id="feGaussianBlur3791"
+          stdDeviation="8.713125"
+      />
+    </filter>
+    <filter
+        id="filter3799"
+      >
+      <feGaussianBlur
+          id="feGaussianBlur3801"
+          stdDeviation="8.7202381"
+      />
+    </filter>
+    <filter
+        id="filter3833"
+      >
+      <feGaussianBlur
+          id="feGaussianBlur3835"
+          stdDeviation="5.1944444"
+      />
+    </filter>
+  </defs>
+  <g
+      stroke="#6400ed"
+      transform="translate(0 -308.27)"
+    >
+    <path
+        filter="url(#filter3789)"
+        transform="translate(0 308.27)"
+        d="m194.44 47.469c-5.54 0-10 4.46-10 10v41.75h-23.85c-5.54 0-10 4.461-10 10.001v380c0 1.43 0.31 2.8 0.85 4.03v65.13h650v-400h-0.85v-49.16c0-5.54-4.46-10.001-10-10.001h-335.78v-41.75c0-5.54-4.46-10-10-10h-250.37z"
+    />
+    <g>
+      <path
+          transform="translate(0 308.27)"
+          fill="#dbde21"
+          d="m194.44 47.469c-5.54 0-10 4.46-10 10v41.75h-23.85c-5.54 0-10 4.461-10 10.001v380c0 1.43 0.31 2.8 0.85 4.03v65.13h650v-400h-0.85v-49.16c0-5.54-4.46-10.001-10-10.001h-335.78v-41.75c0-5.54-4.46-10-10-10h-250.37z"
+      />
+      <rect
+          height="411.11"
+          filter="url(#filter3833)"
+          width="627.78"
+          y="433.84"
+          x="159.26"
+      />
+      <rect
+          height="411.11"
+          width="627.78"
+          y="436.66"
+          x="160.67"
+          fill="#fff"
+      />
+      <path
+          filter="url(#filter3799)"
+          d="m281.41 470.95h640l-119.05 393.65h-650z"
+      />
+      <path
+          fill="#ebeb14"
+          d="m280 472.36h640l-119.05 393.65h-650z"
+      />
+    </g>
+  </g>
+</svg>

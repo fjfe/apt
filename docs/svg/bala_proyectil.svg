@@ -1,0 +1,27 @@
+<svg viewBox="0 0 1162 1162" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>(artillery) projectile / grenade</title>
+ <defs>
+  <linearGradient id="linearGradient1621" x1="-422.3" x2="-420.3" y1="18.014" y2="572.41" gradientTransform="matrix(6.4281 0 0 -6.4281 -3839.6 5604.6)" gradientUnits="userSpaceOnUse">
+   <stop offset="0"/>
+   <stop stop-color="#60602d" offset=".41478"/>
+   <stop stop-color="#050502" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient1647" x1="-2243.1" x2="-2274.9" y1="4530.3" y2="3188.5" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1645"/>
+  <linearGradient id="linearGradient1645">
+   <stop stop-color="#c0c059" offset="0"/>
+   <stop stop-color="#ff9" offset=".38838"/>
+   <stop stop-color="#baba54" offset=".56366"/>
+   <stop stop-color="#ff9" stop-opacity="0" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g transform="matrix(.15557 0 0 -.15557 1437.3 783.91)" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-width="10.181">
+  <g transform="translate(-64.28 -2700.5)">
+   <path d="m-6521 4948.7c-459.66-5.7073-920.65-20.651-1380.4-31.382l-548.14-12.793c-73.207-1.7087-146.37-2.72-219.45-3.8221-174.14-14.307-325.82-108.53-480-181.99v-1434c198.71-107.44 412.4-208.34 644.78-188.01 20.456-0.1488 40.922-0.1493 61.392-0.5266l550.46-10.145c427.24-7.8739 856.15-24.608 1283.1-25.429 1109 0.018 2229.1 34.554 3314.3 283.1 156.07 36.557 309.79 82.061 461.3 133.72 336.11 103.11 795.2 265.57 1111 543.96-300.97 238.89-764.03 383.77-1091.2 510.6-1028.2 332.26-2118.9 387.2-3191.4 412.61-171.89 1.5317-343.74 5.4795-515.65 4.0932z" fill="url(#linearGradient1621)" stroke="#000" stroke-width="51.424"/>
+   <path transform="scale(1,-1)" d="m-8445.2-4903.9 550.64-12.508 2.2743 1830.6-552.92-10.234z" fill="#996" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="19.574"/>
+   <rect transform="scale(1,-1)" x="-8353.4" y="-4903.8" width="86.376" height="1806.3" fill="#000"/>
+   <rect transform="scale(1,-1)" x="-8121.9" y="-4903.8" width="86.376" height="1806.3" fill="#000"/>
+   <path d="m-2658.9 3529.2c305.08 103.59 677 263.65 936.25 492.2-256.7 203.75-631.32 339.11-938.96 453.22-53.681-315.14-61.876-630.28 2.7052-945.42z" fill="url(#linearGradient1647)" stroke="#000" stroke-width="51.424"/>
+   <path d="m-2065.6 3785.2c124.3 68.857 242.12 147.36 342.91 236.22-113.25 82.723-229.12 150.63-346.95 209.6-42.411-189.3-29.399-368.95 4.0375-445.81z" fill="url(#linearGradient1647)" stroke="#000" stroke-width="51.424"/>
+  </g>
+ </g>
+</svg>

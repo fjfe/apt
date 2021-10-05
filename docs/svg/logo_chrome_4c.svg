@@ -1,0 +1,26 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+ <path d="m7 12c0-2.7614 2.2386-5 5-5 0.77051 0 1.4916 0.18872 2.1434 0.5h8.9761c-1.781-4.396-6.0848-7.5-11.12-7.5-3.8522 0-7.2713 1.8223-9.467 4.6439l4.5094 7.7772c-0.011963-0.14111-0.042419-0.27686-0.042419-0.42108z" fill="#F44336"/>
+ <path d="m12 17c-2.6172 0-4.7404-2.0179-4.9576-4.5789l-4.5094-7.7772c-1.5818 2.0328-2.533 4.5808-2.533 7.3561 0 6.0725 4.5149 11.078 10.368 11.876l4.451-7.75c-0.80304 0.5498-1.7728 0.87372-2.8195 0.87372z" fill="#00B060"/>
+ <path d="m14.143 7.5c1.6842 0.80438 2.8566 2.5091 2.8566 4.5 0 1.7147-0.86499 3.2255-2.1805 4.1263l-4.451 7.75c0.53491 0.072937 1.0767 0.12372 1.6316 0.12372 6.6274 0 12-5.3726 12-12 0-1.5927-0.31708-3.1094-0.88043-4.5h-8.9761z" fill="#FFC107"/>
+ <circle cx="12" cy="12" r="4" fill="#2196F3"/>
+ <linearGradient id="g1" x1="16.387" x2="20.876" y1="5.256" y2="9.744" gradientUnits="userSpaceOnUse">
+  <stop stop-opacity=".1" offset="0"/>
+  <stop stop-opacity="0" offset="1"/>
+ </linearGradient>
+ <path d="m16.456 9.761 6.6637-2.261h-8.9761c0.99994 0.47754 1.8116 1.2773 2.3124 2.261z" fill="url(#g1)"/>
+ <linearGradient id="g2" x1="1.8841" x2="8.0149" y1="5.2792" y2="11.41" gradientUnits="userSpaceOnUse">
+  <stop stop-opacity=".1" offset="0"/>
+  <stop stop-opacity="0" offset="1"/>
+ </linearGradient>
+ <path d="m7.8331 9.2606-5.29-4.6404 4.4881 7.7736c-0.086409-1.1047 0.20037-2.2075 0.80191-3.1332z" fill="url(#g2)"/>
+ <linearGradient id="g3" x1="10.639" x2="13.403" y1="18.051" y2="20.814" gradientUnits="userSpaceOnUse">
+  <stop stop-opacity=".1" offset="0"/>
+  <stop stop-opacity="0" offset="1"/>
+ </linearGradient>
+ <path d="m11.711 16.978-1.3737 6.9015 4.4881-7.7736c-0.91353 0.6272-2.012 0.93024-3.1143 0.87211z" fill="url(#g3)"/>
+ <linearGradient id="g4" x1="1.1217" x2="22.878" y1="6.9274" y2="17.073" gradientUnits="userSpaceOnUse">
+  <stop stop-color="#fff" stop-opacity=".2" offset="0"/>
+  <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+ </linearGradient>
+ <circle cx="12" cy="12" r="12" fill="url(#g4)"/>
+</svg>

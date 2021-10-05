@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 39 39" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <radialGradient id="radialGradient3785" cx="12.5" cy="2.3351" r="9.9625" gradientTransform="matrix(.99167 .0041626 -.0041976 .99999 .11387 -.052012)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#940203" stop-opacity="0" offset="0"/>
+   <stop stop-color="#940203" offset="1"/>
+  </radialGradient>
+ </defs>
+ <g transform="translate(0,-1013.4)">
+  <g transform="translate(7.0005)">
+   <path d="m12.5 1013.9c-6.6169 0-11.98 5.3547-11.98 11.962 0 4.7357 2.7733 8.8206 6.771 10.759l5.2085 14.238c1.9367-4.729 3.6869-9.5241 5.4038-14.335 3.8908-1.9764 6.5757-6.0043 6.5757-10.662 0-6.6075-5.3626-11.962-11.98-11.962z" fill="#fff" stroke="#000"/>
+   <circle transform="matrix(1.1041,0,0,1.1041,-1.3018,1013.2)" cx="12.5" cy="11.5" r="9.4643" fill="url(#radialGradient3785)"/>
+  </g>
+ </g>
+</svg>

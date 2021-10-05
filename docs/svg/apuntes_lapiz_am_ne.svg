@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(-.636 -59.221)">
+  <rect x=".636" y="59.221" width="254.71" height="300" rx="8" ry="8" fill="#fff" stroke="#000" stroke-width="2"/>
+  <g transform="matrix(4.0336,0,0,4.0336,-4505.1,-1563.7)" fill="none" stroke="#808080" stroke-linecap="round" stroke-width="2">
+   <path d="m1123.6 419.35 50.082 0.36291"/>
+   <path d="m1123.6 459.35 11.522 0.36291"/>
+   <path d="m1123.6 439.35 50.082 0.36291"/>
+  </g>
+  <g transform="matrix(2.8522,2.8522,-2.8522,2.8522,-1939.1,-4787.1)">
+   <path transform="translate(515.34,307.49)" d="m737.31 213.03h-17.438l8.7188 16 8.7188-16z" fill="#d38d5f"/>
+   <path transform="translate(515.34,307.49)" d="m737.31 168.03h-17.438v45h17.438z" fill="#fc0"/>
+   <path transform="translate(515.34,307.49)" d="m728.59 157.25c-6.2393 0-8.7188 4-8.7188 4v6.7812h17.438v-6.7812s-2.4794-4-8.7188-4z" fill="#800000"/>
+   <path transform="translate(515.34,307.49)" d="m730.87 224.91h-4.4891l2.215 4.1191z" fill="#4d4d4d"/>
+   <rect x="1238.5" y="475.53" width="5" height="45"/>
+   <rect x="1248.5" y="475.53" width="2" height="45"/>
+   <rect x="1235.2" y="469.51" width="17.437" height="1" fill="#fff"/>
+   <path d="m1237.2 520.53h4.4426l2.5503 11.881h-1.357z" fill="#deaa87"/>
+  </g>
+ </g>
+</svg>

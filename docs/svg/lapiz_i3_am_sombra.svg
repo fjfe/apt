@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 392.53 392.53" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient id="linearGradient3976" x1="595" x2="255" y1="632.36" y2="632.36" gradientUnits="userSpaceOnUse">
+   <stop offset="0"/>
+   <stop stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient4053" x1="190.29" x2="264.69" y1="345.59" y2="345.59" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#800000" offset="0"/>
+   <stop stop-color="#800000" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <filter id="filter4100" x="-.043586" y="-.2117" width="1.0872" height="1.4234" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="6.1746988"/>
+  </filter>
+ </defs>
+ <g transform="translate(-180.29,-297.62)">
+  <g transform="translate(-9.9972 -2.0294)">
+   <ellipse transform="translate(-27,10)" cx="425" cy="632.36" rx="170" ry="35" fill="url(#linearGradient3976)" filter="url(#filter4100)" opacity=".65306" stroke-opacity="0"/>
+   <path d="m254.06 368.37c-14.378 16.772-37.93 20.17-52.606 7.5898-14.676-12.581-14.917-36.376-0.53956-53.148 14.378-16.772 37.93-20.17 52.606-7.5898 14.676 12.581 14.917 36.376 0.53957 53.148z" fill="#f00"/>
+   <path d="m254.06 368.37c-14.378 16.772-37.93 20.17-52.606 7.5898-14.676-12.581-14.917-36.376-0.53956-53.148 14.378-16.772 37.93-20.17 52.606-7.5898 14.676 12.581 14.917 36.376 0.53957 53.148z" fill="url(#linearGradient4053)"/>
+   <rect transform="rotate(40.604)" x="398.63" y="74.32" width="380" height="80" fill="#ff0"/>
+   <path d="m254.24 315.92 288.5 247.32-13.01 15.18-288.51-247.32z" fill="#d4aa00"/>
+   <path d="m241.22 331.1 291.54 249.92-22.77 26.58-291.55-249.92z" fill="#fc0"/>
+   <path d="m218.44 357.68 288.51 247.31-16.27 18.98-288.51-247.31z" fill="#fd5"/>
+   <path transform="matrix(.27088 -.021344 .021344 .27088 443.6 497.82)" d="m420 552.36-283.92-76.077 207.85-207.85z" fill="#c88c00"/>
+   <path d="m542.42 563.61-17.646-2.1399 4.8118 17.112-17.646-2.1399 4.8118 17.112-17.646-2.1399 4.8118 17.112-17.646-2.1399 4.8118 17.112 28.341 4.8142 32.087-37.43z" fill="#c88c00" stroke="#c88c00" stroke-width=".98602px"/>
+   <path transform="matrix(.035563 -.0028023 .0028023 .035563 552.6 620.1)" d="m420 552.36-283.92-76.077 207.85-207.85z" fill="#1a1a1a"/>
+  </g>
+ </g>
+</svg>

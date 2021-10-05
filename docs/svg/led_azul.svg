@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+ <radialGradient id="path2991_1_" cx="341.95" cy="119.94" r="91.144" gradientTransform="matrix(-.0253 1.2347 2.2054 .0451 163.73 -367.62)" gradientUnits="userSpaceOnUse">
+  <stop stop-color="#fff" offset="0"/>
+  <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+ </radialGradient>
+ <g transform="translate(-162.49 -47.279)">
+  <path d="m393.39 327.13 10.731-21.73 1.692-32.125 17.076-5.476-47.309-35.958 0.758-28.764-18.567-2.182-1.07 40.608 19.013 17.432-3.764 14.293-24.111 15.45-6.613 26.072 29.365 10.086 1.614 3.005-3.99 213.12 16.311 0.288z" fill="#4d4d4d" stroke="#000" stroke-width="1.8332"/>
+  <path d="m444.99 545.9 5.307-225.74-0.556-11.019-15.206-1.248 0.514-51.628-47.509-28.343-0.289-21.172 98.18 0.894-3.697 43.925-12.223 14.07 26.803 43.036-0.378 14.381-22.085 2.806-11.073 219.66z" fill="#4d4d4d" stroke="#000" stroke-width="1.8332"/>
+  <path d="m508.19 341.37s-53.96 21.438-192.12-4.215c-1.469-8.504 0.942-37.285 0.942-37.285l12.798-3.755s8.06-173.23 11.147-187.71c-1.031-18.82 38.009-61.216 78.615-59.73 54.115 1.984 78.339 54.239 77.229 57.062 5.302 16.539 1.781 196.91 1.781 196.91l10.675 3.567-1.062 35.155z" enable-background="new    " fill="#005cff" opacity=".7897" stroke="#fff" stroke-width="1.8332"/>
+  <path d="m507.02 340.64s-52.966 21.282-188.57-4.127c-1.44-8.438 0.935-36.99 0.935-36.99l12.562-3.73s7.959-171.86 10.993-186.22c-1.006-18.671 37.324-60.747 77.174-59.28 53.111 1.953 76.874 53.787 75.78 56.589 5.2 16.406 1.696 195.35 1.696 195.35l10.475 3.536-1.053 34.878z" fill="url(#path2991_1_)"/>
+  <path d="m328.52 299.03s-3.484 0.284-5.094 0.752l-5.127 1.495s93.409 19.069 191.1 6.403l-1.492-0.596c-1.708-0.684-5.589-1.864-6.776-2.346l-172.61-5.709z" enable-background="new    " fill="#ccc" fill-opacity=".6224" opacity=".5952" stroke="#ccc" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8332"/>
+ </g>
+ <radialGradient id="path3796_1_" cx="675.29" cy="430.87" r="96.047" gradientTransform="matrix(-1.3948 1.3422 -1.1419 -1.2976 1849.9 -172.44)" gradientUnits="userSpaceOnUse">
+  <stop stop-color="#005CFF" offset="0"/>
+  <stop stop-color="#005CFF" stop-opacity="0" offset="1"/>
+ </radialGradient>
+ <ellipse cx="675.97" cy="446.94" rx="95.547" ry="73.223" enable-background="new    " fill="url(#path3796_1_)" opacity=".5952"/>
+</svg>

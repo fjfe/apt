@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
+ <style type="text/css">
+  .st0{fill:#DD9D57;}
+	.st2{fill:#006837;}
+	.st3{fill:#004924;}
+ </style>
+ <g transform="translate(0 107.3)">
+  <rect class="st0" x="52" y="49.45" width="596.1" height="386.5"/>
+  <rect class="st2" x="94.2" y="86.25" width="511.6" height="312.9"/>
+  <polygon class="st3" transform="translate(-129 -131.45)" points="734.8 231.7 734.8 217.7 223.2 217.7 223.2 530.5 239.9 530.5 239.9 231.7"/>
+ </g>
+</svg>

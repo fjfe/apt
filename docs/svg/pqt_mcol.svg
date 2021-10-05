@@ -1,0 +1,31 @@
+<svg version="1.0" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient  id="linearGradient4294">
+   <stop stop-color="#ffffff" stop-opacity="0.668" offset="0"/>
+   <stop stop-color="#ffffff" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <radialGradient  r="61.166" gradientTransform="matrix(0.07316477596759796,0,0,0.07525914162397385,-85.78733348846436,-13.336761474609375)" cx="-59.603" cy="522.12" gradientUnits="userSpaceOnUse" id="radialGradient3861">
+   <stop stop-color="#000000" stop-opacity="0.20833" offset="0"/>
+   <stop stop-color="#000000" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <linearGradient  x1="0.38391" y1="-1.89881" x2="0.3437" xlink:href="#linearGradient4294" y2="1.73703" id="linearGradient3863"/>
+  <linearGradient  x1="0.3996" y1="-0.18738" x2="0.49988" y2="0.76418" id="linearGradient3867">
+   <stop stop-color="#b1883f" offset="0"/>
+   <stop stop-color="#b1883f" stop-opacity="0" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g>
+  <g stroke="null">
+   <g stroke="null">
+    <path stroke="null" fill-rule="evenodd" fill="url(#radialGradient3861)"   d="m41.58731,31.18935a25.21082,9.91218 0 1 1 -50.42081,0a25.21082,9.91218 0 1 1 50.42081,0z"/>
+    <path stroke="#746137" stroke-linejoin="round" stroke-linecap="square" fill="#c7a465" d="m19.94434,10.00067l-19.1735,-4.64l-0.12337,24.826l19.29686,4.638l0,-24.824z"/>
+    <path stroke="#746137" stroke-linejoin="round" stroke-linecap="square" fill="#c7a465" d="m20.32925,9.99667l13.8331,-4.212l0.08784,24.395l-13.88443,4.552l-0.03652,-24.735z"/>
+    <path stroke="#746137" stroke-linejoin="round" stroke-linecap="square" fill="#c7a465" d="m14.93556,0.78367l19.4301,4.712l-14.30388,4.236l-19.41431,-4.556l14.28809,-4.392z"/>
+    <path stroke="#746137" stroke-linejoin="round" fill-rule="evenodd" stroke-width="1px" fill="#c7a465"    d="m9.54385,7.45067l-8.65852,-2.365l13.98312,-4.419l9.44315,2.485l-14.76775,4.299z"/>
+    <path stroke="null" opacity="0.81172" fill-rule="evenodd" fill="url(#linearGradient3863)" d="m19.41928,10.33567l0,12.886c-3.23424,3.315 -18.3188,-21.473 -18.1293,1.66l0.0079,-18.935l18.12141,4.389z"/>
+    <path stroke="null" opacity="0.81172" fill="url(#linearGradient3863)" fill-rule="evenodd" d="m20.83161,10.32467l0,12.886c4.54294,-18.914 13.10375,-12.179 12.75437,-16.775l-12.75437,3.889z"/>
+    <path stroke="null" fill-rule="evenodd" fill="url(#linearGradient3867)" d="m32.53388,5.89167s-17.44633,-4.684 -17.44633,-4.684l-12.48098,3.837c10.57419,2.29 16.89265,-0.836 29.92731,0.847z"/>
+   </g>
+  </g>
+ </g>
+</svg>

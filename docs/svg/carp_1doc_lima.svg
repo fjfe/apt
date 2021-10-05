@@ -1,0 +1,25 @@
+<svg viewBox="0 0 850 850" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs id="defs4">
+  <filter id="filter3789">
+   <feGaussianBlur stdDeviation="8.71312" id="feGaussianBlur3791"/>
+  </filter>
+  <filter id="filter3799">
+   <feGaussianBlur stdDeviation="8.72024" id="feGaussianBlur3801"/>
+  </filter>
+  <filter id="filter3833">
+   <feGaussianBlur stdDeviation="5.19444" id="feGaussianBlur3835"/>
+  </filter>
+ </defs>
+ <g>
+  <g stroke="#6400ed" id="layer1">
+   <path d="m85.43999,165.46898c-5.54,0 -10,4.46 -10,10l0,41.75l-23.85,0c-5.54,0 -10,4.461 -10,10.001l0,380c0,1.43 0.31,2.8 0.85,4.03l0,65.13l650,0l0,-400l-0.85,0l0,-49.16c0,-5.54 -4.46,-10.001 -10,-10.001l-335.78,0l0,-41.75c0,-5.54 -4.46,-10 -10,-10l-250.37,0z" filter="url(#filter3789)" id="path3787"/>
+   <g id="g3837">
+    <path d="m85.43999,165.46898c-5.54,0 -10,4.46 -10,10l0,41.75l-23.85,0c-5.54,0 -10,4.461 -10,10.001l0,380c0,1.43 0.31,2.8 0.85,4.03l0,65.13l650,0l0,-400l-0.85,0l0,-49.16c0,-5.54 -4.46,-10.001 -10,-10.001l-335.78,0l0,-41.75c0,-5.54 -4.46,-10 -10,-10l-250.37,0z" fill="#dbde21" id="rect2993"/>
+    <rect x="50.25999" y="243.56999" width="627.78" filter="url(#filter3833)" height="411.11" id="rect3803"/>
+    <rect fill="#fff" x="51.66999" y="246.38999" width="627.78" height="411.11" id="rect3017"/>
+    <path d="m172.40999,280.67999l640,0l-119.05,393.65l-650,0l129.05,-393.65z" filter="url(#filter3799)" id="path3793"/>
+    <path d="m170.99999,282.08999l640,0l-119.05,393.65l-650,0l129.05,-393.65z" fill="#ebeb14" id="rect3005"/>
+   </g>
+  </g>
+ </g>
+</svg>

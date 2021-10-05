@@ -1,0 +1,7 @@
+<svg fill="#ffffff" stroke-miterlimit="10" stroke-width="2" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+ <path d="m77 79h-74c-1.1046 0-2-0.8954-2-2v-74c0-1.1046 0.8954-2 2-2h74c1.1046 0 2 0.8954 2 2v74c0 1.1046-0.8954 2-2 2z" stroke="#979593"/>
+ <g transform="translate(2,2)" fill="#000">
+  <path d="m6.9551 11.105h32.891v6.4271h-11.802v32.453h-9.2865v-32.453h-11.802z"/>
+  <path d="m52.887 7.2298v53.333h-4.4271v-53.333z"/>
+ </g>
+</svg>

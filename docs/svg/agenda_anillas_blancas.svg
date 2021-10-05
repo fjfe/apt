@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 442 442" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <style>.cls-1{fill:#fff;}</style>
+ </defs>
+ <g transform="translate(26)">
+  <line class="cls-1" x1="46" x2="46" y1="195" y2="109"/>
+  <line x1="46" x2="46" y1="303" y2="220.5"/>
+  <path transform="translate(-487,-164)" d="m525 243v-49a30.09 30.09 0 0 1 30-30h292a30.09 30.09 0 0 1 30 30v381a30.09 30.09 0 0 1-30 30h-292a30.09 30.09 0 0 1-30-30v-76"/>
+  <rect x="3" y="106" width="77" height="28" rx="12" ry="12"/>
+  <rect class="cls-1" y="305.5" width="77" height="28" rx="12" ry="12"/>
+  <rect class="cls-1" x="3" y="191" width="77" height="28" rx="12" ry="12"/>
+  <rect class="cls-1" x="3" y="78" width="77" height="28" rx="12" ry="12"/>
+  <rect x="5" y="332.5" width="77" height="28" rx="12" ry="12"/>
+  <rect x="5" y="217" width="77" height="28" rx="12" ry="12"/>
+ </g>
+</svg>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="-18 0 190 190" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <defs>
+  <linearGradient id="linearGradient4421" x1="55" x2="115" y1="156" y2="196" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#0ff" offset="0"/>
+   <stop stop-color="#00c8c8" offset="1"/>
+  </linearGradient>
+  <radialGradient id="radialGradient4423" cx="50" cy="205.65" r="32.768" gradientTransform="matrix(1.9836 -.15259 .061435 .79898 -61.815 44.322)" gradientUnits="userSpaceOnUse">
+   <stop offset="0"/>
+   <stop stop-color="#191919" offset="1"/>
+  </radialGradient>
+  <linearGradient id="linearGradient4425" x1="60" x2="165" y1="96" y2="96" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" stop-opacity=".098039" offset="0"/>
+   <stop stop-color="#fff" stop-opacity=".19608" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g transform="translate(-40,-26)">
+  <path d="m160 26 35 35-80 135c-5-1-59-38-60-40z" fill="url(#linearGradient4421)"/>
+  <path d="m55 156 60 40s-20-5-40 10c-6.6667 5-29.287 2.1458-25-5 15-25 5-45 5-45z" fill="url(#radialGradient4423)"/>
+  <path d="m50 201 25 5-10 10h-25z" fill="#00c8c8"/>
+  <path d="m160 31 5 5s-90 115-95 125c0 0-10 0-10-5z" fill="url(#linearGradient4425)"/>
+ </g>
+</svg>

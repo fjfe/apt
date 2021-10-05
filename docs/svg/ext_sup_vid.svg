@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <style>
+    .fil0 {fill:#0099FF}
+    .fil3 {fill:#F2F2F2}
+    .fil2 {fill:#E5E5E5;fill-rule:nonzero}
+   </style>
+ </defs>
+ <g transform="matrix(.56361 0 0 .56361 115.1 155.1)">
+  <rect class="fil0" x="20" y="80" width="460" height="340" rx="45" ry="45"/>
+  <path class="fil2" d="m333 242-65-37-65-38c-3-1-6-1-9 0-3 2-4 5-4 8v150c0 3 1 6 4 8 3 1 6 1 9 0l65-38 65-37c3-2 4-5 4-8s-1-6-4-8z"/>
+  <path class="fil3" d="m60 120h50v50h-50zm0 70h50v50h-50zm0 70h50v50h-50zm0 70h50v50h-50zm331-210h50v50h-50zm0 70h50v50h-50zm0 70h50v50h-50zm0 70h50v50h-50z"/>
+ </g>
+</svg>

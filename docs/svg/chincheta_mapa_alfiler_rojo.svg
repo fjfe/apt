@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <radialGradient id="radialGradient7279" cx="-393.21" cy="781.63" r="38.523" gradientTransform="matrix(.72715 1.3952 -1.3382 .69742 940.81 777.53)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#eee" offset="0"/>
+   <stop stop-color="#980101" offset=".41147"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <filter id="filter6894-4" x="-.040909" y="-.040909" width="1.0818" height="1.0818" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="1.3132707"/>
+  </filter>
+  <filter id="filter7332" x="-.23594" y="-4.7004" width="9.1147" height="5.77" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="2.0615662"/>
+  </filter>
+ </defs>
+ <g transform="translate(-209.63,-296.91)">
+  <g transform="matrix(3.2246 0 0 3.3653 1029.4 -2771.7)">
+   <g transform="translate(222.52,350.67)">
+    <path transform="translate(-5.1543,-2.8829)" d="m-450.86 575.73-15.145 71.065 20.97-68.735z" color="#000000"/>
+    <circle transform="matrix(.4267 0 0 .4267 -289.92 243.76)" cx="-383.65" cy="785.47" r="38.523" fill="url(#radialGradient7279)" filter="url(#filter6894-4)"/>
+   </g>
+   <g transform="matrix(.8581 .51349 -.51349 .8581 477.04 267.33)" filter="url(#filter7332)" opacity=".48077">
+    <g transform="translate(222.52,350.67)">
+     <path transform="translate(-5.1543,-2.8829)" d="m-450.86 575.73-15.145 71.065 20.97-68.735z" color="#000000"/>
+     <circle transform="matrix(.4267 0 0 .4267 -289.92 243.76)" cx="-383.65" cy="785.47" r="38.523" filter="url(#filter6894-4)"/>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

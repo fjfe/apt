@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <filter id="filter3800" x="-.020073" y="-.052454" width="1.0401" height="1.1049" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="1.2285401"/>
+  </filter>
+ </defs>
+ <g transform="translate(-62.362 -152.86)">
+  <path d="m65.155 229.85 94.954 183.09 167.94-59.599-1.7678 5.8084-166.93 57.831-94.449-180.82z" fill="#9dac93"/>
+  <path transform="rotate(-30)" d="m-59.394 231.08 160.25 38.277 6.4326 201.49-175.12-33.738z" fill="#d7f4d7" fill-rule="evenodd"/>
+  <text transform="matrix(.5748 -.1714 .8341 1.491 0 0)" x="-67.822578" y="157.2406" fill="#333333" font-family="sans-serif" font-size="7pt" letter-spacing="0px" opacity=".8" word-spacing="0px" style="line-height:0%" xml:space="preserve">
+   <tspan x="-67.822578" y="157.2406" style="line-height:1.25">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</tspan>
+   <tspan x="-67.822578" y="167.39142" style="line-height:1.25">Donec quis ex in nisi placerat sagittis ac at erat. Fusce</tspan>
+   <tspan x="-67.822578" y="177.54222" style="line-height:1.25">quis turpis id diam suscipit posuere. Pellentesque id leo</tspan>
+   <tspan x="-67.822578" y="187.69304" style="line-height:1.25">quam. Integer justo arcu, bibendum et nisl non, imperdiet</tspan>
+   <tspan x="-67.822578" y="197.84386" style="line-height:1.25">ultricies sapien. Fusce</tspan>
+  </text>
+  <path d="m290.55 156.32 6.566 10.859 12.627 4.2932-101.28 103.12-11.187-5.2407-5.718-8.9907z" fill="#ffd42a"/>
+  <path d="m191.33 260.61-13.668 29.558 30.999-15.509-11.402-5.344z" fill="#f95"/>
+  <path d="m177.77 290.24 3.6008-8.2653 1.7363 2.4784 3.501 1.2563z" fill="#1a1a1a"/>
+  <path d="m191.32 260.62 5.9449 8.7553 99.942-102.14-6.6514-10.895z" fill="#cba200" fill-opacity=".33333"/>
+  <path d="m197.29 269.36-14.206 15.089-1.7053-2.4113 9.9606-21.389z" fill="#ff8c3e"/>
+  <path d="m176.61 290.48 17.678 14.9 129.21 40.807-14.637-22.259-107-33.952z" fill="#93ac93" filter="url(#filter3800)" opacity=".5"/>
+  <g transform="translate(.71429 1.4286)">
+   <ellipse transform="translate(-.17857 -1.25)" cx="73.994" cy="235.78" rx="2.7779" ry="2.3991" fill="#93ac93"/>
+   <path d="m67.781 244.59c-2.6726-0.28834-4.4371-2.2921-4.9557-4.8248-0.71546-3.4941 0.72254-7.0785 3.9003-8.1791s6.5836 0.77684 7.6073 4.1934" fill="none" stroke="#d35f5f" stroke-linecap="round" stroke-width="2"/>
+   <g transform="translate(4.3697,7.7029)">
+    <ellipse transform="translate(-.17857 -1.25)" cx="73.994" cy="235.78" rx="2.7779" ry="2.3991" fill="#93ac93"/>
+    <path d="m67.781 244.59c-2.6726-0.28834-4.4371-2.2921-4.9557-4.8248-0.71546-3.4941 0.72254-7.0785 3.9003-8.1791s6.5836 0.77684 7.6073 4.1934" fill="none" stroke="#d35f5f" stroke-linecap="round" stroke-width="2"/>
+   </g>
+   <g transform="translate(8.2458,15.342)">
+    <ellipse transform="translate(-.17857 -1.25)" cx="73.994" cy="235.78" rx="2.7779" ry="2.3991" fill="#93ac93"/>
+    <path d="m67.781 244.59c-2.6726-0.28834-4.4371-2.2921-4.9557-4.8248-0.71546-3.4941 0.72254-7.0785 3.9003-8.1791s6.5836 0.77684 7.6073 4.1934" fill="none" stroke="#d35f5f" stroke-linecap="round" stroke-width="2"/>
+   </g>
+   <g transform="translate(12.616,23.045)">
+    <ellipse transform="translate(-.17857 -1.25)" cx="73.994" cy="235.78" rx="2.7779" ry="2.3991" fill="#93ac93"/>
+    <path d="m67.781 244.59c-2.6726-0.28834-4.4371-2.2921-4.9557-4.8248-0.71546-3.4941 0.72254-7.0785 3.9003-8.1791s6.5836 0.77684 7.6073 4.1934" fill="none" stroke="#d35f5f" stroke-linecap="round" stroke-width="2"/>
+   </g>
+   <g transform="translate(16.371,31.157)">
+    <ellipse transform="translate(-.17857 -1.25)" cx="73.994" cy="235.78" rx="2.7779" ry="2.3991" fill="#93ac93"/>
+    <path d="m67.781 244.59c-2.6726-0.28834-4.4371-2.2921-4.9557-4.8248-0.71546-3.4941 0.72254-7.0785 3.9003-8.1791s6.5836 0.77684 7.6073 4.1934" fill="none" stroke="#d35f5f" stroke-linecap="round" stroke-width="2"/>
+    <g transform="translate(4.3697,7.7029)">
+     <ellipse transform="translate(-.17857 -1.25)" cx="73.994" cy="235.78" rx="2.7779" ry="2.3991" fill="#93ac93"/>
+     <path d="m67.781 244.59c-2.6726-0.28834-4.4371-2.2921-4.9557-4.8248-0.71546-3.4941 0.72254-7.0785 3.9003-8.1791s6.5836 0.77684 7.6073 4.1934" fill="none" stroke="#d35f5f" stroke-linecap="round" stroke-width="2"/>
+    </g>
+    <g transform="translate(8.2458,15.342)">
+     <ellipse transform="translate(-.17857 -1.25)" cx="73.994" cy="235.78" rx="2.7779" ry="2.3991" fill="#93ac93"/>
+     <path d="m67.781 244.59c-2.6726-0.28834-4.4371-2.2921-4.9557-4.8248-0.71546-3.4941 0.72254-7.0785 3.9003-8.1791s6.5836 0.77684 7.6073 4.1934" fill="none" stroke="#d35f5f" stroke-linecap="round" stroke-width="2"/>
+    </g>
+    <g transform="translate(12.616,23.045)">
+     <ellipse transform="translate(-.17857 -1.25)" cx="73.994" cy="235.78" rx="2.7779" ry="2.3991" fill="#93ac93"/>
+     <path d="m67.781 244.59c-2.6726-0.28834-4.4371-2.2921-4.9557-4.8248-0.71546-3.4941 0.72254-7.0785 3.9003-8.1791s6.5836 0.77684 7.6073 4.1934" fill="none" stroke="#d35f5f" stroke-linecap="round" stroke-width="2"/>
+    </g>
+   </g>
+   <g transform="translate(32.66,62.219)">
+    <ellipse transform="translate(-.17857 -1.25)" cx="73.994" cy="235.78" rx="2.7779" ry="2.3991" fill="#93ac93"/>
+    <path d="m67.781 244.59c-2.6726-0.28834-4.4371-2.2921-4.9557-4.8248-0.71546-3.4941 0.72254-7.0785 3.9003-8.1791s6.5836 0.77684 7.6073 4.1934" fill="none" stroke="#d35f5f" stroke-linecap="round" stroke-width="2"/>
+    <g transform="translate(4.3697,7.7029)">
+     <ellipse transform="translate(-.17857 -1.25)" cx="73.994" cy="235.78" rx="2.7779" ry="2.3991" fill="#93ac93"/>
+     <path d="m67.781 244.59c-2.6726-0.28834-4.4371-2.2921-4.9557-4.8248-0.71546-3.4941 0.72254-7.0785 3.9003-8.1791s6.5836 0.77684 7.6073 4.1934" fill="none" stroke="#d35f5f" stroke-linecap="round" stroke-width="2"/>
+    </g>
+    <g transform="translate(8.2458,15.342)">
+     <ellipse transform="translate(-.17857 -1.25)" cx="73.994" cy="235.78" rx="2.7779" ry="2.3991" fill="#93ac93"/>
+     <path d="m67.781 244.59c-2.6726-0.28834-4.4371-2.2921-4.9557-4.8248-0.71546-3.4941 0.72254-7.0785 3.9003-8.1791s6.5836 0.77684 7.6073 4.1934" fill="none" stroke="#d35f5f" stroke-linecap="round" stroke-width="2"/>
+    </g>
+    <g transform="translate(12.616,23.045)">
+     <ellipse transform="translate(-.17857 -1.25)" cx="73.994" cy="235.78" rx="2.7779" ry="2.3991" fill="#93ac93"/>
+     <path d="m67.781 244.59c-2.6726-0.28834-4.4371-2.2921-4.9557-4.8248-0.71546-3.4941 0.72254-7.0785 3.9003-8.1791s6.5836 0.77684 7.6073 4.1934" fill="none" stroke="#d35f5f" stroke-linecap="round" stroke-width="2"/>
+    </g>
+   </g>
+   <g transform="translate(49.327,93.408)">
+    <ellipse transform="translate(-.17857 -1.25)" cx="73.994" cy="235.78" rx="2.7779" ry="2.3991" fill="#93ac93"/>
+    <path d="m67.781 244.59c-2.6726-0.28834-4.4371-2.2921-4.9557-4.8248-0.71546-3.4941 0.72254-7.0785 3.9003-8.1791s6.5836 0.77684 7.6073 4.1934" fill="none" stroke="#d35f5f" stroke-linecap="round" stroke-width="2"/>
+    <g transform="translate(4.3697,7.7029)">
+     <ellipse transform="translate(-.17857 -1.25)" cx="73.994" cy="235.78" rx="2.7779" ry="2.3991" fill="#93ac93"/>
+     <path d="m67.781 244.59c-2.6726-0.28834-4.4371-2.2921-4.9557-4.8248-0.71546-3.4941 0.72254-7.0785 3.9003-8.1791s6.5836 0.77684 7.6073 4.1934" fill="none" stroke="#d35f5f" stroke-linecap="round" stroke-width="2"/>
+    </g>
+    <g transform="translate(8.2458,15.342)">
+     <ellipse transform="translate(-.17857 -1.25)" cx="73.994" cy="235.78" rx="2.7779" ry="2.3991" fill="#93ac93"/>
+     <path d="m67.781 244.59c-2.6726-0.28834-4.4371-2.2921-4.9557-4.8248-0.71546-3.4941 0.72254-7.0785 3.9003-8.1791s6.5836 0.77684 7.6073 4.1934" fill="none" stroke="#d35f5f" stroke-linecap="round" stroke-width="2"/>
+    </g>
+    <g transform="translate(12.616,23.045)">
+     <ellipse transform="translate(-.17857 -1.25)" cx="73.994" cy="235.78" rx="2.7779" ry="2.3991" fill="#93ac93"/>
+     <path d="m67.781 244.59c-2.6726-0.28834-4.4371-2.2921-4.9557-4.8248-0.71546-3.4941 0.72254-7.0785 3.9003-8.1791s6.5836 0.77684 7.6073 4.1934" fill="none" stroke="#d35f5f" stroke-linecap="round" stroke-width="2"/>
+    </g>
+   </g>
+   <g transform="translate(65.363,124.47)">
+    <ellipse transform="translate(-.17857 -1.25)" cx="73.994" cy="235.78" rx="2.7779" ry="2.3991" fill="#93ac93"/>
+    <path d="m67.781 244.59c-2.6726-0.28834-4.4371-2.2921-4.9557-4.8248-0.71546-3.4941 0.72254-7.0785 3.9003-8.1791s6.5836 0.77684 7.6073 4.1934" fill="none" stroke="#d35f5f" stroke-linecap="round" stroke-width="2"/>
+   </g>
+   <g transform="translate(69.733,132.17)">
+    <ellipse transform="translate(-.17857 -1.25)" cx="73.994" cy="235.78" rx="2.7779" ry="2.3991" fill="#93ac93"/>
+    <path d="m67.781 244.59c-2.6726-0.28834-4.4371-2.2921-4.9557-4.8248-0.71546-3.4941 0.72254-7.0785 3.9003-8.1791s6.5836 0.77684 7.6073 4.1934" fill="none" stroke="#d35f5f" stroke-linecap="round" stroke-width="2"/>
+   </g>
+   <g transform="translate(73.609,139.81)">
+    <ellipse transform="translate(-.17857 -1.25)" cx="73.994" cy="235.78" rx="2.7779" ry="2.3991" fill="#93ac93"/>
+    <path d="m67.781 244.59c-2.6726-0.28834-4.4371-2.2921-4.9557-4.8248-0.71546-3.4941 0.72254-7.0785 3.9003-8.1791s6.5836 0.77684 7.6073 4.1934" fill="none" stroke="#d35f5f" stroke-linecap="round" stroke-width="2"/>
+   </g>
+   <g transform="translate(77.979,147.51)">
+    <ellipse transform="translate(-.17857 -1.25)" cx="73.994" cy="235.78" rx="2.7779" ry="2.3991" fill="#93ac93"/>
+    <path d="m67.781 244.59c-2.6726-0.28834-4.4371-2.2921-4.9557-4.8248-0.71546-3.4941 0.72254-7.0785 3.9003-8.1791s6.5836 0.77684 7.6073 4.1934" fill="none" stroke="#d35f5f" stroke-linecap="round" stroke-width="2"/>
+   </g>
+   <g transform="translate(81.608,155.75)">
+    <ellipse transform="translate(-.17857 -1.25)" cx="73.994" cy="235.78" rx="2.7779" ry="2.3991" fill="#93ac93"/>
+    <path d="m67.781 244.59c-2.6726-0.28834-4.4371-2.2921-4.9557-4.8248-0.71546-3.4941 0.72254-7.0785 3.9003-8.1791s6.5836 0.77684 7.6073 4.1934" fill="none" stroke="#d35f5f" stroke-linecap="round" stroke-width="2"/>
+   </g>
+   <g transform="translate(85.978,163.46)">
+    <ellipse transform="translate(-.17857 -1.25)" cx="73.994" cy="235.78" rx="2.7779" ry="2.3991" fill="#93ac93"/>
+    <path d="m67.781 244.59c-2.6726-0.28834-4.4371-2.2921-4.9557-4.8248-0.71546-3.4941 0.72254-7.0785 3.9003-8.1791s6.5836 0.77684 7.6073 4.1934" fill="none" stroke="#d35f5f" stroke-linecap="round" stroke-width="2"/>
+   </g>
+  </g>
+  <path transform="translate(52.362,146.32)" d="m228.04 20.792 6.1872 10.985 11.238 5.6821 11.869-12.248 0.75762-5.0508-5.39-7.8358-8.2471-3.9072-6.566 1.894z" fill="#f55"/>
+  <path transform="translate(52.362,146.32)" d="m228.17 20.666 6.9448 10.48 10.733 5.9346-5.177 5.3033-11.112-6.0609-6.566-10.354z" fill="#b3b3b3"/>
+  <path transform="translate(52.362,146.32)" d="m222.86 25.922 5.3571-5.625 6.7857 10.804-5.3571 5.3571z" fill="#9d9d9d"/>
+ </g>
+</svg>

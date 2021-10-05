@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 410 410" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient4167" x1="328.08" x2="346.86" y1="427.13" y2="450.64" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#e9e9a1" offset="0"/>
+   <stop stop-color="#dcdc60" offset="1"/>
+  </linearGradient>
+  <filter id="filter3591" x="-.21599" y="-.27154" width="1.432" height="1.5431" color-interpolation-filters="sRGB">
+   <feGaussianBlur in="SourceGraphic" result="result0" stdDeviation="6"/>
+   <feDiffuseLighting lighting-color="#ffffff" result="result5" surfaceScale="4">
+    <feDistantLight azimuth="235" elevation="45"/>
+   </feDiffuseLighting>
+   <feComposite in="result5" in2="SourceGraphic" k1="1.4" operator="arithmetic" result="fbSourceGraphic"/>
+   <feGaussianBlur in="fbSourceGraphic" result="result0" stdDeviation="6"/>
+   <feSpecularLighting lighting-color="#f4d8d8" in="result0" result="result1" specularExponent="25" surfaceScale="4">
+    <feDistantLight azimuth="235" elevation="45"/>
+   </feSpecularLighting>
+   <feComposite in="fbSourceGraphic" in2="result1" k2="1" k3="1" operator="arithmetic" result="result4"/>
+   <feComposite in="result4" in2="SourceGraphic" operator="in" result="result2"/>
+  </filter>
+  <linearGradient id="linearGradient4287" x1="283.96" x2="350.92" y1="445.63" y2="516.63" gradientTransform="matrix(.23435 0 0 .23308 63.982 2.066)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#e30000" offset="0"/>
+   <stop stop-color="#eb0000" offset=".42442"/>
+   <stop stop-color="#f30000" offset="1"/>
+  </linearGradient>
+  <radialGradient id="radialGradient4277" cx="49.023" cy="617.36" r="90.419" gradientTransform="matrix(.9955 0 0 .79303 15.098 -241.34)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f30000" offset="0"/>
+   <stop stop-color="#eb0000" offset=".61116"/>
+   <stop stop-color="#e30000" offset="1"/>
+  </radialGradient>
+ </defs>
+ <flowRoot transform="translate(-167.05 -322.77)" fill="#e9e9a1" font-family="Andy" font-size="45px" font-stretch="semi-condensed" font-weight="bold" image-rendering="auto" stroke="#a20000" text-align="center" text-anchor="middle" style="line-height:125%" xml:space="preserve"><flowRegion><rect x="382" y="35" width="287" height="165"/></flowRegion><flowPara/></flowRoot>
+ <g transform="matrix(1.1386 0 0 1.1386 -12.079 -10.485)">
+  <g transform="rotate(-31.466 -82.211 304.04)" fill-rule="evenodd" image-rendering="auto">
+   <path d="m69.839 241.82v225h243.75l56.251-42.188v-182.81z" fill="#ff9"/>
+   <path d="m313.59 466.82c4.2646-13.748 8.3822-27.537 14.558-40.739 5.6503 7.2051 20.599 7.1585 41.693-1.4491z" fill="url(#linearGradient4167)"/>
+  </g>
+  <g stroke="#c30000" stroke-linecap="round" stroke-linejoin="round">
+   <ellipse transform="matrix(.20426 -.1164 .11723 .20162 104.22 78.337)" cx="63.9" cy="248.24" rx="89.514" ry="71.205" fill="url(#radialGradient4277)" filter="url(#filter3591)" image-rendering="auto" stroke-width="4.2707"/>
+   <path d="m117.52 103.01c4.7935 0.20507 10.784 7.4632 17.271 17.644 4.4301 6.953 10.695 2.6904 12.792 0.64875 1.9626-1.9109 6.0002-7.4752-0.88017-12.077-10.075-6.7389-17.214-12.894-17.271-17.644l-5.9559 5.7143z" fill="url(#linearGradient4287)" image-rendering="auto"/>
+   <ellipse transform="matrix(.20426 -.1164 .11723 .20162 104.22 78.337)" cx="32.698" cy="101.37" rx="71.611" ry="56.964" fill="#f30000" filter="url(#filter3591)" image-rendering="auto" stroke-width="4.2707"/>
+  </g>
+ </g>
+</svg>

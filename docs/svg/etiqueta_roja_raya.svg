@@ -1,0 +1,22 @@
+<svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <style>
+      .s01 {
+        fill: #FF6E6E;
+      }
+      .s01, .s02 {
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-width: 0;
+        fill-rule: evenodd;
+      }
+      .s02 {
+        fill: #0C0058;
+      }
+  </style>
+ </defs>
+ <g transform="translate(-5.504 -7.5)">
+  <path class="s01" d="M 6.008,27.205 25.215,8 H 41 V 23 L 22,43 Z"/>
+  <path class="s02" d="m9.8 27.205 2.526-2.526 12 12-2.531 2.521zm21.151-13.576a3.126 3.126 0 1 1 0 4.42 3.126 3.126 0 0 1 0-4.42z"/>
+ </g>
+</svg>

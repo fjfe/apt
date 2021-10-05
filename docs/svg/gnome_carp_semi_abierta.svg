@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg version="1.1" viewBox="0 0 122 122" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <filter id="filter1835" x="-.011571" y="-.012462" width="1.0231" height="1.0249" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="2.16"/>
+  </filter>
+ </defs>
+ <g transform="translate(36.498 41.202)">
+  <path transform="matrix(.26458 0 0 .26458 -555.84 167.9)" d="m2024.1-770.02s-40 0-40 40v143.3c-8.5017 5.569-16 15.38-16 32.695l16 200h376c40 0 40-40 40-40l16-192c0-17.315-7.4983-27.126-16-32.695v-79.305s0-40-40-40h-200l-32-32z" enable-background="new" filter="url(#filter1835)" opacity=".2" style="paint-order:normal"/>
+  <path d="m7.2069-36.36h-27.517s-10.583 0-10.583 10.583v42.333h110.07v-33.867s0-10.583-10.583-10.583h-52.917z" enable-background="new" fill="#c9b8a7" style="paint-order:normal"/>
+  <path d="m24.14 1.7399-8.4667 8.4667h-40.217s-10.583 0-10.583 10.583l4.2333 52.917h99.483c10.583 0 10.583-10.583 10.583-10.583l4.2333-50.8c0-10.583-10.583-10.583-10.583-10.583z" enable-background="new" fill="#ded4ca" style="paint-order:normal"/>
+  <path d="m79.174 61.536s0 10.583-10.583 10.583h-99.483v1.5875h99.483c10.583 0 10.583-10.583 10.583-10.583z" enable-background="new" opacity=".1" style="paint-order:normal"/>
+  <path d="m24.14 1.7401-8.4667 8.4667h-40.217s-10.583 0-10.583 10.583l0.0217 0.27492c0.51001-9.7983 10.562-9.7999 10.562-9.7999h40.217l8.4667-8.4667h48.683s10.046 0.00159 10.561 9.7922l0.02223-0.26717c0-10.583-10.583-10.583-10.583-10.583z" enable-background="new" fill="#fff" opacity=".3" style="paint-order:normal"/>
+ </g>
+</svg>

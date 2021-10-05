@@ -1,0 +1,2067 @@
+﻿<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><title>Img mini</title>
+<!--
+	Fuente: https://webdesign.tutsplus.com/es/tutorials/how-to-build-a-filterable-thumbnail-layout-with-css-grid-flexbox-and-javascript--cms-33242
+
+	Modif.: Paco Fdez. 22/07/2021 - 01/10/2021
+
+			HTM autosuficiente, salvo por los archivos de imagen que se referencian en el código js. Por ej:
+			l.a('./nombre_imagen.svg', 'etiq1 etiq2 etiq3');     // 'Camino del svg', 'etiquetas separadas por espacios'
+
+			Le añadí etiquetas (almacenadas en el código js, junto a los nombres de los archivos).
+			En los nombres de archivos.svg sólo he usado minúsculas y _ como separador. Nunca he usado el espacio.
+			La búsqueda es sensible a mayúsculas.
+			La búsqueda se realiza en nombre y etiquetas (parcialmente) hasta el primer espacio (si existe)
+				y en etiquetas (búsqueda completa de etiquetas separadas por espacios) a partir del mismo.
+-->
+<link id="ico" rel="icon" href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMTkuMjUgNC41SDQuNzVhLjI1LjI1IDAgMDAtLjI1LjI1djE0LjVjMCAuMTM4LjExMi4yNS4yNS4yNWguMTlsOS44MjMtOS44MjNhMS43NSAxLjc1IDAgMDEyLjQ3NSAwbDIuMjYyIDIuMjYyVjQuNzVhLjI1LjI1IDAgMDAtLjI1LS4yNXptLjI1IDkuNTZsLTMuMzIzLTMuMzIzYS4yNS4yNSAwIDAwLS4zNTQgMEw3LjA2MSAxOS41SDE5LjI1YS4yNS4yNSAwIDAwLjI1LS4yNXYtNS4xOXpNNC43NSAzQTEuNzUgMS43NSAwIDAwMyA0Ljc1djE0LjVjMCAuOTY2Ljc4NCAxLjc1IDEuNzUgMS43NWgxNC41QTEuNzUgMS43NSAwIDAwMjEgMTkuMjVWNC43NUExLjc1IDEuNzUgMCAwMDE5LjI1IDNINC43NXpNOC41IDkuNWExIDEgMCAxMDAtMiAxIDEgMCAwMDAgMnptMCAxLjVhMi41IDIuNSAwIDEwMC01IDIuNSAyLjUgMCAwMDAgNXoiLz48L3N2Zz4=">
+<style>
+/* RESET RULES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+  --black: #1a1a1a;
+  --white: #fff;
+  --gray: #ccc;
+  --darkgreen: #18846C;
+  --lightbrown: antiquewhite;
+  --darkblack: rgba(0,0,0,0.8);
+  --minRangeValue: 90px;
+}
+
+* {
+  margin: 0;
+  padding: 0;  
+  outline: none;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+body {
+  margin: 10px 0 50px 0;
+  color: var(--black);
+  font: 1rem/1.3 sans-serif;
+}
+
+.gallery {
+  padding: 0 2rem;
+}
+
+.container {
+  max-width: 1030px;
+  margin: 0 auto;
+}
+
+.d-none {
+  display: none;
+}
+
+
+/* TOOLBAR
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toolbar .search-wrapper {
+  position: relative;
+}
+
+.toolbar input[type="search"] {
+  font-size: 1.1rem;
+  border: none;
+  border-bottom: 1px solid;
+  padding-bottom: 3px;
+}
+
+.toolbar ::placeholder {
+  color: var(--gray);
+}
+
+.toolbar .counter {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 5px);
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+.view-options {
+  display: flex;
+  align-items: center;
+}
+
+.view-options li:not(:last-child) {
+  margin-right: 1.2rem;
+}
+
+.view-options button {
+  padding: 2px;
+  border: 3px solid transparent;
+}
+
+.view-options .active button {
+  border-color: var(--darkgreen);
+}
+
+
+/* IMAGE LIST
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.image-list {
+  margin: 3rem 0;
+}
+
+.image-list li {
+  background: var(--lightbrown);
+  color: var(--darkblack);
+}
+/*
+.image-list p:first-child {
+  font-weight: bold;
+  font-size: 1.15rem;
+}
+*/
+.image-list p:last-child {
+  margin-top: 0.5rem;
+}
+
+
+/* GRID VIEW
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.grid-view {
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(var(--minRangeValue), 1fr));
+}
+
+.grid-view figcaption {
+  padding: 0.5rem 0 0.2rem 0;
+}
+
+
+/* LIST VIEW
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.list-view li + li {
+  margin-top: 1.5rem;
+}
+
+.list-view figure {
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+}
+
+
+/* FOOTER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+footer {
+  font-size: 1rem;
+  padding: 0 1.5rem;
+  text-align: right;
+}
+
+footer span {
+  color: #e31b23;
+}
+
+/* MQ
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (max-width: 900px) {
+  .toolbar input[type="range"] {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .grid-view li {
+    text-align: center;
+    padding: 0.5rem;
+  }
+  
+  .grid-view figcaption {
+    padding: 0.5rem 0 0;
+  }
+}
+</style>
+</head>
+<body>
+<section class="gallery">
+  <div class="container">
+    <div class="toolbar">
+      <div class="search-wrapper">
+        <input type="search" placeholder="Buscar...">
+        <div class="counter">
+          Imágenes: <span id="cont">x</span></div>
+      </div>
+      <ul class="view-options">
+        <li class="zoom">
+          <input type="range" min="32" max="760" value="90">
+        </li>
+        <li class="show-grid active">
+          <button disabled>
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNiA2aC02di02aDZ2NnptOS02aC02djZoNnYtNnptOSAwaC02djZoNnYtNnptLTE4IDloLTZ2Nmg2di02em05IDBoLTZ2Nmg2di02em05IDBoLTZ2Nmg2di02em0tMTggOWgtNnY2aDZ2LTZ6bTkgMGgtNnY2aDZ2LTZ6bTkgMGgtNnY2aDZ2LTZ6Ii8+PC9zdmc+" alt="grid view">  
+          </button>
+        </li>
+        <li class="show-list">
+          <button>
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMiAyM2gtMnYtMmgydjJ6bTAtMTJoLTJ2Mmgydi0yem0wIDVoLTJ2Mmgydi0yem0wLTE1aC0ydjJoMnYtMnptMiAwdjJoMjB2LTJoLTIwem0tMiA1aC0ydjJoMnYtMnptMiA3aDIwdi0yaC0yMHYyem0wIDEwaDIwdi0yaC0yMHYyem0wLTE1aDIwdi0yaC0yMHYyem0wIDEwaDIwdi0yaC0yMHYyeiIvPjwvc3ZnPg==" alt="list view">  
+          </button>
+        </li>
+      </ul>
+    </div>
+    <ol id="lista" class="image-list grid-view">
+<!--
+      <li>
+        <figure>
+          <img src="./boli00.svg" alt="">
+          <figcaption>
+            <p>boli00</p>
+          </figcaption>
+        </figure>
+      </li>
+-->
+    </ol>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <small>Sigo mejorando...
+    </small>
+  </div>
+</footer>
+
+<script>
+//------------------------------------------------------------------------------
+function etqSep(e, s=' '){
+// Una lista de etiquetas debe empezar y acabar por el separador, para facilitar las comparaciones
+  let sRet = e;
+  let l;
+  if (sRet.substring(0,1) != s)
+    sRet = ' ' + sRet;
+  l = sRet.length;
+  if (sRet.substring(l-1,l) != s)
+    sRet = sRet + ' ';
+  return sRet;
+}
+function etqEn(sEtq, sEn, s=' '){
+  let a = sEtq.split(s);
+  let bRet = true;
+  sEn = etqSep(sEn);
+  for (i in a) {
+    if (a[i])
+      bRet &= sEn.includes(etqSep(a[i]));
+  }
+  return bRet;
+}
+//------------------------------------------------------------------------------
+
+/*<!--- Clase Imagenes --------------vv
+Campo  Contenido      Ejemplo
+url    URL ->src      ../img/nombre.svg
+etq    Etiquetas      carpeta 00                   OPCIONAL [Por defecto: '']
+txt    Texto          nombre.svg<br>carpeta 00     PRIVADO  [= nombre.svg<br>etq]
+--->*/
+function Imagenes() {
+  this.n    =0;
+  this.a    =mImaAdd;
+  this.s    =mImaStr;
+}
+function mImaAdd(url,etq) {
+  var o = new Object;
+  o.url=url;
+  if (undefined==etq)
+    etq = '';
+  o.etq=etq;
+  o.txt=url.split("/").pop() + '<br>' + etq;
+  this[this.n++]=o;
+}
+function mImaStr(nAlto) {
+  let s = '';
+  for (let i=0; i<this.n; i++) {
+    s +=
+      `
+      <li>
+        <figure>
+          <img src="${this[i].url}" alt="">
+          <figcaption>
+            <p>${this[i].txt}</p>
+          </figcaption>
+        </figure>
+      </li>
+      `;
+  }
+  return s;
+}
+/*<!--- Clase Imagenes --------------^^ --->*/
+
+let l=new Imagenes();
+
+l.a('./00_imagen_trazos_00.svg'                ,'ext imagen jpg 00');
+
+l.a('./svg_logo.svg'                           ,'svg logo');
+l.a('./svg_logo_cr.svg'                        ,'svg logo');
+l.a('./svg_logo_aster.svg'                     ,'svg logo');
+
+l.a('./boli00.svg'                             ,'bolígrafo 00');
+l.a('./boli_mod_abiz_00.svg'                   ,'bolígrafo 00');
+l.a('./boli01.svg'                             ,'bolígrafo azul degradado sombra');
+l.a('./boli02.svg'                             ,'bolígrafo azul');
+l.a('./boli03.svg'                             ,'bolígrafo 00');
+l.a('./boli04.svg'                             ,'bolígrafo naranja');
+l.a('./boli05.svg'                             ,'bolígrafo azul');
+l.a('./boli_gris_45_bi.svg'                    ,'bolígrafo gris');
+l.a('./boli_barato_azul.svg'                   ,'bolígrafo barato azul realista');
+l.a('./boli_bic_reco_00.svg'                   ,'bolígrafo bic realista');
+l.a('./boli_caneta_bic_inkcenabimin.svg'       ,'bolígrafo bic azul realista');
+l.a('./boli_blanco_capuchon_azul.svg'          ,'bolígrafo bic azul blanco');
+l.a('./capuchon_boli_bic_azul.svg'             ,'capuchón bolígrafo bic azul');
+l.a('./capuchon_boli_bic_bas_azul.svg'         ,'capuchón bolígrafo bic azul');
+l.a('./capuchon_boli_bic_bas_negro.svg'        ,'capuchón bolígrafo bic negro');
+l.a('./capuchon_boli_bic_bas_azul_int.svg'     ,'capuchón bolígrafo bic azul');
+l.a('./capuchon_boli_bic_bas_negro_int.svg'    ,'capuchón bolígrafo bic negro');
+l.a('./capuchon_boli_bic_bas_rojo_int.svg'     ,'capuchón bolígrafo bic rojo');
+l.a('./capuchon_boli_bic_bas_verde_int.svg'    ,'capuchón bolígrafo bic verde');
+l.a('./apuntes_capuchon_azul_sup.svg'          ,'apuntes capuchón bolígrafo bic azul sup');
+l.a('./apuntes_capuchon_negro_sup.svg'         ,'apuntes capuchón bolígrafo bic negro sup');
+l.a('./apuntes_marcadores.svg'                 ,'apuntes capuchón bolígrafo bic negro sup marcador estrella');
+l.a('./apuntes_curso.svg'                      ,'apuntes capuchón bolígrafo bic azul sup curso birrete');
+l.a('./apuntes_movistar_azul.svg'              ,'apuntes movistar azul');
+
+l.a('./boli06_negro.svg'                       ,'bolígrafo punta negro');
+l.a('./boli06_rojo.svg'                        ,'bolígrafo punta rojo');
+l.a('./boli06_verde.svg'                       ,'bolígrafo punta verde');
+l.a('./boli06_azul.svg'                        ,'bolígrafo punta azul');
+
+l.a('./rotulador_permanente_gris.svg'          ,'rotulador gris');
+l.a('./rotulador_marcador_00.svg'              ,'marcador 00');
+l.a('./marcador_rojo.svg'                      ,'marcador rojo');
+l.a('./marcador_verde.svg'                     ,'marcador verde realista');
+l.a('./marcador_celeste.svg'                   ,'marcador azul realista');
+
+l.a('./lapiz_i1_00.svg'                        ,'lápiz punta 00');
+l.a('./lapiz_i2_00.svg'                        ,'lápiz 00');
+l.a('./lapiz_i2_lin_00.svg'                    ,'lápiz 00');
+l.a('./lapiz_i2_naranja.svg'                   ,'lápiz naranja');
+l.a('./lapiz_i3_am_sombra.svg'                 ,'lápiz amarillo sombra');
+
+l.a('./lapiz00.svg'                            ,'lápiz 00');
+l.a('./lapiz01.svg'                            ,'lápiz amarillo');
+l.a('./lapiz02.svg'                            ,'lápiz naranja realista');
+l.a('./lapiz03.svg'                            ,'lápiz naranja negro realista');
+l.a('./lapiz04.svg'                            ,'lápiz naranja');
+l.a('./lapiz05.svg'                            ,'lápiz rojo');
+l.a('./lapiz_corto.svg'                        ,'lápiz corto realista');
+l.a('./lapiz_matt.svg'                         ,'lápiz gris rojo');
+l.a('./lapiz_brillo.svg'                       ,'lápiz naranja');
+l.a('./lapiz_cera_roja.svg'                    ,'lápiz rojo');
+l.a('./lapiz_sombra.svg'                       ,'lápiz naranja sombra realista');
+l.a('./lapiz_naranja.svg'                      ,'lápiz naranja');
+l.a('./lapiz_vert_am_ne.svg'                   ,'lápiz naranja negro realista');
+l.a('./lapiz_punta.svg'                        ,'lápiz azul punta');
+l.a('./lapiz_azul.svg'                         ,'lápiz azul');
+l.a('./lapiz_regla.svg'                        ,'lápiz azul regla');
+l.a('./lapiz_agenda.svg'                       ,'lápiz azul agenda cuaderno naranja');
+l.a('./agenda_00.svg'                          ,'agenda cuaderno 00');
+l.a('./agenda_anillas_blancas.svg'             ,'agenda cuaderno blanco');
+l.a('./libro_00.svg'                           ,'libro 00');
+l.a('./libro_marcador_00.svg'                  ,'libro marcador 00');
+l.a('./libro_celeste_delgado.svg'              ,'libro azul');
+l.a('./libro_amarillo.svg'                     ,'libro amarillo');
+l.a('./agenda_boli_00.svg'                     ,'agenda bolígrafo 00');
+
+l.a('./pizarra_00.svg'                         ,'pizarra 00');
+l.a('./pizarra_tiza.svg'                       ,'pizarra tiza borrador');
+l.a('./pizarra_base.svg'                       ,'pizarra verde');
+l.a('./pizarra_patas_abc.svg'                  ,'pizarra verde blanco');
+l.a('./pizarra_verde_patas.svg'                ,'pizarra verde');
+l.a('./pizarra_verde_patas_abc.svg'            ,'pizarra verde tiza blanco');
+l.a('./pizarra_madera_verde.svg'               ,'pizarra madera verde');
+l.a('./pizarra_madera_verde_borra.svg'         ,'pizarra madera verde tiza blanco borrador sombra');
+l.a('./presentacion_pant_patas.svg'            ,'presentación ppt');
+l.a('./presentacion_proy.svg'                  ,'presentación ppt');
+
+l.a('./huella_digital_00.svg'                  ,'huella 00');
+
+l.a('./pluma_00.svg'                           ,'pluma animal 00');
+l.a('./pluma_sombra.svg'                       ,'pluma animal sombra');
+l.a('./pluma_raya.svg'                         ,'pluma estilográfica 00');
+l.a('./pluma_estilogr_00.svg'                  ,'pluma estilográfica punta 00');
+l.a('./pluma_oro.svg'                          ,'pluma estilográfica oro naranja punta');
+l.a('./noto_emoji_kitkat_2712.svg'             ,'pluma estilográfica oro naranja emoji android');
+l.a('./pluma_estilografica.svg'                ,'pluma estilográfica punta realista');
+l.a('./fountain_pen.svg'                       ,'pluma estilográfica oro realista');
+
+l.a('./bala_proyectil.svg'                     ,'bala proyectil oro');
+
+l.a('./ext_sup_0_new_00.svg'                   ,'sup ext new nuevo vacío 00');
+l.a('./ext_sup_txt.svg'                        ,'sup ext txt 00');
+l.a('./ext_sup_md.svg'                         ,'sup ext md 00');
+l.a('./ext_sup_pdf.svg'                        ,'sup ext pdf rojo');
+l.a('./ext_sup_img.svg'                        ,'sup ext imagen jpg verde naranja');
+l.a('./ext_sup_aud.svg'                        ,'sup ext audio mp3 azul');
+l.a('./ext_sup_vid.svg'                        ,'sup ext vídeo mp4 azul blanco');
+l.a('./ext_sup_doc.svg'                        ,'sup ext doc azul');
+l.a('./ext_sup_xls.svg'                        ,'sup ext xls verde');
+l.a('./ext_sup_ppt.svg'                        ,'sup ext ppt marrón');
+l.a('./ext_sup_odt.svg'                        ,'sup ext odt azul');
+l.a('./ext_sup_ods.svg'                        ,'sup ext ods verde');
+l.a('./ext_sup_odp.svg'                        ,'sup ext odp marrón');
+l.a('./ext_sup_zip.svg'                        ,'sup ext zip marrón');
+l.a('./ext_sup_zip_00.svg'                     ,'sup ext zip 00');
+l.a('./ext_sup_7z.svg'                         ,'sup ext 7z 00');
+l.a('./ext_sup_htm.svg'                        ,'sup ext htm html rojo');
+l.a('./ext_sup_css.svg'                        ,'sup ext css azul');
+l.a('./ext_sup_js.svg'                         ,'sup ext js amarillo');
+l.a('./ext_sup_json.svg'                       ,'sup ext json gris');
+l.a('./ext_sup_xml.svg'                        ,'sup ext xml naranja');
+l.a('./ext_sup_svg.svg'                        ,'sup ext svg naranja');
+l.a('./ext_sup_py.svg'                         ,'sup ext py azul amarillo');
+l.a('./ext_sup_php.svg'                        ,'sup ext php azul negro');
+
+l.a('./ext_xml_2c.svg'                         ,'ext xml gris rojo');
+
+l.a('./lupa_izq_00.svg'                        ,'lupa 00');
+l.a('./lupa_der_00.svg'                        ,'lupa 00');
+l.a('./lupa_verde.svg'                         ,'lupa verde azul degradado');
+l.a('./lupa_naranja.svg'                       ,'lupa naranja azul degradado');
+l.a('./campana_00.svg'                         ,'campana 00');
+l.a('./campana_01.svg'                         ,'campana amarillo');
+l.a('./timbre_recepcion.svg'                   ,'campana');
+
+l.a('./llave_00.svg'                           ,'llave 00');
+l.a('./llave_incl_aba_izq_00.svg'              ,'llave 00');
+l.a('./llaves_00.svg'                          ,'llave 00');
+l.a('./llave_metal_incl_arr_der.svg'           ,'llave metal');
+l.a('./llave_metal_incl_arr_izq.svg'           ,'llave metal');
+l.a('./llave_gris_vert.svg'                    ,'llave');
+l.a('./llave_asim_modern2.svg'                 ,'llave');
+l.a('./llave_dorada_hori.svg'                  ,'llave amarillo');
+l.a('./llave_dorada_equi.svg'                  ,'llave amarillo');
+
+l.a('./opciones_config_2_00.svg'               ,'configuración 00');
+l.a('./opciones_config_2_trazos_00.svg'        ,'configuración 00');
+l.a('./opciones_config_3_00.svg'               ,'configuración 00');
+l.a('./opciones_config_herram_00.svg'          ,'configuración herramienta 00');
+l.a('./engranaje_config_6_00.svg'              ,'engranaje configuración 00');
+l.a('./engranaje_config_6_fino_00.svg'         ,'engranaje configuración 00');
+l.a('./engranaje_config_8_00.svg'              ,'engranaje configuración 00');
+l.a('./engranaje_config_8_rectas_00.svg'       ,'engranaje configuración 00');
+l.a('./engranajes_2_sol.svg'                   ,'engranaje configuración 00');
+l.a('./engranaje_config_8_trazos_00.svg'       ,'engranaje configuración 00');
+
+l.a('./pqt_00.svg'                             ,'paquete 00');
+l.a('./pqt_trazos.svg'                         ,'paquete 00');
+l.a('./pqt_kde.svg'                            ,'paquete kde degradado');
+l.a('./pqt_mcol.svg'                           ,'paquete');
+l.a('./pqt_kliponius.svg'                      ,'paquete');
+l.a('./pqt_matt.svg'                           ,'paquete sombra degradado');
+l.a('./pqt_7zip.svg'                           ,'paquete zip 7z sombra degradado');
+l.a('./pqt_ark5_min.svg'                       ,'paquete realista degradado');
+l.a('./caja_roja.svg'                          ,'paquete caja rojo');
+l.a('./caja_abierta.svg'                       ,'paquete caja');
+l.a('./caja_libros.svg'                        ,'paquete caja libro');
+l.a('./carp_00.svg'                            ,'carpeta 00');
+l.a('./carp_simple_redond.svg'                 ,'carpeta redondeada');
+l.a('./carp_blanca_abierta.svg'                ,'carpeta abierta blanco');
+l.a('./carp_ancha_borde.svg'                   ,'carpeta');
+l.a('./carp_gris_ab.svg'                       ,'carpeta abierta gris');
+l.a('./carp_verde.svg'                         ,'carpeta verde');
+l.a('./carp_mat.svg'                           ,'carpeta');
+l.a('./carp_mat_zip.svg'                       ,'carpeta ext zip degradado');
+l.a('./carp_redondeada.svg'                    ,'carpeta redondeada');
+l.a('./carp_redondeada_vert.svg'               ,'carpeta redondeada vertical');
+l.a('./carp_regular.svg'                       ,'carpeta');
+l.a('./carp_tostada.svg'                       ,'carpeta naranja tostada');
+l.a('./carp_1doc.svg'                          ,'carpeta doc');
+l.a('./carp_1doc_abierta.svg'                  ,'carpeta doc abierta');
+l.a('./carp_1doc_lima.svg'                     ,'carpeta doc lima');
+l.a('./carp_3doc.svg'                          ,'carpeta doc');
+l.a('./carp_etiq.svg'                          ,'carpeta  doc');
+l.a('./carp_1doc_saliendo.svg'                 ,'carpeta doc');
+l.a('./carpeta_celeste_2doc.svg'               ,'carpeta azul');
+l.a('./carp_4doc_foto.svg'                     ,'carpeta doc foto azul');
+l.a('./carp_saliente_rebaje.svg'               ,'carpeta');
+l.a('./carp_saliente_rebaje_abierta.svg'       ,'carpeta abierta');
+l.a('./carp_vert_abierta_izq.svg'              ,'carpeta vertical abierta sombra');
+l.a('./carp_vert_abierta_der.svg'              ,'carpeta vertical abierta sombra');
+l.a('./carp_manilla_vert.svg'                  ,'carpeta vertical abierta sombra');
+l.a('./carp_vert_azul_transp.svg'              ,'carpeta vertical abierta azul');
+l.a('./carp_azul_red.svg'                      ,'carpeta azul redondeada');
+l.a('./carp_azul_transp_hori.svg'              ,'carpeta abierta azul');
+l.a('./carp_anillas_roja.svg'                  ,'carpeta rojo');
+l.a('./carp_dossier_verde.svg'                 ,'carpeta verde');
+l.a('./carp_notas_amarillas.svg'               ,'carpeta naranja nota amarillo');
+
+l.a('./html5.svg'                              ,'ext htm html');
+l.a('./css3.svg'                               ,'ext css');
+l.a('./javascript.svg'                         ,'ext js');
+l.a('./link_1_00.svg'                          ,'enlace html 00');
+l.a('./link_2_00.svg'                          ,'enlace html 00');
+l.a('./link_3_00.svg'                          ,'enlace html 00');
+l.a('./link_4_00.svg'                          ,'enlace html 00');
+
+l.a('./nube_a_00.svg'                          ,'nube 00');
+l.a('./nube_azul_degradado.svg'                ,'nube azul degradado');
+l.a('./nube_b_00.svg'                          ,'nube 00');
+l.a('./nube_negra_00.svg'                      ,'nube negro 00');
+l.a('./nube_azul1.svg'                         ,'nube azul');
+l.a('./nube_azul2.svg'                         ,'nube azul');
+l.a('./nube_palabras_2_00.svg'                 ,'nube palabra 00');
+l.a('./nube_palabras_6_00.svg'                 ,'nube palabra 00');
+l.a('./nube_tormenta_00.svg'                   ,'nube tormenta rayo agua 00');
+
+l.a('./onedrive.svg'                           ,'ms onedrive nube azul');
+l.a('./onedrive_carp.svg'                      ,'ms onedrive carpeta');
+l.a('./onedrive_zip.svg'                       ,'ms onedrive carpeta archivo zip ext');
+l.a('./onedrive_archive.svg'                   ,'ms onedrive carpeta archivo');
+l.a('./onedrive_imagen.svg'                    ,'ms onedrive imagen ext jpg');
+l.a('./onedrive_audio.svg'                     ,'ms onedrive audio ext mp3');
+l.a('./onedrive_video.svg'                     ,'ms onedrive vídeo ext mp4');
+l.a('./onedrive_diagrama.svg'                  ,'ms onedrive diagrama ext svg');
+l.a('./onedrive_exe.svg'                       ,'ms onedrive ejecutable ext exe');
+l.a('./onedrive_link.svg'                      ,'ms onedrive enlace html');
+l.a('./onedrive_msg.svg'                       ,'ms onedrive sobre mensaje ext msg');
+l.a('./onedrive_ppt_hori.svg'                  ,'ms onedrive ppt horizontal ext');
+l.a('./onedrive_xls_hori.svg'                  ,'ms onedrive xls horizontal ext');
+l.a('./onedrive_new.svg'                       ,'ms onedrive documento new nuevo vacío ext');
+l.a('./onedrive_txt.svg'                       ,'ms onedrive txt texto ext');
+l.a('./onedrive_htm.svg'                       ,'ms onedrive htm html ext');
+l.a('./onedrive_xml.svg'                       ,'ms onedrive xml ext');
+l.a('./onedrive_dot.svg'                       ,'ms onedrive dot plantilla doc ext');
+l.a('./onedrive_xlt.svg'                       ,'ms onedrive xlt plantilla xls ext');
+l.a('./onedrive_pot.svg'                       ,'ms onedrive pot plantilla ppt ext');
+l.a('./onedrive_mpt.svg'                       ,'ms onedrive mpt plantilla ext');
+l.a('./onedrive_doc.svg'                       ,'ms onedrive doc ext');
+l.a('./onedrive_xls.svg'                       ,'ms onedrive xls ext');
+l.a('./onedrive_csv.svg'                       ,'ms onedrive csv ext');
+l.a('./onedrive_ppt.svg'                       ,'ms onedrive ppt ext');
+l.a('./onedrive_one.svg'                       ,'ms onedrive one ext');
+l.a('./onedrive_form.svg'                      ,'ms onedrive formulario ext');
+l.a('./onedrive_vsd.svg'                       ,'ms onedrive vsd ext');
+l.a('./onedrive_pps.svg'                       ,'ms onedrive pps ext');
+l.a('./onedrive_svg.svg'                       ,'ms onedrive svg ext');
+l.a('./onedrive_rtf.svg'                       ,'ms onedrive rtf ext');
+l.a('./onedrive_pdf.svg'                       ,'ms onedrive pdf ext');
+
+l.a('./logo_win7_00.svg'                       ,'logo windows 00');
+l.a('./logo_windows_cua.svg'                   ,'logo windows rojo verde azul amarillo');
+l.a('./logo_windows_cua_r.svg'                 ,'logo windows rojo verde azul amarillo');
+l.a('./logo_win10.svg'                         ,'logo windows azul');
+l.a('./logo_android_00.svg'                    ,'logo android 00');
+l.a('./logo_android_verde.svg'                 ,'logo android verde');
+l.a('./logo_apple_00.svg'                      ,'logo apple 00');
+l.a('./logo_apple_gris.svg'                    ,'logo apple gris');
+l.a('./logo_homebrew.svg'                      ,'logo homebrew amarillo blanco');
+l.a('./logo_bash.svg'                          ,'logo bash blanco');
+l.a('./logo_pdf_00.svg'                        ,'logo pdf ext 00');
+l.a('./logo_pdf_color.svg'                     ,'logo pdf ext rojo');
+l.a('./logo_pdf_color_degrad.svg'              ,'logo pdf ext degradado rojo');
+l.a('./pdf_letrero_rojo.svg'                   ,'pdf ext rojo');
+l.a('./new_fino.svg'                           ,'hoja ext new nuevo vacío');
+l.a('./logo_terminal_00.svg'                   ,'logo terminal cmd 00');
+l.a('./editor_texto.svg'                       ,'editor texto txt negro blanco gris');
+l.a('./logo_json.svg'                          ,'logo json ext gris');
+l.a('./logo_python_color.svg'                  ,'logo python py ext azul amarillo');
+l.a('./logo_pip_00.svg'                        ,'logo pip 00');
+l.a('./logo_php_plano.svg'                     ,'logo php ext azul');
+l.a('./logo_ruby.svg'                          ,'logo ruby ext rojo');
+l.a('./logo_ruby_gems.svg'                     ,'logo ruby rojo');
+l.a('./logo_nodejs.svg'                        ,'logo nodejs verde');
+l.a('./logo_wordpress.svg'                     ,'logo wordpress gris');
+l.a('./logo_drupal.svg'                        ,'logo drupal azul');
+l.a('./logo_zip_00.svg'                        ,'logo zip ext 00');
+l.a('./logo_codepen_00.svg'                    ,'logo codepen 00');
+l.a('./logo_notepadpp_ic8.svg'                 ,'logo notepad++ verde txt');
+l.a('./logo_notepadpp_hoja.svg'                ,'logo notepad++ verde txt');
+l.a('./logo_atom_editor.svg'                   ,'logo atom txt');
+l.a('./logo_sublime_text.svg'                  ,'logo sublime naranja txt');
+l.a('./logo_visual_studio_code.svg'            ,'logo vscode azul txt');
+l.a('./logo_typora.svg'                        ,'logo typora md');
+l.a('./logo_sass_red.svg'                      ,'logo sass rojo');
+l.a('./logo_jekyll_00.svg'                     ,'logo jekyll 00');
+l.a('./logo_git.svg'                           ,'logo git rojo');
+l.a('./logo_github_00.svg'                     ,'logo github 00');
+l.a('./logo_github_circ_00.svg'                ,'logo github 00');
+l.a('./logo_github_p_00.svg'                   ,'logo github 00');
+l.a('./logo_github_desktop.svg'                ,'logo github morado sombra');
+l.a('./logo_google_g.svg'                      ,'logo google rojo naranja verde azul');
+l.a('./logo_chrome_00.svg'                     ,'logo google chrome 00');
+l.a('./logo_chrome_4c.svg'                     ,'logo google chrome rojo naranja verde azul');
+l.a('./logo_chrome_extension_00.svg'           ,'logo google chrome extension 00');
+l.a('./logo_chrome_extension_az.svg'           ,'logo google chrome extension azul');
+l.a('./logo_wikipedia_w_00.svg'                ,'logo wikipedia 00');
+l.a('./logo_evernote.svg'                      ,'logo evernote nota elefante verde');
+l.a('./logo_instapaper.svg'                    ,'logo instapaper negro');
+l.a('./logo_pocket.svg'                        ,'logo pocket rojo');
+l.a('./logo_dropbox_00.svg'                    ,'logo dropbox 00');
+l.a('./logo_dropbox_azul.svg'                  ,'logo dropbox azul');
+l.a('./logo_youtube.svg'                       ,'logo youtube rojo blanco');
+l.a('./logo_edx_color.svg'                     ,'logo edx rojo gris azul');
+l.a('./logo_uam_color.svg'                     ,'logo uam verde azul');
+l.a('./logo_movistar_00.svg'                   ,'logo movistar 00');
+l.a('./logo_movistar_azul.svg'                 ,'logo movistar azul');
+
+l.a('./birrete_cuadro_00.svg'                  ,'birrete 00');
+l.a('./birrete_curva_00.svg'                   ,'birrete 00');
+l.a('./birrete_azul.svg'                       ,'birrete azul rojo');
+
+l.a('./portapapeles_01.svg'                    ,'portapapeles');
+l.a('./portapapeles_02.svg'                    ,'portapapeles');
+l.a('./portapapeles_deta.svg'                  ,'portapapeles');
+
+l.a('./paginas_3_00.svg'                       ,'doc 00');
+l.a('./new_doc_azul.svg'                       ,'doc ext azul new nuevo');
+l.a('./doc_azul.svg'                           ,'doc ext azul');
+
+l.a('./doc.svg'                                ,'ms doc ext');
+l.a('./xls.svg'                                ,'ms xls ext');
+l.a('./ppt.svg'                                ,'ms ppt ext');
+l.a('./one.svg'                                ,'ms one ext');
+
+l.a('./ms_doc_2019.svg'                        ,'ms doc ext');
+l.a('./ms_xls_2019.svg'                        ,'ms xls ext');
+l.a('./ms_ppt_2019.svg'                        ,'ms ppt ext');
+l.a('./ms_msg_2019.svg'                        ,'ms msg ext');
+l.a('./ms_mdb_2019.svg'                        ,'ms mdb ext');
+l.a('./ms_one_2019.svg'                        ,'ms one ext');
+
+l.a('./libreoffice_new_00.svg'                 ,'ext libreoffice new nuevo 00');
+l.a('./libreoffice_new_blanco.svg'             ,'ext libreoffice new nuevo blanco');
+l.a('./libreoffice_new.svg'                    ,'ext libreoffice new nuevo blanco');
+l.a('./libreoffice_odt.svg'                    ,'ext libreoffice odt texto');
+l.a('./libreoffice_ods.svg'                    ,'ext libreoffice ods tabla');
+l.a('./libreoffice_odp.svg'                    ,'ext libreoffice odp presentación');
+l.a('./libreoffice_odg.svg'                    ,'ext libreoffice odg gráfico');
+l.a('./libreoffice_odf.svg'                    ,'ext libreoffice odf fórmula');
+l.a('./libreoffice_odb.svg'                    ,'ext libreoffice odb base');
+
+l.a('./new_od_00.svg'                          ,'ext new nuevo 00');
+l.a('./new_od_pie_00.svg'                      ,'ext new nuevo 00');
+l.a('./odt_00.svg'                             ,'ext odt texto 00');
+l.a('./ods_00.svg'                             ,'ext ods tabla 00');
+l.a('./odp_00.svg'                             ,'ext odp presentación 00');
+l.a('./odg_00.svg'                             ,'ext odg gráfico 00');
+l.a('./odf_00.svg'                             ,'ext odf fórmula 00');
+l.a('./odb_00.svg'                             ,'ext odb base 00');
+l.a('./svg_od_00.svg'                          ,'ext svg 00');
+l.a('./eps_od_00.svg'                          ,'ext eps 00');
+l.a('./apk_od_00.svg'                          ,'ext apk android pqt 00');
+l.a('./txt_od_00.svg'                          ,'ext txt 00');
+l.a('./pdf_od_00.svg'                          ,'ext pdf 00');
+l.a('./pub_od_00.svg'                          ,'ext pub 00');
+l.a('./m3u_od_00.svg'                          ,'ext m3u audio vídeo 00');
+l.a('./mp3_od_00.svg'                          ,'ext mp3 audio 00');
+l.a('./mp4_od_00.svg'                          ,'ext mp4 vídeo 00');
+l.a('./mov_od_00.svg'                          ,'ext mov vídeo 00');
+l.a('./otf_od_00.svg'                          ,'ext otf 00');
+l.a('./ttf_od_00.svg'                          ,'ext ttf 00');
+l.a('./bin_od_00.svg'                          ,'ext bin 00');
+l.a('./dat_od_00.svg'                          ,'ext dat 00');
+l.a('./log_od_00.svg'                          ,'ext log 00');
+l.a('./zip_od_00.svg'                          ,'ext zip 00');
+l.a('./iso_od_00.svg'                          ,'ext iso 00');
+l.a('./lnk_od_00.svg'                          ,'ext lnk 00');
+l.a('./html_od_00.svg'                         ,'ext htm html 00');
+l.a('./css_od_00.svg'                          ,'ext css 00');
+l.a('./js_od_00.svg'                           ,'ext js 00');
+l.a('./cer_od_00.svg'                          ,'ext cer 00');
+l.a('./sql_od_00.svg'                          ,'ext sql 00');
+l.a('./eml_od_00.svg'                          ,'ext eml 00');
+l.a('./msg_od_00.svg'                          ,'ext msg 00');
+l.a('./rss_od_00.svg'                          ,'ext rss 00');
+l.a('./json_od_00.svg'                         ,'ext json 00');
+l.a('./bin.svg'                                ,'ext bin');
+l.a('./7z.svg'                                 ,'ext zip 7z');
+
+l.a('./gnome_carp00.svg'                       ,'gnome carpeta 00');
+l.a('./gnome_carp01.svg'                       ,'gnome carpeta marrón');
+l.a('./gnome_carp.svg'                         ,'gnome carpeta');
+l.a('./gnome_carp_semi_abierta.svg'            ,'gnome carpeta abierta');
+l.a('./gnome_carp_abierta.svg'                 ,'gnome carpeta abierta');
+l.a('./gnome_imagen.svg'                       ,'gnome imagen ext jpg');
+l.a('./gnome_audio.svg'                        ,'gnome audio ext');
+l.a('./gnome_video.svg'                        ,'gnome vídeo ext mp4');
+l.a('./gnome_new.svg'                          ,'gnome new nuevo documento vacío ext');
+l.a('./gnome_zip.svg'                          ,'gnome zip ext');
+l.a('./gnome_llave.svg'                        ,'gnome llave');
+l.a('./gnome_usuario_azul.svg'                 ,'gnome persona azul sombra');
+l.a('./gnome_usuario_det.svg'                  ,'gnome persona');
+l.a('./gnome_app_48.svg'                       ,'gnome aplicación ext sombra');
+l.a('./gnome_carp_doc_48.svg'                  ,'gnome carpeta documento sombra');
+l.a('./gnome_pqt_48.svg'                       ,'gnome paquete ext sombra');
+l.a('./gnome_notas_2018.svg'                   ,'gnome nota amarillo');
+l.a('./gnome_agenda_2018.svg'                  ,'gnome agenda cuaderno');
+l.a('./gnome_zip_2018.svg'                     ,'gnome zip ext');
+l.a('./gnome_apuntes_48.svg'                   ,'gnome lápiz cuaderno espiral apuntes');
+l.a('./gnome_apuntes_2018.svg'                 ,'gnome apuntes');
+
+l.a('./apuntes_lapiz_00.svg'                   ,'apuntes lápiz 00');
+l.a('./apuntes_bn.svg'                         ,'apuntes lápiz blanco negro');
+l.a('./apuntes_libreta_lapiz_bn.svg'           ,'apuntes libreta lápiz blanco negro');
+l.a('./apuntes_clon.svg'                       ,'apuntes clon gris azul');
+l.a('./apuntes_lapiz_verde.svg'                ,'apuntes lápiz verde sombra');
+l.a('./apuntes_lapiz_am_ne.svg'                ,'apuntes lápiz amarillo negro');
+l.a('./apuntes_sombras.svg'                    ,'apuntes lápiz naranja sombra');
+l.a('./apuntes_cuaderno_lapiz.svg'             ,'apuntes lápiz amarillo cuaderno verde sombra');
+
+l.a('./usuario_joven.svg'                      ,'persona');
+l.a('./usuario_rubio.svg'                      ,'persona');
+l.a('./usuario_rubio_corbata.svg'              ,'persona');
+l.a('./persona_hombre_sin_rostro.svg'          ,'persona');
+l.a('./persona_mujer_sin_rostro.svg'           ,'persona');
+
+l.a('./diagrama_00.svg'                        ,'diagrama 00');
+l.a('./diagrama_448_00.svg'                    ,'diagrama 00');
+l.a('./maletin_01.svg'                         ,'maletin');
+l.a('./sobre_cerrado_red_00.svg'               ,'sobre mensaje 00');
+l.a('./sobre_cerrado_red_clip_00.svg'          ,'sobre mensaje clip 00');
+l.a('./sobre_abierto_00.svg'                   ,'sobre mensaje 00');
+l.a('./sobre_abierto_azul.svg'                 ,'sobre mensaje azul');
+l.a('./sobre_abierto.svg'                      ,'sobre realista mensaje');
+l.a('./sobre_abierto_01.svg'                   ,'sobre realista mensaje');
+l.a('./sobre_cerrado_01.svg'                   ,'sobre realista mensaje');
+
+l.a('./toc_4p_00.svg'                          ,'toc 00');
+
+l.a('./clip_01_00.svg'                         ,'clip 00');
+l.a('./clip_02_00.svg'                         ,'clip 00');
+l.a('./clip_03_00.svg'                         ,'clip 00');
+l.a('./clip_grueso_00.svg'                     ,'clip 00');
+l.a('./clip_perspectiva_ai_bd_00.svg'          ,'clip 00');
+l.a('./clip_horiz_izq.svg'                     ,'clip 00');
+l.a('./clip_diag_aba_izq.svg'                  ,'clip realista');
+
+l.a('./new_gris_red_som.svg'                   ,'new gris sombra');
+l.a('./new_gris_claro_128.svg'                 ,'new gris');
+l.a('./new_gris_sombra.svg'                    ,'new gris sombra');
+l.a('./new_descentrado_sombra.svg'             ,'new sombra realista');
+l.a('./new_arrugado.svg'                       ,'new arrugado realista');
+
+l.a('./hoja_boli_azul_dorado.svg'              ,'documento boli azul');
+
+l.a('./nota_amarilla_01.svg'                   ,'nota amarillo');
+l.a('./nota_incli_arrugada_abajo.svg'          ,'nota amarillo');
+l.a('./nota_esq_izq_baj.svg'                   ,'nota amarillo');
+l.a('./nota_4sombras.svg'                      ,'nota amarillo sombra');
+l.a('./nota_3sombras.svg'                      ,'nota amarillo sombra');
+l.a('./nota_levantada.svg'                     ,'nota amarillo');
+l.a('./nota_2sombras.svg'                      ,'nota amarillo sombra');
+l.a('./nota_2cintas.svg'                       ,'nota amarillo sombra');
+l.a('./nota_google_keep_2020.svg'              ,'nota amarillo bombilla');
+l.a('./nota_google_keep_2021.svg'              ,'nota amarillo bombilla');
+l.a('./nota_amarilla_sombra_incli.svg'         ,'nota amarillo sombra');
+l.a('./nota_blanca_sombra_incli.svg'           ,'nota blanco sombra');
+l.a('./nota_blanca_chincheta_blanca.svg'       ,'nota blanco chincheta');
+l.a('./nota_peque_gran_chincheta.svg'          ,'nota amarillo chincheta');
+l.a('./nota_curva_der_chincheta_roja.svg'      ,'nota amarillo chincheta');
+l.a('./nota_larga_chincheta_roja.svg'          ,'nota amarillo chincheta');
+l.a('./nota_irreg_chincheta_roja.svg'          ,'nota amarillo chincheta');
+l.a('./nota_ancha_incl_2sombras_chincheta.svg' ,'nota amarillo chincheta');
+l.a('./nota_diagonal_chincheta.svg'            ,'nota amarillo chincheta');
+l.a('./nota_5h_pua.svg'                        ,'nota amarillo chincheta');
+l.a('./notas_3_clip.svg'                       ,'nota clip');
+l.a('./hoja_cuaderno_am.svg'                   ,'nota cuaderno amarillo');
+
+l.a('./chincheta_00.svg'                       ,'chincheta 00');
+l.a('./chincheta_inclinada_00.svg'             ,'chincheta 00');
+l.a('./chincheta_roja_aristas.svg'             ,'chincheta rojo');
+l.a('./chincheta_roja_redondeada.svg'          ,'chincheta rojo realista');
+l.a('./chincheta_roja_aba_izq.svg'             ,'chincheta rojo');
+l.a('./chincheta_clavada_roja_sombra_ii.svg'   ,'chincheta rojo sombra realista');
+l.a('./chincheta_clavada_roja_sombra_id.svg'   ,'chincheta rojo sombra realista');
+l.a('./chincheta_azul.svg'                     ,'chincheta azul');
+l.a('./mapa_chincheta.svg'                     ,'mapa chincheta');
+l.a('./chincheta_mapa_roja.svg'                ,'chincheta rojo blanco mapa');
+l.a('./chincheta_mapa_verde.svg'               ,'chincheta verde blanco mapa');
+l.a('./chincheta_mapa_verde_red.svg'           ,'chincheta verde mapa');
+l.a('./chincheta_mapa_rojo_red.svg'            ,'chincheta rojo mapa');
+l.a('./chincheta_mapa_bola_roja.svg'           ,'chincheta rojo mapa');
+l.a('./chincheta_mapa_alfiler_rojo.svg'        ,'chincheta rojo mapa');
+l.a('./mapa_spain_ca.svg'                      ,'mapa España');
+l.a('./moneda_1euro.svg'                       ,'moneda euro España');
+l.a('./moneda_2euro.svg'                       ,'moneda euro España realista');
+
+l.a('./imperdible_rojo.svg'                    ,'imperdible rojo');
+l.a('./clavo.svg'                              ,'clavo');
+
+l.a('./libreta_anillas_arriba_nota.svg'        ,'nota cuaderno espiral');
+
+l.a('./sello_borde_inclinado_00.svg'           ,'sello 00');
+l.a('./sello_inclinado_original_00.svg'        ,'sello original 00');
+
+l.a('./pulgar_ok_00.svg'                       ,'mano pulgar gesto ok 00');
+l.a('./pulgar_ko_00.svg'                       ,'mano pulgar gesto ko 00');
+l.a('./pulgar_ok_trazos.svg'                   ,'mano pulgar gesto ok');
+l.a('./pulgar_ko_trazos.svg'                   ,'mano pulgar gesto ko');
+l.a('./pulgar_ok_gran.svg'                     ,'mano pulgar gesto ok');
+l.a('./pulgar_ko_gran.svg'                     ,'mano pulgar gesto ko');
+
+l.a('./sombrero_simple_00.svg'                 ,'sombrero 00');
+l.a('./sombrero_bombin_00.svg'                 ,'sombrero 00');
+l.a('./sombrero_vaquero_00.svg'                ,'sombrero 00');
+l.a('./sombrero_gorra_beisbol_00.svg'          ,'sombrero gorra 00');
+
+l.a('./fa_interruptor_apagado_00.svg'          ,'fontawesome símbolo interruptor ko 00');
+l.a('./fa_interruptor_encendido_00.svg'        ,'fontawesome símbolo interruptor ok 00');
+l.a('./fa_flecha_compartir_00.svg'             ,'fontawesome símbolo flecha derecha compartir 00');
+l.a('./fa_flecha_contestar_00.svg'             ,'fontawesome símbolo flecha izquierda contestar 00');
+l.a('./fa_flecha_circ_00.svg'                  ,'fontawesome símbolo círculo flecha 00');
+l.a('./fa_flecha_circ_azul_tr.svg'             ,'fontawesome símbolo círculo flecha azul');
+
+l.a('./fa_campana_solido_00.svg'               ,'fontawesome símbolo campana ok 00');
+l.a('./fa_campana_solido_tachada_00.svg'       ,'fontawesome símbolo campana ko tacha 00');
+l.a('./fa_campana_trazo_00.svg'                ,'fontawesome símbolo campana ok 00');
+l.a('./fa_campana_trazo_tachada_00.svg'        ,'fontawesome símbolo campana ko tacha 00');
+
+l.a('./fa_ext_new_solido.svg'                  ,'fontawesome ext new nuevo 00');
+l.a('./fa_ext_new_trazo.svg'                   ,'fontawesome ext new nuevo 00');
+l.a('./fa_ext_txt_solido.svg'                  ,'fontawesome ext txt 00');
+l.a('./fa_ext_txt_trazo.svg'                   ,'fontawesome ext txt 00');
+l.a('./fa_ext_imagen_solido.svg'               ,'fontawesome ext imagen jpg 00');
+l.a('./fa_ext_imagen_trazo.svg'                ,'fontawesome ext imagen jpg 00');
+l.a('./fa_ext_audio_solido.svg'                ,'fontawesome ext audio mp3 00');
+l.a('./fa_ext_audio_trazo.svg'                 ,'fontawesome ext audio mp3 00');
+l.a('./fa_ext_video_solido.svg'                ,'fontawesome ext video mp4 00');
+l.a('./fa_ext_video_trazo.svg'                 ,'fontawesome ext video mp4 00');
+l.a('./fa_ext_pdf_solido.svg'                  ,'fontawesome ext pdf 00');
+l.a('./fa_ext_pdf_trazo.svg'                   ,'fontawesome ext pdf 00');
+l.a('./fa_ext_zip_solido.svg'                  ,'fontawesome ext zip 00');
+l.a('./fa_ext_zip_trazo.svg'                   ,'fontawesome ext zip 00');
+
+l.a('./fa_ext_carp_cerrada_solido.svg'         ,'fontawesome ext carpeta cerrada 00');
+l.a('./fa_ext_carp_cerrada_trazo.svg'          ,'fontawesome ext carpeta cerrada 00');
+l.a('./fa_ext_carp_abierta_solido.svg'         ,'fontawesome ext carpeta abierta 00');
+l.a('./fa_ext_carp_abierta_trazo.svg'          ,'fontawesome ext carpeta abierta 00');
+
+l.a('./fa_estrella_solido_00.svg'              ,'fontawesome estrella 00');
+l.a('./fa_libro_solido_00.svg'                 ,'fontawesome libro 00');
+
+l.a('./fa_info_circ_00.svg'                    ,'fontawesome círculo información 00');
+l.a('./fa_inte_circ_00.svg'                    ,'fontawesome círculo interrogación 00');
+
+l.a('./fa_ojo_trazo_00.svg'                    ,'fontawesome ojo 00');
+l.a('./fa_tux_linux_brands.svg'                ,'fontawesome tux logo linux 00');
+
+l.a('./info_00.svg'                            ,'círculo información 00');
+l.a('./info_gnome.svg'                         ,'círculo información blanco negro');
+l.a('./info_02.svg'                            ,'círculo información azul');
+l.a('./info_03.svg'                            ,'círculo información azul');
+l.a('./info_04.svg'                            ,'círculo información azul');
+l.a('./info_05.svg'                            ,'círculo información azul sombra');
+l.a('./info_06.svg'                            ,'círculo información azul');
+
+l.a('./u_2b6e_circulo_abierto_der_00.svg'      ,'u+2b6e emoji símbolo círculo abierto derecho 00');
+l.a('./u_2b6f_circulo_abierto_rev_00.svg'      ,'u+2b6f emoji símbolo círculo abierto revés 00');
+
+l.a('./u_274c_gran_x_roja_00.svg'              ,'u+274c emoji símbolo cerrar 00');
+l.a('./u_274c_gran_x_roja_bm.svg'              ,'u+274c emoji símbolo cerrar rojo');
+l.a('./u_274c_gran_x_roja_e2.svg'              ,'u+274c emoji símbolo cerrar rojo');
+l.a('./u_274c_gran_x_roja_go.svg'              ,'u+274c emoji símbolo cerrar rojo');
+l.a('./u_274c_gran_x_roja_on.svg'              ,'u+274c emoji símbolo cerrar rojo');
+l.a('./u_274c_gran_x_roja_op.svg'              ,'u+274c emoji símbolo cerrar rojo');
+l.a('./u_274c_gran_x_roja_tw.svg'              ,'u+274c emoji símbolo cerrar rojo');
+
+l.a('./u_2b55_gran_o_roja_00.svg'              ,'u+2b55 emoji símbolo tráfico velocidad 00');
+l.a('./u_2b55_gran_o_roja_bm.svg'              ,'u+2b55 emoji símbolo tráfico velocidad rojo');
+l.a('./u_2b55_gran_o_roja_e2.svg'              ,'u+2b55 emoji símbolo tráfico velocidad rojo');
+l.a('./u_2b55_gran_o_roja_go.svg'              ,'u+2b55 emoji símbolo tráfico velocidad rojo');
+l.a('./u_2b55_gran_o_roja_on.svg'              ,'u+2b55 emoji símbolo tráfico velocidad rojo');
+l.a('./u_2b55_gran_o_roja_op.svg'              ,'u+2b55 emoji símbolo tráfico velocidad rojo');
+l.a('./u_2b55_gran_o_roja_tw.svg'              ,'u+2b55 emoji símbolo tráfico velocidad rojo');
+
+l.a('./u_2705_cuadro_punteo_00.svg'            ,'u+2705 emoji símbolo punteo 00');
+l.a('./u_2705_cuadro_punteo_bm.svg'            ,'u+2705 emoji símbolo punteo gris');
+l.a('./u_2705_cuadro_punteo_e2.svg'            ,'u+2705 emoji símbolo punteo verde');
+l.a('./u_2705_cuadro_punteo_go.svg'            ,'u+2705 emoji símbolo punteo verde');
+l.a('./u_2705_cuadro_punteo_on.svg'            ,'u+2705 emoji símbolo punteo verde');
+l.a('./u_2705_cuadro_punteo_op.svg'            ,'u+2705 emoji símbolo punteo verde');
+l.a('./u_2705_cuadro_punteo_tw.svg'            ,'u+2705 emoji símbolo punteo verde');
+
+l.a('./u_274e_cuadro_x_negativa_00.svg'        ,'u+274e emoji símbolo cerrar 00');
+l.a('./u_274e_cuadro_x_negativa_bm.svg'        ,'u+274e emoji símbolo cerrar rojo');
+l.a('./u_274e_cuadro_x_negativa_e2.svg'        ,'u+274e emoji símbolo cerrar rojo');
+l.a('./u_274e_cuadro_x_negativa_go.svg'        ,'u+274e emoji símbolo cerrar verde');
+l.a('./u_274e_cuadro_x_negativa_on.svg'        ,'u+274e emoji símbolo cerrar verde');
+l.a('./u_274e_cuadro_x_negativa_op.svg'        ,'u+274e emoji símbolo cerrar verde');
+l.a('./u_274e_cuadro_x_negativa_tw.svg'        ,'u+274e emoji símbolo cerrar verde');
+
+l.a('./u_25b6_play_00.svg'                     ,'u+25b6 emoji símbolo play reproducir 00');
+l.a('./u_25b6_play_bm.svg'                     ,'u+25b6 emoji símbolo play reproducir');
+l.a('./u_25b6_play_e2.svg'                     ,'u+25b6 emoji símbolo play reproducir');
+l.a('./u_25b6_play_go.svg'                     ,'u+25b6 emoji símbolo play reproducir');
+l.a('./u_25b6_play_on.svg'                     ,'u+25b6 emoji símbolo play reproducir');
+l.a('./u_25b6_play_op.svg'                     ,'u+25b6 emoji símbolo play reproducir');
+l.a('./u_25b6_play_tw.svg'                     ,'u+25b6 emoji símbolo play reproducir');
+
+l.a('./u_23f8_pausa_00.svg'                    ,'u+23f8 emoji símbolo pausa 00');
+l.a('./u_23f8_pausa_bm.svg'                    ,'u+23f8 emoji símbolo pausa');
+l.a('./u_23f8_pausa_e2.svg'                    ,'u+23f8 emoji símbolo pausa');
+l.a('./u_23f8_pausa_go.svg'                    ,'u+23f8 emoji símbolo pausa');
+l.a('./u_23f8_pausa_on.svg'                    ,'u+23f8 emoji símbolo pausa');
+l.a('./u_23f8_pausa_op.svg'                    ,'u+23f8 emoji símbolo pausa');
+l.a('./u_23f8_pausa_tw.svg'                    ,'u+23f8 emoji símbolo pausa');
+
+l.a('./u_23f9_parar_00.svg'                    ,'u+23f9 emoji símbolo parar 00');
+l.a('./u_23f9_parar_bm.svg'                    ,'u+23f9 emoji símbolo parar');
+l.a('./u_23f9_parar_e2.svg'                    ,'u+23f9 emoji símbolo parar');
+l.a('./u_23f9_parar_go.svg'                    ,'u+23f9 emoji símbolo parar');
+l.a('./u_23f9_parar_on.svg'                    ,'u+23f9 emoji símbolo parar');
+l.a('./u_23f9_parar_op.svg'                    ,'u+23f9 emoji símbolo parar');
+l.a('./u_23f9_parar_tw.svg'                    ,'u+23f9 emoji símbolo parar');
+
+l.a('./u_23e9_avanzar_00.svg'                  ,'u+23e9 emoji símbolo avanzar 00');
+l.a('./u_23e9_avanzar_bm.svg'                  ,'u+23e9 emoji símbolo avanzar');
+l.a('./u_23e9_avanzar_e2.svg'                  ,'u+23e9 emoji símbolo avanzar');
+l.a('./u_23e9_avanzar_go.svg'                  ,'u+23e9 emoji símbolo avanzar');
+l.a('./u_23e9_avanzar_on.svg'                  ,'u+23e9 emoji símbolo avanzar');
+l.a('./u_23e9_avanzar_op.svg'                  ,'u+23e9 emoji símbolo avanzar');
+l.a('./u_23e9_avanzar_tw.svg'                  ,'u+23e9 emoji símbolo avanzar');
+
+l.a('./u_23ea_retroceder_00.svg'               ,'u+23ea emoji símbolo retroceder 00');
+l.a('./u_23ea_retroceder_bm.svg'               ,'u+23ea emoji símbolo retroceder');
+l.a('./u_23ea_retroceder_e2.svg'               ,'u+23ea emoji símbolo retroceder');
+l.a('./u_23ea_retroceder_go.svg'               ,'u+23ea emoji símbolo retroceder');
+l.a('./u_23ea_retroceder_on.svg'               ,'u+23ea emoji símbolo retroceder');
+l.a('./u_23ea_retroceder_op.svg'               ,'u+23ea emoji símbolo retroceder');
+l.a('./u_23ea_retroceder_tw.svg'               ,'u+23ea emoji símbolo retroceder');
+
+l.a('./u_23fa_grabar_00.svg'                   ,'u+23fa emoji símbolo grabar 00');
+l.a('./u_23fa_grabar_bm.svg'                   ,'u+23fa emoji símbolo grabar');
+l.a('./u_23fa_grabar_e2.svg'                   ,'u+23fa emoji símbolo grabar');
+l.a('./u_23fa_grabar_go.svg'                   ,'u+23fa emoji símbolo grabar');
+l.a('./u_23fa_grabar_on.svg'                   ,'u+23fa emoji símbolo grabar');
+l.a('./u_23fa_grabar_op.svg'                   ,'u+23fa emoji símbolo grabar');
+l.a('./u_23fa_grabar_tw.svg'                   ,'u+23fa emoji símbolo grabar');
+
+l.a('./u_23cf_expulsar_00.svg'                 ,'u+23cf emoji símbolo expulsar 00');
+l.a('./u_23cf_expulsar_bm.svg'                 ,'u+23cf emoji símbolo expulsar');
+l.a('./u_23cf_expulsar_e2.svg'                 ,'u+23cf emoji símbolo expulsar');
+l.a('./u_23cf_expulsar_go.svg'                 ,'u+23cf emoji símbolo expulsar');
+l.a('./u_23cf_expulsar_on.svg'                 ,'u+23cf emoji símbolo expulsar');
+l.a('./u_23cf_expulsar_op.svg'                 ,'u+23cf emoji símbolo expulsar');
+l.a('./u_23cf_expulsar_tw.svg'                 ,'u+23cf emoji símbolo expulsar');
+
+l.a('./u_1f504_flechas_actualizar_00.svg'      ,'u+1f504 emoji símbolo flecha actualizar 00');
+l.a('./u_1f504_flechas_actualizar_h_00.svg'    ,'u+1f504 emoji símbolo flecha actualizar 00');
+l.a('./u_1f504_flechas_actualizar_bm.svg'      ,'u+1f504 emoji símbolo flecha actualizar');
+l.a('./u_1f504_flechas_actualizar_e2.svg'      ,'u+1f504 emoji símbolo flecha actualizar');
+l.a('./u_1f504_flechas_actualizar_go.svg'      ,'u+1f504 emoji símbolo flecha actualizar');
+l.a('./u_1f504_flechas_actualizar_on.svg'      ,'u+1f504 emoji símbolo flecha actualizar');
+l.a('./u_1f504_flechas_actualizar_op.svg'      ,'u+1f504 emoji símbolo flecha actualizar');
+l.a('./u_1f504_flechas_actualizar_tw.svg'      ,'u+1f504 emoji símbolo flecha actualizar');
+
+l.a('./u_2934_flecha_der_arr_00.svg'           ,'u+2934 emoji símbolo flecha curva derecha arriba 00');
+l.a('./u_2934_flecha_der_arr_bm.svg'           ,'u+2934 emoji símbolo flecha curva derecha arriba');
+l.a('./u_2934_flecha_der_arr_e2.svg'           ,'u+2934 emoji símbolo flecha curva derecha arriba');
+l.a('./u_2934_flecha_der_arr_go.svg'           ,'u+2934 emoji símbolo flecha curva derecha arriba');
+l.a('./u_2934_flecha_der_arr_on.svg'           ,'u+2934 emoji símbolo flecha curva derecha arriba');
+l.a('./u_2934_flecha_der_arr_op.svg'           ,'u+2934 emoji símbolo flecha curva derecha arriba');
+l.a('./u_2934_flecha_der_arr_tw.svg'           ,'u+2934 emoji símbolo flecha curva derecha arriba');
+
+l.a('./u_2935_flecha_der_aba_00.svg'           ,'u+2935 emoji símbolo flecha curva derecha abajo 00');
+l.a('./u_2935_flecha_der_aba_bm.svg'           ,'u+2935 emoji símbolo flecha curva derecha abajo');
+l.a('./u_2935_flecha_der_aba_e2.svg'           ,'u+2935 emoji símbolo flecha curva derecha abajo');
+l.a('./u_2935_flecha_der_aba_go.svg'           ,'u+2935 emoji símbolo flecha curva derecha abajo');
+l.a('./u_2935_flecha_der_aba_on.svg'           ,'u+2935 emoji símbolo flecha curva derecha abajo');
+l.a('./u_2935_flecha_der_aba_op.svg'           ,'u+2935 emoji símbolo flecha curva derecha abajo');
+l.a('./u_2935_flecha_der_aba_tw.svg'           ,'u+2935 emoji símbolo flecha curva derecha abajo');
+
+l.a('./u_21a9_flecha_der_izq_00.svg'           ,'u+21a9 emoji símbolo flecha curva derecha izquierda 00');
+l.a('./u_21a9_flecha_der_izq_bm.svg'           ,'u+21a9 emoji símbolo flecha curva derecha izquierda');
+l.a('./u_21a9_flecha_der_izq_e2.svg'           ,'u+21a9 emoji símbolo flecha curva derecha izquierda');
+l.a('./u_21a9_flecha_der_izq_go.svg'           ,'u+21a9 emoji símbolo flecha curva derecha izquierda');
+l.a('./u_21a9_flecha_der_izq_on.svg'           ,'u+21a9 emoji símbolo flecha curva derecha izquierda');
+l.a('./u_21a9_flecha_der_izq_op.svg'           ,'u+21a9 emoji símbolo flecha curva derecha izquierda');
+l.a('./u_21a9_flecha_der_izq_tw.svg'           ,'u+21a9 emoji símbolo flecha curva derecha izquierda');
+
+l.a('./u_21aa_flecha_izq_der_00.svg'           ,'u+21aa emoji símbolo flecha curva izquierda derecha 00');
+l.a('./u_21aa_flecha_izq_der_bm.svg'           ,'u+21aa emoji símbolo flecha curva izquierda derecha');
+l.a('./u_21aa_flecha_izq_der_e2.svg'           ,'u+21aa emoji símbolo flecha curva izquierda derecha');
+l.a('./u_21aa_flecha_izq_der_go.svg'           ,'u+21aa emoji símbolo flecha curva izquierda derecha');
+l.a('./u_21aa_flecha_izq_der_on.svg'           ,'u+21aa emoji símbolo flecha curva izquierda derecha');
+l.a('./u_21aa_flecha_izq_der_op.svg'           ,'u+21aa emoji símbolo flecha curva izquierda derecha');
+l.a('./u_21aa_flecha_izq_der_tw.svg'           ,'u+21aa emoji símbolo flecha curva izquierda derecha');
+
+l.a('./u_2b05_flecha_izq_00.svg'               ,'u+2b05 emoji símbolo flecha izquierda 00');
+l.a('./u_2b05_flecha_izq_bm.svg'               ,'u+2b05 emoji símbolo flecha izquierda');
+l.a('./u_2b05_flecha_izq_e2.svg'               ,'u+2b05 emoji símbolo flecha izquierda');
+l.a('./u_2b05_flecha_izq_go.svg'               ,'u+2b05 emoji símbolo flecha izquierda');
+l.a('./u_2b05_flecha_izq_on.svg'               ,'u+2b05 emoji símbolo flecha izquierda');
+l.a('./u_2b05_flecha_izq_op.svg'               ,'u+2b05 emoji símbolo flecha izquierda');
+l.a('./u_2b05_flecha_izq_tw.svg'               ,'u+2b05 emoji símbolo flecha izquierda');
+
+l.a('./u_27a1_flecha_der_00.svg'               ,'u+27a1 emoji símbolo flecha derecha 00');
+l.a('./u_27a1_flecha_der_bm.svg'               ,'u+27a1 emoji símbolo flecha derecha');
+l.a('./u_27a1_flecha_der_e2.svg'               ,'u+27a1 emoji símbolo flecha derecha');
+l.a('./u_27a1_flecha_der_go.svg'               ,'u+27a1 emoji símbolo flecha derecha');
+l.a('./u_27a1_flecha_der_on.svg'               ,'u+27a1 emoji símbolo flecha derecha');
+l.a('./u_27a1_flecha_der_op.svg'               ,'u+27a1 emoji símbolo flecha derecha');
+l.a('./u_27a1_flecha_der_tw.svg'               ,'u+27a1 emoji símbolo flecha derecha');
+
+l.a('./u_2b06_flecha_arr_00.svg'               ,'u+2b06 emoji símbolo flecha arriba 00');
+l.a('./u_2b06_flecha_arr_bm.svg'               ,'u+2b06 emoji símbolo flecha arriba');
+l.a('./u_2b06_flecha_arr_e2.svg'               ,'u+2b06 emoji símbolo flecha arriba');
+l.a('./u_2b06_flecha_arr_go.svg'               ,'u+2b06 emoji símbolo flecha arriba');
+l.a('./u_2b06_flecha_arr_on.svg'               ,'u+2b06 emoji símbolo flecha arriba');
+l.a('./u_2b06_flecha_arr_op.svg'               ,'u+2b06 emoji símbolo flecha arriba');
+l.a('./u_2b06_flecha_arr_tw.svg'               ,'u+2b06 emoji símbolo flecha arriba');
+
+l.a('./u_2b07_flecha_aba_00.svg'               ,'u+2b07 emoji símbolo flecha abajo 00');
+l.a('./u_2b07_flecha_aba_bm.svg'               ,'u+2b07 emoji símbolo flecha abajo');
+l.a('./u_2b07_flecha_aba_e2.svg'               ,'u+2b07 emoji símbolo flecha abajo');
+l.a('./u_2b07_flecha_aba_go.svg'               ,'u+2b07 emoji símbolo flecha abajo');
+l.a('./u_2b07_flecha_aba_on.svg'               ,'u+2b07 emoji símbolo flecha abajo');
+l.a('./u_2b07_flecha_aba_op.svg'               ,'u+2b07 emoji símbolo flecha abajo');
+l.a('./u_2b07_flecha_aba_tw.svg'               ,'u+2b07 emoji símbolo flecha abajo');
+
+l.a('./u_2b50_estrella_00.svg'                 ,'u+2b50 emoji estrella 00');
+l.a('./u_2b50_estrella_bm.svg'                 ,'u+2b50 emoji estrella');
+l.a('./u_2b50_estrella_e2.svg'                 ,'u+2b50 emoji estrella');
+l.a('./u_2b50_estrella_go.svg'                 ,'u+2b50 emoji estrella');
+l.a('./u_2b50_estrella_on.svg'                 ,'u+2b50 emoji estrella');
+l.a('./u_2b50_estrella_op.svg'                 ,'u+2b50 emoji estrella');
+l.a('./u_2b50_estrella_tw.svg'                 ,'u+2b50 emoji estrella');
+
+l.a('./u_1f514_campana_00.svg'                 ,'u+1f514 emoji campana 00');
+l.a('./u_1f514_campana_bm.svg'                 ,'u+1f514 emoji campana amarillo');
+l.a('./u_1f514_campana_e2.svg'                 ,'u+1f514 emoji campana amarillo');
+l.a('./u_1f514_campana_go.svg'                 ,'u+1f514 emoji campana amarillo');
+l.a('./u_1f514_campana_on.svg'                 ,'u+1f514 emoji campana naranja');
+l.a('./u_1f514_campana_op.svg'                 ,'u+1f514 emoji campana amarillo');
+l.a('./u_1f514_campana_tw.svg'                 ,'u+1f514 emoji campana naranja');
+
+l.a('./u_1f515_campana_tachada_00.svg'         ,'u+1f515 emoji campana tacha 00');
+l.a('./u_1f515_campana_tachada_bm.svg'         ,'u+1f515 emoji campana tacha rojo azul');
+l.a('./u_1f515_campana_tachada_e2.svg'         ,'u+1f515 emoji campana tacha rojo blanco negro');
+l.a('./u_1f515_campana_tachada_go.svg'         ,'u+1f515 emoji campana tacha rojo negro naranja');
+l.a('./u_1f515_campana_tachada_on.svg'         ,'u+1f515 emoji campana tacha rojo naranja');
+l.a('./u_1f515_campana_tachada_op.svg'         ,'u+1f515 emoji campana tacha amarillo');
+l.a('./u_1f515_campana_tachada_tw.svg'         ,'u+1f515 emoji campana tacha rojo naranja');
+
+l.a('./u_1f6ce_timbre_recepcion_00.svg'        ,'u+1f6ce emoji campana 00');
+l.a('./u_1f6ce_timbre_recepcion_bm.svg'        ,'u+1f6ce emoji campana naranja');
+l.a('./u_1f6ce_timbre_recepcion_e2.svg'        ,'u+1f6ce emoji campana gris');
+l.a('./u_1f6ce_timbre_recepcion_go.svg'        ,'u+1f6ce emoji campana amarillo');
+l.a('./u_1f6ce_timbre_recepcion_on.svg'        ,'u+1f6ce emoji campana gris');
+l.a('./u_1f6ce_timbre_recepcion_op.svg'        ,'u+1f6ce emoji campana naranja');
+l.a('./u_1f6ce_timbre_recepcion_tw.svg'        ,'u+1f6ce emoji campana naranja');
+
+l.a('./u_1f6c7_prohibido_00.svg'               ,'u+1f6c7 emoji prohibido tráfico 00');
+l.a('./u_1f6c7_prohibido_bm.svg'               ,'u+1f6c7 emoji prohibido tráfico rojo');
+l.a('./u_1f6c7_prohibido_e2.svg'               ,'u+1f6c7 emoji prohibido tráfico rojo');
+l.a('./u_1f6c7_prohibido_on.svg'               ,'u+1f6c7 emoji prohibido tráfico rojo');
+
+l.a('./u_1f50d_lupa_izq_00.svg'                ,'u+1f50d emoji lupa 00');
+l.a('./u_1f50d_lupa_izq_bm.svg'                ,'u+1f50d emoji lupa');
+l.a('./u_1f50d_lupa_izq_e2.svg'                ,'u+1f50d emoji lupa');
+l.a('./u_1f50d_lupa_izq_go.svg'                ,'u+1f50d emoji lupa');
+l.a('./u_1f50d_lupa_izq_on.svg'                ,'u+1f50d emoji lupa');
+l.a('./u_1f50d_lupa_izq_op.svg'                ,'u+1f50d emoji lupa');
+l.a('./u_1f50d_lupa_izq_tw.svg'                ,'u+1f50d emoji lupa');
+
+l.a('./u_1f50e_lupa_der_00.svg'                ,'u+1f50e emoji lupa 00');
+l.a('./u_1f50e_lupa_der_bm.svg'                ,'u+1f50e emoji lupa');
+l.a('./u_1f50e_lupa_der_e2.svg'                ,'u+1f50e emoji lupa');
+l.a('./u_1f50e_lupa_der_go.svg'                ,'u+1f50e emoji lupa');
+l.a('./u_1f50e_lupa_der_on.svg'                ,'u+1f50e emoji lupa');
+l.a('./u_1f50e_lupa_der_op.svg'                ,'u+1f50e emoji lupa');
+l.a('./u_1f50e_lupa_der_tw.svg'                ,'u+1f50e emoji lupa');
+
+l.a('./u_1f4a1_bombilla_00.svg'                ,'u+1f4a1 emoji bombilla luz 00');
+l.a('./u_1f4a1_bombilla_bm.svg'                ,'u+1f4a1 emoji bombilla luz amarillo');
+l.a('./u_1f4a1_bombilla_e2.svg'                ,'u+1f4a1 emoji bombilla luz amarillo');
+l.a('./u_1f4a1_bombilla_go.svg'                ,'u+1f4a1 emoji bombilla luz amarillo');
+l.a('./u_1f4a1_bombilla_on.svg'                ,'u+1f4a1 emoji bombilla luz amarillo');
+l.a('./u_1f4a1_bombilla_op.svg'                ,'u+1f4a1 emoji bombilla luz amarillo');
+l.a('./u_1f4a1_bombilla_tw.svg'                ,'u+1f4a1 emoji bombilla luz amarillo');
+
+l.a('./u_1f526_linterna_00.svg'                ,'u+1f526 emoji linterna luz 00');
+l.a('./u_1f526_linterna_bm.svg'                ,'u+1f526 emoji linterna luz');
+l.a('./u_1f526_linterna_e2.svg'                ,'u+1f526 emoji linterna luz');
+l.a('./u_1f526_linterna_go.svg'                ,'u+1f526 emoji linterna luz');
+l.a('./u_1f526_linterna_on.svg'                ,'u+1f526 emoji linterna luz');
+l.a('./u_1f526_linterna_op.svg'                ,'u+1f526 emoji linterna luz');
+l.a('./u_1f526_linterna_tw.svg'                ,'u+1f526 emoji linterna luz');
+
+l.a('./u_1f56f_vela_00.svg'                    ,'u+1f56f emoji vela luz 00');
+l.a('./u_1f56f_vela_bm.svg'                    ,'u+1f56f emoji vela luz');
+l.a('./u_1f56f_vela_e2.svg'                    ,'u+1f56f emoji vela luz');
+l.a('./u_1f56f_vela_go.svg'                    ,'u+1f56f emoji vela luz');
+l.a('./u_1f56f_vela_on.svg'                    ,'u+1f56f emoji vela luz');
+l.a('./u_1f56f_vela_op.svg'                    ,'u+1f56f emoji vela luz');
+l.a('./u_1f56f_vela_tw.svg'                    ,'u+1f56f emoji vela luz');
+
+l.a('./u_1f525_fuego_00.svg'                   ,'u+1f525 emoji fuego luz 00');
+l.a('./u_1f525_fuego_bm.svg'                   ,'u+1f525 emoji fuego luz');
+l.a('./u_1f525_fuego_e2.svg'                   ,'u+1f525 emoji fuego luz');
+l.a('./u_1f525_fuego_go.svg'                   ,'u+1f525 emoji fuego luz');
+l.a('./u_1f525_fuego_on.svg'                   ,'u+1f525 emoji fuego luz');
+l.a('./u_1f525_fuego_op.svg'                   ,'u+1f525 emoji fuego luz');
+l.a('./u_1f525_fuego_tw.svg'                   ,'u+1f525 emoji fuego luz');
+
+l.a('./u_26a1_rayo_00.svg'                     ,'u+26a1 emoji rayo luz 00');
+l.a('./u_26a1_rayo_bm.svg'                     ,'u+26a1 emoji rayo luz');
+l.a('./u_26a1_rayo_e2.svg'                     ,'u+26a1 emoji rayo luz');
+l.a('./u_26a1_rayo_go.svg'                     ,'u+26a1 emoji rayo luz');
+l.a('./u_26a1_rayo_on.svg'                     ,'u+26a1 emoji rayo luz');
+l.a('./u_26a1_rayo_op.svg'                     ,'u+26a1 emoji rayo luz');
+l.a('./u_26a1_rayo_tw.svg'                     ,'u+26a1 emoji rayo luz');
+
+l.a('./u_1f323_sol_00.svg'                     ,'u+1f323 emoji sol luz 00');
+l.a('./u_1f323_sol_bm.svg'                     ,'u+1f323 emoji sol luz amarillo');
+l.a('./u_1f323_sol_e2.svg'                     ,'u+1f323 emoji sol luz amarillo');
+l.a('./u_1f323_sol_go.svg'                     ,'u+1f323 emoji sol luz amarillo');
+l.a('./u_1f323_sol_on.svg'                     ,'u+1f323 emoji sol luz amarillo');
+l.a('./u_1f323_sol_op.svg'                     ,'u+1f323 emoji sol luz amarillo');
+l.a('./u_1f323_sol_tw.svg'                     ,'u+1f323 emoji sol luz amarillo');
+
+l.a('./u_1f31e_sol_cara_00.svg'                ,'u+1f31e emoji sol cara luz 00');
+l.a('./u_1f31e_sol_cara_bm.svg'                ,'u+1f31e emoji sol cara luz amarillo');
+l.a('./u_1f31e_sol_cara_e2.svg'                ,'u+1f31e emoji sol cara luz amarillo');
+l.a('./u_1f31e_sol_cara_go.svg'                ,'u+1f31e emoji sol cara luz amarillo');
+l.a('./u_1f31e_sol_cara_on.svg'                ,'u+1f31e emoji sol cara luz amarillo');
+l.a('./u_1f31e_sol_cara_op.svg'                ,'u+1f31e emoji sol cara luz amarillo');
+l.a('./u_1f31e_sol_cara_tw.svg'                ,'u+1f31e emoji sol cara luz amarillo');
+
+l.a('./u_1f31c_luna_cara_00.svg'                ,'u+1f31c emoji luna cara 00');
+l.a('./u_1f31c_luna_cara_bm.svg'                ,'u+1f31c emoji luna cara amarillo');
+l.a('./u_1f31c_luna_cara_e2.svg'                ,'u+1f31c emoji luna cara amarillo');
+l.a('./u_1f31c_luna_cara_go.svg'                ,'u+1f31c emoji luna cara amarillo');
+l.a('./u_1f31c_luna_cara_on.svg'                ,'u+1f31c emoji luna cara amarillo');
+l.a('./u_1f31c_luna_cara_op.svg'                ,'u+1f31c emoji luna cara amarillo');
+l.a('./u_1f31c_luna_cara_tw.svg'                ,'u+1f31c emoji luna cara amarillo');
+
+l.a('./u_1f30d_tierra_europa_africa_00.svg'     ,'u+1f30d emoji tierra 00');
+l.a('./u_1f30d_tierra_europa_africa_bm.svg'     ,'u+1f30d emoji tierra azul');
+l.a('./u_1f30d_tierra_europa_africa_e2.svg'     ,'u+1f30d emoji tierra azul');
+l.a('./u_1f30d_tierra_europa_africa_go.svg'     ,'u+1f30d emoji tierra azul');
+l.a('./u_1f30d_tierra_europa_africa_on.svg'     ,'u+1f30d emoji tierra azul');
+l.a('./u_1f30d_tierra_europa_africa_op.svg'     ,'u+1f30d emoji tierra azul');
+l.a('./u_1f30d_tierra_europa_africa_tw.svg'     ,'u+1f30d emoji tierra azul');
+
+l.a('./u_1f310_tierra_globo_00.svg'             ,'u+1f310 emoji tierra globo 00');
+l.a('./u_1f310_tierra_globo_bm.svg'             ,'u+1f310 emoji tierra globo azul');
+l.a('./u_1f310_tierra_globo_e2.svg'             ,'u+1f310 emoji tierra globo azul');
+l.a('./u_1f310_tierra_globo_go.svg'             ,'u+1f310 emoji tierra globo azul');
+l.a('./u_1f310_tierra_globo_on.svg'             ,'u+1f310 emoji tierra globo azul');
+l.a('./u_1f310_tierra_globo_op.svg'             ,'u+1f310 emoji tierra globo azul');
+l.a('./u_1f310_tierra_globo_tw.svg'             ,'u+1f310 emoji tierra globo azul');
+
+l.a('./u_2601_nube_00.svg'                      ,'u+2601 emoji nube 00');
+l.a('./u_2601_nube_bm.svg'                      ,'u+2601 emoji nube gris');
+l.a('./u_2601_nube_e2.svg'                      ,'u+2601 emoji nube azul');
+l.a('./u_2601_nube_go.svg'                      ,'u+2601 emoji nube azul degradado');
+l.a('./u_2601_nube_on.svg'                      ,'u+2601 emoji nube gris');
+l.a('./u_2601_nube_op.svg'                      ,'u+2601 emoji nube gris');
+l.a('./u_2601_nube_tw.svg'                      ,'u+2601 emoji nube gris');
+
+l.a('./u_2744_copo_nieve_00.svg'               ,'u+2744 emoji copo nieve 00');
+l.a('./u_2744_copo_nieve_bm.svg'               ,'u+2744 emoji copo nieve');
+l.a('./u_2744_copo_nieve_e2.svg'               ,'u+2744 emoji copo nieve');
+l.a('./u_2744_copo_nieve_go.svg'               ,'u+2744 emoji copo nieve');
+l.a('./u_2744_copo_nieve_on.svg'               ,'u+2744 emoji copo nieve');
+l.a('./u_2744_copo_nieve_op.svg'               ,'u+2744 emoji copo nieve');
+l.a('./u_2744_copo_nieve_tw.svg'               ,'u+2744 emoji copo nieve');
+
+l.a('./u_1f3c6_trofeo_00.svg'                  ,'u+1f3c6 emoji trofeo 00');
+l.a('./u_1f3c6_trofeo_bm.svg'                  ,'u+1f3c6 emoji trofeo oro amarillo');
+l.a('./u_1f3c6_trofeo_e2.svg'                  ,'u+1f3c6 emoji trofeo oro amarillo');
+l.a('./u_1f3c6_trofeo_go.svg'                  ,'u+1f3c6 emoji trofeo oro amarillo');
+l.a('./u_1f3c6_trofeo_on.svg'                  ,'u+1f3c6 emoji trofeo oro amarillo');
+l.a('./u_1f3c6_trofeo_op.svg'                  ,'u+1f3c6 emoji trofeo oro amarillo');
+l.a('./u_1f3c6_trofeo_tw.svg'                  ,'u+1f3c6 emoji trofeo oro amarillo');
+
+l.a('./u_1f947_medalla_1_00.svg'               ,'u+1f947 emoji medalla 00');
+l.a('./u_1f947_medalla_1_bm.svg'               ,'u+1f947 emoji medalla oro');
+l.a('./u_1f947_medalla_1_e2.svg'               ,'u+1f947 emoji medalla oro');
+l.a('./u_1f947_medalla_1_go.svg'               ,'u+1f947 emoji medalla oro');
+l.a('./u_1f947_medalla_1_op.svg'               ,'u+1f947 emoji medalla oro');
+l.a('./u_1f947_medalla_1_tw.svg'               ,'u+1f947 emoji medalla oro');
+
+l.a('./u_1f948_medalla_2_00.svg'               ,'u+1f948 emoji medalla 00');
+l.a('./u_1f948_medalla_2_bm.svg'               ,'u+1f948 emoji medalla plata');
+l.a('./u_1f948_medalla_2_e2.svg'               ,'u+1f948 emoji medalla plata');
+l.a('./u_1f948_medalla_2_go.svg'               ,'u+1f948 emoji medalla plata');
+l.a('./u_1f948_medalla_2_op.svg'               ,'u+1f948 emoji medalla plata');
+l.a('./u_1f948_medalla_2_tw.svg'               ,'u+1f948 emoji medalla plata');
+
+l.a('./u_1f949_medalla_3_00.svg'               ,'u+1f949 emoji medalla 00');
+l.a('./u_1f949_medalla_3_bm.svg'               ,'u+1f949 emoji medalla bronce');
+l.a('./u_1f949_medalla_3_e2.svg'               ,'u+1f949 emoji medalla bronce');
+l.a('./u_1f949_medalla_3_go.svg'               ,'u+1f949 emoji medalla bronce');
+l.a('./u_1f949_medalla_3_op.svg'               ,'u+1f949 emoji medalla bronce');
+l.a('./u_1f949_medalla_3_tw.svg'               ,'u+1f949 emoji medalla bronce');
+
+l.a('./u_1f396_medalla_militar_00.svg'         ,'u+1f396 emoji medalla militar 00');
+l.a('./u_1f396_medalla_militar_bm.svg'         ,'u+1f396 emoji medalla militar');
+l.a('./u_1f396_medalla_militar_e2.svg'         ,'u+1f396 emoji medalla militar');
+l.a('./u_1f396_medalla_militar_go.svg'         ,'u+1f396 emoji medalla militar');
+l.a('./u_1f396_medalla_militar_on.svg'         ,'u+1f396 emoji medalla militar');
+l.a('./u_1f396_medalla_militar_op.svg'         ,'u+1f396 emoji medalla militar');
+l.a('./u_1f396_medalla_militar_tw.svg'         ,'u+1f396 emoji medalla militar');
+
+l.a('./u_1f37a_jarra_cerveza_00.svg'           ,'u+1f37a emoji jarra cerveza 00');
+l.a('./u_1f37a_jarra_cerveza_bm.svg'           ,'u+1f37a emoji jarra cerveza amarillo');
+l.a('./u_1f37a_jarra_cerveza_e2.svg'           ,'u+1f37a emoji jarra cerveza amarillo');
+l.a('./u_1f37a_jarra_cerveza_go.svg'           ,'u+1f37a emoji jarra cerveza amarillo');
+l.a('./u_1f37a_jarra_cerveza_on.svg'           ,'u+1f37a emoji jarra cerveza marrón');
+l.a('./u_1f37a_jarra_cerveza_op.svg'           ,'u+1f37a emoji jarra cerveza amarillo');
+l.a('./u_1f37a_jarra_cerveza_tw.svg'           ,'u+1f37a emoji jarra cerveza amarillo');
+
+l.a('./u_1f37b_jarras_cerveza_00.svg'          ,'u+1f37b emoji brindis jarra cerveza 00');
+l.a('./u_1f37b_jarras_cerveza_bm.svg'          ,'u+1f37b emoji brindis jarra cerveza amarillo');
+l.a('./u_1f37b_jarras_cerveza_e2.svg'          ,'u+1f37b emoji brindis jarra cerveza amarillo');
+l.a('./u_1f37b_jarras_cerveza_go.svg'          ,'u+1f37b emoji brindis jarra cerveza amarillo');
+l.a('./u_1f37b_jarras_cerveza_on.svg'          ,'u+1f37b emoji brindis jarra cerveza marrón');
+l.a('./u_1f37b_jarras_cerveza_op.svg'          ,'u+1f37b emoji brindis jarra cerveza amarillo');
+l.a('./u_1f37b_jarras_cerveza_tw.svg'          ,'u+1f37b emoji brindis jarra cerveza amarillo');
+
+l.a('./u_1f942_copas_cava_00.svg'              ,'u+1f942 emoji brindis copa cava 00');
+l.a('./u_1f942_copas_cava_bm.svg'              ,'u+1f942 emoji brindis copa cava amarillo');
+l.a('./u_1f942_copas_cava_e2.svg'              ,'u+1f942 emoji brindis copa cava amarillo');
+l.a('./u_1f942_copas_cava_go.svg'              ,'u+1f942 emoji brindis copa cava amarillo');
+l.a('./u_1f942_copas_cava_op.svg'              ,'u+1f942 emoji brindis copa cava amarillo');
+l.a('./u_1f942_copas_cava_tw.svg'              ,'u+1f942 emoji brindis copa cava amarillo');
+
+l.a('./u_1f377_copa_vino_00.svg'               ,'u+1f377 emoji copa vino 00');
+l.a('./u_1f377_copa_vino_bm.svg'               ,'u+1f377 emoji copa vino rojo');
+l.a('./u_1f377_copa_vino_e2.svg'               ,'u+1f377 emoji copa vino rojo');
+l.a('./u_1f377_copa_vino_go.svg'               ,'u+1f377 emoji copa vino rojo');
+l.a('./u_1f377_copa_vino_on.svg'               ,'u+1f377 emoji copa vino rojo');
+l.a('./u_1f377_copa_vino_op.svg'               ,'u+1f377 emoji copa vino rojo');
+l.a('./u_1f377_copa_vino_tw.svg'               ,'u+1f377 emoji copa vino rojo');
+
+l.a('./u_1f943_vaso_whisky_00.svg'             ,'u+1f943 emoji vaso whisky 00');
+l.a('./u_1f943_vaso_whisky_bm.svg'             ,'u+1f943 emoji vaso whisky hielo marrón');
+l.a('./u_1f943_vaso_whisky_e2.svg'             ,'u+1f943 emoji vaso whisky marrón');
+l.a('./u_1f943_vaso_whisky_go.svg'             ,'u+1f943 emoji vaso whisky hielo marrón');
+l.a('./u_1f943_vaso_whisky_op.svg'             ,'u+1f943 emoji vaso whisky hielo marrón');
+l.a('./u_1f943_vaso_whisky_tw.svg'             ,'u+1f943 emoji vaso whisky hielo marrón');
+
+l.a('./u_2615_taza_cafe_00.svg'                ,'u+2615 emoji taza café 00');
+l.a('./u_2615_taza_cafe_bm.svg'                ,'u+2615 emoji taza café');
+l.a('./u_2615_taza_cafe_e2.svg'                ,'u+2615 emoji taza café');
+l.a('./u_2615_taza_cafe_go.svg'                ,'u+2615 emoji taza café');
+l.a('./u_2615_taza_cafe_on.svg'                ,'u+2615 emoji taza café');
+l.a('./u_2615_taza_cafe_op.svg'                ,'u+2615 emoji taza café');
+l.a('./u_2615_taza_cafe_tw.svg'                ,'u+2615 emoji taza café');
+
+l.a('./u_1f95b_vaso_leche_00.svg'              ,'u+1f95b emoji vaso leche 00');
+l.a('./u_1f95b_vaso_leche_bm.svg'              ,'u+1f95b emoji vaso leche blanco');
+l.a('./u_1f95b_vaso_leche_e2.svg'              ,'u+1f95b emoji vaso leche blanco');
+l.a('./u_1f95b_vaso_leche_go.svg'              ,'u+1f95b emoji vaso leche blanco');
+l.a('./u_1f95b_vaso_leche_op.svg'              ,'u+1f95b emoji vaso leche blanco');
+l.a('./u_1f95b_vaso_leche_tw.svg'              ,'u+1f95b emoji vaso leche blanco');
+
+l.a('./u_231a_reloj_pulsera_00.svg'            ,'u+231a emoji reloj pulsera 00');
+l.a('./u_231a_reloj_pulsera_bm.svg'            ,'u+231a emoji reloj pulsera');
+l.a('./u_231a_reloj_pulsera_e2.svg'            ,'u+231a emoji reloj pulsera');
+l.a('./u_231a_reloj_pulsera_go.svg'            ,'u+231a emoji reloj pulsera');
+l.a('./u_231a_reloj_pulsera_on.svg'            ,'u+231a emoji reloj pulsera');
+l.a('./u_231a_reloj_pulsera_op.svg'            ,'u+231a emoji reloj pulsera');
+l.a('./u_231a_reloj_pulsera_tw.svg'            ,'u+231a emoji reloj pulsera');
+
+l.a('./u_23f0_reloj_despertador_00.svg'        ,'u+23f0 emoji reloj despertador 00');
+l.a('./u_23f0_reloj_despertador_bm.svg'        ,'u+23f0 emoji reloj despertador');
+l.a('./u_23f0_reloj_despertador_e2.svg'        ,'u+23f0 emoji reloj despertador');
+l.a('./u_23f0_reloj_despertador_go.svg'        ,'u+23f0 emoji reloj despertador');
+l.a('./u_23f0_reloj_despertador_on.svg'        ,'u+23f0 emoji reloj despertador');
+l.a('./u_23f0_reloj_despertador_op.svg'        ,'u+23f0 emoji reloj despertador');
+l.a('./u_23f0_reloj_despertador_tw.svg'        ,'u+23f0 emoji reloj despertador');
+
+l.a('./u_23f3_reloj_arena_00.svg'              ,'u+23f3 emoji reloj arena 00');
+l.a('./u_23f3_reloj_arena_a00.svg'             ,'u+23f3 emoji reloj arena 00');
+l.a('./u_23f3_reloj_arena_f00.svg'             ,'u+23f3 emoji reloj arena 00');
+l.a('./u_23f3_reloj_arena_bm.svg'              ,'u+23f3 emoji reloj arena');
+l.a('./u_23f3_reloj_arena_e2.svg'              ,'u+23f3 emoji reloj arena');
+l.a('./u_23f3_reloj_arena_go.svg'              ,'u+23f3 emoji reloj arena naranja');
+l.a('./u_23f3_reloj_arena_on.svg'              ,'u+23f3 emoji reloj arena');
+l.a('./u_23f3_reloj_arena_op.svg'              ,'u+23f3 emoji reloj arena');
+l.a('./u_23f3_reloj_arena_tw.svg'              ,'u+23f3 emoji reloj arena naranja');
+
+l.a('./u_2702_tijera_00.svg'                   ,'u+2702 emoji tijera 00');
+l.a('./u_2702_tijera_bm.svg'                   ,'u+2702 emoji tijera rojo');
+l.a('./u_2702_tijera_e2.svg'                   ,'u+2702 emoji tijera negro');
+l.a('./u_2702_tijera_go.svg'                   ,'u+2702 emoji tijera rojo');
+l.a('./u_2702_tijera_on.svg'                   ,'u+2702 emoji tijera rojo');
+l.a('./u_2702_tijera_op.svg'                   ,'u+2702 emoji tijera rojo');
+l.a('./u_2702_tijera_tw.svg'                   ,'u+2702 emoji tijera rojo');
+
+l.a('./u_1f3f7_etiqueta_00.svg'                ,'u+1f3f7 emoji etiqueta 00');
+l.a('./u_1f3f7_etiqueta_bm.svg'                ,'u+1f3f7 emoji etiqueta naranja');
+l.a('./u_1f3f7_etiqueta_e2.svg'                ,'u+1f3f7 emoji etiqueta naranja');
+l.a('./u_1f3f7_etiqueta_go.svg'                ,'u+1f3f7 emoji etiqueta naranja');
+l.a('./u_1f3f7_etiqueta_on.svg'                ,'u+1f3f7 emoji etiqueta rojo');
+l.a('./u_1f3f7_etiqueta_op.svg'                ,'u+1f3f7 emoji etiqueta naranja');
+l.a('./u_1f3f7_etiqueta_tw.svg'                ,'u+1f3f7 emoji etiqueta amarillo');
+
+l.a('./u_2709_sobre_cerrado_00.svg'            ,'u+2709 emoji sobre cerrado 00');
+l.a('./u_2709_sobre_cerrado_bm.svg'            ,'u+2709 emoji sobre cerrado');
+l.a('./u_2709_sobre_cerrado_e2.svg'            ,'u+2709 emoji sobre cerrado');
+l.a('./u_2709_sobre_cerrado_go.svg'            ,'u+2709 emoji sobre cerrado');
+l.a('./u_2709_sobre_cerrado_on.svg'            ,'u+2709 emoji sobre cerrado');
+l.a('./u_2709_sobre_cerrado_op.svg'            ,'u+2709 emoji sobre cerrado');
+l.a('./u_2709_sobre_cerrado_tw.svg'            ,'u+2709 emoji sobre cerrado');
+
+l.a('./u_1f4c3_hoja_rizo_00.svg'               ,'u+1f4c3 emoji página hoja rizo 00');
+l.a('./u_1f4c3_hoja_rizo_bm.svg'               ,'u+1f4c3 emoji página hoja rizo');
+l.a('./u_1f4c3_hoja_rizo_e2.svg'               ,'u+1f4c3 emoji página hoja rizo');
+l.a('./u_1f4c3_hoja_rizo_go.svg'               ,'u+1f4c3 emoji página hoja rizo');
+l.a('./u_1f4c3_hoja_rizo_on.svg'               ,'u+1f4c3 emoji página hoja rizo');
+l.a('./u_1f4c3_hoja_rizo_op.svg'               ,'u+1f4c3 emoji página hoja rizo');
+l.a('./u_1f4c3_hoja_rizo_tw.svg'               ,'u+1f4c3 emoji página hoja rizo');
+
+l.a('./u_1f4c4_hoja_esq_00.svg'                ,'u+1f4c4 emoji página hoja 00');
+l.a('./u_1f4c4_hoja_esq_bm.svg'                ,'u+1f4c4 emoji página hoja');
+l.a('./u_1f4c4_hoja_esq_e2.svg'                ,'u+1f4c4 emoji página hoja');
+l.a('./u_1f4c4_hoja_esq_go.svg'                ,'u+1f4c4 emoji página hoja');
+l.a('./u_1f4c4_hoja_esq_on.svg'                ,'u+1f4c4 emoji página hoja');
+l.a('./u_1f4c4_hoja_esq_op.svg'                ,'u+1f4c4 emoji página hoja');
+l.a('./u_1f4c4_hoja_esq_tw.svg'                ,'u+1f4c4 emoji página hoja');
+
+l.a('./u_1f5cb_hoja_vacia_00.svg'              ,'u+1f5cb emoji página hoja vacío 00');
+l.a('./u_1f5cb_hoja_vacia_bm.svg'              ,'u+1f5cb emoji página hoja vacío');
+l.a('./u_1f5cb_hoja_vacia_e2.svg'              ,'u+1f5cb emoji página hoja vacío');
+l.a('./u_1f5cb_hoja_vacia_go.svg'              ,'u+1f5cb emoji página hoja vacío');
+l.a('./u_1f5cb_hoja_vacia_on.svg'              ,'u+1f5cb emoji página hoja vacío');
+l.a('./u_1f5cb_hoja_vacia_op.svg'              ,'u+1f5cb emoji página hoja vacío');
+l.a('./u_1f5cb_hoja_vacia_tw.svg'              ,'u+1f5cb emoji página hoja vacío');
+
+l.a('./u_1f440_ojos_00.svg'                    ,'u+1f440 emoji ojos 00');
+l.a('./u_1f440_ojos_bm.svg'                    ,'u+1f440 emoji ojos');
+l.a('./u_1f440_ojos_e2.svg'                    ,'u+1f440 emoji ojos');
+l.a('./u_1f440_ojos_go.svg'                    ,'u+1f440 emoji ojos');
+l.a('./u_1f440_ojos_on.svg'                    ,'u+1f440 emoji ojos');
+l.a('./u_1f440_ojos_op.svg'                    ,'u+1f440 emoji ojos marrón');
+l.a('./u_1f440_ojos_tw.svg'                    ,'u+1f440 emoji ojos gris');
+
+l.a('./u_1f441_ojo_00.svg'                     ,'u+1f441 emoji ojo 00');
+l.a('./u_1f441_ojo_bm.svg'                     ,'u+1f441 emoji ojo negro');
+l.a('./u_1f441_ojo_e2.svg'                     ,'u+1f441 emoji ojo azul');
+l.a('./u_1f441_ojo_go.svg'                     ,'u+1f441 emoji ojo marrón');
+l.a('./u_1f441_ojo_on.svg'                     ,'u+1f441 emoji ojo azul');
+l.a('./u_1f441_ojo_op.svg'                     ,'u+1f441 emoji ojo marrón');
+l.a('./u_1f441_ojo_tw.svg'                     ,'u+1f441 emoji ojo marrón');
+
+l.a('./u_1f4cc_chincheta_00.svg'               ,'u+1f4cc emoji chincheta 00');
+l.a('./u_1f4cc_chincheta_bm.svg'               ,'u+1f4cc emoji chincheta naranja');
+l.a('./u_1f4cc_chincheta_e2.svg'               ,'u+1f4cc emoji chincheta rojo');
+l.a('./u_1f4cc_chincheta_go.svg'               ,'u+1f4cc emoji chincheta rojo');
+l.a('./u_1f4cc_chincheta_on.svg'               ,'u+1f4cc emoji chincheta rojo');
+l.a('./u_1f4cc_chincheta_op.svg'               ,'u+1f4cc emoji chincheta rojo');
+l.a('./u_1f4cc_chincheta_tw.svg'               ,'u+1f4cc emoji chincheta rojo');
+
+l.a('./u_1f4e6_paquete_00.svg'                 ,'u+1f4e6 emoji paquete 00');
+l.a('./u_1f4e6_paquete_bm.svg'                 ,'u+1f4e6 emoji paquete');
+l.a('./u_1f4e6_paquete_e2.svg'                 ,'u+1f4e6 emoji paquete');
+l.a('./u_1f4e6_paquete_go.svg'                 ,'u+1f4e6 emoji paquete');
+l.a('./u_1f4e6_paquete_on.svg'                 ,'u+1f4e6 emoji paquete');
+l.a('./u_1f4e6_paquete_op.svg'                 ,'u+1f4e6 emoji paquete');
+l.a('./u_1f4e6_paquete_tw.svg'                 ,'u+1f4e6 emoji paquete');
+
+l.a('./u_1f512_candado_cerrado_00.svg'         ,'u+1f512 emoji candado cerrado 00');
+l.a('./u_1f512_candado_cerrado_bm.svg'         ,'u+1f512 emoji candado cerrado');
+l.a('./u_1f512_candado_cerrado_e2.svg'         ,'u+1f512 emoji candado cerrado');
+l.a('./u_1f512_candado_cerrado_go.svg'         ,'u+1f512 emoji candado cerrado');
+l.a('./u_1f512_candado_cerrado_on.svg'         ,'u+1f512 emoji candado cerrado');
+l.a('./u_1f512_candado_cerrado_op.svg'         ,'u+1f512 emoji candado cerrado');
+l.a('./u_1f512_candado_cerrado_tw.svg'         ,'u+1f512 emoji candado cerrado');
+
+l.a('./u_1f513_candado_abierto_00.svg'         ,'u+1f513 emoji candado abierto 00');
+l.a('./u_1f513_candado_abierto_bm.svg'         ,'u+1f513 emoji candado abierto');
+l.a('./u_1f513_candado_abierto_e2.svg'         ,'u+1f513 emoji candado abierto');
+l.a('./u_1f513_candado_abierto_go.svg'         ,'u+1f513 emoji candado abierto');
+l.a('./u_1f513_candado_abierto_on.svg'         ,'u+1f513 emoji candado abierto');
+l.a('./u_1f513_candado_abierto_op.svg'         ,'u+1f513 emoji candado abierto');
+l.a('./u_1f513_candado_abierto_tw.svg'         ,'u+1f513 emoji candado abierto');
+
+l.a('./u_1f510_candado_llave_00.svg'           ,'u+1f510 emoji candado llave 00');
+l.a('./u_1f510_candado_llave_bm.svg'           ,'u+1f510 emoji candado llave');
+l.a('./u_1f510_candado_llave_e2.svg'           ,'u+1f510 emoji candado llave');
+l.a('./u_1f510_candado_llave_go.svg'           ,'u+1f510 emoji candado llave');
+l.a('./u_1f510_candado_llave_on.svg'           ,'u+1f510 emoji candado llave');
+l.a('./u_1f510_candado_llave_op.svg'           ,'u+1f510 emoji candado llave');
+l.a('./u_1f510_candado_llave_tw.svg'           ,'u+1f510 emoji candado llave');
+
+l.a('./u_1f50f_pluma_stilog_candado_00.svg'    ,'u+1f50f emoji candado pluma estilográfica 00');
+l.a('./u_1f50f_pluma_stilog_candado_bm.svg'    ,'u+1f50f emoji candado pluma estilográfica naranja');
+l.a('./u_1f50f_pluma_stilog_candado_e2.svg'    ,'u+1f50f emoji candado pluma estilográfica naranja');
+l.a('./u_1f50f_pluma_stilog_candado_go.svg'    ,'u+1f50f emoji candado pluma estilográfica naranja');
+l.a('./u_1f50f_pluma_stilog_candado_on.svg'    ,'u+1f50f emoji candado pluma estilográfica naranja');
+l.a('./u_1f50f_pluma_stilog_candado_op.svg'    ,'u+1f50f emoji candado pluma estilográfica amarillo');
+l.a('./u_1f50f_pluma_stilog_candado_tw.svg'    ,'u+1f50f emoji candado pluma estilográfica naranja');
+
+l.a('./u_2712_pluma_estilog_00.svg'            ,'u+2712 emoji pluma estilográfica punta 00');
+l.a('./u_2712_pluma_estilog_bm.svg'            ,'u+2712 emoji pluma estilográfica naranja');
+l.a('./u_2712_pluma_estilog_e2.svg'            ,'u+2712 emoji pluma estilográfica');
+l.a('./u_2712_pluma_estilog_go.svg'            ,'u+2712 emoji pluma estilográfica punta naranja');
+l.a('./u_2712_pluma_estilog_on.svg'            ,'u+2712 emoji pluma estilográfica');
+l.a('./u_2712_pluma_estilog_op.svg'            ,'u+2712 emoji pluma estilográfica');
+l.a('./u_2712_pluma_estilog_tw.svg'            ,'u+2712 emoji pluma estilográfica');
+
+l.a('./u_1f58b_pluma_estilog_ii_00.svg'        ,'u+1f58b emoji pluma estilográfica 00');
+l.a('./u_1f58b_pluma_estilog_ii_bm.svg'        ,'u+1f58b emoji pluma estilográfica');
+l.a('./u_1f58b_pluma_estilog_ii_e2.svg'        ,'u+1f58b emoji pluma estilográfica');
+l.a('./u_1f58b_pluma_estilog_ii_go.svg'        ,'u+1f58b emoji pluma estilográfica naranja');
+l.a('./u_1f58b_pluma_estilog_ii_on.svg'        ,'u+1f58b emoji pluma estilográfica');
+l.a('./u_1f58b_pluma_estilog_ii_op.svg'        ,'u+1f58b emoji pluma estilográfica');
+l.a('./u_1f58b_pluma_estilog_ii_tw.svg'        ,'u+1f58b emoji pluma estilográfica');
+
+l.a('./u_1f511_llave_00.svg'                   ,'u+1f511 emoji llave 00');
+l.a('./u_1f511_llave_bm.svg'                   ,'u+1f511 emoji llave');
+l.a('./u_1f511_llave_e2.svg'                   ,'u+1f511 emoji llave');
+l.a('./u_1f511_llave_go.svg'                   ,'u+1f511 emoji llave');
+l.a('./u_1f511_llave_on.svg'                   ,'u+1f511 emoji llave');
+l.a('./u_1f511_llave_op.svg'                   ,'u+1f511 emoji llave');
+l.a('./u_1f511_llave_tw.svg'                   ,'u+1f511 emoji llave');
+
+l.a('./u_1f5dd_llave_antigua_00.svg'           ,'u+1f5dd emoji llave 00');
+l.a('./u_1f5dd_llave_antigua_bm.svg'           ,'u+1f5dd emoji llave');
+l.a('./u_1f5dd_llave_antigua_e2.svg'           ,'u+1f5dd emoji llave');
+l.a('./u_1f5dd_llave_antigua_go.svg'           ,'u+1f5dd emoji llave');
+l.a('./u_1f5dd_llave_antigua_on.svg'           ,'u+1f5dd emoji llave');
+l.a('./u_1f5dd_llave_antigua_op.svg'           ,'u+1f5dd emoji llave');
+l.a('./u_1f5dd_llave_antigua_tw.svg'           ,'u+1f5dd emoji llave');
+
+l.a('./u_270d_apuntes_mano_00.svg'             ,'u+270d emoji apuntes mano gesto lápiz 00');
+l.a('./u_270d_apuntes_mano_bm.svg'             ,'u+270d emoji apuntes mano gesto lápiz');
+l.a('./u_270d_apuntes_mano_e2.svg'             ,'u+270d emoji apuntes mano gesto lápiz');
+l.a('./u_270d_apuntes_mano_go.svg'             ,'u+270d emoji apuntes mano gesto lápiz');
+l.a('./u_270d_apuntes_mano_op.svg'             ,'u+270d emoji apuntes mano gesto lápiz');
+l.a('./u_270d_apuntes_mano_tw.svg'             ,'u+270d emoji apuntes mano gesto lápiz');
+l.a('./u_270d_apuntes_mano_z1.svg'             ,'u+270d emoji apuntes mano gesto lápiz');
+l.a('./u_270d_apuntes_mano_z2.svg'             ,'u+270d emoji apuntes mano gesto lápiz');
+
+l.a('./u_1f4dd_memo_00.svg'                    ,'u+1f4dd emoji apuntes memo lápiz 00');
+l.a('./u_1f4dd_memo_bm.svg'                    ,'u+1f4dd emoji apuntes memo lápiz');
+l.a('./u_1f4dd_memo_e2.svg'                    ,'u+1f4dd emoji apuntes memo lápiz');
+l.a('./u_1f4dd_memo_go.svg'                    ,'u+1f4dd emoji apuntes memo lápiz');
+l.a('./u_1f4dd_memo_on.svg'                    ,'u+1f4dd emoji apuntes memo lápiz');
+l.a('./u_1f4dd_memo_op.svg'                    ,'u+1f4dd emoji apuntes memo lápiz');
+l.a('./u_1f4dd_memo_tw.svg'                    ,'u+1f4dd emoji apuntes memo lápiz');
+
+l.a('./u_1f4cb_portapapeles_00.svg'            ,'u+1f4cb emoji portapapeles 00');
+l.a('./u_1f4cb_portapapeles_bm.svg'            ,'u+1f4cb emoji portapapeles');
+l.a('./u_1f4cb_portapapeles_e2.svg'            ,'u+1f4cb emoji portapapeles');
+l.a('./u_1f4cb_portapapeles_go.svg'            ,'u+1f4cb emoji portapapeles');
+l.a('./u_1f4cb_portapapeles_on.svg'            ,'u+1f4cb emoji portapapeles');
+l.a('./u_1f4cb_portapapeles_op.svg'            ,'u+1f4cb emoji portapapeles');
+l.a('./u_1f4cb_portapapeles_tw.svg'            ,'u+1f4cb emoji portapapeles');
+
+l.a('./u_1f9f7_imperdible_00.svg'              ,'u+1f9f7 emoji imperdible 00');
+l.a('./u_1f9f7_imperdible_bm.svg'              ,'u+1f9f7 emoji imperdible');
+l.a('./u_1f9f7_imperdible_go.svg'              ,'u+1f9f7 emoji imperdible');
+l.a('./u_1f9f7_imperdible_op.svg'              ,'u+1f9f7 emoji imperdible');
+l.a('./u_1f9f7_imperdible_tw.svg'              ,'u+1f9f7 emoji imperdible');
+
+l.a('./u_1f4ce_clip_00.svg'                    ,'u+1f4ce emoji clip 00');
+l.a('./u_1f4ce_clip_bm.svg'                    ,'u+1f4ce emoji clip');
+l.a('./u_1f4ce_clip_e2.svg'                    ,'u+1f4ce emoji clip');
+l.a('./u_1f4ce_clip_go.svg'                    ,'u+1f4ce emoji clip');
+l.a('./u_1f4ce_clip_on.svg'                    ,'u+1f4ce emoji clip');
+l.a('./u_1f4ce_clip_op.svg'                    ,'u+1f4ce emoji clip');
+l.a('./u_1f4ce_clip_tw.svg'                    ,'u+1f4ce emoji clip');
+
+l.a('./u_1f587_clip_unido_00.svg'              ,'u+1f587 emoji clip unido 00');
+l.a('./u_1f587_clip_unido_bm.svg'              ,'u+1f587 emoji clip unido gris azul');
+l.a('./u_1f587_clip_unido_e2.svg'              ,'u+1f587 emoji clip unido rojo azul');
+l.a('./u_1f587_clip_unido_go.svg'              ,'u+1f587 emoji clip unido gris');
+l.a('./u_1f587_clip_unido_on.svg'              ,'u+1f587 emoji clip unidogris naranja rojo');
+l.a('./u_1f587_clip_unido_op.svg'              ,'u+1f587 emoji clip unido 00');
+l.a('./u_1f587_clip_unido_tw.svg'              ,'u+1f587 emoji clip unido gris');
+
+
+l.a('./u_1f446_dedo_indice_arr_00.svg'         ,'u+1f446 emoji mano gesto yo 00');
+l.a('./u_1f446_dedo_indice_arr_bm.svg'         ,'u+1f446 emoji mano gesto yo');
+l.a('./u_1f446_dedo_indice_arr_e2.svg'         ,'u+1f446 emoji mano gesto yo');
+l.a('./u_1f446_dedo_indice_arr_go.svg'         ,'u+1f446 emoji mano gesto yo');
+l.a('./u_1f446_dedo_indice_arr_on.svg'         ,'u+1f446 emoji mano gesto yo');
+l.a('./u_1f446_dedo_indice_arr_op.svg'         ,'u+1f446 emoji mano gesto yo');
+l.a('./u_1f446_dedo_indice_arr_tw.svg'         ,'u+1f446 emoji mano gesto yo');
+
+l.a('./u_1f44c_mano_ok_00.svg'                 ,'u+1f44c emoji mano gesto ok 00');
+l.a('./u_1f44c_mano_ok_bm.svg'                 ,'u+1f44c emoji mano gesto ok');
+l.a('./u_1f44c_mano_ok_e2.svg'                 ,'u+1f44c emoji mano gesto ok');
+l.a('./u_1f44c_mano_ok_go.svg'                 ,'u+1f44c emoji mano gesto ok');
+l.a('./u_1f44c_mano_ok_on.svg'                 ,'u+1f44c emoji mano gesto ok');
+l.a('./u_1f44c_mano_ok_op.svg'                 ,'u+1f44c emoji mano gesto ok');
+l.a('./u_1f44c_mano_ok_tw.svg'                 ,'u+1f44c emoji mano gesto ok');
+
+l.a('./u_1f44d_pulgar_ok_00.svg'               ,'u+1f44d emoji mano pulgar gesto ok 00');
+l.a('./u_1f44d_pulgar_ok_an_00.svg'            ,'u+1f44d emoji mano pulgar gesto ok 00');
+l.a('./u_1f44d_pulgar_ok_bm.svg'               ,'u+1f44d emoji mano pulgar gesto ok');
+l.a('./u_1f44d_pulgar_ok_e2d.svg'              ,'u+1f44d emoji mano pulgar gesto ok');
+l.a('./u_1f44d_pulgar_ok_e2i.svg'              ,'u+1f44d emoji mano pulgar gesto ok');
+l.a('./u_1f44d_pulgar_ok_god.svg'              ,'u+1f44d emoji mano pulgar gesto ok');
+l.a('./u_1f44d_pulgar_ok_goi.svg'              ,'u+1f44d emoji mano pulgar gesto ok');
+l.a('./u_1f44d_pulgar_ok_on.svg'               ,'u+1f44d emoji mano pulgar gesto ok');
+l.a('./u_1f44d_pulgar_ok_op.svg'               ,'u+1f44d emoji mano pulgar gesto ok');
+l.a('./u_1f44d_pulgar_ok_tw.svg'               ,'u+1f44d emoji mano pulgar gesto ok');
+
+l.a('./u_1f44e_pulgar_ko_00.svg'               ,'u+1f44e emoji mano pulgar gesto ko 00');
+l.a('./u_1f44e_pulgar_ko_bm.svg'               ,'u+1f44e emoji mano pulgar gesto ko');
+l.a('./u_1f44e_pulgar_ko_e2.svg'               ,'u+1f44e emoji mano pulgar gesto ko');
+l.a('./u_1f44e_pulgar_ko_go.svg'               ,'u+1f44e emoji mano pulgar gesto ko');
+l.a('./u_1f44e_pulgar_ko_on.svg'               ,'u+1f44e emoji mano pulgar gesto ko');
+l.a('./u_1f44e_pulgar_ko_op.svg'               ,'u+1f44e emoji mano pulgar gesto ko');
+l.a('./u_1f44e_pulgar_ko_tw.svg'               ,'u+1f44e emoji mano pulgar gesto ko');
+l.a('./u_1f44e_pulgar_ko_tx.svg'               ,'u+1f44e emoji mano pulgar gesto ko');
+
+l.a('./u_1f44f_aplauso_00.svg'                 ,'u+1f44f emoji mano gesto aplauso 00');
+l.a('./u_1f44f_aplauso_bm.svg'                 ,'u+1f44f emoji mano gesto aplauso');
+l.a('./u_1f44f_aplauso_e2.svg'                 ,'u+1f44f emoji mano gesto aplauso');
+l.a('./u_1f44f_aplauso_go.svg'                 ,'u+1f44f emoji mano gesto aplauso');
+l.a('./u_1f44f_aplauso_on.svg'                 ,'u+1f44f emoji mano gesto aplauso');
+l.a('./u_1f44f_aplauso_op.svg'                 ,'u+1f44f emoji mano gesto aplauso');
+l.a('./u_1f44f_aplauso_tw.svg'                 ,'u+1f44f emoji mano gesto aplauso');
+
+l.a('./u_1f91d_dar_la_mano_a00.svg'            ,'u+1f91d emoji mano gesto dar ok 00');
+l.a('./u_1f91d_dar_la_mano_b00.svg'            ,'u+1f91d emoji mano gesto dar ok 00');
+l.a('./u_1f91d_dar_la_mano_c00.svg'            ,'u+1f91d emoji mano gesto dar ok 00');
+l.a('./u_1f91d_dar_la_mano_e2.svg'             ,'u+1f91d emoji mano gesto dar ok verde');
+l.a('./u_1f91d_dar_la_mano_bm.svg'             ,'u+1f91d emoji mano gesto dar ok');
+l.a('./u_1f91d_dar_la_mano_go.svg'             ,'u+1f91d emoji mano gesto dar ok');
+l.a('./u_1f91d_dar_la_mano_gox.svg'            ,'u+1f91d emoji mano gesto dar ok');
+l.a('./u_1f91d_dar_la_mano_op.svg'             ,'u+1f91d emoji mano gesto dar ok');
+l.a('./u_1f91d_dar_la_mano_tw.svg'             ,'u+1f91d emoji mano gesto dar ok');
+
+l.a('./u_270c_mano_victoria_00.svg'            ,'u+270c emoji mano gesto victoria 00');
+l.a('./u_270c_mano_victoria_bm.svg'            ,'u+270c emoji mano gesto victoria');
+l.a('./u_270c_mano_victoria_e2.svg'            ,'u+270c emoji mano gesto victoria');
+l.a('./u_270c_mano_victoria_go.svg'            ,'u+270c emoji mano gesto victoria');
+l.a('./u_270c_mano_victoria_on.svg'            ,'u+270c emoji mano gesto victoria');
+l.a('./u_270c_mano_victoria_op.svg'            ,'u+270c emoji mano gesto victoria');
+l.a('./u_270c_mano_victoria_tw.svg'            ,'u+270c emoji mano gesto victoria');
+
+l.a('./u_263a_cara_sonrisa_00.svg'             ,'u+263a emoji cara emoción sonrisa 00');
+l.a('./u_263a_cara_sonrisa_bm.svg'             ,'u+263a emoji cara emoción sonrisa amarillo');
+l.a('./u_263a_cara_sonrisa_e2.svg'             ,'u+263a emoji cara emoción sonrisa amarillo');
+l.a('./u_263a_cara_sonrisa_go.svg'             ,'u+263a emoji cara emoción sonrisa amarillo');
+l.a('./u_263a_cara_sonrisa_on.svg'             ,'u+263a emoji cara emoción sonrisa amarillo');
+l.a('./u_263a_cara_sonrisa_op.svg'             ,'u+263a emoji cara emoción sonrisa amarillo');
+l.a('./u_263a_cara_sonrisa_tw.svg'             ,'u+263a emoji cara emoción sonrisa amarillo');
+
+l.a('./u_1f609_cara_guino_00.svg'              ,'u+1f609 emoji cara emoción guiño 00');
+l.a('./u_1f609_cara_guino_bm.svg'              ,'u+1f609 emoji cara emoción guiño amarillo');
+l.a('./u_1f609_cara_guino_e2.svg'              ,'u+1f609 emoji cara emoción guiño amarillo');
+l.a('./u_1f609_cara_guino_go.svg'              ,'u+1f609 emoji cara emoción guiño amarillo');
+l.a('./u_1f609_cara_guino_on.svg'              ,'u+1f609 emoji cara emoción guiño amarillo');
+l.a('./u_1f609_cara_guino_op.svg'              ,'u+1f609 emoji cara emoción guiño amarillo');
+l.a('./u_1f609_cara_guino_tw.svg'              ,'u+1f609 emoji cara emoción guiño amarillo');
+
+l.a('./u_1f60a_cara_sonrojada_00.svg'          ,'u+1f60a emoji cara emoción sonrojado 00');
+l.a('./u_1f60a_cara_sonrojada_bm.svg'          ,'u+1f60a emoji cara emoción sonrojado amarillo');
+l.a('./u_1f60a_cara_sonrojada_e2.svg'          ,'u+1f60a emoji cara emoción sonrojado amarillo');
+l.a('./u_1f60a_cara_sonrojada_go.svg'          ,'u+1f60a emoji cara emoción sonrojado amarillo');
+l.a('./u_1f60a_cara_sonrojada_on.svg'          ,'u+1f60a emoji cara emoción sonrojado amarillo');
+l.a('./u_1f60a_cara_sonrojada_op.svg'          ,'u+1f60a emoji cara emoción sonrojado amarillo');
+l.a('./u_1f60a_cara_sonrojada_tw.svg'          ,'u+1f60a emoji cara emoción sonrojado amarillo');
+
+l.a('./u_1f60e_cara_sonrisa_gafas_00.svg'      ,'u+1f60e emoji cara emoción sonrisa gafas 00');
+l.a('./u_1f60e_cara_sonrisa_gafas_bm.svg'      ,'u+1f60e emoji cara emoción sonrisa gafas amarillo');
+l.a('./u_1f60e_cara_sonrisa_gafas_e2.svg'      ,'u+1f60e emoji cara emoción sonrisa gafas amarillo');
+l.a('./u_1f60e_cara_sonrisa_gafas_go.svg'      ,'u+1f60e emoji cara emoción sonrisa gafas amarillo');
+l.a('./u_1f60e_cara_sonrisa_gafas_on.svg'      ,'u+1f60e emoji cara emoción sonrisa gafas amarillo');
+l.a('./u_1f60e_cara_sonrisa_gafas_op.svg'      ,'u+1f60e emoji cara emoción sonrisa gafas amarillo');
+l.a('./u_1f60e_cara_sonrisa_gafas_tw.svg'      ,'u+1f60e emoji cara emoción sonrisa gafas amarillo');
+
+l.a('./u_1f920_cara_sonrisa_sombrero_00.svg'   ,'u+1f920 emoji cara emoción sonrisa sombrero 00');
+l.a('./u_1f920_cara_sonrisa_sombrero_bm.svg'   ,'u+1f920 emoji cara emoción sonrisa sombrero amarillo');
+l.a('./u_1f920_cara_sonrisa_sombrero_e2.svg'   ,'u+1f920 emoji cara emoción sonrisa sombrero amarillo');
+l.a('./u_1f920_cara_sonrisa_sombrero_go.svg'   ,'u+1f920 emoji cara emoción sonrisa sombrero amarillo');
+l.a('./u_1f920_cara_sonrisa_sombrero_op.svg'   ,'u+1f920 emoji cara emoción sonrisa sombrero amarillo');
+l.a('./u_1f920_cara_sonrisa_sombrero_tw.svg'   ,'u+1f920 emoji cara emoción sonrisa sombrero amarillo');
+
+l.a('./u_1f917_cara_abrazo_00.svg'             ,'u+1f917 emoji cara emoción sonrisa abrazo 00');
+l.a('./u_1f917_cara_abrazo_bm.svg'             ,'u+1f917 emoji cara emoción sonrisa abrazo amarillo');
+l.a('./u_1f917_cara_abrazo_e2.svg'             ,'u+1f917 emoji cara emoción sonrisa abrazo amarillo');
+l.a('./u_1f917_cara_abrazo_go.svg'             ,'u+1f917 emoji cara emoción sonrisa abrazo amarillo');
+l.a('./u_1f917_cara_abrazo_op.svg'             ,'u+1f917 emoji cara emoción sonrisa abrazo amarillo');
+l.a('./u_1f917_cara_abrazo_tw.svg'             ,'u+1f917 emoji cara emoción sonrisa abrazo amarillo');
+
+l.a('./u_1f601_cara_carcajada_00.svg'          ,'u+1f601 emoji cara emoción carcajada 00');
+l.a('./u_1f601_cara_carcajada_bm.svg'          ,'u+1f601 emoji cara emoción carcajada amarillo');
+l.a('./u_1f601_cara_carcajada_e2.svg'          ,'u+1f601 emoji cara emoción carcajada amarillo');
+l.a('./u_1f601_cara_carcajada_go.svg'          ,'u+1f601 emoji cara emoción carcajada amarillo');
+l.a('./u_1f601_cara_carcajada_on.svg'          ,'u+1f601 emoji cara emoción carcajada amarillo');
+l.a('./u_1f601_cara_carcajada_op.svg'          ,'u+1f601 emoji cara emoción carcajada amarillo');
+l.a('./u_1f601_cara_carcajada_tw.svg'          ,'u+1f601 emoji cara emoción carcajada amarillo');
+
+l.a('./u_1f61e_cara_triste_00.svg'             ,'u+1f61e emoji cara emoción triste 00');
+l.a('./u_1f61e_cara_triste_bm.svg'             ,'u+1f61e emoji cara emoción triste amarillo');
+l.a('./u_1f61e_cara_triste_e2.svg'             ,'u+1f61e emoji cara emoción triste amarillo');
+l.a('./u_1f61e_cara_triste_go.svg'             ,'u+1f61e emoji cara emoción triste amarillo');
+l.a('./u_1f61e_cara_triste_on.svg'             ,'u+1f61e emoji cara emoción triste amarillo');
+l.a('./u_1f61e_cara_triste_op.svg'             ,'u+1f61e emoji cara emoción triste amarillo');
+l.a('./u_1f61e_cara_triste_tw.svg'             ,'u+1f61e emoji cara emoción triste amarillo');
+
+l.a('./u_1f622_cara_llorar_00.svg'             ,'u+1f622 emoji cara emoción llorar 00');
+l.a('./u_1f622_cara_llorar_bm.svg'             ,'u+1f622 emoji cara emoción llorar amarillo');
+l.a('./u_1f622_cara_llorar_e2.svg'             ,'u+1f622 emoji cara emoción llorar amarillo');
+l.a('./u_1f622_cara_llorar_go.svg'             ,'u+1f622 emoji cara emoción llorar amarillo');
+l.a('./u_1f622_cara_llorar_on.svg'             ,'u+1f622 emoji cara emoción llorar amarillo');
+l.a('./u_1f622_cara_llorar_op.svg'             ,'u+1f622 emoji cara emoción llorar amarillo');
+l.a('./u_1f622_cara_llorar_tw.svg'             ,'u+1f622 emoji cara emoción llorar amarillo');
+
+l.a('./u_1f621_cara_enfado_00.svg'             ,'u+1f622 emoji cara emoción enfado 00');
+l.a('./u_1f621_cara_enfado_bm.svg'             ,'u+1f622 emoji cara emoción enfado rojo');
+l.a('./u_1f621_cara_enfado_e2.svg'             ,'u+1f622 emoji cara emoción enfado rojo');
+l.a('./u_1f621_cara_enfado_go.svg'             ,'u+1f622 emoji cara emoción enfado rojo');
+l.a('./u_1f621_cara_enfado_on.svg'             ,'u+1f622 emoji cara emoción enfado rojo');
+l.a('./u_1f621_cara_enfado_op.svg'             ,'u+1f622 emoji cara emoción enfado rojo');
+l.a('./u_1f621_cara_enfado_tw.svg'             ,'u+1f622 emoji cara emoción enfado rojo');
+
+l.a('./u_1f608_cara_sonrisa_cuernos_00.svg'    ,'u+1f608 emoji cara emoción sonrisa_cuernos 00');
+l.a('./u_1f608_cara_sonrisa_cuernos_bm.svg'    ,'u+1f608 emoji cara emoción sonrisa_cuernos morado');
+l.a('./u_1f608_cara_sonrisa_cuernos_e2.svg'    ,'u+1f608 emoji cara emoción sonrisa_cuernos rojo');
+l.a('./u_1f608_cara_sonrisa_cuernos_go.svg'    ,'u+1f608 emoji cara emoción sonrisa_cuernos morado');
+l.a('./u_1f608_cara_sonrisa_cuernos_on.svg'    ,'u+1f608 emoji cara emoción sonrisa_cuernos morado');
+l.a('./u_1f608_cara_sonrisa_cuernos_op.svg'    ,'u+1f608 emoji cara emoción sonrisa_cuernos rojo');
+l.a('./u_1f608_cara_sonrisa_cuernos_tw.svg'    ,'u+1f608 emoji cara emoción sonrisa_cuernos morado');
+
+l.a('./u_270f_lapiz_id_00.svg'                 ,'u+270f emoji lápiz 00');
+l.a('./u_270f_lapiz_id_bm.svg'                 ,'u+270f emoji lápiz verde');
+l.a('./u_270f_lapiz_id_e2.svg'                 ,'u+270f emoji lápiz naranja');
+l.a('./u_270f_lapiz_id_go.svg'                 ,'u+270f emoji lápiz naranja');
+l.a('./u_270f_lapiz_id_on.svg'                 ,'u+270f emoji lápiz rojo');
+l.a('./u_270f_lapiz_id_op.svg'                 ,'u+270f emoji lápiz naranja');
+l.a('./u_270f_lapiz_id_tw.svg'                 ,'u+270f emoji lápiz naranja');
+
+l.a('./u_1f589_lapiz_ii_00.svg'                ,'u+1f589 emoji lápiz 00');
+l.a('./u_1f589_lapiz_ii_e2.svg'                ,'u+1f589 emoji lápiz naranja');
+l.a('./u_1f589_lapiz_ii_on.svg'                ,'u+1f589 emoji lápiz rojo');
+
+l.a('./u_1f58a_boli_ii_00.svg'                 ,'u+1f58a emoji bolígrafo 00');
+l.a('./u_1f58a_boli_ii_bm.svg'                 ,'u+1f58a emoji bolígrafo');
+l.a('./u_1f58a_boli_ii_e2.svg'                 ,'u+1f58a emoji bolígrafo azul');
+l.a('./u_1f58a_boli_ii_go.svg'                 ,'u+1f58a emoji bolígrafo azul');
+l.a('./u_1f58a_boli_ii_on.svg'                 ,'u+1f58a emoji bolígrafo gris');
+l.a('./u_1f58a_boli_ii_op.svg'                 ,'u+1f58a emoji bolígrafo gris');
+l.a('./u_1f58a_boli_ii_tw.svg'                 ,'u+1f58a emoji bolígrafo negro naranja');
+
+l.a('./u_1f5d2_cuaderno_espiral_00.svg'        ,'u+1f5d2 emoji cuaderno espiral 00');
+l.a('./u_1f5d2_cuaderno_espiral_bm.svg'        ,'u+1f5d2 emoji cuaderno espiral');
+l.a('./u_1f5d2_cuaderno_espiral_e2.svg'        ,'u+1f5d2 emoji cuaderno espiral');
+l.a('./u_1f5d2_cuaderno_espiral_go.svg'        ,'u+1f5d2 emoji cuaderno espiral');
+l.a('./u_1f5d2_cuaderno_espiral_on.svg'        ,'u+1f5d2 emoji cuaderno espiral');
+l.a('./u_1f5d2_cuaderno_espiral_op.svg'        ,'u+1f5d2 emoji cuaderno espiral');
+l.a('./u_1f5d2_cuaderno_espiral_tw.svg'        ,'u+1f5d2 emoji cuaderno espiral');
+
+l.a('./u_1f4d2_libro_mayor_00.svg'             ,'u+1f4d2 emoji libro mayor 00');
+l.a('./u_1f4d2_libro_mayor_bm.svg'             ,'u+1f4d2 emoji libro mayor azul');
+l.a('./u_1f4d2_libro_mayor_e2.svg'             ,'u+1f4d2 emoji libro mayor marrón');
+l.a('./u_1f4d2_libro_mayor_go.svg'             ,'u+1f4d2 emoji libro mayor naranja');
+l.a('./u_1f4d2_libro_mayor_on.svg'             ,'u+1f4d2 emoji libro mayor naranja');
+l.a('./u_1f4d2_libro_mayor_op.svg'             ,'u+1f4d2 emoji libro mayor naranja');
+l.a('./u_1f4d2_libro_mayor_tw.svg'             ,'u+1f4d2 emoji libro mayor naranja');
+
+l.a('./u_1f4d3_cuaderno_00.svg'                ,'u+1f4d3 emoji cuaderno libro 00');
+l.a('./u_1f4d3_cuaderno_bm.svg'                ,'u+1f4d3 emoji cuaderno libro');
+l.a('./u_1f4d3_cuaderno_e2.svg'                ,'u+1f4d3 emoji cuaderno libro azul');
+l.a('./u_1f4d3_cuaderno_go.svg'                ,'u+1f4d3 emoji cuaderno libro gris');
+l.a('./u_1f4d3_cuaderno_on.svg'                ,'u+1f4d3 emoji cuaderno libro gris');
+l.a('./u_1f4d3_cuaderno_op.svg'                ,'u+1f4d3 emoji cuaderno libro');
+l.a('./u_1f4d3_cuaderno_tw.svg'                ,'u+1f4d3 emoji cuaderno libro');
+
+l.a('./u_1f4d5_libro_cerrado_00.svg'           ,'u+1f4d5 emoji libro cerrado 00');
+l.a('./u_1f4d5_libro_cerrado_bm.svg'           ,'u+1f4d5 emoji libro cerrado rojo');
+l.a('./u_1f4d5_libro_cerrado_e2.svg'           ,'u+1f4d5 emoji libro cerrado rojo');
+l.a('./u_1f4d5_libro_cerrado_go.svg'           ,'u+1f4d5 emoji libro cerrado');
+l.a('./u_1f4d5_libro_cerrado_on.svg'           ,'u+1f4d5 emoji libro cerrado rojo');
+l.a('./u_1f4d5_libro_cerrado_op.svg'           ,'u+1f4d5 emoji libro cerrado rojo');
+l.a('./u_1f4d5_libro_cerrado_tw.svg'           ,'u+1f4d5 emoji libro cerrado rojo');
+
+l.a('./u_1f4d6_libro_abierto_00.svg'           ,'u+1f4d6 emoji libro abierto 00');
+l.a('./u_1f4d6_libro_abierto_bm.svg'           ,'u+1f4d6 emoji libro abierto blanco');
+l.a('./u_1f4d6_libro_abierto_e2.svg'           ,'u+1f4d6 emoji libro abierto');
+l.a('./u_1f4d6_libro_abierto_go.svg'           ,'u+1f4d6 emoji libro abierto');
+l.a('./u_1f4d6_libro_abierto_on.svg'           ,'u+1f4d6 emoji libro abierto');
+l.a('./u_1f4d6_libro_abierto_op.svg'           ,'u+1f4d6 emoji libro abierto blanco');
+l.a('./u_1f4d6_libro_abierto_tw.svg'           ,'u+1f4d6 emoji libro abierto');
+
+l.a('./u_1f56e_libro_abierto_00.svg'           ,'u+1f56e emoji libro abierto 00');
+l.a('./u_1f56e_libro_abierto_on.svg'           ,'u+1f56e emoji libro abierto');
+
+l.a('./u_1f4da_libros_00.svg'                  ,'u+1f4da emoji libros 00');
+l.a('./u_1f4da_libros_bm.svg'                  ,'u+1f4da emoji libros');
+l.a('./u_1f4da_libros_e2.svg'                  ,'u+1f4da emoji libros');
+l.a('./u_1f4da_libros_go.svg'                  ,'u+1f4da emoji libros');
+l.a('./u_1f4da_libros_on.svg'                  ,'u+1f4da emoji libros');
+l.a('./u_1f4da_libros_op.svg'                  ,'u+1f4da emoji libros');
+l.a('./u_1f4da_libros_tw.svg'                  ,'u+1f4da emoji libros');
+
+l.a('./u_1f4a7_gota_agua_00.svg'               ,'u+1f4a7 emoji gota agua 00');
+l.a('./u_1f4a7_gota_agua_bm.svg'               ,'u+1f4a7 emoji gota agua azul');
+l.a('./u_1f4a7_gota_agua_e2.svg'               ,'u+1f4a7 emoji gota agua azul');
+l.a('./u_1f4a7_gota_agua_go.svg'               ,'u+1f4a7 emoji gota agua azul');
+l.a('./u_1f4a7_gota_agua_on.svg'               ,'u+1f4a7 emoji gota agua azul');
+l.a('./u_1f4a7_gota_agua_op.svg'               ,'u+1f4a7 emoji gota agua azul');
+l.a('./u_1f4a7_gota_agua_tw.svg'               ,'u+1f4a7 emoji gota agua azul');
+
+l.a('./u_1f6b2_bici_00.svg'                    ,'u+1f6b2 emoji bicicleta 00');
+l.a('./u_1f6b2_bici_bm.svg'                    ,'u+1f6b2 emoji bicicleta naranja');
+l.a('./u_1f6b2_bici_e2.svg'                    ,'u+1f6b2 emoji bicicleta azul');
+l.a('./u_1f6b2_bici_go.svg'                    ,'u+1f6b2 emoji bicicleta amarillo');
+l.a('./u_1f6b2_bici_on.svg'                    ,'u+1f6b2 emoji bicicleta gris');
+l.a('./u_1f6b2_bici_op.svg'                    ,'u+1f6b2 emoji bicicleta rojo');
+l.a('./u_1f6b2_bici_tw.svg'                    ,'u+1f6b2 emoji bicicleta rojo');
+
+l.a('./u_1f6b6_peaton_00.svg'                  ,'u+1f6b6 emoji peatón 00');
+l.a('./u_1f6b6_peaton_bm.svg'                  ,'u+1f6b6 emoji peatón');
+l.a('./u_1f6b6_peaton_e2.svg'                  ,'u+1f6b6 emoji peatón');
+l.a('./u_1f6b6_peaton_go.svg'                  ,'u+1f6b6 emoji peatón');
+l.a('./u_1f6b6_peaton_on.svg'                  ,'u+1f6b6 emoji peatón');
+l.a('./u_1f6b6_peaton_op.svg'                  ,'u+1f6b6 emoji peatón');
+l.a('./u_1f6b6_peaton_tw.svg'                  ,'u+1f6b6 emoji peatón');
+
+l.a('./u_1f6c8_info_a00.svg'                   ,'u+1f6c8 emoji información 00');
+l.a('./u_1f6c8_info_b00.svg'                   ,'u+1f6c8 emoji información 00');
+l.a('./u_1f6c8_info_e2.svg'                    ,'u+1f6c8 emoji información azul');
+l.a('./u_1f6c8_info_on.svg'                    ,'u+1f6c8 emoji información azul');
+
+l.a('./u_1fab6_pluma_go.svg'                   ,'u+1fab6 emoji pluma animal');
+l.a('./u_1fab6_pluma_op.svg'                   ,'u+1fab6 emoji pluma animal');
+l.a('./u_1fab6_pluma_tw.svg'                   ,'u+1fab6 emoji pluma animal');
+
+l.a('./candado_abierto_00.svg'                 ,'candado abierto ok 00');
+l.a('./candado_cerrado_00.svg'                 ,'candado cerrado ko 00');
+l.a('./candado_abierto_ant_00.svg'             ,'candado abierto ok 00');
+l.a('./candado_cerrado_ant_00.svg'             ,'candado cerrado ko 00');
+l.a('./candado_01.svg'                         ,'candado cerrado ko amarillo');
+l.a('./candado_02.svg'                         ,'candado cerrado ko naranja');
+l.a('./candado_dorado.svg'                     ,'candado cerrado ko naranja');
+
+l.a('./escudo_dorado.svg'                      ,'escudo realista');
+
+l.a('./peligro_00.svg'                         ,'tráfico peligro 00');
+l.a('./peligro_01.svg'                         ,'tráfico peligro amarillo rojo');
+l.a('./triangulo_peligro_amarillo_negro.svg'   ,'tráfico peligro amarillo negro');
+l.a('./peligro_02.svg'                         ,'tráfico peligro blanco rojo');
+l.a('./triangulo_peligro_blanco_rojo.svg'      ,'tráfico peligro blanco rojo');
+l.a('./stop_01.svg'                            ,'tráfico stop banco rojo');
+l.a('./prohibido_hori_00.svg'                  ,'tráfico prohibido 00');
+l.a('./prohibido_hori_blanco.svg'              ,'tráfico prohibido blanco');
+l.a('./prohibido_hori_ro_bl.svg'               ,'tráfico prohibido rojo blanco');
+l.a('./prohibido_incl_00.svg'                  ,'tráfico prohibido 00');
+l.a('./prohibido_incl.svg'                     ,'tráfico prohibido blanco rojo');
+
+l.a('./etiqueta_00.svg'                        ,'etiqueta 00');
+l.a('./etiqueta_tostada.svg'                   ,'etiqueta naranja tostada');
+l.a('./etiqueta_tostada2.svg'                  ,'etiqueta naranja tostada');
+l.a('./etiqueta_amarilla.svg'                  ,'etiqueta amarillo');
+l.a('./etiqueta_cuerda.svg'                    ,'etiqueta cuerda amarillo');
+l.a('./etiqueta_hilo.svg'                      ,'etiqueta hilo amarillo');
+l.a('./etiqueta_roja_raya.svg'                 ,'etiqueta rojo');
+
+l.a('./icons8_new_doc.svg'                     ,'icons8 hoja new doc vacío');
+l.a('./icons8_imagen.svg'                      ,'icons8 ext jpg imagen');
+l.a('./icons8_carp.svg'                        ,'icons8 carpeta');
+l.a('./icons8_carp_abierta.svg'                ,'icons8 carpeta abierta');
+l.a('./icons8_pqt.svg'                         ,'icons8 paquete');
+l.a('./icons8_portapapeles.svg'                ,'icons8 portapapeles');
+l.a('./icons8_lupa.svg'                        ,'icons8 lupa');
+l.a('./icons8_engranaje_config.svg'            ,'icons8 engranaje configuración');
+l.a('./icons8_info.svg'                        ,'icons8 información azul');
+l.a('./icons8_ok.svg'                          ,'icons8 ok');
+l.a('./icons8_android.svg'                     ,'icons8 android verde');
+l.a('./icons8_wikipedia_00.svg'                ,'icons8 wikipedia 00');
+l.a('./icons8_sass.svg'                        ,'icons8 sass rojo');
+
+l.a('./tango_new_doc_1.svg'                    ,'tango hoja new doc vacío');
+l.a('./tango_new_doc_2.svg'                    ,'tango hoja new doc vacío');
+l.a('./tango_doc_php.svg'                      ,'tango hoja doc ext php');
+l.a('./tango_doc_python.svg'                   ,'tango hoja doc python ext py');
+l.a('./tango_imagen.svg'                       ,'tango ext jpg imagen');
+l.a('./tango_audio.svg'                        ,'tango ext mp3 audio');
+l.a('./tango_video.svg'                        ,'tango ext mp4 vídeo');
+l.a('./tango_hoja_perforada_vacia.svg'         ,'tango hoja perforada new doc vacío sombra');
+l.a('./tango_hoja_perforada_txt.svg'           ,'tango hoja perforada doc ext txt sombra');
+l.a('./tango_hoja_perforada_doc.svg'           ,'tango hoja perforada doc ext sombra');
+l.a('./tango_hoja_perforada_htm.svg'           ,'tango hoja perforada doc ext htm sombra');
+l.a('./tango_hoja_perforada_enc.svg'           ,'tango hoja perforada enc ext sombra');
+l.a('./tango_hoja_perforada_manual.svg'        ,'tango hoja perforada doc manual sombra');
+l.a('./tango_hoja_perforada_incompleta.svg'    ,'tango hoja perforada doc sombra');
+l.a('./tango_hoja_perforada_lupa.svg'          ,'tango hoja perforada doc lupa sombra');
+l.a('./tango_hoja_perforada_herr.svg'          ,'tango hoja perforada doc herramienta sombra');
+l.a('./tango_carp.svg'                         ,'tango carpeta azul sombra');
+l.a('./tango_carp_entreabierta.svg'            ,'tango carpeta abierta azul sombra');
+l.a('./tango_carp_abierta.svg'                 ,'tango carpeta abierta azul sombra');
+l.a('./tango_carp_doc.svg'                     ,'tango carpeta abierta azul sombra');
+l.a('./tango_libro.svg'                        ,'tango libro');
+l.a('./tango_apuntes.svg'                      ,'tango apuntes cuaderno espiral lápiz sombra');
+l.a('./tango_sobre_abierto.svg'                ,'tango sobre abierto sombra');
+l.a('./tango_sobre_cerrado.svg'                ,'tango sobre cerrado sombra');
+l.a('./tango_clip.svg'                         ,'tango clip sombra');
+l.a('./tango_tijera.svg'                       ,'tango tijera gris');
+l.a('./tango_hojas_copia.svg'                  ,'tango hoja copia sombra');
+l.a('./tango_hojas_copia2.svg'                 ,'tango hoja copia sombra');
+l.a('./tango_portapapeles.svg'                 ,'tango portapapeles sombra');
+l.a('./tango_pluma_estilog.svg'                ,'tango pluma estilográfica oro amarillo punta azul');
+l.a('./tango_vaso_boli_lapiz.svg'              ,'tango vaso bolígrafo lápiz sombra');
+l.a('./tango_tarro.svg'                        ,'tango tarro sombra');
+l.a('./tango_lupa.svg'                         ,'tango lupa sombra');
+l.a('./tango_config.svg'                       ,'tango engranaje configuración sombra');
+l.a('./tango_cd.svg'                           ,'tango cd dvd sombra');
+l.a('./tango_persona.svg'                      ,'tango persona sombra');
+l.a('./tango_personas3.svg'                    ,'tango persona sombra');
+l.a('./tango_estrella.svg'                     ,'tango estrella amarillo sombra');
+l.a('./tango_bombilla_amarilla.svg'            ,'tango bombilla amarillo sombra');
+l.a('./tango_candado_abierto.svg'              ,'tango candado abierto ok amarillo sombra');
+l.a('./tango_candado_cerrado.svg'              ,'tango candado cerrado ko amarillo sombra');
+l.a('./tango_bandera_spain.svg'                ,'tango bandera España rojo amarillo sombra');
+l.a('./tango_emo_sonrisa.svg'                  ,'tango emoción sonrisa amarillo sombra');
+l.a('./tango_emo_guino.svg'                    ,'tango emoción guiño amarillo sombra');
+l.a('./tango_emo_sonrojado.svg'                ,'tango emoción sonrojado amarillo rojo sombra');
+l.a('./tango_emo_carcajada.svg'                ,'tango emoción carcajada amarillo sombra');
+l.a('./tango_emo_triste.svg'                   ,'tango emoción triste amarillo sombra');
+l.a('./tango_emo_llorar.svg'                   ,'tango emoción llorar amarillo sombra');
+l.a('./tango_peligro.svg'                      ,'tango tráfico peligro rojo sombra');
+l.a('./tango_mano_stop.svg'                    ,'tango tráfico mano gesto stop rojo sombra');
+l.a('./tango_stop.svg'                         ,'tango tráfico stop rojo sombra');
+
+l.a('./oxygen_new_doc.svg'                     ,'oxygen hoja new doc vacío');
+l.a('./oxygen_new_perf.svg'                    ,'oxygen hoja new doc vacío');
+l.a('./oxygen_txt.svg'                         ,'oxygen ext txt');
+l.a('./oxygen_imagen.svg'                      ,'oxygen ext jpg imagen');
+l.a('./oxygen_audio.svg'                       ,'oxygen ext mp3 audio');
+l.a('./oxygen_video.svg'                       ,'oxygen ext mp4 video');
+l.a('./oxygen_xml.svg'                         ,'oxygen ext xml');
+l.a('./oxygen_doc.svg'                         ,'oxygen ext doc');
+l.a('./oxygen_xls.svg'                         ,'oxygen ext xls');
+l.a('./oxygen_ppt.svg'                         ,'oxygen ext ppt');
+l.a('./oxygen_pdf.svg'                         ,'oxygen ext pdf');
+l.a('./oxygen_epub.svg'                        ,'oxygen ext epub libro');
+l.a('./oxygen_db.svg'                          ,'oxygen ext db');
+l.a('./oxygen_zip.svg'                         ,'oxygen ext zip');
+l.a('./oxygen_hex.svg'                         ,'oxygen ext hex');
+l.a('./oxygen_carp.svg'                        ,'oxygen carpeta');
+l.a('./oxygen_libro.svg'                       ,'oxygen libro realista');
+l.a('./oxygen_pqt.svg'                         ,'oxygen paquete sombra realista');
+l.a('./oxygen_cd.svg'                          ,'oxygen cd dvd sombra realista');
+l.a('./oxygen_boli.svg'                        ,'oxygen bolígrafo realista');
+l.a('./oxygen_pluma_estilog.svg'               ,'oxygen pluma estilográfica sombra realista');
+l.a('./oxygen_firma.svg'                       ,'oxygen bolígrafo sombra realista');
+l.a('./oxygen_info.svg'                        ,'oxygen información azul sombra');
+l.a('./oxygen_persona.svg'                     ,'oxygen persona sombra');
+
+l.a('./perro_00.svg'                           ,'perro animal 00');
+l.a('./perro_01.svg'                           ,'perro animal');
+l.a('./perro_02.svg'                           ,'perro animal');
+l.a('./perro_03.svg'                           ,'perro animal');
+l.a('./punto_mira_00.svg'                      ,'punto mira 00');
+l.a('./punto_mira_1_00.svg'                    ,'punto mira 00');
+l.a('./punto_mira_2_00.svg'                    ,'punto mira 00');
+l.a('./punto_mira_3_00.svg'                    ,'punto mira 00');
+l.a('./punto_mira_4_00.svg'                    ,'punto mira 00');
+l.a('./punto_mira_5_00.svg'                    ,'punto mira 00');
+l.a('./punto_mira_6_00.svg'                    ,'punto mira 00');
+l.a('./punto_mira_7_00.svg'                       ,'punto mira 00');
+l.a('./punto_mira_rojo.svg'                    ,'punto mira rojo');
+l.a('./diana_flecha_00.svg'                    ,'diana flecha 00');
+l.a('./diana_flecha.svg'                       ,'diana flecha rojo blanco');
+l.a('./diana_5colores.svg'                     ,'diana blanco negro azul rojo amarillo');
+l.a('./diana_dardos.svg'                       ,'diana rojo verde amarillo negro');
+l.a('./diana_num.svg'                          ,'diana rojo verde blanco negro');
+l.a('./diana_roja_perspectiva.svg'             ,'diana rojo blanco flecha');
+l.a('./diana_perspectiva_flecha.svg'           ,'diana amarillo rojo azul negro blanco flecha');
+l.a('./diana_perspectiva_dardo.svg'            ,'diana rojo negro blanco dardo');
+
+l.a('./caballo_00.svg'                         ,'caballo animal 00');
+l.a('./cabeza_caballo_00.svg'                  ,'caballo animal 00');
+l.a('./cabeza_caballo_crin_par_00.svg'         ,'caballo animal 00');
+l.a('./bici_00.svg'                            ,'bicicleta 00');
+l.a('./bici_bas_00.svg'                        ,'bicicleta 00');
+l.a('./bici_mtb_00.svg'                        ,'bicicleta mtb btt 00');
+l.a('./moto_bas_00.svg'                        ,'moto 00');
+l.a('./moto_car_00.svg'                        ,'moto 00');
+l.a('./moto_vespa_gts_300.svg'                 ,'moto 00');
+l.a('./coche_frontal_00.svg'                   ,'coche 00');
+l.a('./logo_mazda_00.svg'                      ,'logo coche mazda 00');
+l.a('./logo_ford_mustang_00.svg'               ,'logo coche mustang caballo animal 00');
+l.a('./logo_ford_mustang_01.svg'               ,'logo coche mustang caballo animal');
+l.a('./silueta_ford_mustang_00.svg'            ,'coche mustang 00');
+
+l.a('./logo_bitcoin_btc.svg'                   ,'logo bitcoin naranja');
+l.a('./logo_bitcoincash_bch.svg'               ,'logo bitcoin verde');
+l.a('./logo_bitcoincashabc_bcha.svg'           ,'logo bitcoin naranja');
+l.a('./logo_bitcoincashsv_bsv.svg'             ,'logo bitcoin naranja');
+
+l.a('./bomba_antigua_00.svg'                   ,'peligro bomba 00');
+l.a('./bomba_antigua_01.svg'                   ,'peligro bomba');
+l.a('./bomba_granada_00.svg'                   ,'peligro bomba 00');
+l.a('./bomba_granada_redo_00.svg'              ,'peligro bomba 00');
+l.a('./gafas_oscuras_00.svg'                   ,'gafas 00');
+l.a('./gafas_inclinadas_00.svg'                ,'gafas 00');
+l.a('./gafas_inclinadas_01.svg'                ,'gafas');
+l.a('./maletin_00.svg'                         ,'maletin 00');
+l.a('./cartel_entrada_00.svg'                  ,'cartel 00');
+l.a('./cartel_no_molesten_00.svg'              ,'cartel 00');
+
+l.a('./gota_agua_00.svg'                       ,'gota agua 00');
+l.a('./gota_agua_azul.svg'                     ,'gota agua azul');
+
+l.a('./vaso_agua_u_00.svg'                     ,'vaso agua 00');
+l.a('./vaso_agua_u_azul.svg'                   ,'vaso agua azul');
+l.a('./vaso_agua_vc_00.svg'                    ,'vaso agua 00');
+
+l.a('./botella_agua_00.svg'                    ,'botella agua 00');
+l.a('./botella_agua_deporte_00.svg'            ,'botella agua deporte 00');
+l.a('./botella_agua_bici_00.svg'               ,'botella agua deporte bicicleta 00');
+l.a('./botella_cerveza_00.svg'                 ,'botella cerveza 00');
+l.a('./botella_leche_00.svg'                   ,'botella leche 00');
+l.a('./botella_rota.svg'                       ,'botella');
+
+l.a('./markdown_00.svg'                        ,'ext md markdown texto 00');
+l.a('./flecha_hd_00.svg'                       ,'flecha 00');
+l.a('./flecha_4_hd_00.svg'                     ,'flecha 00');
+
+l.a('./hormiga.svg'                            ,'hormiga animal realista');
+l.a('./mariquita_roja.svg'                     ,'mariquita animal rojo realista');
+l.a('./tierra_europa_africa_liso_00.svg'       ,'tierra 00');
+l.a('./tierra_europa_africa_liso.svg'          ,'tierra');
+l.a('./tierra_europa_africa_simple.svg'        ,'tierra');
+
+l.a('./estrella_5_00.svg'                      ,'estrella 00');
+l.a('./estrella_marcador_azul.svg'             ,'estrella marcador azul');
+l.a('./estrella_5p_00.svg'                     ,'estrella 00');
+l.a('./estrella_naranja.svg'                   ,'estrella naranja');
+l.a('./estrella_sonrisa.svg'                   ,'estrella amarillo');
+l.a('./estrella_plata_3d.svg'                  ,'estrella');
+
+l.a('./bombilla_incand_transp_00.svg'          ,'bombilla luz 00');
+l.a('./bombilla_00.svg'                        ,'bombilla luz 00');
+l.a('./bombilla_amarilla.svg'                  ,'bombilla luz amarillo');
+l.a('./bombilla_incandescente.svg'             ,'bombilla luz amarillo realista');
+l.a('./bombilla_bajo_consumo.svg'              ,'bombilla luz blanco realista');
+l.a('./led_rojo.svg'                           ,'led rojo luz');
+l.a('./led_azul.svg'                           ,'led azul luz');
+l.a('./ojo_reflejo.svg'                        ,'ojo reflejo gris');
+l.a('./ojo_azul.svg'                           ,'ojo azul');
+
+l.a('./tux_silueta_espalda_00.svg'             ,'tux animal 00');
+l.a('./tux_bn.svg'                             ,'tux blanco negro');
+l.a('./tux_plano.svg'                          ,'tux blanco negro naranja');
+l.a('./tux_abnd.svg'                           ,'tux blanco negro amarillo sombra');
+l.a('./tux_ovalado.svg'                        ,'tux blanco negro amarillo sombra');
+l.a('./tux_redondo.svg'                        ,'tux blanco negro amarillo sombra');
+l.a('./tux_peque.svg'                          ,'tux blanco negro amarillo');
+l.a('./tux_esquina.svg'                        ,'tux blanco negro amarillo azul');
+l.a('./tux_triste.svg'                         ,'tux blanco negro amarillo gesto triste azul');
+l.a('./tux_guino.svg'                          ,'tux blanco negro amarillo gesto guiño');
+l.a('./tux_indio.svg'                          ,'tux blanco negro amarillo naranja oficio indio pluma');
+l.a('./tux_caballero_sombrero.svg'             ,'tux blanco negro amarillo oficio caballero sombrero');
+l.a('./tux_policia.svg'                        ,'tux blanco negro amarillo oficio policía gorra');
+l.a('./tux_ninja.svg'                          ,'tux blanco negro oficio ninja rojo');
+l.a('./tux_enfermero.svg'                      ,'tux blanco negro amarillo oficio enfermero rojo verde');
+l.a('./tux_cocinero.svg'                       ,'tux blanco negro amarillo oficio cocinero azul');
+l.a('./tux_hola.svg'                           ,'tux blanco negro naranja mano gesto hola');
+l.a('./tux_duerme.svg'                         ,'tux blanco negro amarillo gesto dormir sombra');
+l.a('./tux_asustado.svg'                       ,'tux blanco negro amarillo gesto emoción asustado');
+l.a('./tux_abrigo.svg'                         ,'tux blanco negro amarillo gesto emoción frío abrigo');
+l.a('./tux_alegre.svg'                         ,'tux blanco negro naranja gesto emoción alegre sombra');
+l.a('./tux_levanta_dedo.svg'                   ,'tux blanco negro naranja mano gesto voy');
+
+document.getElementById('lista').innerHTML = l.s();
+
+// VARIABLES
+const rangeInput = document.querySelector('input[type = "range"]');
+const imageList = document.querySelector('.image-list');
+const searchInput = document.querySelector('input[type="search"]');
+const btns = document.querySelectorAll('.view-options button');
+const cont = document.getElementById('cont');
+const imageListItems = document.querySelectorAll('.image-list li');
+const captions = document.querySelectorAll('.image-list figcaption p:first-child');
+const myArray = [];
+let counter = 1;
+const active = 'active';
+const listView = 'list-view';
+const gridView = 'grid-view';
+const dNone = 'd-none';
+
+// SET VIEW
+for (const btn of btns) {
+  btn.addEventListener('click', function() {
+    const parent = this.parentElement;
+    document.querySelector('.view-options .active').classList.remove(active);
+    parent.classList.add(active);
+    this.disabled = true;
+    document.querySelector('.view-options [class^="show-"]:not(.active) button').disabled = false;
+
+    if (parent.classList.contains('show-list')) {
+      parent.previousElementSibling.previousElementSibling.classList.add(dNone);
+      imageList.classList.remove(gridView);
+      imageList.classList.add(listView);
+    } else {
+      parent.previousElementSibling.classList.remove(dNone);
+      imageList.classList.remove(listView);
+      imageList.classList.add(gridView);
+    }
+  });
+}
+
+// SET THUMBNAIL VIEW - CHANGE CSS VARIABLE
+rangeInput.addEventListener('input', function() {
+  document.documentElement.style.setProperty('--minRangeValue',`${this.value}px`);
+});
+
+// SEARCH FUNCTIONALITY
+for (const caption of captions) {
+  let s = caption.innerText;
+  let n = s.indexOf('\n');
+  let t = s.substring(n+1);
+  myArray.push({
+    id: counter++,
+    text: s,
+    tag: t
+  });
+//  console.log(`caption[${counter}]=${s}/${t}`);
+}
+
+searchInput.addEventListener('keyup', keyupHandler);
+
+function keyupHandler() {
+  for (const item of imageListItems) {
+    item.classList.add(dNone);
+  }
+  let sSearch = this.value;
+  let sTag = '';
+  if (sSearch.includes(' ')) {
+    const n = sSearch.indexOf(' ');
+    sSearch = sSearch.substring(0, n);
+    sTag = this.value.substring(n);
+//    console.log(`sSearch=${sSearch} sTag=${sTag}`);
+  }
+  const filteredArray = myArray.filter(el => el.text.includes(sSearch) && (!sTag || etqEn(sTag, el.tag)) );
+  if (filteredArray.length > 0) {
+    for (const el of filteredArray) {
+      document.querySelector(`.image-list li:nth-child(${el.id})`).classList.remove(dNone);
+    }
+  }
+  cont.innerHTML = filteredArray.length;
+}
+
+cont.innerText = imageListItems.length;
+//document.body.style.color = '#00d';
+document.documentElement.style.setProperty('--black','#00d');
+</script></body></html>

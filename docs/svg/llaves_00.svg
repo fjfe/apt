@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="-44 0 206 206" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(-50.985 -63.34)" fill="none" stroke="#000">
+  <path transform="rotate(233.96)" d="m-125.04 1.4576a33.081 33.36 0 0 1 8.9426 42.137 33.081 33.36 0 0 1-39.725 15.877 33.081 33.36 0 0 1-22.11-36.875" stroke-linecap="round" stroke-linejoin="round" stroke-width="9.1101" style="paint-order:normal"/>
+  <g transform="rotate(-11.692,212.71,967.36)">
+   <path transform="rotate(175.15)" d="m-265.36-192.71a33.081 33.36 0 0 1 14.165 39.075 33.081 33.36 0 0 1-34.629 22.614 33.081 33.36 0 0 1-29.563-29.02 33.081 33.36 0 0 1 21.485-35.518" stroke-linejoin="round" stroke-width="8" style="paint-order:normal"/>
+   <path d="m310.86 165.96v81.852c-2.0292 4.4045 0 0-15.2 17.341-13.545-12.293-11.262-6.673-11.423-19.283l-8.0788-9.4377 6.0591-8.9085-6.0591-10.496 6.0591-10.496-6.0591-10.496 6.0591-10.496v-19.546" stroke-linejoin="round" stroke-width="6.9896" style="paint-order:normal"/>
+   <path d="m300.99 177.16v59.867" stroke-linecap="round" stroke-width="5"/>
+   <path transform="rotate(219.99)" d="m-308.94 81.224a11.027 11.12 0 0 1 11.297 10.836 11.027 11.12 0 0 1-10.742 11.396 11.027 11.12 0 0 1-11.305-10.828 11.027 11.12 0 0 1 10.734-11.404" stroke-linejoin="round" stroke-width="3" style="paint-order:normal"/>
+  </g>
+  <g transform="rotate(13.604,183.64,-684.44)">
+   <path transform="rotate(175.15)" d="m-265.36-192.71a33.081 33.36 0 0 1 13.622 40.591 33.081 33.36 0 0 1-37.248 20.626" stroke-linejoin="round" stroke-width="8" style="paint-order:normal"/>
+   <path d="m310.86 165.96v81.852c-2.0292 4.4045 0 0-15.2 17.341-13.545-12.293-11.262-6.673-11.423-19.283l-8.0788-9.4377 6.0591-8.9085-6.0591-10.496 6.0591-10.496-6.0591-10.496 6.0591-10.496v-19.546" stroke-linejoin="round" stroke-width="6.9896" style="paint-order:normal"/>
+   <path d="m300.99 177.16v59.867" stroke-linecap="round" stroke-width="5"/>
+   <path transform="rotate(175.15)" d="m-304.72-188.99a33.081 33.36 0 0 1 10.578-6.4755" stroke-linejoin="round" stroke-width="8" style="paint-order:normal"/>
+  </g>
+ </g>
+</svg>
