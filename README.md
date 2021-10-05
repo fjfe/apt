@@ -11,8 +11,8 @@ Apuntes
 [nota_Markdown_Pygments.htm](https://fjfe.github.io/apt/nota_Markdown_Pygments.htm)  
 [tutorial-Git-GitHub.htm](https://fjfe.github.io/apt/tutorial-Git-GitHub.htm)
 
-**svg**  
+Iconos **svg**  
 [svg/](https://fjfe.github.io/apt/svg/)
 
 **Pruebas**  
-[Web2Img](https://fjfe.github.io/apt/pru-Web2Img/)
+[Web2Img](https://fjfe.github.io/apt/pru-Web2Img/) _Mal_
