@@ -12,7 +12,7 @@ Apuntes
 [tutorial-Git-GitHub.htm](https://fjfe.github.io/apt/tutorial-Git-GitHub.htm)
 
 **svg**  
-[svg](https://fjfe.github.io/apt/svg/_visor.htm)
+[svg](https://fjfe.github.io/apt/svg/index.html)
 
 **Pruebas**  
 [Web2Img](https://fjfe.github.io/apt/pru-Web2Img/ver.htm)
