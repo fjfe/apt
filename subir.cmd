@@ -1,3 +1,3 @@
 git add .
-git commit -m "05-10-2021 +otros"
+git commit -m "06-10-2021 +2 svg"
 git push -u origin master
