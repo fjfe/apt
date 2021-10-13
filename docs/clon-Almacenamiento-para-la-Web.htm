@@ -33,7 +33,7 @@ pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5p
 <h2 id="que_usar">¿Qué debo usar?</h2>
 <p>Recomendación general para almacenar recursos:</p>
 <ul>
-<li>Para obtener los recursos de red necesarios para cargar su aplicación y contenido basado en archivos, use la <a href="https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api"><strong>API de almacenamiento en caché</strong></a> (parte de los <a href="https://developers.google.com/web/fundamentals/primers/service-workers">service workers</a> [trabajadores del servicio]).</li>
+<li>Para obtener los recursos de red necesarios para cargar su aplicación y contenido basado en archivos, use la <a href="./clon-API-Cache-Guia-rapida.htm"><strong>API de almacenamiento en caché</strong></a> (parte de los <a href="https://developers.google.com/web/fundamentals/primers/service-workers">service workers</a> [trabajadores del servicio]).</li>
 <li>API de almacenamiento en caché <a href="https://developer.mozilla.org/docs/Web/API/IndexedDB_API"><strong>IndexedDB</strong></a> (con un <a href="https://www.npmjs.com/package/idb">contenedor de promesas</a>).</li>
 </ul>
 <p>IndexedDB y la API de almacenamiento en caché son compatibles con todos los navegadores modernos. Ambos son asincrónicos y no bloquearán el hilo principal. Son accesibles desde el OBJETO <code>window</code>, web workers, y service workers, lo que facilita su uso en cualquier parte de su código.</p>
@@ -63,7 +63,7 @@ pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5p
 <h2 id="como_comp">¿Cómo puedo comprobar la cantidad de almacenamiento disponible?</h2>
 <p>En <a href="https://caniuse.com/#feat=mdn-api_storagemanager">muchos navegadores</a>, puede usar la <a href="https://developer.mozilla.org/docs/Web/API/StorageManager/estimate">API de StorageManager</a> para determinar la cantidad de almacenamiento disponible para el origen y cuánto almacenamiento está usando. Informa el número total de bytes utilizados por IndexedDB y la API de caché, y permite calcular el espacio de almacenamiento restante aproximado disponible.</p>
 
-<pre class="hljs language-javascript"><code><span class="hljs-keyword">if</span> (navigator.<span class="hljs-property">storage</span> &amp;amp;&amp;amp; navigator.<span class="hljs-property">storage</span>.<span class="hljs-property">estimate</span>) {
+<pre class="hljs language-javascript"><code><span class="hljs-keyword">if</span> (navigator.<span class="hljs-property">storage</span> &amp;&amp; navigator.<span class="hljs-property">storage</span>.<span class="hljs-property">estimate</span>) {
   <span class="hljs-keyword">const</span> quota = <span class="hljs-keyword">await</span> navigator.<span class="hljs-property">storage</span>.<span class="hljs-title function_">estimate</span>();
   <span class="hljs-comment">// quota.usage -&gt; Number of bytes used.</span>
   <span class="hljs-comment">// quota.quota -&gt; Maximum number of bytes available.</span>
