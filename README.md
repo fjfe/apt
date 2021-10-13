@@ -4,7 +4,7 @@ Apuntes
 
 **Git Github Jekyll Markdown Netlify WebStorage Web2Img**  
 [clon-151003-Publicar-pagina-web-en-GitHub-Pages.htm](https://fjfe.github.io/apt/clon-151003-Publicar-pagina-web-en-GitHub-Pages.htm)  
-[clon-Almacenamiento-para-la-Web.htm](https://fjfe.github.io/apt/clon-Almacenamiento-para-la-Web.htm)  
+[clon-Almacenamiento-para-la-Web.htm](https://fjfe.github.io/apt/clon-Almacenamiento-para-la-Web.htm) (WebStorage)  
 [clon-API-Cache-Guia-rapida.htm](https://fjfe.github.io/apt/clon-API-Cache-Guia-rapida.htm)  
 [clon-Crea-sitio-web-con-Jekyll-y-GitHubPages.htm](https://fjfe.github.io/apt/clon-Crea-sitio-web-con-Jekyll-y-GitHubPages.htm)  
 [clon-Netlify-Drop-publicar-web-gratis-con-arrastrar-y-soltar.htm](https://fjfe.github.io/apt/clon-Netlify-Drop-publicar-web-gratis-con-arrastrar-y-soltar.htm)  
