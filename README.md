@@ -2,11 +2,12 @@
 
 Apuntes
 
-**Git Github Jekyll Markdown Netlify WebStorage Web2Img**  
+**Git Github Jekyll Markdown Netlify Svg WebStorage Web2Img**  
 [clon-151003-Publicar-pagina-web-en-GitHub-Pages.htm](https://fjfe.github.io/apt/clon-151003-Publicar-pagina-web-en-GitHub-Pages.htm)  
 [clon-Almacenamiento-para-la-Web.htm](https://fjfe.github.io/apt/clon-Almacenamiento-para-la-Web.htm) (WebStorage)  
 [clon-API-Cache-Guia-rapida.htm](https://fjfe.github.io/apt/clon-API-Cache-Guia-rapida.htm)  
 [clon-Crea-sitio-web-con-Jekyll-y-GitHubPages.htm](https://fjfe.github.io/apt/clon-Crea-sitio-web-con-Jekyll-y-GitHubPages.htm)  
+[clon-Escalar-SVG.htm](https://fjfe.github.io/apt/clon-Escalar-SVG.htm)  
 [clon-Netlify-Drop-publicar-web-gratis-con-arrastrar-y-soltar.htm](https://fjfe.github.io/apt/clon-Netlify-Drop-publicar-web-gratis-con-arrastrar-y-soltar.htm)  
 [clon-Publicar-web-gratis-usando-Netlify-y-Github.htm](https://fjfe.github.io/apt/clon-Publicar-web-gratis-usando-Netlify-y-Github.htm)  
 [clon-Web2Img-Camuflar-web-en-imagen-PNG.htm](https://fjfe.github.io/apt/clon-Web2Img-Camuflar-web-en-imagen-PNG.htm)  
