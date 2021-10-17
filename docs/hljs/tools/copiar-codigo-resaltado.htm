@@ -7,7 +7,7 @@
     Origen:     highlight.js    https://highlightjs.org/
     Bondades:   Resalta (¿y detecta?) los 196 lenguajes conocidos por highlight.js
                 Sin dependencias externas.
-    Autor:      Paco Fdez    10/10/2021 - 12/10/2021
+    Autor:      Paco Fdez    10/10/2021 - 17/10/2021
 -->
 <style>
 body{
@@ -125,12 +125,16 @@ function cpy(s) {cp(e(s).innerText);} // Copiar texto del elemento con id s
 function cph(s) {cp(e(s).innerHTML);} // Copiar HTML  del elemento con id s
 function copyres() {cp(e('res').innerHTML.replace(/<pre id="pr2"/, '<pre').replace(/<code id="co2"/, '<code'));}
 function htmlEscape(s) {return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');}
-function co1KeyUp() {
+function cambios() {
   let s1 = co1.value;
   let n1 = s1.length;
   let s2 = '';
   let n2 = 0;
-  pr2.className = '';
+  let sLeng = lleng.options[lleng.selectedIndex].text;
+  if ('(Auto detecta)'==sLeng)
+    pr2.className = '';
+  else
+    pr2.className = 'hljs language-'+sLeng;
   co2.innerHTML = htmlEscape(s1);
   hljs.highlightElement(pr2);
   if (0==n1)
@@ -148,7 +152,8 @@ function inicia(){
   ti2.innerHTML = document.title;
   ic2.src = ico.href;
   ic3.src = ico.href;
-  co1.addEventListener('keyup', co1KeyUp);
+  co1.addEventListener('keyup', cambios);
+  lleng.addEventListener('change', cambios);
   cop.addEventListener('click', copyres);
   shortcut.add('Ctrl+1', copyres);
 }
@@ -199,8 +204,10 @@ window.addEventListener('load',inicia);
   <div>
     Código a resaltar:
     <span class="peq">(<b id="nb1">0</b> bytes)</span>
-    <span class="emo fld"
-          title="Pegar desde el portapapeles el código fuente"><b class="tec">Ctrl+V</b> 📋<b class="fve">⤵</b></span>
+    <span class="fld">Lenguaje: <select id="lleng" class="languages"><option value="">(Auto detecta)</option></select>&emsp;
+      <span class="emo"
+            title="Pegar desde el portapapeles el código fuente"><b class="tec">Ctrl+V</b> 📋<b class="fve">⤵</b></span>
+    </span>
   </div>
   <textarea id="co1" autofocus spellcheck="false" placeholder="Escribe aquí el código fuente..."></textarea>
 
@@ -3789,5 +3796,26 @@ begin:/[-+*/=%^~]|&&?|\|\|?|!=?|<(?:=>?|<|>)?|>[>=]?/,relevance:0}]}}})());
 
 //hljs.highlightAll();
 shl.innerText = "pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{background:#eee;color:#000}.hljs-comment{color:#9b9}.hljs-quote,.hljs-variable{color:#0e0}.hljs-built_in,.hljs-keyword,.hljs-name,.hljs-selector-tag,.hljs-tag{color:#e00}.hljs-addition,.hljs-attribute,.hljs-literal,.hljs-section,.hljs-string,.hljs-template-tag,.hljs-template-variable,.hljs-title,.hljs-type{color:#4b0}.hljs-deletion,.hljs-meta,.hljs-selector-attr,.hljs-selector-pseudo{color:#39b}.hljs-doctag{color:grey}.hljs-attr{color:#00e}.hljs-bullet,.hljs-link,.hljs-symbol{color:#0ae}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}";
+hljs.listLanguages().forEach(function(u) {
+  lleng.innerHTML += '<option>'+u+'</option>';
+});
+function sortSelect(e) {
+  let at = new Array();
+  for (let i=0;i<e.options.length;i++) {
+    at[i] = new Array();
+    at[i][0] = e.options[i].text;
+    at[i][1] = e.options[i].value;
+  }
+  at.sort();
+  while (e.options.length > 0) {
+    e.options[0] = null;
+  }
+  for (var i=0;i<at.length;i++) {
+    var op = new Option(at[i][0], at[i][1]);
+    e.options[i] = op;
+  }
+  return;
+}
+sortSelect(lleng);
 </script>
 </body></html>
