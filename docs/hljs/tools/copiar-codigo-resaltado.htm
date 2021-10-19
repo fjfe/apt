@@ -96,9 +96,9 @@ a.close:hover   {color:#fff;text-decoration:none;}
 <style id="shl">
 </style>
 <script>
-const APLI = "ccr_";    // La uso como prefijo de cada item guardado en localStorage
-const LENG_AUTO = "(Auto detecta)";
-var nTab = 4;
+const APLI       = "ccr_";            // La uso como prefijo de cada item guardado en localStorage
+const LENG_AUTO  = "(Auto detecta)";  // Texto en el desplegable lleng para detectar automárticamente
+var   nTab       = 4;                 // Tamaño del tabulador en <pre>
 function e(s){return document.getElementById(s);}
 function getBrowserInfo() {
     var ua= navigator.userAgent, tem, 
@@ -249,11 +249,10 @@ function inicia(){
   e('style').checked = ('1'==getSto('bStyle', '0'));
   e('pre').checked   = ('1'==getSto('bPre',   '1'));
   e('code').checked  = ('1'==getSto('bCode',  '1'));
-  nTab = parseInt(getSto('nTab', '0'));
+  nTab = parseInt(getSto('nTab', '4'));
+  prenTab();
   e('tab').value = nTab;
   setLeng(getSto('cLeng', LENG_AUTO));
-
-  prenTab();
 }
 
 // ----- MAIN -----
