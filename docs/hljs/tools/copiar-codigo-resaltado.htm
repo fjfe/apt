@@ -1,13 +1,14 @@
 <!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>Resaltar código fuente</title>
 <link id="ico" rel="icon" href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjAgMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTUuNzA3IDYuMjkzYTEgMSAwIDAgMSAwIDEuNDE0TDMuNDE0IDEwbDIuMjkzIDIuMjkzYTEgMSAwIDEgMS0xLjQxNCAxLjQxNGwtMy0zYTEgMSAwIDAgMSAwLTEuNDE0bDMtM2ExIDEgMCAwIDEgMS40MTQgMHoiIGZpbGw9IiMzNTkzZmYiLz48cGF0aCBkPSJNMTIuMzE2IDMuMDUxYTEgMSAwIDAgMSAuNjMzIDEuMjY1bC00IDEyYTEgMSAwIDEgMS0xLjg5OC0uNjMybDQtMTJhMSAxIDAgMCAxIDEuMjY1LS42MzN6IiBmaWxsPSIjYmQ0YzAwIi8+PHBhdGggZD0iTTE0LjI5MyA2LjI5M2ExIDEgMCAwIDEgMS40MTQgMGwzIDNhMSAxIDAgMCAxIDAgMS40MTRsLTMgM2ExIDEgMCAxIDEtMS40MTQtMS40MTRMMTYuNTg2IDEwbC0yLjI5My0yLjI5M2ExIDEgMCAwIDEgMC0xLjQxNHoiIGZpbGw9IiMzNTkzZmYiLz48L3N2Zz4=">
 <!--
-    Resalta el código fuente tecleado y permite copiar el resultado al portapapeles.
+    Resalta el código fuente tecleado y permite copiar al portapapeles el resultado
+                  (resultado = código HTML con etiquetas+clases"hljs" para resaltar).
     Normalmente bastará con pulsar Ctrl+V y Alt+V para tener un buen resultado en el portapapeles.
 
     Origen:     highlight.js    https://highlightjs.org/
-    Bondades:   Resalta (¿y detecta?) los 196 lenguajes conocidos por highlight.js
+    Bondades:   (¿detecta y?) Resalta los 196 lenguajes conocidos por highlight.js
                 Sin dependencias externas.
-    Autor:      Paco Fdez    10/10/2021 - 18/10/2021
+    Autor:      Paco Fdez    10/10/2021 - 19/10/2021
 -->
 <style>
 body{
@@ -24,10 +25,12 @@ textarea{
   width:         99.4%;
   height:        10em;
 }
+#tab{width:2.6em;}
 .emo{font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "Android Emoji", Symbola, Verdana, Arial;}
 .fld{float:right}
 .fve{font-family:Verdana;}
 .icc{width:1em;height:auto;vertical-align:middle;}
+.neg{font-weight:bold;}
 .peq{font-size:80%;}
 .pde{cursor:default;}
 .pun{cursor:pointer;}
@@ -88,11 +91,14 @@ a.close:hover   {color:#fff;text-decoration:none;}
 /* ^^^----- Capa Modal -----^^^ */
 #fjfe{height:1.4em;width:auto;vertical-align:middle;}
 </style>
+<style id="spre">
+</style>
 <style id="shl">
 </style>
 <script>
-const APLI = "ccr_"; 			// La uso como prefijo de cada item guardado en localStorage
+const APLI = "ccr_";    // La uso como prefijo de cada item guardado en localStorage
 const LENG_AUTO = "(Auto detecta)";
+var nTab = 4;
 function e(s){return document.getElementById(s);}
 function getBrowserInfo() {
     var ua= navigator.userAgent, tem, 
@@ -135,7 +141,6 @@ function setSto(item, v) {  // Guarda APLI+item en localStorage
   localStorage.setItem(APLI + item, v);
 }
 function copyres() {
-//cp(e('res').innerHTML.replace(/<pre id="pr2"/, '<pre').replace(/<code id="co2"/, '<code'));
   let bHtml  = e('html').checked;
   let bStyle = e('style').checked;
   let bPre   = e('pre').checked;
@@ -147,22 +152,24 @@ function copyres() {
   s = c.innerHTML;
   if (!bCode)  s = s.replace(/<(code)\b.*?>/, '').replace(/<\/code>/, '');
   if (!bPre)   s = s.replace(/<(pre)\b.*?>/, '').replace(/<\/pre>/, '');
-  if (bStyle && !bHtml)  s = '<style>\n'+ shl.innerText +'\n</style>\n' + s;
+  if (bStyle && !bHtml)  s = '<style>\n'+ spre.innerText + '\n' + shl.innerText +'\n</style>\n' + s;
   if (bHtml)
     s = '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>Código ' + clase.innerText + ' resaltado</title>\n' +
-	    '<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAiklEQVR42mNkAAIjI6MTQMqcgQA4d+7cBCBViCzGCDXg/969e/FqdnZ2hhmyAEglkmUAULMhUO15ZENIMgCkRlBQEGYI2DskewEtTBiJNgCHlwarAcCAAoUyw/v37xOw8fEaAFUMUrgAzQAUMawGYFOI5iq4HG0MoNgLVAlEcqORqOyMBk4CDbAAAIyLrxEFKA5XAAAAAElFTkSuQmCC">\n' +
-	    ( bStyle ? ('<style>\n'+ shl.innerText +'\n</style>\n') : '' ) +
-		'</head>\n\n<body>\n' + s +
+      '<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAiklEQVR42mNkAAIjI6MTQMqcgQA4d+7cBCBViCzGCDXg/969e/FqdnZ2hhmyAEglkmUAULMhUO15ZENIMgCkRlBQEGYI2DskewEtTBiJNgCHlwarAcCAAoUyw/v37xOw8fEaAFUMUrgAzQAUMawGYFOI5iq4HG0MoNgLVAlEcqORqOyMBk4CDbAAAIyLrxEFKA5XAAAAAElFTkSuQmCC">\n' +
+      ( bStyle ? ('<style>\n'+ spre.innerText + '\n' + shl.innerText +'\n</style>\n') : '' ) +
+    '</head>\n\n<body>\n' + s +
         '\n</body>\n</html>\n';
   setSto('bHtml',  bHtml  ? '1':'0');      // Guardo bHtml en localStorage: 1=si 0=no
   setSto('bStyle', bStyle ? '1':'0');
   setSto('bPre',   bPre   ? '1':'0');
   setSto('bCode',  bCode  ? '1':'0');
+  setSto('nTab',   nTab.toString());
   setSto('cLeng',  lleng.options[lleng.selectedIndex].text);
   cp(s);
 }
+function prenTab() {spre.innerText = (nTab) ? 'pre{ tab-size: ' + nTab + '; }' : '';}
 function htmlEscape(s) {return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');}
-function cambios() {
+function cambios() {    // ⇐ Se han hecho cambios que afectan al resaltado visible (pr2)
   let s1 = co1.value;
   let n1 = s1.length;
   let s2 = '';
@@ -181,6 +188,8 @@ function cambios() {
   nb1.innerHTML = n1;
   s2 = '<code id="co2">' + pr2.innerHTML + '</code>';
   n2 = s2.length;
+  nTab = e('tab').value;
+  prenTab();
   pr2.innerHTML = s2;
   nb2.innerHTML = n2+31;
 }
@@ -191,15 +200,22 @@ function setLeng(sLeng){
        break;
     }
   }
+  cambios();
 }
 function lengAuto(){
   setLeng(LENG_AUTO);
+}
+function lengCSS(){
+  setLeng('css');
 }
 function lengJS(){
   setLeng('javascript');
 }
 function lengXML(){
   setLeng('xml');
+}
+function lengC(){
+  setLeng('c');
 }
 function clickTodo(){
   e('html').checked  = true;
@@ -220,9 +236,12 @@ function inicia(){
   ic3.src = ico.href;
   co1.addEventListener('keyup', cambios);
   lleng.addEventListener('change', cambios);
+  tab.addEventListener('change', cambios);
   auto.addEventListener('click', lengAuto);
+  css.addEventListener('click', lengCSS);
   js.addEventListener('click', lengJS);
   xml.addEventListener('click', lengXML);
+  c.addEventListener('click', lengC);
   todo.addEventListener('click', clickTodo);
   nada.addEventListener('click', clickNada);
   cop.addEventListener('click', copyres);
@@ -230,8 +249,11 @@ function inicia(){
   e('style').checked = ('1'==getSto('bStyle', '0'));
   e('pre').checked   = ('1'==getSto('bPre',   '1'));
   e('code').checked  = ('1'==getSto('bCode',  '1'));
+  nTab = parseInt(getSto('nTab', '0'));
+  e('tab').value = nTab;
   setLeng(getSto('cLeng', LENG_AUTO));
-//shortcut.add('Alt+V', copyres);
+
+  prenTab();
 }
 
 // ----- MAIN -----
@@ -239,22 +261,36 @@ window.addEventListener('load',inicia);
 </script>
 </head>
 
+<!-- Atajos Alt+ç usados:  accesskey="ç"
+ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890
+a c    hij l nop  st v x z         0
+-->
+
 <body>
   <h1>
     <img id="ic2" class="icc"> <span id="tit"> </span>
-    <a href="#verInfo"><img title="Info sobre este proceso" class="fld icc" src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTI0IDEyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImEiIHgxPSI0MTUiIHgyPSI0MTUiIHkxPSIyMzcuMDciIHkyPSI1ODAuODMiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBzdG9wLWNvbG9yPSIjODNkNWYwIiBvZmZzZXQ9IjAiLz48c3RvcCBzdG9wLWNvbG9yPSIjMWI4NWMwIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODcuODM0IC04Ni4xMDgpIHNjYWxlKC4zNjE2NykiIGQ9Ik01ODUuNzEgNDA5LjUxYzAgOTQuNjc3LTc2Ljc1MSAxNzEuNDMtMTcxLjQzIDE3MS40My05NC42NzcgMC0xNzEuNDMtNzYuNzUxLTE3MS40My0xNzEuNDMgMC05NC42NzcgNzYuNzUxLTE3MS40MyAxNzEuNDMtMTcxLjQzIDk0LjY3NyAwIDE3MS40MyA3Ni43NTEgMTcxLjQzIDE3MS40M3oiIGZpbGw9InVybCgjYSkiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjxwYXRoIGQ9Ik00Ni40MDQgNTkuNzg4Yy0xLjI1MSAwIC41MDcuMTUzLTIuNzI1LjQ1OHYtNS44MzRsMjguODY0LTYuNDIuNjI2LjM0M3YzOS43MzJjMCA0LjUxLjg4NiA3LjMgMi42NTggOC4zNyAxLjM1NS45OTMuNDMgMS42MDUgNS4yMjYgMS44MzR2NS43MmgtMzh2LTUuNzJjNS45NDMtLjIzIDUuNTkyLTEuMDcgNi45NDYtMi41MjIgMS4xNDctMS4yMjMgMS43Mi0zLjc4MyAxLjcyLTcuNjgyVjY2Ljc4YzAtNC4yOC0xLjMwMy02LjU3My0zLjkwOS02Ljg3OWE3Ljg1NSA3Ljg1NSAwIDAgMC0xLjQwNy0uMTE0TTYyIDE5YzYgMCAxMSA1IDExIDExcy01IDExLTExIDExLTExLTUtMTEtMTEgNS0xMSAxMS0xMXoiIGZpbGw9IiNmZmYiLz48L3N2Zz4="></a>
+    <a href="#verInfo" accesskey="i"><img title="Info sobre este proceso" class="fld icc" src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTI0IDEyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImEiIHgxPSI0MTUiIHgyPSI0MTUiIHkxPSIyMzcuMDciIHkyPSI1ODAuODMiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBzdG9wLWNvbG9yPSIjODNkNWYwIiBvZmZzZXQ9IjAiLz48c3RvcCBzdG9wLWNvbG9yPSIjMWI4NWMwIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODcuODM0IC04Ni4xMDgpIHNjYWxlKC4zNjE2NykiIGQ9Ik01ODUuNzEgNDA5LjUxYzAgOTQuNjc3LTc2Ljc1MSAxNzEuNDMtMTcxLjQzIDE3MS40My05NC42NzcgMC0xNzEuNDMtNzYuNzUxLTE3MS40My0xNzEuNDMgMC05NC42NzcgNzYuNzUxLTE3MS40MyAxNzEuNDMtMTcxLjQzIDk0LjY3NyAwIDE3MS40MyA3Ni43NTEgMTcxLjQzIDE3MS40M3oiIGZpbGw9InVybCgjYSkiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjxwYXRoIGQ9Ik00Ni40MDQgNTkuNzg4Yy0xLjI1MSAwIC41MDcuMTUzLTIuNzI1LjQ1OHYtNS44MzRsMjguODY0LTYuNDIuNjI2LjM0M3YzOS43MzJjMCA0LjUxLjg4NiA3LjMgMi42NTggOC4zNyAxLjM1NS45OTMuNDMgMS42MDUgNS4yMjYgMS44MzR2NS43MmgtMzh2LTUuNzJjNS45NDMtLjIzIDUuNTkyLTEuMDcgNi45NDYtMi41MjIgMS4xNDctMS4yMjMgMS43Mi0zLjc4MyAxLjcyLTcuNjgyVjY2Ljc4YzAtNC4yOC0xLjMwMy02LjU3My0zLjkwOS02Ljg3OWE3Ljg1NSA3Ljg1NSAwIDAgMC0xLjQwNy0uMTE0TTYyIDE5YzYgMCAxMSA1IDExIDExcy01IDExLTExIDExLTExLTUtMTEtMTEgNS0xMSAxMS0xMXoiIGZpbGw9IiNmZmYiLz48L3N2Zz4="></a>
   </h1>
 
 <div id="verInfo" class="modalDialog"><div>    <!-- Capa modal -->
-  <a href="#close" title="Cerrar" class="close">X</a>
+  <a href="#close" title="Cerrar" class="close" accesskey="0">X</a>
   <h2><img id="ic3" class="icc"> <span id="ti2"></span> &nbsp;<span class="peq">con <a target="_blank" href="https://highlightjs.org/"> <img class="icc" src="data:image/png;base64,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">
     <u>highlight.js</u></a> <span class="peq">11.2</span></span>
   </h2>
   <p>
     Resalta el código fuente tecleado y copia fácilmente el resultado
-    <i class="peq">(código HTML con las clases definidas en highlight.js)</i> al portapapeles.<br>
+    <i class="peq">(código HTML con las clases CSS "hljs" definidas por highlight.js)</i> al portapapeles.<br>
     Si tienes copiado en el portapapeles el código fuente, normalmente bastará con pulsar
-    <b class="tec">Ctrl+V</b> y <b class="tec">Alt+V</b> para obtener un buen resultado en el portapapeles.
+    <b class="tec">Ctrl+V</b> y <b class="tec">Alt+V</b> para obtener un buen resultado en el portapapeles.<br>
+    <span class="peq">Si falla la detección automática,</span> puedes especificar el lenguaje en el desplegable.<br>
+    Puedes envolver el código resaltado con <i class="neg peq">más</i> elementos
+    (<i class="neg peq">html</i>, <i class="neg peq">style,</i> pre, code)
+    <span class="peq">para conseguir un resultado <i class="neg">más</i> autónomo</span>.<br>
+  </p>
+  <p>
+    Dispones de bastantes atajos de teclado
+    (<b>Alt</b>+<u class="neg">T</u> <span class="peq">donde <u>T</u> son las <i>letras subrayadas</i></span>)
+    para facilitar la tarea.
   </p>
   <p>
     Se utiliza el código de highlight.js incrustado en esta página.<br>
@@ -262,12 +298,14 @@ window.addEventListener('load',inicia);
     Resalta los 196 lenguajes conocidos por highlight.js, sin dependencias externas.
   </p>
   <p>
-    En caso de necesidad, puedes recurrir a <i>la herramienta del desarrollador highlight.js</i>, que es más versátil:<br>
+    En caso de necesidad, puedes recurrir a <i>la herramienta del desarrollador highlight.js</i>
+    (que es más versátil ☺
+    <span class="peq"> pero algo más incómoda ☹)</span>:<br>
     <a class="url" target="_blank" href="developer.html"><img class="icc" src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjAgMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGgyMHYyMEgweiIgZmlsbD0iIzYwMCIvPjxwYXRoIGQ9Ik01LjcwNyA2LjI5M2ExIDEgMCAwIDEgMCAxLjQxNEwzLjQxNCAxMGwyLjI5MyAyLjI5M2ExIDEgMCAxIDEtMS40MTQgMS40MTRsLTMtM2ExIDEgMCAwIDEgMC0xLjQxNGwzLTNhMSAxIDAgMCAxIDEuNDE0IDB6IiBmaWxsPSIjMzU5M2ZmIi8+PHBhdGggZD0iTTEyLjMxNiAzLjA1MWExIDEgMCAwIDEgLjYzMyAxLjI2NWwtNCAxMmExIDEgMCAxIDEtMS44OTgtLjYzMmw0LTEyYTEgMSAwIDAgMSAxLjI2NS0uNjMzeiIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0xNC4yOTMgNi4yOTNhMSAxIDAgMCAxIDEuNDE0IDBsMyAzYTEgMSAwIDAgMSAwIDEuNDE0bC0zIDNhMSAxIDAgMSAxLTEuNDE0LTEuNDE0TDE2LjU4NiAxMGwtMi4yOTMtMi4yOTNhMSAxIDAgMCAxIDAtMS40MTR6IiBmaWxsPSIjMzU5M2ZmIi8+PC9zdmc+"></a>
     &emsp; <i class="peq">(He clonado aquí sus archivos imprescindibles.)</i>
   </p>
   <p>
-    <span class="peq">Desarrollo: 10/10/2021 - 12/10/2021</span>
+    <span class="peq">Desarrollo: 10/10/2021 - 19/10/2021</span>
     <span class="fld uni">
       <a target="_blank" href="../clon-Usa-highlight-js-para-resaltar-codigo.htm"><img class="icc" src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTk2LDBIMTZDNy4xNjQsMCwwLDcuMTY0LDAsMTZ2OTZjMCw4LjgzNiw3LjE2NCwxNiwxNiwxNmg0NHYtOCAgICBIMTZjLTQuNDA2LDAtOC0zLjU4Ni04LThWMTZjMC00LjQxNCwzLjU5NC04LDgtOGg4MGM0LjQxNCwwLDgsMy41ODYsOCw4djQ3LjAzMWw4LThWMTZDMTEyLDcuMTY0LDEwNC44MzYsMCw5NiwweiIgZmlsbD0iIzU0NkU3QSIvPjxwYXRoIGQ9Ik0xMjUuNjU2LDcyTDEyMCw2Ni4zNDRjLTEuNTYzLTEuNTYzLTMuNjA5LTIuMzQ0LTUuNjU2LTIuMzQ0cy00LjA5NCwwLjc4MS01LjY1NiwyLjM0NGwtMzQuMzQ0LDM0LjM0NCAgYy0xLjU2MywxLjU2My02LjM0Miw3LjYwNS02LjM0NCw5LjY1Mkw2NCwxMjhsMTcuNjU2LTRjMCwwLDguMDk0LTQuNzgxLDkuNjU2LTYuMzQ0bDM0LjM0NC0zNC4zNDQgIEMxMjguNzgxLDgwLjE4OCwxMjguNzgxLDc1LjEyMSwxMjUuNjU2LDcyeiIgZmlsbD0iIzAzQTlGNCIvPjxwYXRoIGQ9Ik04OCwzMkgyNHYtOGg2NFYzMnogTTg4LDQ4SDI0di04aDY0VjQ4eiBNODgsNjRIMjR2LThoNjRWNjR6IE01Niw4MEgyNHYtOGgzMlY4MHoiIGZpbGw9IiNCMEJFQzUiLz48L3N2Zz4=">
         Antecedentes y notas.
@@ -281,7 +319,7 @@ window.addEventListener('load',inicia);
     Código a resaltar:
     <span class="peq">(<b id="nb1">0</b> bytes)</span>
     <span class="fld"><label accesskey="l" for="lleng"><u>L</u>enguaje:</label> <select id="lleng" class="languages"><option value="">(Auto detecta)</option></select>
-	<span class="peq"><u id="auto" class="pde" accesskey="a">a</u>/<u id="js" class="pde" accesskey="j">j</u>/<u id="xml" class="pde" accesskey="x">x</u></span> &emsp;
+      <span class="peq"><u id="auto" class="pde neg" accesskey="a">a</u>uto/<u id="css" class="pde neg" accesskey="c">c</u>ss/<u id="js" class="pde neg" accesskey="j">j</u>s/<u id="xml" class="pde neg" accesskey="x">x</u>ml/<u id="c" class="pde neg" accesskey="z">z</u>C</span>&emsp;
       <span class="emo"
             title="Pegar desde el portapapeles el código fuente"><b class="tec">Ctrl+V</b> 📋<b class="fve">⤵</b></span>
     </span>
@@ -292,11 +330,13 @@ window.addEventListener('load',inicia);
     Código <b id="clase"></b> resaltado:
     <span class="peq">(<b id="nb2">0</b> bytes)</span>
     <span class="fld">
-	  <span class="peq"><span id="todo" class="pde" accesskey="t"><u>T</u>odo</span>/<span id="nada" class="pde" accesskey="n"><u>N</u>ada</span></span>&nbsp;
-      <input type="checkbox" id="html" ><label accesskey="h" for="html" > <u>h</u>tml</label> &nbsp;
-      <input type="checkbox" id="style"><label accesskey="s" for="style"> <u>s</u>tyle</label> &nbsp;
-      <input type="checkbox" id="pre"  ><label accesskey="p" for="pre"  > <u>p</u>re</label> &nbsp;
-      <input type="checkbox" id="code" ><label accesskey="c" for="code" > <u>c</u>ode</label> &emsp;
+    <label for="tab">Tab:</label> <input type="number" id="tab" min="0" max="10">&emsp;
+    <span class="peq"><span id="todo" class="pde" accesskey="t"><u>T</u>odo</span>/<span id="nada" class="pde" accesskey="n"><u>N</u>ada</span></span>→
+      <input type="checkbox" id="html" ><label accesskey="h" for="html" > <u>h</u>tml</label>&nbsp;
+      <input type="checkbox" id="style"><label accesskey="s" for="style"> <u>s</u>tyle</label>&nbsp;
+      <input type="checkbox" id="pre"  ><label accesskey="p" for="pre"  > <u>p</u>re</label>&nbsp;
+      <input type="checkbox" id="code" ><label accesskey="o" for="code" > c<u>o</u>de</label>&nbsp;
+      ☑<span class="peq">&lt;<span class="peq">resaltado</span>&gt;</span>&emsp;
       <span id="cop" class="pun emo" accesskey="v"
             title="Copiar al portapapeles el código resaltado"><b class="tec">Alt+V</b> ➦📋</span>
     </span>
@@ -306,7 +346,7 @@ window.addEventListener('load',inicia);
 </code></pre>
 </div>
 
-<!--
+<!-- He dejado de usar shortcut.js porque he configurado todos los atajos con accesskey="ç"
 <script> // shortcut.js
 /**
  * http://www.openjs.com/scripts/events/keyboard_shortcuts/
@@ -3879,7 +3919,7 @@ begin:/""/}]},e.C_NUMBER_MODE,e.C_BLOCK_COMMENT_MODE,n,{className:"operator",
 begin:/[-+*/=%^~]|&&?|\|\|?|!=?|<(?:=>?|<|>)?|>[>=]?/,relevance:0}]}}})());
 
 //hljs.highlightAll();
-shl.innerText = "pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{background:#eee;color:#000}.hljs-comment{color:#9b9}.hljs-quote,.hljs-variable{color:#0e0}.hljs-built_in,.hljs-keyword,.hljs-name,.hljs-selector-tag,.hljs-tag{color:#e00}.hljs-addition,.hljs-attribute,.hljs-literal,.hljs-section,.hljs-string,.hljs-template-tag,.hljs-template-variable,.hljs-title,.hljs-type{color:#4b0}.hljs-deletion,.hljs-meta,.hljs-selector-attr,.hljs-selector-pseudo{color:#39b}.hljs-doctag{color:grey}.hljs-attr{color:#00e}.hljs-bullet,.hljs-link,.hljs-symbol{color:#0ae}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}";
+shl.innerText = 'pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{background:#eee;color:#000}.hljs-comment{color:#9b9}.hljs-quote,.hljs-variable{color:#0e0}.hljs-built_in,.hljs-keyword,.hljs-name,.hljs-selector-tag,.hljs-tag{color:#e00}.hljs-addition,.hljs-attribute,.hljs-literal,.hljs-section,.hljs-string,.hljs-template-tag,.hljs-template-variable,.hljs-title,.hljs-type{color:#4b0}.hljs-deletion,.hljs-meta,.hljs-selector-attr,.hljs-selector-pseudo{color:#39b}.hljs-doctag{color:grey}.hljs-attr{color:#00e}.hljs-bullet,.hljs-link,.hljs-symbol{color:#0ae}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}';
 hljs.listLanguages().forEach(function(u) {
   lleng.innerHTML += '<option>'+u+'</option>';
 });
