@@ -8,7 +8,7 @@
     Origen:     highlight.js    https://highlightjs.org/
     Bondades:   (¿detecta y?) Resalta los 196 lenguajes conocidos por highlight.js
                 Sin dependencias externas.
-    Autor:      Paco Fdez    10/10/2021 - 19/10/2021
+    Autor:      Paco Fdez    10/10/2021 - 20/10/2021
 -->
 <style>
 body{
@@ -152,11 +152,11 @@ function copyres() {
   s = c.innerHTML;
   if (!bCode)  s = s.replace(/<(code)\b.*?>/, '').replace(/<\/code>/, '');
   if (!bPre)   s = s.replace(/<(pre)\b.*?>/, '').replace(/<\/pre>/, '');
-  if (bStyle && !bHtml)  s = '<style>\n'+ spre.innerText + '\n' + shl.innerText +'\n</style>\n' + s;
+  if (bStyle && !bHtml)  s = '<style>'+ spre.innerHTML + shl.innerText +'\n</style>\n' + s;
   if (bHtml)
     s = '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>Código ' + clase.innerText + ' resaltado</title>\n' +
       '<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAiklEQVR42mNkAAIjI6MTQMqcgQA4d+7cBCBViCzGCDXg/969e/FqdnZ2hhmyAEglkmUAULMhUO15ZENIMgCkRlBQEGYI2DskewEtTBiJNgCHlwarAcCAAoUyw/v37xOw8fEaAFUMUrgAzQAUMawGYFOI5iq4HG0MoNgLVAlEcqORqOyMBk4CDbAAAIyLrxEFKA5XAAAAAElFTkSuQmCC">\n' +
-      ( bStyle ? ('<style>\n'+ spre.innerText + '\n' + shl.innerText +'\n</style>\n') : '' ) +
+      ( bStyle ? ('<style>'+ spre.innerHTML + shl.innerText +'\n</style>\n') : '' ) +
     '</head>\n\n<body>\n' + s +
         '\n</body>\n</html>\n';
   setSto('bHtml',  bHtml  ? '1':'0');      // Guardo bHtml en localStorage: 1=si 0=no
@@ -167,7 +167,14 @@ function copyres() {
   setSto('cLeng',  lleng.options[lleng.selectedIndex].text);
   cp(s);
 }
-function prenTab() {spre.innerText = (nTab) ? 'pre{ tab-size: ' + nTab + '; }' : '';}
+function preTab(n) {
+  spre.innerHTML = `
+pre{
+  padding:  1em;
+  tab-size: ${n};
+}
+`;
+}
 function htmlEscape(s) {return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');}
 function cambios() {    // ⇐ Se han hecho cambios que afectan al resaltado visible (pr2)
   let s1 = co1.value;
@@ -188,8 +195,7 @@ function cambios() {    // ⇐ Se han hecho cambios que afectan al resaltado vis
   nb1.innerHTML = n1;
   s2 = '<code id="co2">' + pr2.innerHTML + '</code>';
   n2 = s2.length;
-  nTab = e('tab').value;
-  prenTab();
+  preTab(nTab = e('tab').value);
   pr2.innerHTML = s2;
   nb2.innerHTML = n2+31;
 }
@@ -249,8 +255,7 @@ function inicia(){
   e('style').checked = ('1'==getSto('bStyle', '0'));
   e('pre').checked   = ('1'==getSto('bPre',   '1'));
   e('code').checked  = ('1'==getSto('bCode',  '1'));
-  nTab = parseInt(getSto('nTab', '4'));
-  prenTab();
+  preTab(nTab = parseInt(getSto('nTab', '4')));
   e('tab').value = nTab;
   setLeng(getSto('cLeng', LENG_AUTO));
 }
@@ -289,7 +294,7 @@ a c    hij l nop  st v x z         0
   <p>
     Dispones de bastantes atajos de teclado
     (<b>Alt</b>+<u class="neg">T</u> <span class="peq">donde <u>T</u> son las <i>letras subrayadas</i></span>)
-    para facilitar la tarea.
+    para facilitar la tarea. [<b>⬆</b>+<b>Alt</b>+<u class="neg">T</u> <span class="peq">en Firefox</span>]
   </p>
   <p>
     Se utiliza el código de highlight.js incrustado en esta página.<br>

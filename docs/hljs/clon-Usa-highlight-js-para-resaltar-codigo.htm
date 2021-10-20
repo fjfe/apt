@@ -7,7 +7,7 @@
 <style>
 h2{font-size:15pt;}
 h3{font-size:14pt;}
-pre{width:97%;}
+pre{ width:97%; tab-size:4; }
 code{font-size:12pt;line-height:15pt;color:#d00;}
 .fma{font-family:PacoFdez,mano; font-size:18pt; color:#1717bd; background-color:#ffffdc;} /* fuente manual */
 .flc{font-family:Lucida console; font-size:11pt;}
@@ -270,7 +270,7 @@ Veamos 3 de esas herramientas
     <div class="fma"><div class="s01">
       En mi caso → <b class="flc">D:\Doc\js\highlight.js-main\</b><br>
     </div></div>
-    En la carpeta <em class="neg">tools</em> está la herramienta <em class="neg">developer.html</em>.<br>
+    En la carpeta <em class="neg">tools</em> está la herramienta <em class="neg">developer.html</em>.<br>
     <i class="peq">Recuerde que el proyecto github de highlight.js no se puede usar directamente después de descargarlo. Necesita construir.<br>
     <div class="fma"><div class="s01">
       <b class="roj">👀</b> <a target="_blank" href="https://highlightjs.readthedocs.io/en/latest/building-testing.html#building">
@@ -364,8 +364,8 @@ En ese caso, se debe usar el método <strong>highlightBlock</strong> del objeto 
 
 Ejemplo <strong><a target="_blank" href="https://es.wikipedia.org/wiki/C_(lenguaje_de_programación)">C</a></strong>:
 
-<pre><code>/*  Comentario
-    de varias líneas
+<pre><code>/*	Comentario
+	de varias líneas
 */
 #include &lt;windows.h>
 #include &lt;stdio.h>
@@ -374,15 +374,16 @@ const char ClassName[] = "Pruebas";   // Comentario hasta fin de línea
 HWND hWndButton;
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam) {
-    switch (Msg) {
-        case WM_CREATE: {
-            HINSTANCE hInst = (HINSTANCE)GetWindowLong(hWnd, GWL_HINSTANCE);
-            hWndButton = CreateWindowEx(
-                        0, "BUTTON", "Casilla de verificación",
-                        WS_VISIBLE | WS_CHILD | BS_AUTOCHECKBOX,
-                        10, 10, 200, 20, hWnd, (HMENU)IDB_CHECKBOX, hInst, NULL);
-        }
-        break;
+	switch (Msg) {
+		case WM_CREATE: {
+			HINSTANCE hInst = (HINSTANCE)GetWindowLong(hWnd, GWL_HINSTANCE);
+			hWndButton = CreateWindowEx(
+						0, "BUTTON", "Casilla de verificación",
+						WS_VISIBLE | WS_CHILD | BS_AUTOCHECKBOX,
+						10, 10, 200, 20, hWnd, (HMENU)IDB_CHECKBOX, hInst, NULL);
+		}
+		break;
+	}
 }
 </code></pre>
 
@@ -720,7 +721,7 @@ mostrados enteros con aspecto neutro.
     He corregido gazapos y he usado 'mi estilo'<br>
 	para resaltar el código.<br>
     He añadido 'mi herramienta', iconos y notas<br>
-	<i>(sobre todo muestras de código)</i>. <i class="peq">19/10/2021</i> ™
+	<i>(sobre todo muestras de código)</i>. <i class="peq">20/10/2021</i> ™
   </span>
 </footer>
 
