@@ -7,7 +7,7 @@ Apuntes
 [clon-Almacenamiento-para-la-Web.htm](https://fjfe.github.io/apt/clon-Almacenamiento-para-la-Web.htm) (WebStorage)  
 [clon-API-Cache-Guia-rapida.htm](https://fjfe.github.io/apt/clon-API-Cache-Guia-rapida.htm)  
 [clon-Crea-sitio-web-con-Jekyll-y-GitHubPages.htm](https://fjfe.github.io/apt/clon-Crea-sitio-web-con-Jekyll-y-GitHubPages.htm)  
-[clon-Bootstrap4-Que-es-Como-instalar.htm](https://fjfe.github.io/apt/clon-Bootstrap4-Que-es-Como-instalar.htm)
+[clon-Bootstrap4-Que-es-Como-instalar.htm](https://fjfe.github.io/apt/clon-Bootstrap4-Que-es-Como-instalar.htm)  
 [clon-Escalar-SVG.htm](https://fjfe.github.io/apt/clon-Escalar-SVG.htm)  
 [clon-Netlify-Drop-publicar-web-gratis-con-arrastrar-y-soltar.htm](https://fjfe.github.io/apt/clon-Netlify-Drop-publicar-web-gratis-con-arrastrar-y-soltar.htm)  
 [clon-Publicar-web-gratis-usando-Netlify-y-Github.htm](https://fjfe.github.io/apt/clon-Publicar-web-gratis-usando-Netlify-y-Github.htm)  
