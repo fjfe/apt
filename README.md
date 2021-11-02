@@ -11,10 +11,10 @@ Apuntes
 [clon-Escalar-SVG.htm](https://fjfe.github.io/apt/clon-Escalar-SVG.htm)  
 [clon-Netlify-Drop-publicar-web-gratis-con-arrastrar-y-soltar.htm](https://fjfe.github.io/apt/clon-Netlify-Drop-publicar-web-gratis-con-arrastrar-y-soltar.htm)  
 [clon-Publicar-web-gratis-usando-Netlify-y-Github.htm](https://fjfe.github.io/apt/clon-Publicar-web-gratis-usando-Netlify-y-Github.htm)  
+[clon-Usando-Clases-en-JavaScript.htm](https://fjfe.github.io/apt/clon-Usando-Clases-en-JavaScript.htm)  
 [clon-Web2Img-Camuflar-web-en-imagen-PNG.htm](https://fjfe.github.io/apt/clon-Web2Img-Camuflar-web-en-imagen-PNG.htm)  
 [nota_Markdown_Pygments.htm](https://fjfe.github.io/apt/nota_Markdown_Pygments.htm)  
-[tutorial-Git-GitHub.htm](https://fjfe.github.io/apt/tutorial-Git-GitHub.htm)  
-[clon-Usando-Clases-en-JavaScript.htm](https://fjfe.github.io/apt/clon-Usando-Clases-en-JavaScript.htm)
+[tutorial-Git-GitHub.htm](https://fjfe.github.io/apt/tutorial-Git-GitHub.htm)
 
 Iconos **svg**  
 [svg/](https://fjfe.github.io/apt/svg/)
