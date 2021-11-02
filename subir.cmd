@@ -1,3 +1,3 @@
 git add .
-git commit -m "01-11-2021 svg +icono gist"
+git commit -m "02-11-2021 usando class jss"
 git push -u origin master

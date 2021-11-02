@@ -1,0 +1,882 @@
+﻿<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><!-- Espacio duro fino ( )  Espacio duro normal ( )(mejor: &nbsp;)  Espacio duro M ( ) -->
+<base target=_blank><style>body{margin:8pt;color:#000;background-color:#fff;font-family:Verdana,Arial;font-size:14pt}img{margin:0 0 .2em;border:0 currentColor;border-image:none;line-height:1;vertical-align:middle;display:block;max-width:100%;box-sizing:border-box}a:link{color:#00f;text-decoration:none}a:visited{color:#a4a;text-decoration:none}a:active{color:#c00;text-decoration:none}a:hover{color:red;text-decoration:none;background-color:#ff9}a.url::after{content:" → " attr(href);}header{padding:.5em;background-color:#eee;line-height:2.2em}footer{padding:.5em;color:#333;background-color:#eee}.asp{margin:0 auto;color:inherit;text-transform:none;line-height:1.7em;text-indent:0;letter-spacing:normal;font-family:inherit;font-size:inherit;font-style:normal;font-weight:400;word-spacing:0;white-space:normal;direction:ltr;max-width:44em;box-sizing:border-box;orphans:2;widows:2;font-variant-ligatures:normal;font-variant-caps:normal;-webkit-text-stroke-width:0;text-decoration-style:initial;text-decoration-color:initial}.roj{color:#d00}.ver{color:#0d0}.azu{color:#00d}.mor{color:#7e41a7}.nar{color:#ffa82c}.gri{color:#777}.mam{background-color:#fffccc}.maz{background-color:#b2e4ff}.mro{background-color:#ff6f63}.mve{background-color:#88df58}.mna{background-color:#ffd6b5}.mmo{background-color:#cb97df}.mgr{background-color:#ddd}.cen{text-align:center}.der{text-align:right}.jus{text-align:justify}.som{margin:4px;border-radius:2px;box-shadow:2px 2px 2px 2px rgba(8,8,8,.3)}.peq{font-size:80%}.tac{text-decoration:line-through}.w1m{width:1em;height:auto}.vam{vertical-align:middle}.icc{display:inline;width:1em;height:auto;vertical-align:middle}.red{padding:.1em .3em;-webkit-border-radius:.3em;-moz-border-radius:.3em;border-radius:.3em}.i01{text-indent:1em}.i02{text-indent:2em}.i03{text-indent:3em}.i04{text-indent:4em}.i05{text-indent:5em}.i10{text-indent:10em}.f01{margin-left:1em;text-indent:-1em}.f02{margin-left:2em;text-indent:-2em}.f03{margin-left:3em;text-indent:-3em}.f04{margin-left:4em;text-indent:-4em}.f05{margin-left:5em;text-indent:-5em}.f10{margin-left:10em;text-indent:-10em}.uni{white-space:nowrap}.neg{font-weight:bold;}.fld{float:right}.fli{float:left}.clf:after{content:"";display:table;clear:both}.toc{list-style-position:inside;list-style-type:none;margin:0;padding:0;}.bor{border:1px solid #ccc;}</style>
+<link id="ico" rel="icon" href="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTk2LDBIMTZDNy4xNjQsMCwwLDcuMTY0LDAsMTZ2OTZjMCw4LjgzNiw3LjE2NCwxNiwxNiwxNmg0NHYtOCAgICBIMTZjLTQuNDA2LDAtOC0zLjU4Ni04LThWMTZjMC00LjQxNCwzLjU5NC04LDgtOGg4MGM0LjQxNCwwLDgsMy41ODYsOCw4djQ3LjAzMWw4LThWMTZDMTEyLDcuMTY0LDEwNC44MzYsMCw5NiwweiIgZmlsbD0iIzU0NkU3QSIvPjxwYXRoIGQ9Ik0xMjUuNjU2LDcyTDEyMCw2Ni4zNDRjLTEuNTYzLTEuNTYzLTMuNjA5LTIuMzQ0LTUuNjU2LTIuMzQ0cy00LjA5NCwwLjc4MS01LjY1NiwyLjM0NGwtMzQuMzQ0LDM0LjM0NCAgYy0xLjU2MywxLjU2My02LjM0Miw3LjYwNS02LjM0NCw5LjY1Mkw2NCwxMjhsMTcuNjU2LTRjMCwwLDguMDk0LTQuNzgxLDkuNjU2LTYuMzQ0bDM0LjM0NC0zNC4zNDQgIEMxMjguNzgxLDgwLjE4OCwxMjguNzgxLDc1LjEyMSwxMjUuNjU2LDcyeiIgZmlsbD0iIzAzQTlGNCIvPjxwYXRoIGQ9Ik04OCwzMkgyNHYtOGg2NFYzMnogTTg4LDQ4SDI0di04aDY0VjQ4eiBNODgsNjRIMjR2LThoNjRWNjR6IE01Niw4MEgyNHYtOGgzMlY4MHoiIGZpbGw9IiNCMEJFQzUiLz48L3N2Zz4=">
+<script>var oImg={};function e(e){return document.getElementById(e)}function qs(e){return document.querySelectorAll(e)}function imgData(e){Object.assign(oImg,e)}function imgSrc(){let e=qs("[data-src]");for(let t in e)e.hasOwnProperty(t)&&(e[t].src=oImg[e[t].dataset.src])}function inicia(){document.title=document.querySelector("h1").innerText,oImg.ico=ico.href,imgSrc()}"undefined"!=typeof NodeList&&NodeList.prototype&&!NodeList.prototype.forEach&&(NodeList.prototype.forEach=Array.prototype.forEach),"function"!=typeof Object.assign&&Object.defineProperty(Object,"assign",{value:function(e,t){"use strict";if(null==e)throw new TypeError("undefined o null");for(var o=Object(e),r=1;r<arguments.length;r++){var n=arguments[r];if(null!=n)for(var i in n)Object.prototype.hasOwnProperty.call(n,i)&&(o[i]=n[i])}return o},writable:!0,configurable:!0}),window.addEventListener("load",inicia);</script>
+</head><body><div class="asp">
+
+<style>
+h2{font-size:15pt;}
+h3{font-size:14pt;}
+pre{ line-height:14pt; overflow-x:auto; padding:0.5em 1em; width:97%; tab-size:4; }
+code{font-size:12pt;line-height:15pt;color:#d00;}
+.fma{font-family:PacoFdez,mano; font-size:18pt; color:#1717bd; background-color:#ffffdc;} /* fuente manual */
+.fve{font-family:Verdana; font-size:11pt;}
+.flc{font-family:Lucida console; font-size:11pt;}
+.col{color:#b91b06;}
+
+/* estilos añadidos para adjuntos */
+.adj {
+  color:  #0000ff;
+  cursor: pointer;
+}
+.adj:hover {
+  color:  #ff0000;
+  background-color: #ffff99;
+}
+.nor {      /* normal: quita negrita e itálica */
+  font-weight: normal;
+  font-style:  normal;
+}
+.ic2{width:2em;height:auto;vertical-align:text-bottom;}	/* icono como carácter x2 en línea */
+.ic3{width:3em;height:auto;vertical-align:text-bottom;}	/* icono como carácter x3 en línea */
+.e01{padding-right:0.1em}	/* Espacio  +relleno derecho 10% em */
+.e02{padding-right:0.2em}
+.e03{padding-right:0.3em}
+.e04{padding-right:0.4em}
+.e05{padding-right:0.5em}
+.e06{padding-right:0.6em}
+.e07{padding-right:0.7em}
+.e08{padding-right:0.8em}
+.e09{padding-right:0.9em}
+.e10{padding-right:1em}
+.e15{padding-right:1.5em}
+.e20{padding-right:2em}
+.e25{padding-right:2.5em}
+.e30{padding-right:3em}
+.r01{margin-left:-0.1em;}	/* Retrocede 10% em */
+.r02{margin-left:-0.2em;}
+.r03{margin-left:-0.3em;}
+.r04{margin-left:-0.4em;}
+.r05{margin-left:-0.5em;}
+.r06{margin-left:-0.6em;}
+.r07{margin-left:-0.7em;}
+.r08{margin-left:-0.8em;}
+.r09{margin-left:-0.9em;}
+.r10{margin-left:-1em;}
+.r15{margin-left:-1.5em}
+.r20{margin-left:-2em}
+.r25{margin-left:-2.5em}
+.r30{margin-left:-3em}
+.p01{padding-left:1em;}	/* +padding izq */
+.p02{padding-left:2em;}
+.p03{padding-left:3em;}
+.p04{padding-left:4em;}
+.p05{padding-left:5em;}
+.p06{padding-left:6em;}
+.p07{padding-left:7em;}
+.p08{padding-left:8em;}
+.p09{padding-left:9em;}
+.p10{padding-left:10em;}
+.s01{margin-left:1em;}	/* sangrado (+margen izq en todas las líneas) */
+.s02{margin-left:2em;}
+.s03{margin-left:3em;}
+.s04{margin-left:4em;}
+.s05{margin-left:5em;}
+.s06{margin-left:6em;}
+.s07{margin-left:7em;}
+.s08{margin-left:8em;}
+.s09{margin-left:9em;}
+.s10{margin-left:10em;}
+.tf0{font-size:initial;}				/* Tamaños de Fuente */
+.tf1{font-size:xx-small;}
+.tf2{font-size:x-small;}
+.tf3{font-size:small;}
+.tf4{font-size:medium;}
+.tf5{font-size:large;}
+.tf6{font-size:x-large;}
+.tf7{font-size:xx-large;}
+.tf8{font-size:180%;}
+.tf9{font-size:240%;}
+
+.a05{margin-top:0.5em}
+blockquote {
+    color: #29B6FD;
+    line-height: 1.4em;
+    background-color: #F6F7F8;
+    border-left: 5px solid #29B6FD;
+    padding-left: 1em;
+}
+.egt {
+    background-color: transparent;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: .9em;
+    border-spacing: 0;
+    border-collapse: collapse;
+	text-indent: initial;
+	border:1px solid #ddd;
+}
+.egt tbody tr:nth-child(odd) {
+    background-color: #f8f8f8;
+}
+.egt tbody tr td {
+    padding-left: 1em;
+}
+
+.din {
+    display: inline;
+}
+
+.fma .s01 pre.hljs { width:92%; }  /* corrección forzada */
+</style>
+
+<style id="shl">
+</style>
+
+<header>
+  <h1>Usando Clases en JavaScript</h1>
+  <span id="ori1">Original: <a target="_blank" href="https://medium.com/@jmz12/usando-clases-en-javascript-e07f0e25c67d"><img class="icc" data-src="ico_origen"> Medium</a> · Por Jorge Mendez Ortega · 31/jul/2017<span class="fld">→ <img class="icc" data-src="ico" title="Esta página clonada"></span></span>
+</header>
+
+<main>
+<img data-src="img_cabecera">
+
+<div class="fma"><div class="s01">
+  Hasta <i class="peq">oct/2021</i> mis únicas aproximaciones a POO en js habían sido del siguiente modo
+  <span class="peq">(matriz de enlaces, usando 'función constructora' y <a class="neg" href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>,
+  pero no <a class="neg" href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Objects/Object_prototypes">prototype</a>
+  ni <a class="neg" href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Classes">class</a>)</span>.
+  <span class="fld mam red"><label class="fve col" accesskey="t" for="ltema"> <u>T</u>ema:</label> <select id="ltema"></select>&nbsp;</span>
+<pre class="hljs language-javascript"><code><span class="hljs-comment">/* --- Clase Enlaces ---------------
+    Campo    Contenido       Ejemplo
+    url      URL -&gt;href      https://google.es
+    txt      Texto           Google
+    img      Imagen icono    OPCIONAL  [Por defecto: https://www.google.com/s2/favicons?domain=dominio.suf]
+*/</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">Enlaces</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-variable language_">this</span>.<span class="hljs-property">n</span>    = <span class="hljs-number">0</span>;
+  <span class="hljs-variable language_">this</span>.<span class="hljs-property">add</span>  = mEnlAdd;
+  <span class="hljs-variable language_">this</span>.<span class="hljs-property">str</span>  = mEnlStr;
+}
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">mEnlAdd</span>(<span class="hljs-params">url,txt,img</span>) {
+  <span class="hljs-keyword">var</span> o = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Object</span>;
+  o.<span class="hljs-property">url</span> = url;
+  o.<span class="hljs-property">txt</span> = txt;
+  <span class="hljs-keyword">if</span> (<span class="hljs-literal">undefined</span>==img)
+    img = <span class="hljs-string">'https://www.google.com/s2/favicons?domain='</span>+<span class="hljs-title function_">dom</span>(url);
+  o.<span class="hljs-property">img</span> = img;
+  <span class="hljs-variable language_">this</span>[<span class="hljs-variable language_">this</span>.<span class="hljs-property">n</span>++] = o;
+}
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">mEnlStr</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">var</span> s = <span class="hljs-string">'&lt;table class="ttb"&gt;&lt;tr&gt;&lt;td valign="top"&gt;'</span>;
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i&lt;<span class="hljs-variable language_">this</span>.<span class="hljs-property">n</span>; i++) {
+    s += <span class="hljs-title function_">a</span>(<span class="hljs-variable language_">this</span>[i].<span class="hljs-property">url</span>, <span class="hljs-title function_">img</span>(<span class="hljs-variable language_">this</span>[i].<span class="hljs-property">img</span>, <span class="hljs-string">' title="'</span>+<span class="hljs-variable language_">this</span>[i].<span class="hljs-property">url</span>+<span class="hljs-string">'"'</span>)+<span class="hljs-string">' '</span>+<span class="hljs-variable language_">this</span>[i].<span class="hljs-property">txt</span>, <span class="hljs-string">' target="_blank"'</span>) + <span class="hljs-title function_">br</span>();
+  }
+  s += <span class="hljs-string">'&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;'</span>;
+  <span class="hljs-keyword">return</span> s;
+}
+
+<span class="hljs-keyword">var</span> l = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Enlaces</span>();
+l.<span class="hljs-title function_">add</span>(<span class="hljs-string">'https://google.es'</span>,            <span class="hljs-string">'Google'</span>);
+l.<span class="hljs-title function_">add</span>(<span class="hljs-string">'https://github.com'</span>,           <span class="hljs-string">'GitHub'</span>);
+l.<span class="hljs-title function_">add</span>(<span class="hljs-string">'http://hilite.me'</span>,             <span class="hljs-string">'hilite.me'</span>);
+l.<span class="hljs-title function_">add</span>(<span class="hljs-string">'https://www.iconfinder.com/'</span>,  <span class="hljs-string">'IconFinder'</span>);
+enl.<span class="hljs-property">innerHTML</span> = l.<span class="hljs-title function_">str</span>();</code></pre>
+
+Ahora estudiaré el 'azúcar sintáctico' <span class="peq">(prototype → class)</span> que acerca js a la POO.
+</div></div>
+
+<div class="a05">
+  <div class="bor red">
+    <b>Índice del artículo</b>:
+    <div id="toc" class="s01"></div>
+  </div>
+</div>
+<div class="fma bor red"><div class="s01">
+  <a target="_self" href="#pruebas">Mis pruebas</a> <i class="peq gri">(2/11/2021)</i><br>
+  <a target="_self" href="#otros">Otros artículos/ejemplos/vídeos</a><br>
+</div></div>
+
+
+<p>En jun/2015, con las especificaciones <a class="uni" href="https://es.wikipedia.org/wiki/ECMAScript"><img class="icc" data-src="logo_wikipedia"> EcmaScript 6</a>, se introduce el manejo de <em>clases (class)</em>. Éstas brindan una mejora de sintaxis en la creación de objetos y herencia basada en <em>prototipos (Manera en la que JavaScript entiende </em><a class="uni" href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos"><em><img class="icc" data-src="logo_wikipedia"> POO</em></a><em>)</em>, por lo que el uso de <em>clases</em> en <em>JavaScript (JS)</em> no introducen nuevos conceptos; solo generan una sintaxis más clara en el manejo de prototipos.</p>
+<p>Teniendo lo anterior en cuenta podríamos decir que el manejo de prototipos dentro de <em>JS </em>es un estilo de<em> </em><a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos"><em>POO</em></a> <em>(Programación Orientada a Objetos)</em>.<br>
+El objetivo de este post no es profundizar en el manejo de <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos"><em>POO</em></a><em> </em>dentro de <em>JS</em>, por lo que si deseas entender más sobre el tema, te recomiendo leer el siguiente articulo.</p>
+<div>
+<div>
+<div>
+<h2 id="intro_js_oo">Introducción a JavaScript orientado a objetos</h2>
+<div>
+   <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Objects/Object-oriented_JS"><img class="icc" data-src="ico_mozilla"> JavaScript orientado a objetos para principiantes | MDN</a>
+</div>
+</div>
+</div>
+</div>
+<p>Dicho lo anterior es importante mencionar que si se mostraran algunas pequeñas diferencias en el manejo de <em>clases</em> y <em>prototipos, </em>es con la finalidad de tener un punto de referencia.</p>
+<h2 id="manos_obra">Manos a la obra</h2>
+<p>Después de un poco de teoría empecemos con lo divertido, hablemos de código.<br>Como se mencionó antes, <em>JS</em> ya permite el manejo de <em>clases</em>, con lo que conocemos como <em>prototipos</em>.</p>
+<h2 id="declara_clase">Declarando una clase</h2>
+<p>
+  Al igual que otros lenguajes que usan <em>POO</em>, en <em>JS</em> ya podemos utilizar la palabra reservada <strong><em>class </em></strong><em>y ésta tambien cuenta con un</em><strong><em> constructor</em></strong>. Tal vez a primera vista no podemos apreciar la mejora mencionada. Para tener un enfoque más claro, analicemos el siguiente ejemplo.
+</p>
+<figure>
+<pre class="hljs language-javascript"><code><span class="hljs-comment">/**
+ * Declaracion de la clase.
+ */</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">CalculadoraUsandoClass</span>
+{
+    <span class="hljs-comment">/**
+     * Metodo principal para incializar nuestra clase.
+     *
+     * <span class="hljs-doctag">@return</span> void.
+     */</span>
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>)
+    {
+        <span class="hljs-comment">//Variables que estaran disponibles en el scope global</span>
+        <span class="hljs-comment">//de la clase</span>
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_a</span> = <span class="hljs-number">0</span>;
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_b</span> = <span class="hljs-number">0</span>;
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"Se genero la instancia de CalculadoraUsandoClass"</span>);
+    }<span class="hljs-comment">//constructor</span>
+    
+    <span class="hljs-comment">//=================================================//</span>
+    
+    <span class="hljs-comment">/**
+     * Metodo para definir los valores de la clase
+     *
+     * <span class="hljs-doctag">@param</span> Integer valor_a Primer valor.
+     * <span class="hljs-doctag">@param</span> Integer valor_b Segundo valor.
+     *
+     * <span class="hljs-doctag">@return</span> void.
+     */</span>
+    <span class="hljs-title function_">setValores</span>(<span class="hljs-params">valor_a, valor_b</span>)
+    {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_a</span> = valor_a;
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_b</span> = valor_b;
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`El valor de a es =&gt; <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.valor_a}</span>`</span>);
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`El valor de b es =&gt; <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.valor_b}</span>`</span>);
+    }<span class="hljs-comment">//setValores</span>
+
+}<span class="hljs-comment">//CalculadoraUsandoClass</span>
+
+<span class="hljs-comment">//========== Instanciando nuestro Objeto ==========//</span>
+<span class="hljs-comment">/**
+ * Instancia de la clase CalculadoraUsandoClass.
+ * 
+ * <span class="hljs-doctag">@type</span> CalculadoraUsandoClass.
+ */</span>
+<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">CALCULADORA_USANDO_CLASS</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">CalculadoraUsandoClass</span>();
+
+<span class="hljs-comment">//declaracion de los valores</span>
+<span class="hljs-variable constant_">CALCULADORA_USANDO_CLASS</span>.<span class="hljs-title function_">setValores</span>(<span class="hljs-number">50</span>, <span class="hljs-number">1000</span>);</code></pre>
+<figcaption>Generando una clase utilizando class <strong>fig-01.</strong>
+<a class="fld peq" href="https://gist.github.com/konami12/33f56c331645cfd0736ddd2ff03025e6"><img class="icc" data-src="logo_github"><img class="icc" data-src="logo_gist"> CalculadoraUsandoClass.js</a>
+</figcaption>
+</figure>
+<p>En el ejemplo anterior se genera una clase utilizando las nuevas especificaciones de <a class="uni" href="https://carlosazaustre.es/ecmascript6"><em><img class="icc" data-src="ico_carlosazaustre"> EcmaScript 6</em></a>. De entrada podemos apreciar:</p>
+<ol>
+<li>Nuestra clase se inicia utilizando <strong><em>class</em></strong>.</li>
+<li>Se declara un método <strong><em>constructor</em></strong><em>.</em></li>
+<li>Se declara el método <strong><em>setValores </em></strong>el cual ya está dentro de nuestra<em> clase</em>, dicho método modifica las variables inicializadas en el <em>constructor</em>.</li>
+<li>Se genera la instancia de nuestra clase usando <strong><em>new(</em></strong><em>Esto tambien es posible usando prototipos</em><strong><em>)</em></strong>.</li>
+<li>Podemos ver que la nueva sintaxis es muy similar a la que presentan otros lenguajes de programación que utilizan <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos"><em>POO</em></a><em>, </em>por lo que puede ser entendida con mayor facilidad por otros desarrolladores.</li>
+</ol>
+<blockquote>
+<p><strong>Nota</strong>: Actualmente muchos FrameWork y Librerías de JS están utilizando las nuevas características que ofrece EcmaScript<a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Novedades_en_JavaScript/ECMAScript_6_support_in_Mozilla">6</a>, una de las más populares por el momento es <a href="https://facebook.github.io/react/"><strong>ReactJS</strong></a><em>.</em></p>
+</blockquote>
+<p>Todo suena muy bien, pero ¿cuál es punto de comparación para poder apreciar las mejoras que ofrece el manejo de clases dentro de <em>JS</em>?<br>Analicemos el siguiente ejemplo.</p>
+<figure>
+<pre class="hljs language-javascript"><code><span class="hljs-comment">/**
+ * Declaracion de nuestro prototipo
+ * Esto tambien funcionara como un constructor
+ */</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">CalculadoraUsandoPrototype</span>(<span class="hljs-params"></span>)
+{
+    <span class="hljs-comment">//Variables que estaran disponibles en el scope global</span>
+    <span class="hljs-comment">//del prototipo</span>
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_a</span> = <span class="hljs-number">0</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_b</span> = <span class="hljs-number">0</span>;
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"Se genero la instancia de CalculadoraUsandoPrototype"</span>,);
+}<span class="hljs-comment">//CalculadoraUsandoPrototype</span>
+
+<span class="hljs-comment">//=================================================//</span>
+
+<span class="hljs-comment">/**
+ * Metodo para definir los valores del prototipo
+ *
+ * <span class="hljs-doctag">@param</span> Integer valor_a Primer valor.
+ * <span class="hljs-doctag">@param</span> Integer valor_b Segundo valor.
+ *
+ * <span class="hljs-doctag">@return</span> void.
+ */</span>
+<span class="hljs-title class_">CalculadoraUsandoPrototype</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">setValores</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">valor_a, valor_b</span>)
+{
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_a</span> = valor_a;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_b</span> = valor_b;
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`El valor de a es =&gt; <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.valor_a}</span>`</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`El valor de b es =&gt; <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.valor_b}</span>`</span>);
+}<span class="hljs-comment">//setValores</span>
+
+<span class="hljs-comment">//========== Instanciando nuestro Objeto ==========//</span>
+<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">CALCULADORA_USANDO_PROTOTYPE</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">CalculadoraUsandoPrototype</span>();
+
+<span class="hljs-comment">//declaracion de los valores</span>
+<span class="hljs-variable constant_">CALCULADORA_USANDO_PROTOTYPE</span>.<span class="hljs-title function_">setValores</span>(<span class="hljs-number">50</span>, <span class="hljs-number">1000</span>);</code></pre>
+<figcaption>Generando una clase usando prototipos <strong>fig-02.</strong>
+<a class="fld peq" href="https://gist.github.com/konami12/d2e202e2cca35e428b24a213f63fcdda"><img class="icc" data-src="logo_github"><img class="icc" data-src="logo_gist"> CalculadoraUsandoPrototype.js</a>
+</figcaption>
+</figure>
+<p>En este ejemplo podemos ver que se genera una codificación similar a la del anterior, pero en éste destacan:</p>
+<ol>
+<li>Se declara una función común y corriente la cual tomará el papel de prototipo y tambien será el constructor.</li>
+<li>Se declara un método <strong><em>setValores</em></strong><em> </em>el cual para pertenecer a nuestro prototipo tiene que llevar como prefijo “<strong><em>[nombre_protitipo].prototype.[nombre_del_metodo]</em></strong>”, este prefijo siempre tendrá que colocarse cuando se requiera generar un nuevo método.</li>
+<li>Al igual que el ejemplo de <em>clases</em> se utiliza new para generar una instancia del prototipo.</li>
+<li>El código puede ser comprendido por los desarrolladores que están muy acostumbrados a la magia de <em>JS</em>, pero talves no por terceros ya que de primera vista no parece POO.</li>
+</ol>
+<p>Hasta este punto podemos ver claramente muchas mejoras que nos brinda el manejo de clases en JS pero por eso no subestimemos el manejo de prototipos ya que son muy potentes si quieres ver un poco más de prototype puedes ver.</p>
+<div>
+<div>
+<div>
+<h2 id="patrones_dis_js">Patrones de Diseño en JS</h2>
+<div>
+   <a href="https://medium.com/@jmz12/patrones-de-dise%C3%B1o-en-js-43beab8f5756"><img class="icc" data-src="ico_origen"> Patrones de diseño en JavaScript | Medium</a>
+</div>
+</div>
+</div>
+</div>
+<h2 id="uso_herencia">Utilizando herencia</h2>
+<p>Una de las grandes ventajas que ofrece POO es la herencia, prácticamente es tomar métodos de otra clase e implementarlos en una clase nueva, con las nuevas especificaciones de EcmaScript 6, facilita el manejo de la herencia prácticamente podemos utilizar el todo poderoso extends, modifiquemos nuestro ejemplo pasado para agregarle un nuevo método heredado.</p>
+<figure>
+<pre class="hljs language-javascript"><code><span class="hljs-comment">/**
+ * Declaramos la clase suma de la cual
+ * extendera la CalculadoraUsandoClass.
+ */</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">SumaUsandoClass</span>
+{
+    <span class="hljs-comment">/**
+     * Metodo principal para incializar nuestra clase.
+     *
+     * <span class="hljs-doctag">@return</span> void.
+     */</span>
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>)
+    {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"Soy el consturctor de la clase SumaUsandoClass"</span>);
+    }<span class="hljs-comment">//constructor</span>
+
+    <span class="hljs-comment">//=================================================//</span>
+
+    <span class="hljs-comment">/**
+     * Permite la suma  de los valores que tiene la clase padre.
+     *
+     * <span class="hljs-doctag">@return</span> void.
+     */</span>
+    <span class="hljs-title function_">getSuma</span>(<span class="hljs-params"></span>)
+    {
+        <span class="hljs-keyword">let</span> resultado = <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_a</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_b</span>;
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`La suma de <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.valor_a}</span> + <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.valor_b}</span> = <span class="hljs-subst">${resultado}</span>`</span>);
+    }<span class="hljs-comment">//getSuma</span>
+}<span class="hljs-comment">//SumaUsandoClass</span>
+
+<span class="hljs-comment">//=================================================//</span>
+
+<span class="hljs-comment">/**
+ * Declaramos la clase y generamos una herencia de la 
+ * clase SumaUsandoClass.
+ */</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">CalculadoraUsandoClass</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">SumaUsandoClass</span>
+{
+    <span class="hljs-comment">/**
+     * Metodo principal para incializar nuestra clase.
+     *
+     * <span class="hljs-doctag">@return</span> void.
+     */</span>
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>)
+    {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"Se genero la instancia de CalculadoraUsandoClass"</span>);
+
+        <span class="hljs-comment">//invocamos el constructor de la calse Suma</span>
+        <span class="hljs-variable language_">super</span>();
+
+        <span class="hljs-comment">//Variables que estaran disponibles en el scope global</span>
+        <span class="hljs-comment">//de la clase</span>
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_a</span> = <span class="hljs-number">0</span>;
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_b</span> = <span class="hljs-number">0</span>;
+    }<span class="hljs-comment">//constructor</span>
+    
+    <span class="hljs-comment">//=================================================//</span>
+    
+    <span class="hljs-comment">/**
+     * Metodo para definir los valores de la clase
+     *
+     * <span class="hljs-doctag">@param</span> Integer valor_a Primer valor.
+     * <span class="hljs-doctag">@param</span> Integer valor_b Segundo valor.
+     *
+     * <span class="hljs-doctag">@return</span> void.
+     */</span>
+    <span class="hljs-title function_">setValores</span>(<span class="hljs-params">valor_a, valor_b</span>)
+    {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_a</span> = valor_a;
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_b</span> = valor_b;
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`El valor de a es =&gt; <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.valor_a}</span>`</span>);
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`El valor de b es =&gt; <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.valor_b}</span>`</span>);
+    }<span class="hljs-comment">//setValores</span>
+
+}<span class="hljs-comment">//CalculadoraUsandoClass</span>
+
+<span class="hljs-comment">//========== Instanciando nuestro Objeto ==========//</span>
+<span class="hljs-comment">/**
+ * Instancia de la clase CalculadoraUsandoClass.
+ * 
+ * <span class="hljs-doctag">@type</span> CalculadoraUsandoClass.
+ */</span>
+<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">CALCULADORA_USANDO_CLASS</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">CalculadoraUsandoClass</span>();
+<span class="hljs-comment">//declaracion de los valores</span>
+<span class="hljs-variable constant_">CALCULADORA_USANDO_CLASS</span>.<span class="hljs-title function_">setValores</span>(<span class="hljs-number">50</span>, <span class="hljs-number">1000</span>);
+<span class="hljs-comment">//invocamos el metodo que proviene de la clase suma</span>
+<span class="hljs-variable constant_">CALCULADORA_USANDO_CLASS</span>.<span class="hljs-title function_">getSuma</span>();</code></pre>
+<figcaption>Herencia utilizando extends <strong>Fig-03.</strong>
+<a class="fld peq" href="https://gist.github.com/konami12/53397b76efa5313d908bbdde78828cd5"><img class="icc" data-src="logo_github"><img class="icc" data-src="logo_gist"> CalculadoraUsandoClass.js</a>
+</figcaption>
+</figure>
+<p>Como podemos ver en el ejemplo anterior estamos realizando una herencia, constamos con una nueva clase “<strong><em>SumaUsandoClass</em></strong>” la cual contiene un método “<strong><em>getSuma</em></strong>” que genera la suma de 2 valores, los cuales provienen de la clase “<strong><em>CalculadoraUsandoClass</em></strong>”, tambien del código anterior podemos destacar.</p>
+<ol>
+<li>Estamos utilizando <strong><em>extends para poder generar la herencia.</em></strong></li>
+<li>La clase hija “<strong><em>CalculadoraUsandoClass</em></strong>” contiene una nueva sentencia llamada <strong><em>super </em></strong>la cual permite invocar el <strong><em>constructor</em></strong> de la clase padre “<strong><em>SumaUsandoClass</em></strong>” cabe mencionar que la sentencia <strong><em>super siempre se tiene que declarar antes de utilizar un this, super tambien permite invocar métodos de la clase padre.</em></strong></li>
+</ol>
+
+<pre class="hljs language-javascript"><code><span class="hljs-variable language_">super</span>.<span class="hljs-title class_">[Nombre_del_metodo_de_la_clase_padre]</span>();</code></pre>
+
+<p>3. Al generar la instancia de la clase hija podemos acceder a los métodos de la clase padre, por lo que podremos ejecutar “<strong><em>getSuma</em></strong>” sin que exista en la clase hija, de igual manera la clase padre puede acceder a elementos de la clase hija y viceversa.</p>
+<p>4.- Seguimos conservando un código similar al de otros lenguajes de programación que implementan <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos"><em>POO</em></a><em>.</em></p>
+<p>Nuevamente para poder ver las mejoras obtenidas utilicemos el siguiente punto de comparación.</p>
+<figure>
+<pre class="hljs language-javascript"><code><span class="hljs-comment">/**
+ * Declaracion de nuestro prototipo
+ * Esto tambien funcionara como un constructor
+ */</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">SumaUsandoPrototype</span>(<span class="hljs-params"></span>)
+{
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"Soy el consturctor de la clase SumaUsandoClass"</span>);
+}<span class="hljs-comment">//SumaUsandoPrototype</span>
+
+<span class="hljs-comment">//=================================================//</span>
+
+<span class="hljs-title class_">SumaUsandoPrototype</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">getSuma</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)
+{
+    <span class="hljs-keyword">let</span> resultado = <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_a</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_b</span>;
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`La suma de <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.valor_a}</span> + <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.valor_b}</span> = <span class="hljs-subst">${resultado}</span>`</span>); 
+};
+
+<span class="hljs-comment">//=================================================//</span>
+
+<span class="hljs-comment">/**
+ * Declaracion de nuestro prototipo
+ * Esto tambien funcionara como un constructor
+ */</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">CalculadoraUsandoPrototype</span>(<span class="hljs-params"></span>)
+{
+    <span class="hljs-comment">//Esto es el llamado al constructor del prototipo</span>
+    <span class="hljs-comment">//SumaUsandoPrototype</span>
+    <span class="hljs-title class_">SumaUsandoPrototype</span>.<span class="hljs-title function_">call</span>(<span class="hljs-variable language_">this</span>);
+    <span class="hljs-comment">//Variables que estaran disponibles en el scope global</span>
+    <span class="hljs-comment">//del prototipo</span>
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_a</span> = <span class="hljs-number">0</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_b</span> = <span class="hljs-number">0</span>;
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"Se genero la instancia de CalculadoraUsandoPrototype"</span>,);
+}<span class="hljs-comment">//CalculadoraUsandoPrototype</span>
+
+<span class="hljs-comment">//Esto el el equibalente ah utilizar el extends de EcmaScript 6</span>
+ <span class="hljs-title class_">CalculadoraUsandoPrototype</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span> = <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">create</span>(<span class="hljs-title class_">SumaUsandoPrototype</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>);
+
+<span class="hljs-comment">//=================================================//</span>
+
+<span class="hljs-comment">/**
+ * Metodo para definir los valores del prototipo
+ *
+ * <span class="hljs-doctag">@param</span> Integer valor_a Primer valor.
+ * <span class="hljs-doctag">@param</span> Integer valor_b Segundo valor.
+ *
+ * <span class="hljs-doctag">@return</span> void.
+ */</span>
+<span class="hljs-title class_">CalculadoraUsandoPrototype</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">setValores</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">valor_a, valor_b</span>)
+{
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_a</span> = valor_a;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_b</span> = valor_b;
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`El valor de a es =&gt; <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.valor_a}</span>`</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`El valor de b es =&gt; <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.valor_b}</span>`</span>);
+}<span class="hljs-comment">//setValores</span>
+
+<span class="hljs-comment">//========== Instanciando nuestro Objeto ==========//</span>
+<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">CALCULADORA_USANDO_PROTOTYPE</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">CalculadoraUsandoPrototype</span>();
+
+<span class="hljs-comment">//declaracion de los valores</span>
+<span class="hljs-variable constant_">CALCULADORA_USANDO_PROTOTYPE</span>.<span class="hljs-title function_">setValores</span>(<span class="hljs-number">50</span>, <span class="hljs-number">1000</span>);
+
+<span class="hljs-comment">//invocamos el metodo que proviene de la clase suma</span>
+<span class="hljs-variable constant_">CALCULADORA_USANDO_CLASS</span>.<span class="hljs-title function_">getSuma</span>();</code></pre>
+<figcaption>Herencia utilizando prototipos <strong>Fig-04.</strong>
+<a class="fld peq" href="https://gist.github.com/konami12/d99d38aa4357f5bd2c3c3b7f6b052821"><img class="icc" data-src="logo_github"><img class="icc" data-src="logo_gist"> CalculadoraUsandoPrototype.js</a>
+</figcaption>
+</figure>
+<p>Como se puede apreciar el manejo de la herencia utilizando prototipos es un poco más compleja, el código anterior realiza exactamente los mismo que el ejemplo donde utilizamos <em>class,</em> pero el código anterior consta de ciertos puntos de los cuales podemos destacar.</p>
+<ol>
+<li>Para poder invocar el constructor del prototipo padre “<strong><em>SumaUsandoPrototype</em></strong>” se utiliza la sentencia <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Function/call"><strong><em>call</em></strong></a> la cual<strong><em> </em></strong>llama a una función con un valor this asignado y argumentos provistos de forma individual, ya no se está utilizando <strong>super</strong>.</li>
+<li>Para poder crear la herencia tenemos que generar un Objeto “<strong><em>SumaUsandoPrototype</em></strong>” el cual será asignado al scope de nuestro prototipo hijo “<strong><em>SumaUsandoPrototype</em></strong>”.</li>
+<li>Al instanciar nuestro prototipo ya podemos tener acceso a los métodos del prototipo padre y viceversa.</li>
+</ol>
+<p>Hasta este punto podemos ver muchas mejoras en el uso de <em>clases</em> sobre los <em>prototipos</em> en <em>JS</em>, pero las clases aún presentan otras mejoras de las cuales destacan.</p>
+<h2 id="get">get</h2>
+<p>Es una propiedad que nos permite ejecutar una función la cual se llamada cuando la propiedad es requerida, otra de sus características es que no recibe parámetros, prácticamente solo es para consulta.</p>
+<h2 id="set">set</h2>
+<p>Es una propiedad que permite ejecutar una función la cual se ejecutará para asignar un valor, otra de sus características es que solo recibe un parámetro el cual es el valor que será asignado.</p>
+<h2 id="static">static</h2>
+<p>Como en otros lenguajes de programación JS nos permite declarar un método estático el cual puede ser accedido sin la necesidad de instanciar la clase.</p>
+<p>Al parecer estos métodos son mágicos, pero la teoría no dice mucho por lo que realizaremos un ejemplo básico para poder ver las propiedades explicada dichas en acción.</p>
+<figure>
+<pre class="hljs language-javascript"><code><span class="hljs-comment">/**
+ * Declaramos la clase y generamos una herencia de la 
+ * clase SumaUsandoClass.
+ */</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Calculadora</span>
+{
+    <span class="hljs-comment">/**
+     * Metodo principal para incializar nuestra clase.
+     *
+     * <span class="hljs-doctag">@return</span> void.
+     */</span>
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>)
+    {
+        <span class="hljs-comment">//Variables que estaran disponibles en el scope global</span>
+        <span class="hljs-comment">//de la clase</span>
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_a</span> = <span class="hljs-number">0</span>;
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_b</span> = <span class="hljs-number">0</span>;
+    }<span class="hljs-comment">//constructor</span>
+
+    <span class="hljs-comment">//=================================================//</span>
+
+    <span class="hljs-comment">/**
+     * Permite asignar el valor para this.valor_a.
+     * 
+     * <span class="hljs-doctag">@param</span> Integer valor Valor a asignar.
+     *
+     * return void.
+     */</span>
+    <span class="hljs-keyword">set</span> <span class="hljs-title function_">valorA</span>(<span class="hljs-params">valor</span>)
+    {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Asignando el primer valor = <span class="hljs-subst">${valor}</span>`</span>);
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_a</span> = valor;
+    }<span class="hljs-comment">//valorA</span>
+    
+    <span class="hljs-comment">//=================================================//</span>
+    
+    <span class="hljs-comment">/**
+     * Permite asignar el valor para this.valor_b.
+     * 
+     * <span class="hljs-doctag">@param</span> Integer valor Valor a asignar.
+     *
+     * return void.
+     */</span>
+    <span class="hljs-keyword">set</span> <span class="hljs-title function_">valorB</span>(<span class="hljs-params">valor</span>)
+    {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Asignando el primer valor = <span class="hljs-subst">${valor}</span>`</span>);
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_b</span> = valor;
+    }<span class="hljs-comment">//valorB</span>
+
+    <span class="hljs-comment">//=================================================//</span>
+
+    <span class="hljs-comment">/**
+     * Permite conseguir la suma de unos valores datos.
+     *
+     * return integer.
+     */</span>
+    <span class="hljs-keyword">get</span> <span class="hljs-title function_">suma</span>()
+    {
+        <span class="hljs-keyword">let</span> resultado = <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_a</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-property">valor_b</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">`La suma de <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.valor_a}</span> + <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.valor_b}</span> = <span class="hljs-subst">${resultado}</span>`</span>;
+    }<span class="hljs-comment">//suma</span>
+
+    <span class="hljs-comment">//=================================================//</span>
+    
+    <span class="hljs-comment">/**
+     * Realiza la multiplicacion de unos valores dados,
+     * Pra acceder ah este metodo no es necesario contar con una
+     * instancia de la clase.
+     */</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-title function_">multiplicacion</span>(<span class="hljs-params">valor_a, valor_b</span>)
+    {
+        <span class="hljs-keyword">let</span> resultado = valor_a * valor_b;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">`La multiplicación de <span class="hljs-subst">${valor_a}</span> * <span class="hljs-subst">${valor_b}</span> = <span class="hljs-subst">${resultado}</span>`</span>;
+    }<span class="hljs-comment">//multiplicacion</span>
+
+}<span class="hljs-comment">//calcladora</span>
+
+<span class="hljs-comment">//========== Ejecutando el metodo multiplicacion ==========//</span>
+
+<span class="hljs-comment">//ejecutamos el metodo multiplicacion sin la necesidad de </span>
+<span class="hljs-comment">//contar con una instancia de nuestra clase.</span>
+<span class="hljs-keyword">let</span> multiplicacion = <span class="hljs-title class_">Calculadora</span>.<span class="hljs-title function_">multiplicacion</span>(<span class="hljs-number">9</span>, <span class="hljs-number">1000</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(multiplicacion);
+
+<span class="hljs-comment">//========== Instanciando nuestro Objeto ==========//</span>
+
+<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">CALCULADORA</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Calculadora</span>();
+
+<span class="hljs-comment">//Asignadmos el primer valor.</span>
+<span class="hljs-variable constant_">CALCULADORA</span>.<span class="hljs-property">valorA</span> = <span class="hljs-number">98</span>;
+
+<span class="hljs-comment">//Asignadmos el segundo valor.</span>
+<span class="hljs-variable constant_">CALCULADORA</span>.<span class="hljs-property">valorB</span> = <span class="hljs-number">54</span>;
+
+<span class="hljs-comment">//conseguimos la suma de los valores</span>
+<span class="hljs-keyword">let</span> suma = <span class="hljs-variable constant_">CALCULADORA</span>.<span class="hljs-property">suma</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(suma);</code></pre>
+<figcaption>utilizando las propiedades de class <strong>Fig-05.</strong>
+<a class="fld peq" href="https://gist.github.com/konami12/f5b57b34c06fe56acb73a1da415ebcac"><img class="icc" data-src="logo_github"><img class="icc" data-src="logo_gist"> Calciladora.js</a>
+</figcaption>
+</figure>
+<p>Como se puede ver en el ejemplo anterior, estamos haciendo usos de las propiedades de las clases en <em>JS, </em>pero en el código existen algunas cosas curiosas.</p>
+<ol>
+<li>Estamos utilizando <em>get, set y static.</em></li>
+<li>Para poder utilizar las propiedades comentadas dentro de nuestra clase tendremos que seguir la siguiente sintaxis.</li>
+</ol>
+<figure>
+<pre class="hljs language-scss"><code><span class="hljs-comment">//Usando get</span>
+get <span class="hljs-selector-attr">[nombre_del_metodo]</span>(){}
+
+<span class="hljs-comment">//Usando set</span>
+set <span class="hljs-selector-attr">[nombre_del_metodo]</span>([valor_a_asignar]){}
+
+<span class="hljs-comment">//Usando static</span>
+static <span class="hljs-selector-attr">[nombre_del_metodo]</span>(parametros){}</code></pre>
+<figcaption>Ejemplo del uso de las propiedades <strong>Fig-06</strong>
+<a class="fld peq" href="https://gist.github.com/konami12/a086932992d44542818a1122e779db5f"><img class="icc" data-src="logo_github"><img class="icc" data-src="logo_gist"> EjemploGetSetStatic.js</a>
+</figcaption>
+</figure>
+<p>3. Para poder ejecutar los métodos que cuenten con las propiedades mencionadas se utiliza la siguiente sintaxis.</p>
+<figure>
+<pre class="hljs language-javascript"><code><span class="hljs-comment">//ejecutando un metodo con el prefijo static</span>
+[nombre_de_la_clase].[metodo]([parametros]);
+
+<span class="hljs-comment">//ejecutando un metodo con el prefijo set</span>
+<span class="hljs-comment">//como se puede ver es similar ah la inicializacion de una variable</span>
+[nombre_de_la_instancia].[metodo] = [valor];
+
+<span class="hljs-comment">//Ejecutando un metodo con prefijo get</span>
+<span class="hljs-comment">//como se puede ver es como si consultaramos una variable</span>
+[nombe_de_la_instancia].[metodo];</code></pre>
+<figcaption>Ejemplo para la consulta de las propiedades <strong>Fig-07</strong>
+<a class="fld peq" href="https://gist.github.com/konami12/9c984d73f2ba70a877bfa7310ac9cd5d"><img class="icc" data-src="logo_github"><img class="icc" data-src="logo_gist"> EjemploGetSetStatic.js</a>
+</figcaption>
+</figure>
+<blockquote>
+<p><strong>Extra</strong>: Podemos combinar las propiedades static con get o set.</p>
+</blockquote>
+<h2 id="conclusion">Conclusión</h2>
+<p>Como podemos ver el manejo de clases en <em>JS</em> nos brinda muchas ventajas, pero esto no quiere decir que los prototipos no cuenten con las propias. Hay que recordar que los prototipos son la manera con la se inicia el manejo de <em>POO</em> en <em>JS</em>.</p>
+
+
+<div id="pruebas" class="fma"><div class="s01">
+  <p class="tf7 neg"><br>Pruebas</p>
+  He guardado los anteriores archivos de ejemplo en
+  <span class="tf8 roj">📎</span>
+  <b data-adj="data:application/octet-stream;base64,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"
+    class="adj" onclick="adj(this)" title="descarga">
+    <i class="r06"><img class="icc" data-src="logo_7z"> <b class="peq">usando-Clases-js.7z</b></i>
+  </b> 2 KB<br>
+               <img class="din" data-src="usando_Clases_js_7z"><br>
+  <br>
+
+  El 2/11/2021 hice algunas pruebas
+  <i class="peq">(partiendo de <a href="https://www.youtube.com/playlist?list=PLH6rB7Roz4zxeJoXCQ7orLJmipiKOVQM_"><img class="icc" data-src="logo_youtube"> 'JS avanzado'</a> - vídeos 3º y 4º)</i> 🚩<br>
+  y guardé los archivos usados en
+  <span class="tf8 roj">📎</span>
+  <b data-adj="data:application/octet-stream;base64,N3q8ryccAAQWFXMiiAMAAAAAAAAjAAAAAAAAALQNvS4AHghFBtDvqCgXWdmp9eqnJT7FbAPcQK4xKPr+8HWwLg0ionAYntl+HDFSe2DRkpBsLg9Kya9A0e9YrEIaps4yEiQumLh15eQfelvD2ION9RRzqXZWnQLE0ivGSUZLl6yIybfJ86ndyf6/malGnTGoKO7DSQ3ffeo3Nmg3BwM/C1J1PvPy8Gb3uRQRLXO6mnUDxn73P68pYa0KbnxCBUnwAKDmOtCdYa/9i6ykAZRX5uJvkEmCU1tmjzX35ye6Q1esUPYXsv1nKLhpSOms1+Ew06EMDny956yVEQuzQhJvlojC4ZJcDlfLJttmjy+adIEC6ZkpVPP4O/Ly2zP+MpMxuHOEAEllI9yizvbMsLgeA4xProB/y0zwqhxM9sL9nBepDSB0tNBTr0n3QexJkxhI6E9+JNFamPRSRP5qg370W3ek2d9JhN1dXqBQmd3SnWOw7kqP7/PIx9dj4oIOFjb/d0G986eOk2cGSIMTWG5gGdnhdECIYUA8WHx32PG/D2YuZsrcGN4aZc0eQLlHGQtQPAIst/t0rojEfZ5ZzZ3Q1sE0soWdj3Nx4gcgodAD4oyDx3/S8Cd/RwoDp+pp68QkTt8S7XEbMUPEmZF1Rd1sX21qYvFc2/0FhObsFzsHSATeBN/fc4e1UnQ2sW3c8Lq1L5XImImWLGG1M/rZx8v5hRmyNW/xeiw+4mQbWwC2I8BmJ4GrXIcC/svjaZSKIoaLn6JnQhVn2eLpfB435mw0/5xbcWVxE2/Ze1/SqVn8LKcr1FnpJbns4lX75TLjmznnYbAZvSs1HIlCeWdyocT8PRzJNPAiV2gNdUUvyQIV4M6TwuR7GJl7suGed5pmOxDdrnLju5ZalHgHOKpRNkn3G1htPV7z1Qnvl18Bkn49QrHtemHMPkh2W9ZhIswM+9vDvohnUmf25ilghx685umWE7jrR2YbvkxQmDVUfBmYi5vhNlq18H9fcppGhA6VothWXuSewfHd9lHqdc0ap3+NVh9shZ5t3c6Xh0+c6mtx/RX2avfm5/kAAACBMweuD9VN+ob5xmbajhxhUxv9chrZPWuKuC1DlJEcaL/j7SC0of/Hts9tSTn8Yw6gDPqERCZzQzewvAMLOrgRdYequj7DEhFXflWT7JAU8A9CAYlA9kXAbpvWTj4jEfFNN976XSVx8k02s+PlC3gGtLpF79xdziJt7bBTHJgAFwaDBwEJgIEABwsBAAEjAwEBBV0AEAAADICuCgGWEGUgAAA="
+    class="adj" onclick="adj(this)" title="descarga">
+    <i class="r06"><img class="icc" data-src="logo_7z"> <b class="peq">pruebas-prototype-class-js.7z</b></i>
+  </b> 1 KB<br>
+               <img class="din" data-src="pruebas_prototype_class_js_7z"><br>
+  <span class="fld"><a class="peq" href="https://gist.github.com/fjfe/70505bcd3cb2e298ae06b1646091a97e"><img class="icc" data-src="logo_github"><img class="icc" data-src="logo_gist"> fjfe / pruebas prototype class js</a>      </span>
+  <br>
+  Usando <b>prototype</b>:
+<pre class="hljs language-javascript"><code>    <span class="hljs-keyword">function</span> <span class="hljs-title function_">Animal</span>(<span class="hljs-params">pelo, ojos</span>) {
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">pelo</span> = pelo;
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">ojos</span> = ojos;
+    }
+    <span class="hljs-title class_">Animal</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">correr</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'corriendo...'</span>);
+    }
+
+    <span class="hljs-keyword">function</span> <span class="hljs-title function_">Perro</span>(<span class="hljs-params">apodo, pelo, ojos</span>) {
+      <span class="hljs-title class_">Animal</span>.<span class="hljs-title function_">call</span>(<span class="hljs-variable language_">this</span>, pelo, ojos);
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">apodo</span> = apodo;
+    }
+    <span class="hljs-title class_">Perro</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span> = <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">create</span>(<span class="hljs-title class_">Animal</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>);
+    <span class="hljs-title class_">Perro</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">constructor</span> = <span class="hljs-title class_">Perro</span>;
+    <span class="hljs-title class_">Perro</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">ladrar</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>){
+      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'guau guau'</span>);
+    }
+
+    <span class="hljs-keyword">const</span> animalito = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Animal</span>(<span class="hljs-string">'marrón'</span>, <span class="hljs-string">'gris'</span>);
+    <span class="hljs-keyword">const</span> perrito   = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Perro</span> (<span class="hljs-string">'perrito'</span>, <span class="hljs-string">'negro'</span>, <span class="hljs-string">'azul'</span>);</code></pre>
+  Usando <b>class</b>:  <i class="peq gri">(Desafortunadamente µIE y Edge antiguo no soportan class)</i>
+<pre class="hljs language-javascript"><code>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Animal</span> {
+      <span class="hljs-title function_">constructor</span>(<span class="hljs-params">pelo, ojos</span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">pelo</span> = pelo;
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">ojos</span> = ojos;
+      }
+      <span class="hljs-title function_">correr</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'corriendo...'</span>);
+      }
+    }
+
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Perro</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Animal</span> {
+      <span class="hljs-title function_">constructor</span>(<span class="hljs-params">apodo, pelo, ojos</span>) {
+        <span class="hljs-variable language_">super</span>(pelo, ojos);
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">apodo</span> = apodo;
+      }
+      <span class="hljs-title function_">ladrar</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'guau guau'</span>);
+      }
+    }
+
+    <span class="hljs-keyword">const</span> animalito = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Animal</span>(<span class="hljs-string">'marrón'</span>, <span class="hljs-string">'gris'</span>);
+    <span class="hljs-keyword">const</span> perrito   = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Perro</span> (<span class="hljs-string">'perrito'</span>, <span class="hljs-string">'negro'</span>, <span class="hljs-string">'azul'</span>);</code></pre>
+  <br>
+</div></div>
+
+<div id="otros" class="fma"><div class="s01">
+  <p class="tf7 neg"><br>Otros artículos/ejemplos/vídeos</p>
+
+  <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Classes"><img class="icc" data-src="ico_mozilla"> Clases - JavaScript | MDN</a><br>
+  <a class="ico" href="https://www.w3schools.com/js/js_classes.asp"><img class="icc" data-src="ico_w3schools"> JavaScript Classes | W3Schools</a><br>
+  <a href="https://lenguajejs.com/javascript/caracteristicas/clases-es6/"><img class="icc" data-src="ico_lenguaje_js"> Clases ES6 | Lenguaje JS</a><br>
+  <a href="https://www.youtube.com/watch?v=Rh1sHvUTyqg"><img class="icc" data-src="logo_youtube"> Curso Javascript - CLASES (Class, Extends, Super) [ES6] | YouTube</a> 🚩<br>
+  <br>
+  <a href="https://www.youtube.com/playlist?list=PLH6rB7Roz4zwJq1Z-0XPS8yQmSCTKO0W2"><img class="icc" data-src="logo_youtube"> Curso JAVASCRIPT [ES6] | YouTube (17 vídeos)</a> ← Canal: <a class="peq" href="https://www.youtube.com/channel/UC019ue15AkWD0Nc0S5e1gcw"><img class="icc" data-src="ico_progr_destino"> Programando el Destino</a><br>
+  <a href="https://www.youtube.com/playlist?list=PLH6rB7Roz4zxeJoXCQ7orLJmipiKOVQM_"><img class="icc" data-src="logo_youtube"> Curso de JAVASCRIPT Avanzado | YouTube (13 vídeos)</a> El 4º es 🚩 el de Clases.<br>
+
+</div></div>
+
+<div>&nbsp;</div>
+
+</main>
+
+
+<footer class="clf">
+  <span id="ori2"></span><br>
+  <span class="peq fma fld red">
+    He incluido '<a target="_self" href="#ltema">temas</a>' <i class="peq">(estilos para resaltar el código)</i>,<br>
+	iconos, mis archivos de <a target="_self" href="#pruebas">pruebas</a> <i class="peq">2/11/2021</i><br>
+	y referencias a <a target="_self" href="#otros">otros artículos/ejemplos/vídeos</a>. ™
+  </span>
+</footer>
+
+
+<script>
+/* script añadido para adjuntos */
+function blobData(dataURI) {
+  var sByte = atob(dataURI.split(',')[1]);
+  var sMime = dataURI.split(',')[0].split(':')[1].split(';')[0];
+  var ab = new ArrayBuffer(sByte.length);
+  var ia = new Uint8Array(ab);
+  for (var i = 0; i < sByte.length; i++)
+    ia[i] = sByte.charCodeAt(i);
+  return new Blob([ab], {type: sMime});
+}
+function saveDlg (data, filename, mimetype) {
+  if (!data) return;
+  var blob = data.constructor !== Blob
+    ? new Blob([data], {type: mimetype || 'application/octet-stream'})
+    : data ;
+  if (navigator.msSaveBlob) {
+    navigator.msSaveBlob(blob, filename);
+    return;
+  }
+  var lnk = document.createElement('a'),
+      url = window.URL,
+      objectURL;
+  if (mimetype)
+    lnk.type = mimetype;
+  lnk.download = filename || 'untitled';
+  lnk.href = objectURL = url.createObjectURL(blob);
+  lnk.dispatchEvent(new MouseEvent('click'));
+  setTimeout(url.revokeObjectURL.bind(url, objectURL));
+}
+function adj (e, s) {
+  if (!s) s = e.innerText.trim();
+  if (!s) s = e.title;
+  if (!s) s = 'adjunto';
+  saveDlg (blobData(e.dataset.adj), s);
+}
+
+
+function toc() {
+	var q = document.querySelectorAll('h2,h3,h4,h5,h6');
+	if(q.length) {
+		var t = e('toc');
+		var i = document.createElement('ol');
+		i.className = 'toc';
+		for(var o = 0, l = q.length; l > o; o++) {
+			var r = q[o],
+				a = parseInt(r.tagName.substring(1, 2)),
+				d = '&nbsp;'.repeat((a-2)*4),
+				c = r.textContent,
+				p = document.createElement('li');
+			if(p.innerHTML = d, r.id) {
+				var m = document.createElement('a');
+				m.style = 'color:#04e;text-decoration:none;',
+				m.innerHTML = c,
+				m.href = '#' + r.id,
+				m.target = '_self',
+				p.appendChild(m);
+			} else p.innerHTML = p.innerHTML.concat(c);
+			i.appendChild(p)
+		}
+		t.appendChild(i);
+	}
+}
+toc();
+
+ori2.innerHTML = ori1.innerHTML;
+imgData({
+  ico_origen                    :'data:image/png;base64,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',
+  img_cabecera                  :'data:image/jpeg;base64,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',
+  ico_mozilla                   :'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAMFBMVEWioqK8vLyAgIDQ0NDe3t7r6+tOTk49Pj309PT5+fkbGxv///8HBwf///////8AAAAB9kdWAAAADnRSTlPAwcPExs7Q1dbg5uvy9qwff/MAAADmSURBVHjaY/iPAzAMP4k/57FKfJO491IMi8Snee+A4MbczedRJf7EvYOCflSJFe9g4DmKxK95cImHKBIr38HBW32oBFQDAryWQkiceIcM3pqDJRBOQoAuqMTXd2jgMVSCo6MTVeIFwlU4JP704ZA4+g6HRAIDwz1kiQeIsPryDhnMQUjYvUMCV+rhEh/fQcHF9CLvJ+v/wyW+lxdDQqMeIwZ/Qm3FkMgDS7xClUDYfh+XxHxMic9giXhMif98IAl/LBLf5wEl5LFI/D8MlODHJvF/CS6J/8X39FEkEOBQ/eDLg5RKAADqoEn9Jf+X6gAAAABJRU5ErkJggg==',
+  ico_w3schools                 :'data:image/png;base64,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',
+  ico_lenguaje_js               :'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABTklEQVR42mP8cDvwPwPZgJGB8cNt/1EDBq0BjIwMDLOXf2Dg52NiCPXiY3j84jfDkvUfGb5++8/gYMXF4GLFzcDwn4AByaXPGSTEWRhaSkQZIrKfMjAzMzDISrMyXLnxk2HxRGkGQV5m4gxoLBRlcI58yBDoyctQkCzM8PXrPwYuDkbCXoAZ0Ap0QcOE1wz7j35jUFViY4gP5WewNeFi+E+0F4pFGUCKNu/7wrBq0yeGJ89+M5RkCjP4OPJiGgA0lOHZiz8MspIsDAlFzxhkpFgZmoAuOH72O4OlESfYoJi8p+Cw6CgTxzRgwvx3DLsPfmWwMuNk2HfoK0N0ED+DgTYHQ2HDSwYdTXYGSaCL9h/+yhDmx8eQHiWEacCX7/8Y5q38wHD/yW8GdUU2hqRwAQY2VkaG05d+MGzd+5nhCzAaddTZGWIC+RlYmKiQkABsTJezHcTRGQAAAABJRU5ErkJggg==',
+  ico_carlosazaustre            :'data:image/png;base64,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',
+  ico_progr_destino             :'data:image/png;base64,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',
+  logo_7z                       :'data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDQgNDQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnPgogPHJlY3QgeD0iMCIgeT0iNSIgd2lkdGg9IjQyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjZmZmIi8+CiA8cGF0aCBkPSJtMjgsMThsMCwzbDUuMywwbC01LjMsNy43bDAsMy4zbDksMGwwLC0zbC01LjMsMGw1LjMsLTcuN2wwLC0zLjNsLTksMHptLTE3LC0zbDAsM2w3LjUsMGwtNC41LDQuNWwwLDYuNWw0LDBsMCwtNi41bDQsLTRsMCwtMy41bS0xNSwtM2wxOCwwbDAsMjBsLTE4LDBsMCwtMjB6bS03LC03bDAsMzRsNDQsMGwwLC0zNGwtNDQsMHptMywzbDM4LDBsMCwyOGwtMzgsMCIvPgo8L2c+Cjwvc3ZnPg==',
+  logo_github                   :'data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzAgMzAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTE1IDBjLTguMyAwLTE1IDYuNy0xNSAxNSAwIDYuNiA0LjMgMTIuMiAxMC4zIDE0LjIgMC44IDAuMSAxLTAuMyAxLTAuN3YtMi42Yy00LjIgMC45LTUuMS0yLTUuMS0yLTAuNy0xLjctMS43LTIuMi0xLjctMi4yLTEuNC0wLjkgMC4xLTAuOSAwLjEtMC45IDEuNSAwLjEgMi4zIDEuNSAyLjMgMS41IDEuMyAyLjMgMy41IDEuNiA0LjQgMS4yIDAuMS0xIDAuNS0xLjYgMS0yLTMuMy0wLjQtNi44LTEuNy02LjgtNy40IDAtMS42IDAuNi0zIDEuNS00LTAuMi0wLjQtMC43LTEuOSAwLjEtNCAwIDAgMS4zLTAuNCA0LjEgMS41IDEuMi0wLjMgMi41LTAuNSAzLjgtMC41czIuNiAwLjIgMy44IDAuNWMyLjktMS45IDQuMS0xLjUgNC4xLTEuNSAwLjggMi4xIDAuMyAzLjYgMC4xIDQgMSAxIDEuNSAyLjQgMS41IDQgMCA1LjgtMy41IDctNi44IDcuNCAwLjUgMC41IDEgMS40IDEgMi44djQuMWMwIDAuNCAwLjMgMC45IDEgMC43IDYtMiAxMC4yLTcuNiAxMC4yLTE0LjIgMC4xLTguMi02LjYtMTQuOS0xNC45LTE0Ljl6Ii8+Cjwvc3ZnPg==',
+  logo_gist                     :'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0yIDAgMTYgMTYiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTcuNSA1TDEwIDcuNSA3LjUgMTBsLS43NS0uNzVMOC41IDcuNSA2Ljc1IDUuNzUgNy41IDV6bS0zIDBMMiA3LjUgNC41IDEwbC43NS0uNzVMMy41IDcuNWwxLjc1LTEuNzVMNC41IDV6TTAgMTNWMmMwLS41NS40NS0xIDEtMWgxMGMuNTUgMCAxIC40NSAxIDF2MTFjMCAuNTUtLjQ1IDEtMSAxSDFjLS41NSAwLTEtLjQ1LTEtMXptMSAwaDEwVjJIMXYxMXoiLz48L3N2Zz4=',
+  logo_wikipedia                :'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+CjxwYXRoIGQ9Ik0xMS4xNCA0SDE0YS42OS42OSAwIDAgMSAwIC42NWMtMSAuMTYtMS4zNi45MS0xLjgxIDEuODNsLTEuNCAyLjc1IDIuMzUgNS4yMWguMDdsMy41Mi04LjFjLjQ0LTEuMDcuNC0xLjU5LS43OS0xLjdhLjY4LjY4IDAgMCAxIDAtLjY1aDMuNDVhLjY4LjY4IDAgMCAxIDAgLjY1Yy0xLjIxLjE2LTEuNDIuOTEtMS44MSAxLjgzbC00LjM3IDEwLjA4Yy0uMTMuMy0uMjQuNDUtLjQ0LjQ1cy0uMzMtLjE2LS40Mi0uNDVsLTIuNDgtNS43My0yLjcyIDUuNzNjLS4xMS4zLS4yNC40NS0uNDQuNDVzLS4zMS0uMTYtLjQyLS40NWwtNC0xMC4wOWMtLjU3LTEuNC0uNi0xLjctMS42NS0xLjhBLjY4LjY4IDAgMCAxIC42MiA0aDMuOTFhLjY4LjY4IDAgMCAxIDAgLjY1Yy0xLjE2LjEzLTEuMjEuNDUtLjc0IDEuNThsMy40MSA4LjE5aC4wNUw5LjMgMTAgNy43OCA2LjQ1QzcuMTcgNS4wNSA3IDQuNzcgNi4yNCA0LjY2YS42OS42OSAwIDAgMSAwLS42NWgzLjMyYS42OC42OCAwIDAgMSAwIC42NWMtLjc0LjEyLS43LjQ1LS4xOSAxLjU4bC44NyAyIC4wOC4wOSAxLTJjLjU3LTEuMTQuNjQtMS41OC0uMTUtMS43YS42OS42OSAwIDAgMS0uMDMtLjYzeiIvPgo8L3N2Zz4=',
+  logo_youtube                  :'data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzIgMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMxLjY3LDkuMTc5YzAsMC0wLjMxMi0yLjM1My0xLjI3MS0zLjM4OWMtMS4yMTctMS4zNTgtMi41OC0xLjM2Ni0zLjIwNS0xLjQ0M0MyMi43MTcsNCwxNi4wMDIsNCwxNi4wMDIsNCAgIGgtMC4wMTVjMCwwLTYuNzE1LDAtMTEuMTkxLDAuMzQ3QzQuMTcxLDQuNDI0LDIuODA5LDQuNDMyLDEuNTkxLDUuNzlDMC42MzMsNi44MjYsMC4zMiw5LjE3OSwwLjMyLDkuMTc5UzAsMTEuOTQsMCwxNC43MDF2Mi41ODggICBjMCwyLjc2MywwLjMyLDUuNTIzLDAuMzIsNS41MjNzMC4zMTIsMi4zNTIsMS4yNzEsMy4zODZjMS4yMTgsMS4zNTgsMi44MTUsMS4zMTcsMy41MjcsMS40NTlDNy42NzcsMjcuOTE5LDE1Ljk5NSwyOCwxNS45OTUsMjggICBzNi43MjItMC4wMTIsMTEuMTk5LTAuMzU1YzAuNjI1LTAuMDgsMS45ODgtMC4wODgsMy4yMDUtMS40NDZjMC45NTgtMS4wMzQsMS4yNzEtMy4zODYsMS4yNzEtMy4zODZzMC4zMi0yLjc2MSwwLjMyLTUuNTIzdi0yLjU4OCAgIEMzMS45OSwxMS45NCwzMS42Nyw5LjE3OSwzMS42Nyw5LjE3OXoiIGZpbGw9IiNFMDJGMkYiLz48cG9seWdvbiBmaWxsPSIjRkZGRkZGIiBwb2ludHM9IjEyLDEwIDEyLDIyIDIyLDE2ICAiLz48L3N2Zz4=',
+  carp_zip                      :'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0iI0ZGRiI+Cgk8cGF0aCBmaWxsPSIjRkZCOTAwIiBkPSJNNDUsMjRsLTQuMjQyNi00LjI0MjZDMzkuNjMyMSwxOC42MzIxLDM4LjEwNiwxOCwzNi41MTQ3LDE4SDljLTEuNjU2OSwwLTMsMS4zNDMxLTMsM3Y1NiBjMCwwLjU1MjMsMC40NDc3LDEsMSwxaDgyYzAuNTUyMywwLDEtMC40NDc3LDEtMVYyN2MwLTEuNjU2OS0xLjM0MzEtMy0zLTNINDV6Ii8+Cgk8cGF0aCBmaWxsPSIjRkZENzVFIiBkPSJNNDUsMjRsLTQuMjQyNiw0LjI0MjZDMzkuNjMyMSwyOS4zNjc5LDM4LjEwNiwzMCwzNi41MTQ3LDMwSDZ2NDdjMCwwLjU1MjMsMC40NDc3LDEsMSwxaDgyIGMwLjU1MjMsMCwxLTAuNDQ3NywxLTFWMjdjMC0xLjY1NjktMS4zNDMxLTMtMy0zSDQ1eiIvPgoJPGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iNDgiIHgyPSI0OCIgeTE9IjI0IiB5Mj0iNzgiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KCQk8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgoJCTxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmZDc1ZSIgc3RvcC1vcGFjaXR5PSIuMyIvPgoJPC9saW5lYXJHcmFkaWVudD4KCTxwYXRoIGZpbGw9InVybCgjYSkiIGQ9Ik00NSwyNGwtNC4yNDI2LDQuMjQyNkMzOS42MzIxLDI5LjM2NzksMzguMTA2LDMwLDM2LjUxNDcsMzBINnY0N2MwLDAuNTUyMywwLjQ0NzcsMSwxLDFoODIgYzAuNTUyMywwLDEtMC40NDc3LDEtMVYyN2MwLTEuNjU2OS0xLjM0MzEtMy0zLTNINDV6Ii8+Cgk8cGF0aCBvcGFjaXR5PSIuNCIgZD0iTTYsMzB2MWgzMC42MDA1YzEuODU2NSwwLDMuNjM3LTAuNzM3NSw0Ljk0OTctMi4wNTAzTDQ2LjUsMjRINDVsLTQuMjQyNiw0LjI0MjYgQzM5LjYzMjEsMjkuMzY3OSwzOC4xMDYsMzAsMzYuNTE0NywzMEg2eiIvPgoJPHBhdGggZmlsbD0iI0RBN0IxNiIgZD0iTTg5LDc4SDdjLTAuNTUyMywwLTEtMC40NDc3LTEtMWwwLDBoODRsMCwwQzkwLDc3LjU1MjMsODkuNTUyMyw3OCw4OSw3OHoiLz4KCTxwYXRoIGZpbGw9IiNFOTlFMEMiIGQ9Ik00NCA1OUw0NCA1OWMtLjU1MjMgMC0xLS40NDc3LTEtMXYtOGMwLS41NTIzLjQ0NzctMSAxLTFsMCAwYy41NTIzIDAgMSAuNDQ3NyAxIDF2OEM0NSA1OC41NTIzIDQ0LjU1MjMgNTkgNDQgNTl6TTQ5IDU5TDQ5IDU5Yy0uNTUyMyAwLTEtLjQ0NzctMS0xdi04YzAtLjU1MjMuNDQ3Ny0xIDEtMWwwIDBjLjU1MjMgMCAxIC40NDc3IDEgMXY4QzUwIDU4LjU1MjMgNDkuNTUyMyA1OSA0OSA1OXpNNTQgNTlMNTQgNTljLS41NTIzIDAtMS0uNDQ3Ny0xLTF2LThjMC0uNTUyMy40NDc3LTEgMS0xbDAgMGMuNTUyMyAwIDEgLjQ0NzcgMSAxdjhDNTUgNTguNTUyMyA1NC41NTIzIDU5IDU0IDU5ek01OSA1OUw1OSA1OWMtLjU1MjMgMC0xLS40NDc3LTEtMXYtOGMwLS41NTIzLjQ0NzctMSAxLTFsMCAwYy41NTIzIDAgMSAuNDQ3NyAxIDF2OEM2MCA1OC41NTIzIDU5LjU1MjMgNTkgNTkgNTl6TTY0IDU5TDY0IDU5Yy0uNTUyMyAwLTEtLjQ0NzctMS0xdi04YzAtLjU1MjMuNDQ3Ny0xIDEtMWwwIDBjLjU1MjMgMCAxIC40NDc3IDEgMXY4QzY1IDU4LjU1MjMgNjQuNTUyMyA1OSA2NCA1OXpNNjkgNTlMNjkgNTljLS41NTIzIDAtMS0uNDQ3Ny0xLTF2LThjMC0uNTUyMy40NDc3LTEgMS0xbDAgMGMuNTUyMyAwIDEgLjQ0NzcgMSAxdjhDNzAgNTguNTUyMyA2OS41NTIzIDU5IDY5IDU5ek03NCA1OUw3NCA1OWMtLjU1MjMgMC0xLS40NDc3LTEtMXYtOGMwLS41NTIzLjQ0NzctMSAxLTFsMCAwYy41NTIzIDAgMSAuNDQ3NyAxIDF2OEM3NSA1OC41NTIzIDc0LjU1MjMgNTkgNzQgNTl6TTc5IDU5TDc5IDU5Yy0uNTUyMyAwLTEtLjQ0NzctMS0xdi04YzAtLjU1MjMuNDQ3Ny0xIDEtMWwwIDBjLjU1MjMgMCAxIC40NDc3IDEgMXY4QzgwIDU4LjU1MjMgNzkuNTUyMyA1OSA3OSA1OXpNODQgNTlMODQgNTljLS41NTIzIDAtMS0uNDQ3Ny0xLTF2LThjMC0uNTUyMy40NDc3LTEgMS0xbDAgMGMuNTUyMyAwIDEgLjQ0NzcgMSAxdjhDODUgNTguNTUyMyA4NC41NTIzIDU5IDg0IDU5ek04OSA1OUw4OSA1OWMtLjU1MjMgMC0xLS40NDc3LTEtMXYtOGMwLS41NTIzLjQ0NzctMSAxLTFsMCAwYy41NTIzIDAgMSAuNDQ3NyAxIDF2OEM5MCA1OC41NTIzIDg5LjU1MjMgNTkgODkgNTl6TTM4IDQ3SDExYy0xLjEwNDYgMC0yIC44OTU0LTIgMmgyYy41NTIzIDAgMSAuNDQ3NyAxIDF2OGMwIC41NTIzLS40NDc3IDEtMSAxSDljMCAxLjEwNDYuODk1NCAyIDIgMmgyN2MxLjEwNDYgMCAyLS44OTU0IDItMlY0OUM0MCA0Ny44OTU0IDM5LjEwNDUgNDcgMzggNDd6TTM3IDU4YzAgLjU1MjMtLjQ0NzcgMS0xIDFoLThjLS41NTIzIDAtMS0uNDQ3Ny0xLTF2LThjMC0uNTUyMy40NDc3LTEgMS0xaDhjLjU1MjMgMCAxIC40NDc3IDEgMVY1OHpNOCA1OUg2VjQ5aDJjLjU1MjMgMCAxIC40NDc3IDEgMXY4QzkgNTguNTUyMyA4LjU1MjMgNTkgOCA1OXoiLz4KPC9zdmc+',
+  usando_Clases_js_7z           :'data:image/png;base64,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',
+  pruebas_prototype_class_js_7z :'data:image/png;base64,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',
+});
+
+const TEMA_DEF   = '(def claro)';           // Texto en el desplegable ltema por defecto
+const S0         = 'pre code.hljs{display:block;overflow-x:auto;padding:1em;}code.hljs{padding:3px 5px}';         // String Inicial. Todos los temas comienzan con este CSS
+class Dicc{constructor(){this.items={}}has(t){return this.items.hasOwnProperty(t)}set(t,s){let e=this.has(t);return this.items[t]=s,e}del(t){return!!this.has(t)&&(delete this.items[t],!0)}get(t){return this.has(t)?this.items[t]:void 0}values(){const t=[];for(let s in this.items)this.has(s)&&t.push(this.items[s]);return t}size(){return Object.keys(this.items).length}keys(){return Object.keys(this.items)}getItems(){return this.items}}
+const dTemas = new Dicc();
+dTemas.set(TEMA_DEF,                   S0+'.hljs{background:#eee;color:#000}.language-xml .hljs-meta,.language-xml .hljs-meta-string{font-weight:700;font-style:italic;color:#48b}.hljs-comment,.hljs-quote{font-style:italic;color:#0b0}.hljs-built_in,.hljs-keyword,.hljs-name{color:#ff1e00}.hljs-attr,.hljs-name{font-weight:700}.hljs-string{font-weight:400;color:#0f5fff}.hljs-number{color:#ff6f00}.hljs-title{color:#a8a500}.hljs-code,.hljs-link,.hljs-meta .hljs-string,.hljs-regexp{color:#00f}.hljs-bullet,.hljs-symbol,.hljs-template-variable,.hljs-variable{color:#f40}.hljs-class .hljs-title,.hljs-title.class_,.hljs-type{font-weight:700;color:#639}.hljs-attr,.hljs-function .hljs-title,.hljs-subst,.hljs-tag,.hljs-title.function_{color:#a8a500}.hljs-formula{background-color:#eee;font-style:italic}.hljs-addition{background-color:#beb}.hljs-deletion{background-color:#fbb}.hljs-meta{color:#269}.hljs-section,.hljs-selector-class,.hljs-selector-id,.hljs-selector-pseudo,.hljs-selector-tag{font-weight:700;color:#48b}.hljs-selector-pseudo{font-style:italic}.hljs-doctag,.hljs-strong{font-weight:700}.hljs-emphasis{font-style:italic}');
+dTemas.set('(def oscuro)',             S0+'.hljs{background:#333;color:#fff}.language-xml .hljs-meta,.language-xml .hljs-meta-string{font-weight:700;font-style:italic;color:#69f}.hljs-comment,.hljs-quote{font-style:italic;color:#9c6}.hljs-built_in,.hljs-keyword,.hljs-name{color:#ff1e00}.hljs-attr,.hljs-name{font-weight:700}.hljs-string{font-weight:400;color:#578fff}.hljs-number{color:#ff6f00}.hljs-title{color:#ffe600}.hljs-code,.hljs-link,.hljs-meta .hljs-string,.hljs-regexp{color:#bce}.hljs-bullet,.hljs-symbol,.hljs-template-variable,.hljs-variable{color:#d40}.hljs-class .hljs-title,.hljs-title.class_,.hljs-type{font-weight:700;color:#96c}.hljs-attr,.hljs-function .hljs-title,.hljs-subst,.hljs-tag,.hljs-title.function_{color:#ffe600}.hljs-formula{background-color:#eee;font-style:italic}.hljs-addition{background-color:#797}.hljs-deletion{background-color:#c99}.hljs-meta{color:#69f}.hljs-section,.hljs-selector-class,.hljs-selector-id,.hljs-selector-pseudo,.hljs-selector-tag{font-weight:700;color:#69f}.hljs-selector-pseudo{font-style:italic}.hljs-doctag,.hljs-strong{font-weight:700}.hljs-emphasis{font-style:italic}');
+dTemas.set('atom-one-dark-reasonable', S0+'.hljs{color:#abb2bf;background:#282c34}.hljs-keyword,.hljs-operator{color:#f92672}.hljs-pattern-match{color:#f92672}.hljs-pattern-match .hljs-constructor{color:#61aeee}.hljs-function{color:#61aeee}.hljs-function .hljs-params{color:#a6e22e}.hljs-function .hljs-params .hljs-typing{color:#fd971f}.hljs-module-access .hljs-module{color:#7e57c2}.hljs-constructor{color:#e2b93d}.hljs-constructor .hljs-string{color:#9ccc65}.hljs-comment,.hljs-quote{color:#b18eb1;font-style:italic}.hljs-doctag,.hljs-formula{color:#c678dd}.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#e06c75}.hljs-literal{color:#56b6c2}.hljs-addition,.hljs-attribute,.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#98c379}.hljs-built_in,.hljs-class .hljs-title,.hljs-title.class_{color:#e6c07b}.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#d19a66}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#61aeee}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.hljs-link{text-decoration:underline}');
+dTemas.set('devibeans',                S0+'.hljs{background:#000;color:#a39e9b}.hljs-attr,.hljs-template-tag{color:#8787d7}.hljs-comment,.hljs-doctag,.hljs-quote{color:#396}.hljs-params{color:#a39e9b}.hljs-regexp{color:#d700ff}.hljs-literal,.hljs-number,.hljs-selector-id,.hljs-tag{color:#ef5350}.hljs-meta,.hljs-meta .hljs-keyword{color:#0087ff}.hljs-code,.hljs-formula,.hljs-keyword,.hljs-link,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-variable{color:#64b5f6}.hljs-built_in,.hljs-deletion,.hljs-title{color:#ff8700}.hljs-attribute,.hljs-function,.hljs-name,.hljs-property,.hljs-section,.hljs-type{color:#ffd75f}.hljs-addition,.hljs-bullet,.hljs-meta .hljs-string,.hljs-string,.hljs-subst,.hljs-symbol{color:#558b2f}.hljs-selector-tag{color:#96f}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}');
+dTemas.set('far',                      S0+'.hljs{color:#0ff;background:navy}.hljs-addition,.hljs-attribute,.hljs-built_in,.hljs-bullet,.hljs-string,.hljs-symbol,.hljs-template-tag,.hljs-template-variable{color:#ff0}.hljs-keyword,.hljs-name,.hljs-section,.hljs-selector-class,.hljs-selector-id,.hljs-selector-tag,.hljs-type,.hljs-variable{color:#fff}.hljs-comment,.hljs-deletion,.hljs-doctag,.hljs-quote{color:#888}.hljs-link,.hljs-literal,.hljs-number,.hljs-regexp{color:#0f0}.hljs-meta{color:teal}.hljs-keyword,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-strong,.hljs-title{font-weight:700}.hljs-emphasis{font-style:italic}');
+dTemas.set('github',                   S0+'.hljs{color:#24292e;background:#fff}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#d73a49}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#6f42c1}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable{color:#005cc5}.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#032f62}.hljs-built_in,.hljs-symbol{color:#e36209}.hljs-code,.hljs-comment,.hljs-formula{color:#6a737d}.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag{color:#22863a}.hljs-subst{color:#24292e}.hljs-section{color:#005cc5;font-weight:700}.hljs-bullet{color:#735c0f}.hljs-emphasis{color:#24292e;font-style:italic}.hljs-strong{color:#24292e;font-weight:700}.hljs-addition{color:#22863a;background-color:#f0fff4}.hljs-deletion{color:#b31d28;background-color:#ffeef0}');
+dTemas.set('github-dark',              S0+'.hljs{color:#c9d1d9;background:#0d1117}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#ff7b72}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#d2a8ff}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable{color:#79c0ff}.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#a5d6ff}.hljs-built_in,.hljs-symbol{color:#ffa657}.hljs-code,.hljs-comment,.hljs-formula{color:#8b949e}.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag{color:#7ee787}.hljs-subst{color:#c9d1d9}.hljs-section{color:#1f6feb;font-weight:700}.hljs-bullet{color:#f2cc60}.hljs-emphasis{color:#c9d1d9;font-style:italic}.hljs-strong{color:#c9d1d9;font-weight:700}.hljs-addition{color:#aff5b4;background-color:#033a16}.hljs-deletion{color:#ffdcd7;background-color:#67060c}');
+dTemas.set('mono-blue',                S0+'.hljs{background:#eaeef3;color:#00193a}.hljs-doctag,.hljs-keyword,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-strong,.hljs-title{font-weight:700}.hljs-comment{color:#738191}.hljs-addition,.hljs-built_in,.hljs-literal,.hljs-name,.hljs-quote,.hljs-section,.hljs-selector-class,.hljs-selector-id,.hljs-string,.hljs-tag,.hljs-title,.hljs-type{color:#0048ab}.hljs-attribute,.hljs-bullet,.hljs-deletion,.hljs-link,.hljs-meta,.hljs-regexp,.hljs-subst,.hljs-symbol,.hljs-template-variable,.hljs-variable{color:#4c81c9}.hljs-emphasis{font-style:italic}');
+dTemas.set('monokai-sublime',          S0+'.hljs{background:#23241f;color:#f8f8f2}.hljs-subst,.hljs-tag{color:#f8f8f2}.hljs-emphasis,.hljs-strong{color:#a8a8a2}.hljs-bullet,.hljs-link,.hljs-literal,.hljs-number,.hljs-quote,.hljs-regexp{color:#ae81ff}.hljs-code,.hljs-section,.hljs-selector-class,.hljs-title{color:#a6e22e}.hljs-strong{font-weight:700}.hljs-emphasis{font-style:italic}.hljs-attr,.hljs-keyword,.hljs-name,.hljs-selector-tag{color:#f92672}.hljs-attribute,.hljs-symbol{color:#66d9ef}.hljs-class .hljs-title,.hljs-params,.hljs-title.class_{color:#f8f8f2}.hljs-addition,.hljs-built_in,.hljs-selector-attr,.hljs-selector-id,.hljs-selector-pseudo,.hljs-string,.hljs-template-variable,.hljs-type,.hljs-variable{color:#e6db74}.hljs-comment,.hljs-deletion,.hljs-meta{color:#75715e}');
+dTemas.set('paraiso-light',            S0+'.hljs{background:#e7e9db;color:#4f424c}.hljs-comment,.hljs-quote{color:#776e71}.hljs-link,.hljs-meta,.hljs-name,.hljs-regexp,.hljs-selector-class,.hljs-selector-id,.hljs-tag,.hljs-template-variable,.hljs-variable{color:#ef6155}.hljs-built_in,.hljs-deletion,.hljs-literal,.hljs-number,.hljs-params,.hljs-type{color:#f99b15}.hljs-attribute,.hljs-section,.hljs-title{color:#fec418}.hljs-addition,.hljs-bullet,.hljs-string,.hljs-symbol{color:#48b685}.hljs-keyword,.hljs-selector-tag{color:#815ba4}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}');
+dTemas.set('pojoaque',                 S0+'.hljs{color:#dccf8f;background:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAZABkAAD/7AARRHVja3kAAQAEAAAAMAAA/+4ADkFkb2JlAGTAAAAAAf/bAIQACQYGBgcGCQcHCQ0IBwgNDwsJCQsPEQ4ODw4OERENDg4ODg0RERQUFhQUERoaHBwaGiYmJiYmKysrKysrKysrKwEJCAgJCgkMCgoMDwwODA8TDg4ODhMVDg4PDg4VGhMRERERExoXGhYWFhoXHR0aGh0dJCQjJCQrKysrKysrKysr/8AAEQgAjACMAwEiAAIRAQMRAf/EAF4AAQEBAAAAAAAAAAAAAAAAAAABBwEBAQAAAAAAAAAAAAAAAAAAAAIQAAEDAwIHAQEAAAAAAAAAAADwAREhYaExkUFRcYGxwdHh8REBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AyGFEjHaBS2fDDs2zkhKmBKktb7km+ZwwCnXPkLVmCTMItj6AXFxRS465/BTnkAJvkLkJe+7AKKoi2AtRS2zuAWsCb5GOlBN8gKfmuGHZ8MFqIth3ALmFoFwbwKWyAlTAp17uKqBvgBD8sM4fTjhvAhkzhaRkBMKBrfs7jGPIpzy7gFrAqnC0C0gB0EWwBDW2cBVQwm+QtPpa3wBO3sVvszCnLAhkzgL5/RLf13cLQd8/AGlu0Cb5HTx9KuAEieGJEdcehS3eRTp2ATdt3CpIm+QtZwAhROXFeb7swp/ahaM3kBE/jSIUBc/AWrgBN8uNFAl+b7sAXFxFn2YLUU5Ns7gFX8C4ib+hN8gFWXwK3bZglxEJm+gKdciLPsFV/TClsgJUwKJ5FVA7tvIFrfZhVfGJDcsCKaYgAqv6YRbE+RWOWBtu7+AL3yRalXLyKqAIIfk+zARbDgFyEsncYwJvlgFRW+GEWntIi2P0BooyFxcNr8Ep3+ANLbMO+QyhvbiqdgC0kVvgUUiLYgBS2QtPbiVI1/sgOmG9uO+Y8DW+7jS2zAOnj6O2BndwuIAUtkdRN8gFoK3wwXMQyZwHVbClsuNLd4E3yAUR6FVDBR+BafQGt93LVMxJTv8ABts4CVLhcfYWsCb5kC9/BHdU8CLYFY5bMAd+eX9MGthhpbA1vu4B7+RKkaW2Yq4AQtVBBFsAJU/AuIXBhN8gGWnstefhiZyWvLAEnbYS1uzSFP6Jvn4Baxx70JKkQojLib5AVTey1jjgkKJGO0AKWyOm7N7cSpgSpAdPH0Tfd/gp1z5C1ZgKqN9J2wFxcUUuAFLZAm+QC0Fb4YUVRFsAOvj4KW2dwtYE3yAWk/wS/PLMKfmuGHZ8MAXF/Ja32Yi5haAKWz4Ydm2cSpgU693Atb7km+Zwwh+WGcPpxw3gAkzCLY+iYUDW/Z3Adc/gpzyFrAqnALkJe+7DoItgAtRS2zuKqGE3yAx0oJvkdvYrfZmALURbDuL5/RLf13cAuDeBS2RpbtAm+QFVA3wR+3fUtFHoBDJnC0jIXH0HWsgMY8inPLuOkd9chp4z20ALQLSA8cI9jYAIa2zjzjBd8gRafS1vgiUho/kAKcsCGTOGWvoOpkAtB3z8Hm8x2Ff5ADp4+lXAlIvcmwH/2Q==) left top #181914}.hljs-comment,.hljs-quote{color:#586e75;font-style:italic}.hljs-addition,.hljs-keyword,.hljs-literal,.hljs-selector-tag{color:#b64926}.hljs-doctag,.hljs-number,.hljs-regexp,.hljs-string{color:#468966}.hljs-built_in,.hljs-name,.hljs-section,.hljs-title{color:#ffb03b}.hljs-class .hljs-title,.hljs-tag,.hljs-template-variable,.hljs-title.class_,.hljs-type,.hljs-variable{color:#b58900}.hljs-attribute{color:#b89859}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-subst,.hljs-symbol{color:#cb4b16}.hljs-deletion{color:#dc322f}.hljs-selector-class,.hljs-selector-id{color:#d3a60c}.hljs-formula{background:#073642}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}');
+dTemas.set('purebasic',                S0+'.hljs{background:#ffffdf}.hljs,.hljs-attr,.hljs-function,.hljs-name,.hljs-number,.hljs-params,.hljs-subst,.hljs-type{color:#000}.hljs-addition,.hljs-comment,.hljs-regexp,.hljs-section,.hljs-selector-pseudo{color:#0aa}.hljs-built_in,.hljs-class,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-selector-class{color:#066;font-weight:700}.hljs-code,.hljs-tag,.hljs-title,.hljs-variable{color:#066}.hljs-selector-attr,.hljs-string{color:#0080ff}.hljs-attribute,.hljs-deletion,.hljs-link,.hljs-symbol{color:#924b72}.hljs-literal,.hljs-meta,.hljs-selector-id{color:#924b72;font-weight:700}.hljs-name,.hljs-strong{font-weight:700}.hljs-emphasis{font-style:italic}');
+dTemas.set('qtcreator-dark',           S0+'.hljs{color:#aaa;background:#000}.hljs-emphasis,.hljs-strong{color:#a8a8a2}.hljs-bullet,.hljs-literal,.hljs-number,.hljs-quote,.hljs-regexp{color:#f5f}.hljs-code .hljs-selector-class{color:#aaf}.hljs-emphasis,.hljs-stronge,.hljs-type{font-style:italic}.hljs-function,.hljs-keyword,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-symbol{color:#ff5}.hljs-subst,.hljs-tag,.hljs-title{color:#aaa}.hljs-attribute{color:#f55}.hljs-class .hljs-title,.hljs-params,.hljs-title.class_,.hljs-variable{color:#88f}.hljs-addition,.hljs-built_in,.hljs-link,.hljs-selector-attr,.hljs-selector-id,.hljs-selector-pseudo,.hljs-string,.hljs-template-tag,.hljs-template-variable,.hljs-type{color:#f5f}.hljs-comment,.hljs-deletion,.hljs-meta{color:#5ff}');
+dTemas.set('rainbow',                  S0+'.hljs{background:#474949;color:#d1d9e1}.hljs-comment,.hljs-quote{color:#969896;font-style:italic}.hljs-addition,.hljs-keyword,.hljs-literal,.hljs-selector-tag,.hljs-type{color:#c9c}.hljs-number,.hljs-selector-attr,.hljs-selector-pseudo{color:#f99157}.hljs-doctag,.hljs-regexp,.hljs-string{color:#8abeb7}.hljs-built_in,.hljs-name,.hljs-section,.hljs-title{color:#b5bd68}.hljs-class .hljs-title,.hljs-selector-id,.hljs-template-variable,.hljs-title.class_,.hljs-variable{color:#fc6}.hljs-name,.hljs-section,.hljs-strong{font-weight:700}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-subst,.hljs-symbol{color:#f99157}.hljs-deletion{color:#dc322f}.hljs-formula{background:#eee8d5}.hljs-attr,.hljs-attribute{color:#81a2be}.hljs-emphasis{font-style:italic}');
+dTemas.set('shades-of-purple',         S0+'.hljs{background:#2d2b57;color:#e3dfff;font-weight:400}.hljs-subst{color:#e3dfff}.hljs-title{color:#fad000;font-weight:400}.hljs-name{color:#a1feff}.hljs-tag{color:#fff}.hljs-attr{color:#f8d000;font-style:italic}.hljs-built_in,.hljs-keyword,.hljs-section,.hljs-selector-tag{color:#fb9e00}.hljs-addition,.hljs-attribute,.hljs-bullet,.hljs-code,.hljs-deletion,.hljs-quote,.hljs-regexp,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-string,.hljs-symbol,.hljs-template-tag{color:#4cd213}.hljs-meta,.hljs-meta .hljs-string{color:#fb9e00}.hljs-comment{color:#ac65ff}.hljs-keyword,.hljs-literal,.hljs-name,.hljs-selector-tag,.hljs-strong{font-weight:400}.hljs-literal,.hljs-number{color:#fa658d}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}');
+dTemas.set('stackoverflow-dark',       S0+'.hljs{color:#fff;background:#1c1b1b}.hljs-subst{color:#fff}.hljs-comment{color:#999}.hljs-attr,.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-section,.hljs-selector-tag{color:#88aece}.hljs-attribute{color:#c59bc1}.hljs-name,.hljs-number,.hljs-quote,.hljs-selector-id,.hljs-template-tag,.hljs-type{color:#f08d49}.hljs-selector-class{color:#88aece}.hljs-link,.hljs-regexp,.hljs-selector-attr,.hljs-string,.hljs-symbol,.hljs-template-variable,.hljs-variable{color:#b5bd68}.hljs-meta,.hljs-selector-pseudo{color:#88aece}.hljs-built_in,.hljs-literal,.hljs-title{color:#f08d49}.hljs-bullet,.hljs-code{color:#ccc}.hljs-meta .hljs-string{color:#b5bd68}.hljs-deletion{color:#de7176}.hljs-addition{color:#76c490}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}');
+dTemas.set('stackoverflow-light',      S0+'.hljs{color:#2f3337;background:#f6f6f6}.hljs-subst{color:#2f3337}.hljs-comment{color:#656e77}.hljs-attr,.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-section,.hljs-selector-tag{color:#015692}.hljs-attribute{color:#803378}.hljs-name,.hljs-number,.hljs-quote,.hljs-selector-id,.hljs-template-tag,.hljs-type{color:#b75501}.hljs-selector-class{color:#015692}.hljs-link,.hljs-regexp,.hljs-selector-attr,.hljs-string,.hljs-symbol,.hljs-template-variable,.hljs-variable{color:#54790d}.hljs-meta,.hljs-selector-pseudo{color:#015692}.hljs-built_in,.hljs-literal,.hljs-title{color:#b75501}.hljs-bullet,.hljs-code{color:#535a60}.hljs-meta .hljs-string{color:#54790d}.hljs-deletion{color:#c02d2e}.hljs-addition{color:#2f6f44}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}');
+dTemas.set('tomorrow-night-blue',      S0+'.hljs-comment,.hljs-quote{color:#7285b7}.hljs-deletion,.hljs-name,.hljs-regexp,.hljs-selector-class,.hljs-selector-id,.hljs-tag,.hljs-template-variable,.hljs-variable{color:#ff9da4}.hljs-built_in,.hljs-link,.hljs-literal,.hljs-meta,.hljs-number,.hljs-params,.hljs-type{color:#ffc58f}.hljs-attribute{color:#ffeead}.hljs-addition,.hljs-bullet,.hljs-string,.hljs-symbol{color:#d1f1a9}.hljs-section,.hljs-title{color:#bbdaff}.hljs-keyword,.hljs-selector-tag{color:#ebbbff}.hljs{background:#002451;color:#fff}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}');
+dTemas.set('vs',                       S0+'.hljs{background:#fff;color:#000}.hljs-comment,.hljs-quote,.hljs-variable{color:green}.hljs-built_in,.hljs-keyword,.hljs-name,.hljs-selector-tag,.hljs-tag{color:#00f}.hljs-addition,.hljs-attribute,.hljs-literal,.hljs-section,.hljs-string,.hljs-template-tag,.hljs-template-variable,.hljs-title,.hljs-type{color:#a31515}.hljs-deletion,.hljs-meta,.hljs-selector-attr,.hljs-selector-pseudo{color:#2b91af}.hljs-doctag{color:grey}.hljs-attr{color:red}.hljs-bullet,.hljs-link,.hljs-symbol{color:#00b0e8}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}');
+dTemas.set('vs2015',                   S0+'.hljs{background:#1e1e1e;color:#dcdcdc}.hljs-keyword,.hljs-literal,.hljs-name,.hljs-symbol{color:#569cd6}.hljs-link{color:#569cd6;text-decoration:underline}.hljs-built_in,.hljs-type{color:#4ec9b0}.hljs-class,.hljs-number{color:#b8d7a3}.hljs-meta .hljs-string,.hljs-string{color:#d69d85}.hljs-regexp,.hljs-template-tag{color:#9a5334}.hljs-formula,.hljs-function,.hljs-params,.hljs-subst,.hljs-title{color:#dcdcdc}.hljs-comment,.hljs-quote{color:#57a64a;font-style:italic}.hljs-doctag{color:#608b4e}.hljs-meta,.hljs-meta .hljs-keyword,.hljs-tag{color:#9b9b9b}.hljs-template-variable,.hljs-variable{color:#bd63c5}.hljs-attr,.hljs-attribute{color:#9cdcfe}.hljs-section{color:gold}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.hljs-bullet,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-selector-pseudo,.hljs-selector-tag{color:#d7ba7d}.hljs-addition{background-color:#144212;display:inline-block;width:100%}.hljs-deletion{background-color:#600;display:inline-block;width:100%}');
+dTemas.set('',                         S0+'');
+dTemas.keys().forEach(function(u) {
+  ltema.innerHTML += '<option>'+u+'</option>';
+});
+function cambioTema() {    // ⇐ Se ha cambiado el tema (CSS)
+  shl.innerText = dTemas.get(ltema.options[ltema.selectedIndex].text);
+}
+ltema.addEventListener('change', cambioTema);
+cambioTema();
+</script>
+</body></html>
