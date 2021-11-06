@@ -1,17 +1,17 @@
 ﻿<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><title>Img mini</title>
 <!--
-	Fuente: https://webdesign.tutsplus.com/es/tutorials/how-to-build-a-filterable-thumbnail-layout-with-css-grid-flexbox-and-javascript--cms-33242
+  Fuente: https://webdesign.tutsplus.com/es/tutorials/how-to-build-a-filterable-thumbnail-layout-with-css-grid-flexbox-and-javascript--cms-33242
 
-	Modif.: Paco Fdez. 22/07/2021 - 01/11/2021
+  Modif.: Paco Fdez. 22/07/2021 - 06/11/2021
 
-			HTM autosuficiente, salvo por los archivos de imagen que se referencian en el código js. Por ej:
-			l.a('./nombre_imagen.svg', 'etiq1 etiq2 etiq3');     // 'Camino del svg', 'etiquetas separadas por espacios'
+      HTM autosuficiente, salvo por los archivos de imagen que se referencian en el código js. Por ej:
+      l.a('./nombre_imagen.svg', 'etiq1 etiq2 etiq3');     // 'Camino del svg', 'etiquetas separadas por espacios'
 
-			Le añadí etiquetas (almacenadas en el código js, junto a los nombres de los archivos).
-			En los nombres de archivos.svg sólo he usado minúsculas y _ como separador. Nunca he usado el espacio.
-			La búsqueda es sensible a mayúsculas.
-			La búsqueda se realiza en nombre y etiquetas (parcialmente) hasta el primer espacio (si existe)
-				y en etiquetas (búsqueda completa de etiquetas separadas por espacios) a partir del mismo.
+      Le añadí etiquetas (almacenadas en el código js, junto a los nombres de los archivos).
+      En los nombres de archivos.svg sólo he usado minúsculas y _ como separador. Nunca he usado el espacio.
+      La búsqueda es sensible a mayúsculas.
+      La búsqueda se realiza en nombre y etiquetas (parcialmente) hasta el primer espacio (si existe)
+        y en etiquetas (búsqueda completa de etiquetas separadas por espacios) a partir del mismo.
 -->
 <link id="ico" rel="icon" href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMTkuMjUgNC41SDQuNzVhLjI1LjI1IDAgMDAtLjI1LjI1djE0LjVjMCAuMTM4LjExMi4yNS4yNS4yNWguMTlsOS44MjMtOS44MjNhMS43NSAxLjc1IDAgMDEyLjQ3NSAwbDIuMjYyIDIuMjYyVjQuNzVhLjI1LjI1IDAgMDAtLjI1LS4yNXptLjI1IDkuNTZsLTMuMzIzLTMuMzIzYS4yNS4yNSAwIDAwLS4zNTQgMEw3LjA2MSAxOS41SDE5LjI1YS4yNS4yNSAwIDAwLjI1LS4yNXYtNS4xOXpNNC43NSAzQTEuNzUgMS43NSAwIDAwMyA0Ljc1djE0LjVjMCAuOTY2Ljc4NCAxLjc1IDEuNzUgMS43NWgxNC41QTEuNzUgMS43NSAwIDAwMjEgMTkuMjVWNC43NUExLjc1IDEuNzUgMCAwMDE5LjI1IDNINC43NXpNOC41IDkuNWExIDEgMCAxMDAtMiAxIDEgMCAwMDAgMnptMCAxLjVhMi41IDIuNSAwIDEwMC01IDIuNSAyLjUgMCAwMDAgNXoiLz48L3N2Zz4=">
 <style>
@@ -649,6 +649,8 @@ l.a('./ms_msg_2019.svg'                        ,'ms msg ext');
 l.a('./ms_mdb_2019.svg'                        ,'ms mdb ext');
 l.a('./ms_one_2019.svg'                        ,'ms one ext');
 
+l.a('./ms_teams.svg'                           ,'ms teams');
+
 l.a('./libreoffice_new_00.svg'                 ,'ext libreoffice new nuevo 00');
 l.a('./libreoffice_new_blanco.svg'             ,'ext libreoffice new nuevo blanco');
 l.a('./libreoffice_new.svg'                    ,'ext libreoffice new nuevo blanco');
@@ -812,6 +814,11 @@ l.a('./libreta_anillas_arriba_nota.svg'        ,'nota cuaderno espiral');
 
 l.a('./sello_borde_inclinado_00.svg'           ,'sello 00');
 l.a('./sello_inclinado_original_00.svg'        ,'sello original 00');
+
+l.a('./punteo_ok_verde.svg'                    ,'punteo ok verde');
+l.a('./punteo_ko_rojo.svg'                     ,'punteo ko cerrar rojo');
+l.a('./punteo_ok_circ_verde.svg'               ,'punteo ok verde');
+l.a('./punteo_ko_circ_rojo.svg'                ,'punteo ko cerrar rojo');
 
 l.a('./pulgar_ok_00.svg'                       ,'mano pulgar gesto ok 00');
 l.a('./pulgar_ko_00.svg'                       ,'mano pulgar gesto ko 00');

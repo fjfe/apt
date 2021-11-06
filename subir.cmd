@@ -1,3 +1,3 @@
 git add .
-git commit -m "03-11-2021 Win ico de carpeta"
+git commit -m "06-11-2021 ES6demo y +5ico-svg"
 git push -u origin master
