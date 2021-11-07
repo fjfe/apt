@@ -1,0 +1,626 @@
+﻿<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><!-- Espacio duro fino ( )  Espacio duro normal ( )(mejor: &nbsp;)  Espacio duro M ( ) -->
+<base target=_blank><style>body{margin:8pt;color:#000;background-color:#fff;font-family:Verdana,Arial;font-size:14pt}img{margin:0 0 .2em;border:0 currentColor;border-image:none;line-height:1;vertical-align:middle;display:block;max-width:100%;box-sizing:border-box}a:link{color:#00f;text-decoration:none}a:visited{color:#a4a;text-decoration:none}a:active{color:#c00;text-decoration:none}a:hover{color:red;text-decoration:none;background-color:#ff9}a.url::after{content:" → " attr(href);}header{padding:.5em;background-color:#eee;line-height:2.2em}footer{padding:.5em;color:#333;background-color:#eee}.asp{margin:0 auto;color:inherit;text-transform:none;line-height:1.7em;text-indent:0;letter-spacing:normal;font-family:inherit;font-size:inherit;font-style:normal;font-weight:400;word-spacing:0;white-space:normal;direction:ltr;max-width:44em;box-sizing:border-box;orphans:2;widows:2;font-variant-ligatures:normal;font-variant-caps:normal;-webkit-text-stroke-width:0;text-decoration-style:initial;text-decoration-color:initial}.roj{color:#d00}.ver{color:#0d0}.azu{color:#00d}.mor{color:#7e41a7}.nar{color:#ffa82c}.gri{color:#777}.mam{background-color:#fffccc}.maz{background-color:#b2e4ff}.mro{background-color:#ff6f63}.mve{background-color:#88df58}.mna{background-color:#ffd6b5}.mmo{background-color:#cb97df}.mgr{background-color:#ddd}.cen{text-align:center}.der{text-align:right}.jus{text-align:justify}.som{margin:4px;border-radius:2px;box-shadow:2px 2px 2px 2px rgba(8,8,8,.3)}.peq{font-size:80%}.tac{text-decoration:line-through}.w1m{width:1em;height:auto}.vam{vertical-align:middle}.icc{display:inline;width:1em;height:auto;vertical-align:middle}.red{padding:.1em .3em;-webkit-border-radius:.3em;-moz-border-radius:.3em;border-radius:.3em}.i01{text-indent:1em}.i02{text-indent:2em}.i03{text-indent:3em}.i04{text-indent:4em}.i05{text-indent:5em}.i10{text-indent:10em}.f01{margin-left:1em;text-indent:-1em}.f02{margin-left:2em;text-indent:-2em}.f03{margin-left:3em;text-indent:-3em}.f04{margin-left:4em;text-indent:-4em}.f05{margin-left:5em;text-indent:-5em}.f10{margin-left:10em;text-indent:-10em}.uni{white-space:nowrap}.neg{font-weight:bold;}.fld{float:right}.fli{float:left}.clf:after{content:"";display:table;clear:both}.toc{list-style-position:inside;list-style-type:none;margin:0;padding:0;}.bor{border:1px solid #ccc;}</style>
+<link id="ico" rel="icon" href="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTk2LDBIMTZDNy4xNjQsMCwwLDcuMTY0LDAsMTZ2OTZjMCw4LjgzNiw3LjE2NCwxNiwxNiwxNmg0NHYtOCAgICBIMTZjLTQuNDA2LDAtOC0zLjU4Ni04LThWMTZjMC00LjQxNCwzLjU5NC04LDgtOGg4MGM0LjQxNCwwLDgsMy41ODYsOCw4djQ3LjAzMWw4LThWMTZDMTEyLDcuMTY0LDEwNC44MzYsMCw5NiwweiIgZmlsbD0iIzU0NkU3QSIvPjxwYXRoIGQ9Ik0xMjUuNjU2LDcyTDEyMCw2Ni4zNDRjLTEuNTYzLTEuNTYzLTMuNjA5LTIuMzQ0LTUuNjU2LTIuMzQ0cy00LjA5NCwwLjc4MS01LjY1NiwyLjM0NGwtMzQuMzQ0LDM0LjM0NCAgYy0xLjU2MywxLjU2My02LjM0Miw3LjYwNS02LjM0NCw5LjY1Mkw2NCwxMjhsMTcuNjU2LTRjMCwwLDguMDk0LTQuNzgxLDkuNjU2LTYuMzQ0bDM0LjM0NC0zNC4zNDQgIEMxMjguNzgxLDgwLjE4OCwxMjguNzgxLDc1LjEyMSwxMjUuNjU2LDcyeiIgZmlsbD0iIzAzQTlGNCIvPjxwYXRoIGQ9Ik04OCwzMkgyNHYtOGg2NFYzMnogTTg4LDQ4SDI0di04aDY0VjQ4eiBNODgsNjRIMjR2LThoNjRWNjR6IE01Niw4MEgyNHYtOGgzMlY4MHoiIGZpbGw9IiNCMEJFQzUiLz48L3N2Zz4=">
+<script>var oImg={};function e(e){return document.getElementById(e)}function qs(e){return document.querySelectorAll(e)}function imgData(e){Object.assign(oImg,e)}function imgSrc(){let e=qs("[data-src]");for(let t in e)e.hasOwnProperty(t)&&(e[t].src=oImg[e[t].dataset.src])}function inicia(){document.title=document.querySelector("h1").innerText,oImg.ico=ico.href,imgSrc()}"undefined"!=typeof NodeList&&NodeList.prototype&&!NodeList.prototype.forEach&&(NodeList.prototype.forEach=Array.prototype.forEach),"function"!=typeof Object.assign&&Object.defineProperty(Object,"assign",{value:function(e,t){"use strict";if(null==e)throw new TypeError("undefined o null");for(var o=Object(e),r=1;r<arguments.length;r++){var n=arguments[r];if(null!=n)for(var i in n)Object.prototype.hasOwnProperty.call(n,i)&&(o[i]=n[i])}return o},writable:!0,configurable:!0}),window.addEventListener("load",inicia);</script>
+</head><body><div class="asp">
+
+<style>
+h2{font-size:15pt;}
+h3{font-size:14pt;}
+pre{ line-height:14pt; overflow-x:auto; padding:0.5em 1em; width:97%; tab-size:4; }
+code{font-size:12pt;line-height:15pt;}
+.fma{font-family:PacoFdez,mano; font-size:18pt; color:#1717bd; background-color:#ffffdc;} /* fuente manual */
+.fve{font-family:Verdana; font-size:11pt;}
+.flc{font-family:Lucida console; font-size:11pt;}
+.col{color:#b91b06;}
+
+/* estilos añadidos para adjuntos */
+.adj {
+  color:  #0000ff;
+  cursor: pointer;
+}
+.adj:hover {
+  color:  #ff0000;
+  background-color: #ffff99;
+}
+.nor {      /* normal: quita negrita e itálica */
+  font-weight: normal;
+  font-style:  normal;
+}
+.gra{font-size:120%;}
+.ic2{display:inline;width:2em;height:auto;vertical-align:text-bottom;}
+.ic3{display:inline;width:3em;height:auto;vertical-align:text-bottom;}
+.e01{padding-right:0.1em}	/* Espacio  +relleno derecho 10% em */
+.e02{padding-right:0.2em}
+.e03{padding-right:0.3em}
+.e04{padding-right:0.4em}
+.e05{padding-right:0.5em}
+.e06{padding-right:0.6em}
+.e07{padding-right:0.7em}
+.e08{padding-right:0.8em}
+.e09{padding-right:0.9em}
+.e10{padding-right:1em}
+.e15{padding-right:1.5em}
+.e20{padding-right:2em}
+.e25{padding-right:2.5em}
+.e30{padding-right:3em}
+.r01{margin-left:-0.1em;}	/* Retrocede 10% em */
+.r02{margin-left:-0.2em;}
+.r03{margin-left:-0.3em;}
+.r04{margin-left:-0.4em;}
+.r05{margin-left:-0.5em;}
+.r06{margin-left:-0.6em;}
+.r07{margin-left:-0.7em;}
+.r08{margin-left:-0.8em;}
+.r09{margin-left:-0.9em;}
+.r10{margin-left:-1em;}
+.r15{margin-left:-1.5em}
+.r20{margin-left:-2em}
+.r25{margin-left:-2.5em}
+.r30{margin-left:-3em}
+.p01{padding-left:1em;}	/* +padding izq */
+.p02{padding-left:2em;}
+.p03{padding-left:3em;}
+.p04{padding-left:4em;}
+.p05{padding-left:5em;}
+.p06{padding-left:6em;}
+.p07{padding-left:7em;}
+.p08{padding-left:8em;}
+.p09{padding-left:9em;}
+.p10{padding-left:10em;}
+.s01{margin-left:1em;}	/* sangrado (+margen izq en todas las líneas) */
+.s02{margin-left:2em;}
+.s03{margin-left:3em;}
+.s04{margin-left:4em;}
+.s05{margin-left:5em;}
+.s06{margin-left:6em;}
+.s07{margin-left:7em;}
+.s08{margin-left:8em;}
+.s09{margin-left:9em;}
+.s10{margin-left:10em;}
+.tf0{font-size:initial;}				/* Tamaños de Fuente */
+.tf1{font-size:xx-small;}
+.tf2{font-size:x-small;}
+.tf3{font-size:small;}
+.tf4{font-size:medium;}
+.tf5{font-size:large;}
+.tf6{font-size:x-large;}
+.tf7{font-size:xx-large;}
+.tf8{font-size:180%;}
+.tf9{font-size:240%;}
+
+.a05{margin-top:0.5em}
+blockquote {
+    color: #29B6FD;
+    line-height: 1.4em;
+    background-color: #F6F7F8;
+    border-left: 5px solid #29B6FD;
+    padding-left: 1em;
+}
+.egt {
+    background-color: transparent;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: .9em;
+    border-spacing: 0;
+    border-collapse: collapse;
+	text-indent: initial;
+	border:1px solid #ddd;
+}
+.egt tbody tr:nth-child(odd) {
+    background-color: #f8f8f8;
+}
+.egt tbody tr td {
+    padding-left: 1em;
+}
+
+.din {
+    display: inline;
+}
+
+.mr1 {margin-right:1em;}
+
+.fma .s01 pre.hljs { width:92%; }  /* corrección forzada */
+</style>
+
+<style id="shl">
+</style>
+
+<header>
+  <h1>Patrón Observer en JavaScript</h1>
+  <span id="ori1">Original: <a target="_blank" href="https://tempuscode.com/patron-observer-en-javascript/"><img class="icc" data-src="ico_origen"> Tempus Code</a> · Por Chema Alfonso · 24/oct/2019<span class="fld">→ <img class="icc" data-src="ico" title="Esta página clonada"></span></span>
+</header>
+
+<main>
+
+<p>En este artículo hablaremos de patrones de diseño, y más concretamente del <a class="neg uni" href="https://es.wikipedia.org/wiki/Observer_(patr%C3%B3n_de_dise%C3%B1o)"><img class="icc" data-src="logo_wikipedia"> patrón observer</a>. Aprenderemos a realizar su implementación mediante un <strong>ejemplo sencillo y fácil de entender</strong>, a partir del cual podrás implementar este diseño en tus proyectos para <strong>mejorar la calidad de tu código</strong>.</p>
+<p>El patrón Observer, es un patrón de diseño de software que nos permite definir una <strong>dependencia de uno a muchos</strong> entre elementos del sistema, los cuales serán <strong>notificados por parte del observable</strong> cada vez que se realice una modificación.</p>
+<p>
+  Para ver todo esto de forma clara lo realizaremos mediante un ejemplo en el que tendremos <strong>1 input maestro</strong> <i class="fma">(Original)</i> el cual disparará, tras cada tecla pulsada, el método de nuestro observable que <strong>notificará a cada uno de sus subscriptores</strong>. En este caso serán otros <strong>3 inputs que escucharán los cambios</strong> <i class="fma">(3 Plagios)</i> mediante el observable.
+  <span class="fld mam red"><label class="fve col" accesskey="t" for="ltema"> <u>T</u>ema:</label> <select id="ltema"></select>&nbsp;</span>
+</p>
+
+<pre class="hljs language-javascript"><code><span class="hljs-comment">// Definición de la clase Observable</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Observable</span>{
+
+    <span class="hljs-comment">// El constructor de la clase inicializa un arreglo vació</span>
+    <span class="hljs-comment">// donde se almacenaran los observadores.</span>
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>){
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">observers</span> = [];
+    }
+
+    <span class="hljs-comment">// Método para añadir nuevos observadores.</span>
+    <span class="hljs-title function_">subscribe</span>(<span class="hljs-params"> observer </span>){
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">observers</span>.<span class="hljs-title function_">push</span>(observer);
+    }
+
+    <span class="hljs-comment">// Método para eliminar observadores.</span>
+    <span class="hljs-title function_">unsubscribe</span>(<span class="hljs-params"> observer </span>){
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">observers</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">observers</span>.<span class="hljs-title function_">filter</span>( <span class="hljs-function"><span class="hljs-params">subscriber</span> =&gt;</span> subscriber != observer);
+    }
+
+    <span class="hljs-comment">// Método para notificar los cambios a los observadores.</span>
+    <span class="hljs-title function_">notify</span>(<span class="hljs-params"> data </span>){
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">observers</span>.<span class="hljs-title function_">forEach</span>( <span class="hljs-function"><span class="hljs-params">observer</span> =&gt;</span> <span class="hljs-title function_">observer</span>( data ) );
+    }
+}
+
+<span class="hljs-comment">// Referenciamos los elementos del DOM</span>
+<span class="hljs-comment">// con los que queremos trabajar.</span>
+<span class="hljs-keyword">const</span> elmMaster = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">'elmMaster'</span>);
+<span class="hljs-keyword">const</span> elm  = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">'elm1'</span>);
+<span class="hljs-keyword">const</span> elm2 = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">'elm2'</span>);
+<span class="hljs-keyword">const</span> elm3 = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">'elm3'</span>);
+
+<span class="hljs-comment">// Asignamos la función a realizar cuando</span>
+<span class="hljs-comment">// se dispare el observable a una variable</span>
+<span class="hljs-comment">// (En este caso asignaríamos la data al valor del input).</span>
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">updateFirstInput</span>  = (<span class="hljs-params">data</span>) =&gt; elm.<span class="hljs-property">value</span>  = data;
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">updateSecondInput</span> = (<span class="hljs-params">data</span>) =&gt; elm2.<span class="hljs-property">value</span> = data;
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">updateThirdInput</span>  = (<span class="hljs-params">data</span>) =&gt; elm3.<span class="hljs-property">value</span> = data;
+
+<span class="hljs-comment">// Instanciamos nuestra clase observable</span>
+<span class="hljs-keyword">const</span> inputsObserver = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Observable</span>();
+
+<span class="hljs-comment">// Suscribimos las funciones que se ejecutarán</span>
+<span class="hljs-comment">// al dispararse el observable</span>
+inputsObserver.<span class="hljs-title function_">subscribe</span>(updateFirstInput);
+inputsObserver.<span class="hljs-title function_">subscribe</span>(updateSecondInput);
+inputsObserver.<span class="hljs-title function_">subscribe</span>(updateThirdInput);
+
+<span class="hljs-comment">// Añadimos el evento keyup a nuestro input maestro</span>
+<span class="hljs-comment">// para ejecutar el resultado tras soltar cada tecla</span>
+<span class="hljs-comment">// y llamamos a la función notify de nuestro observable</span>
+<span class="hljs-comment">// mandando como parámetro los datos a actualizar.</span>
+elmMaster.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'keyup'</span>, <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> inputsObserver.<span class="hljs-title function_">notify</span>(event.<span class="hljs-property">target</span>.<span class="hljs-property">value</span>));</code></pre>
+
+<p>Esto es todo lo necesario para suscribirse y poder utilizar los datos introducidos en <strong>elmMaster</strong> en <strong>tiempo real</strong>.</p>
+<p>Para <strong>dejar de ser notificados con algún elemento</strong>, basta con llamar al método <strong>unsubscribe</strong> con parámetro el elemento que queremos eliminar de la suscripción.</p>
+
+<pre class="hljs language-javascript"><code><span class="hljs-comment">// Esto terminará con la escucha del observable </span>
+<span class="hljs-comment">// por parte de updateSecondInput.</span>
+inputsObserver.<span class="hljs-title function_">unsubscribe</span>(updateSecondInput);</code></pre>
+
+<p>Espero que con este ejemplo hayas aprendido algo más sobre patrones de diseño y te quede más clara la forma de crear un <strong>observable</strong> y su utilización e implementación en lenguaje <a class="neg uni" href="https://es.wikipedia.org/wiki/JavaScript"><img class="icc" data-src="logo_wikipedia"> JavaScript</a>.</p>
+<p>Te animo a aprender algunas <a class="neg uni" href="https://tempuscode.com/buenas-practicas-js/"><img class="icc" data-src="ico_origen"> buenas prácticas en JavaScript</a>.</p>
+
+
+<div id="pruebas" class="fma"><div class="s01">
+  <p class="tf7 neg"><br>Pruebas</p>
+  El 5/11/2021 hice algunas pruebas+modificaciones y guardé el archivo usado en<br>
+  <span class="tf8 roj">📎</span>
+  <b data-adj="data:text/html;base64,PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVzIj48aGVhZD48bWV0YSBjaGFyc2V0PSJ1dGYtOCI+PHRpdGxlPk9ic2VydmFkb3I8L3RpdGxlPgo8IS0tCiAgICBGdWVudGU6IGh0dHBzOi8vdGVtcHVzY29kZS5jb20vcGF0cm9uLW9ic2VydmVyLWVuLWphdmFzY3JpcHQvCiAgICBNb2RpZi46IFBhY28gRmRleiAgNS8xMS8yMDIxCi0tPgogIDxzdHlsZT4KICAgIGJvZHkgeyBtYXJnaW46MWVtOyBjb2xvcjojMTExOyBmb250LWZhbWlseTpWZXJkYW5hLEFyaWFsOyBmb250LXNpemU6c21hbGw7IH0KICA8L3N0eWxlPgogIDxzY3JpcHQ+CiAgICBmdW5jdGlvbiBlKHMpe3JldHVybiBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChzKTt9ICAgICAgIC8vIEVsZW1lbnRvIGNvbiBpZD1zCgogICAgY2xhc3MgT2JzZXJ2YWJsZXsgICAgICAgICAgIC8vIERlZmluaWNpw7NuIGRlIGxhIGNsYXNlIE9ic2VydmFibGUKCiAgICAgIGNvbnN0cnVjdG9yKCl7ICAgICAgICAgICAgLy8gQ3JlYSBhcnJheSB2YWPDrW8gcXVlIGFsbWFjZW5hcsOhIGxvcyBvYnNlcnZhZG9yZXMKICAgICAgICB0aGlzLm9ic2VydmVycyA9IFtdOwogICAgICB9CgogICAgICBzdWJzY3JpYmUoIG9ic2VydmVyICl7ICAgIC8vIEHDsWFkaXIgbnVldm9zIG9ic2VydmFkb3JlcwogICAgICAgIHRoaXMub2JzZXJ2ZXJzLnB1c2gob2JzZXJ2ZXIpOwogICAgICB9CgogICAgICB1bnN1YnNjcmliZSggb2JzZXJ2ZXIgKXsgIC8vIEVsaW1pbmFyIG9ic2VydmFkb3JlcwogICAgICAgIHRoaXMub2JzZXJ2ZXJzID0gdGhpcy5vYnNlcnZlcnMuZmlsdGVyKHN1YnNjcmliZXIgPT4gc3Vic2NyaWJlciAhPSBvYnNlcnZlcik7CiAgICAgIH0KCiAgICAgIG5vdGlmeSggZGF0YSApeyAgICAgICAgICAgLy8gTm90aWZpY2FyIGxvcyBjYW1iaW9zIGEgbG9zIG9ic2VydmFkb3JlcwogICAgICAgIHRoaXMub2JzZXJ2ZXJzLmZvckVhY2goIG9ic2VydmVyID0+IG9ic2VydmVyKCBkYXRhICkgKTsKICAgICAgfQogICAgfQoKCiAgICB3aW5kb3cuYWRkRXZlbnRMaXN0ZW5lcignbG9hZCcsIGZ1bmN0aW9uKCl7ICAgLy8gaW5pY2lhIGNvbiBET00gY2FyZ2FkbwogICAgICBlKCd0aXQnKS5pbm5lckhUTUwgPSBkb2N1bWVudC50aXRsZTsKCiAgICAgIC8vIFJlZmVyZW5jaWFtb3MgbG9zIGVsZW1lbnRvcyBkZWwgRE9NIGNvbiBsb3MgcXVlIHF1ZXJlbW9zIHRyYWJhamFyCiAgICAgIGNvbnN0IHRPcmlnID0gZSgndE9yaWcnKTsKICAgICAgY29uc3QgdFBsYTEgPSBlKCd0UGxhMScpOwogICAgICBjb25zdCB0UGxhMiA9IGUoJ3RQbGEyJyk7CiAgICAgIGNvbnN0IHRQbGEzID0gZSgndFBsYTMnKTsKCiAgICAgIC8vIEZ1bmNpb25lcyBxdWUgc2UgZWplY3V0YXLDoW4gY3VhbmRvIHNlIGRpc3BhcmUgZWwgb2JzZXJ2YWJsZQogICAgICAvLyAoRW4gZXN0b3MgY2Fzb3MgYXNpZ25hcsOtYW1vcyBsYSBkYXRhIGFsIHZhbG9yIGRlbCBpbnB1dCAnUGxhZ2lvIE4nKQogICAgICBjb25zdCBhY3RQbGExID0gKGRhdGEpID0+IHRQbGExLnZhbHVlID0gZGF0YTsKICAgICAgY29uc3QgYWN0UGxhMiA9IChkYXRhKSA9PiB0UGxhMi52YWx1ZSA9IGRhdGE7CiAgICAgIGNvbnN0IGFjdFBsYTMgPSAoZGF0YSkgPT4gdFBsYTMudmFsdWUgPSBkYXRhOwoKICAgICAgLy8gSW5zdGFuY2lhbW9zIG51ZXN0cmEgY2xhc2Ugb2JzZXJ2YWJsZQogICAgICBjb25zdCBvYnMgPSBuZXcgT2JzZXJ2YWJsZSgpOwoKICAgICAgLy8gU3VzY3JpYmltb3MgbGFzIGZ1bmNpb25lcyBxdWUgc2UgZWplY3V0YXLDoW4gYWwgZGlzcGFyYXJzZSBlbCBvYnNlcnZhYmxlCiAgICAgIG9icy5zdWJzY3JpYmUoYWN0UGxhMSk7CiAgICAgIG9icy5zdWJzY3JpYmUoYWN0UGxhMik7CiAgICAgIG9icy5zdWJzY3JpYmUoYWN0UGxhMyk7CgogICAgICAvLyBFbCBldmVudG8ga2V5dXAgZW4gaW5wdXQgb3JpZ2luYWwgKHNlIGVqZWN1dGFyw6EgdHJhcyBzb2x0YXIgY2FkYSB0ZWNsYSkKICAgICAgLy8gbGxhbWEgYWwgbcOpdG9kbyBub3RpZnkgZGVsIG9ic2VydmFibGUgY29uIHBhcsOhbWV0cm8gbG9zIGRhdG9zIGEgYWN0dWFsaXphcgogICAgICB0T3JpZy5hZGRFdmVudExpc3RlbmVyKCdrZXl1cCcsIChldmVudCkgPT4gb2JzLm5vdGlmeShldmVudC50YXJnZXQudmFsdWUpKTsKCiAgICAgIC8vIFVzbyBjYXNpbGxhcyBkZSB2ZXJpZmljYWNpw7NuIHBhcmEgc3VzY3JpYmlyL2Rlc3VzY3JpYmlyIGNhZGEgcGxhZ2lvCiAgICAgIGNTdXMxLmFkZEV2ZW50TGlzdGVuZXIoJ2NoYW5nZScsIGZ1bmN0aW9uKCl7CiAgICAgICAgaWYgKGNTdXMxLmNoZWNrZWQpCiAgICAgICAgICBvYnMuc3Vic2NyaWJlKGFjdFBsYTEpOwogICAgICAgIGVsc2UKICAgICAgICAgIG9icy51bnN1YnNjcmliZShhY3RQbGExKTsKICAgICAgfSk7CiAgICAgIGNTdXMyLmFkZEV2ZW50TGlzdGVuZXIoJ2NoYW5nZScsIGZ1bmN0aW9uKCl7CiAgICAgICAgaWYgKGNTdXMyLmNoZWNrZWQpCiAgICAgICAgICBvYnMuc3Vic2NyaWJlKGFjdFBsYTIpOwogICAgICAgIGVsc2UKICAgICAgICAgIG9icy51bnN1YnNjcmliZShhY3RQbGEyKTsKICAgICAgfSk7CiAgICAgIGNTdXMzLmFkZEV2ZW50TGlzdGVuZXIoJ2NoYW5nZScsIGZ1bmN0aW9uKCl7CiAgICAgICAgaWYgKGNTdXMzLmNoZWNrZWQpCiAgICAgICAgICBvYnMuc3Vic2NyaWJlKGFjdFBsYTMpOwogICAgICAgIGVsc2UKICAgICAgICAgIG9icy51bnN1YnNjcmliZShhY3RQbGEzKTsKICAgICAgfSk7CiAgICB9KTsKICA8L3NjcmlwdD4KPC9oZWFkPgoKPGJvZHk+CiAgPGgxIGlkPSJ0aXQiPsKgPC9oMT4KICA8cD4KICAgIFB1ZWRlcyBwcm9iYXIgbGEgY2xhc2UgPGI+T2JzZXJ2YWJsZTwvYj4gZXNjcmliaWVuZG8uLi48YnI+CiAgICA8YnI+CiAgICA8bGFiZWwgYWNjZXNza2V5PSJvIiBmb3I9InRPcmlnIj48dT5PPC91PnJpZ2luYWw6PC9sYWJlbD48YnI+CiAgICA8aW5wdXQgaWQ9InRPcmlnIiB0eXBlPSJ0ZXh0IiBzaXplPSIyMCIgcGxhY2Vob2xkZXI9IkVzY3JpYmUgYXF1w60uLi4iIGF1dG9mb2N1cz4KICAgIDx0YWJsZT4KICAgICAgPHRyPgogICAgICAgIDx0ZD4KICAgICAgICAgIFBsYWdpbyAxOjxicj4KICAgICAgICAgIDxpbnB1dCBpZD0idFBsYTEiIHR5cGU9InRleHQiIHNpemU9IjIwIj7igIM8YnI+CiAgICAgICAgICA8aW5wdXQgdHlwZT0iY2hlY2tib3giIGlkPSJjU3VzMSIgY2hlY2tlZD4KICAgICAgICAgIDxsYWJlbCBhY2Nlc3NrZXk9IjEiIGZvcj0iY1N1czEiPlN1c2NyaXRvIDx1PjE8L3U+PC9sYWJlbD4KICAgICAgICA8L3RkPgogICAgICAgIDx0ZD4KICAgICAgICAgIFBsYWdpbyAyOjxicj4KICAgICAgICAgIDxpbnB1dCBpZD0idFBsYTIiIHR5cGU9InRleHQiIHNpemU9IjIwIj7igIM8YnI+CiAgICAgICAgICA8aW5wdXQgdHlwZT0iY2hlY2tib3giIGlkPSJjU3VzMiIgY2hlY2tlZD4KICAgICAgICAgIDxsYWJlbCBhY2Nlc3NrZXk9IjIiIGZvcj0iY1N1czIiPlN1c2NyaXRvIDx1PjI8L3U+PC9sYWJlbD4KICAgICAgICA8L3RkPgogICAgICAgIDx0ZD4KICAgICAgICAgIFBsYWdpbyAzOjxicj4KICAgICAgICAgIDxpbnB1dCBpZD0idFBsYTMiIHR5cGU9InRleHQiIHNpemU9IjIwIj7igIM8YnI+CiAgICAgICAgICA8aW5wdXQgdHlwZT0iY2hlY2tib3giIGlkPSJjU3VzMyIgY2hlY2tlZD4KICAgICAgICAgIDxsYWJlbCBhY2Nlc3NrZXk9IjMiIGZvcj0iY1N1czMiPlN1c2NyaXRvIDx1PjM8L3U+PC9sYWJlbD4KICAgICAgICA8L3RkPgogICAgICA8L3RyPgogICAgPC90YWJsZT4KICA8L3A+CjwvYm9keT4KPC9odG1sPgo="
+    class="adj" onclick="adj(this)" title="descarga">
+    <i class="r06"><img class="icc" data-src="logo_html5"> <b class="peq">pru-observer-js.htm</b></i>
+  </b> 4 KB<br>
+  <br>
+
+  Aquí puedes ver el código fuente y probarlo.
+
+<pre class="hljs language-xml"><code><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"es"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Observador<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-comment">&lt;!--
+    Fuente: https://tempuscode.com/patron-observer-en-javascript/
+    Modif.: Paco Fdez  5/11/2021
+--&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css">
+    <span class="hljs-selector-tag">body</span> { <span class="hljs-attribute">margin</span>:<span class="hljs-number">1em</span>; <span class="hljs-attribute">color</span>:<span class="hljs-number">#111</span>; <span class="hljs-attribute">font-family</span>:Verdana,Arial; <span class="hljs-attribute">font-size</span>:small; }
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">function</span> <span class="hljs-title function_">e</span>(<span class="hljs-params">s</span>){<span class="hljs-keyword">return</span> <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(s);}       <span class="hljs-comment">// Elemento con id=s</span>
+
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Observable</span>{           <span class="hljs-comment">// Definición de la clase Observable</span>
+
+      <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>){            <span class="hljs-comment">// Crea array vacío que almacenará los observadores</span>
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">observers</span> = [];
+      }
+
+      <span class="hljs-title function_">subscribe</span>(<span class="hljs-params"> observer </span>){    <span class="hljs-comment">// Añadir nuevos observadores</span>
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">observers</span>.<span class="hljs-title function_">push</span>(observer);
+      }
+
+      <span class="hljs-title function_">unsubscribe</span>(<span class="hljs-params"> observer </span>){  <span class="hljs-comment">// Eliminar observadores</span>
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">observers</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">observers</span>.<span class="hljs-title function_">filter</span>(<span class="hljs-function"><span class="hljs-params">subscriber</span> =&gt;</span> subscriber != observer);
+      }
+
+      <span class="hljs-title function_">notify</span>(<span class="hljs-params"> data </span>){           <span class="hljs-comment">// Notificar los cambios a los observadores</span>
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">observers</span>.<span class="hljs-title function_">forEach</span>( <span class="hljs-function"><span class="hljs-params">observer</span> =&gt;</span> <span class="hljs-title function_">observer</span>( data ) );
+      }
+    }
+
+
+    <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'load'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>){   <span class="hljs-comment">// inicia con DOM cargado</span>
+      <span class="hljs-title function_">e</span>(<span class="hljs-string">'tit'</span>).<span class="hljs-property">innerHTML</span> = <span class="hljs-variable language_">document</span>.<span class="hljs-property">title</span>;
+
+      <span class="hljs-comment">// Referenciamos los elementos del DOM con los que queremos trabajar</span>
+      <span class="hljs-keyword">const</span> tOrig = <span class="hljs-title function_">e</span>(<span class="hljs-string">'tOrig'</span>);
+      <span class="hljs-keyword">const</span> tPla1 = <span class="hljs-title function_">e</span>(<span class="hljs-string">'tPla1'</span>);
+      <span class="hljs-keyword">const</span> tPla2 = <span class="hljs-title function_">e</span>(<span class="hljs-string">'tPla2'</span>);
+      <span class="hljs-keyword">const</span> tPla3 = <span class="hljs-title function_">e</span>(<span class="hljs-string">'tPla3'</span>);
+
+      <span class="hljs-comment">// Funciones que se ejecutarán cuando se dispare el observable</span>
+      <span class="hljs-comment">// (En estos casos asignaríamos la data al valor del input 'Plagio N')</span>
+      <span class="hljs-keyword">const</span> <span class="hljs-title function_">actPla1</span> = (<span class="hljs-params">data</span>) =&gt; tPla1.<span class="hljs-property">value</span> = data;
+      <span class="hljs-keyword">const</span> <span class="hljs-title function_">actPla2</span> = (<span class="hljs-params">data</span>) =&gt; tPla2.<span class="hljs-property">value</span> = data;
+      <span class="hljs-keyword">const</span> <span class="hljs-title function_">actPla3</span> = (<span class="hljs-params">data</span>) =&gt; tPla3.<span class="hljs-property">value</span> = data;
+
+      <span class="hljs-comment">// Instanciamos nuestra clase observable</span>
+      <span class="hljs-keyword">const</span> obs = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Observable</span>();
+
+      <span class="hljs-comment">// Suscribimos las funciones que se ejecutarán al dispararse el observable</span>
+      obs.<span class="hljs-title function_">subscribe</span>(actPla1);
+      obs.<span class="hljs-title function_">subscribe</span>(actPla2);
+      obs.<span class="hljs-title function_">subscribe</span>(actPla3);
+
+      <span class="hljs-comment">// El evento keyup en input original (se ejecutará tras soltar cada tecla)</span>
+      <span class="hljs-comment">// llama al método notify del observable con parámetro los datos a actualizar</span>
+      tOrig.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'keyup'</span>, <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> obs.<span class="hljs-title function_">notify</span>(event.<span class="hljs-property">target</span>.<span class="hljs-property">value</span>));
+
+      <span class="hljs-comment">// Uso casillas de verificación para suscribir/desuscribir cada plagio</span>
+      cSus1.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'change'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>){
+        <span class="hljs-keyword">if</span> (cSus1.<span class="hljs-property">checked</span>)
+          obs.<span class="hljs-title function_">subscribe</span>(actPla1);
+        <span class="hljs-keyword">else</span>
+          obs.<span class="hljs-title function_">unsubscribe</span>(actPla1);
+      });
+      cSus2.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'change'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>){
+        <span class="hljs-keyword">if</span> (cSus2.<span class="hljs-property">checked</span>)
+          obs.<span class="hljs-title function_">subscribe</span>(actPla2);
+        <span class="hljs-keyword">else</span>
+          obs.<span class="hljs-title function_">unsubscribe</span>(actPla2);
+      });
+      cSus3.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'change'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>){
+        <span class="hljs-keyword">if</span> (cSus3.<span class="hljs-property">checked</span>)
+          obs.<span class="hljs-title function_">subscribe</span>(actPla3);
+        <span class="hljs-keyword">else</span>
+          obs.<span class="hljs-title function_">unsubscribe</span>(actPla3);
+      });
+    });
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tit"</span>&gt;</span>&nbsp;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    Puedes probar la clase <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>Observable<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span> escribiendo...<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">accesskey</span>=<span class="hljs-string">"o"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"tOrig"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">u</span>&gt;</span>O<span class="hljs-tag">&lt;/<span class="hljs-name">u</span>&gt;</span>riginal:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tOrig"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Escribe aquí..."</span> <span class="hljs-attr">autofocus</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>
+          Plagio 1:<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tPla1"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"20"</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"cSus1"</span> <span class="hljs-attr">checked</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">accesskey</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"cSus1"</span>&gt;</span>Suscrito <span class="hljs-tag">&lt;<span class="hljs-name">u</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">u</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>
+          Plagio 2:<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tPla2"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"20"</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"cSus2"</span> <span class="hljs-attr">checked</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">accesskey</span>=<span class="hljs-string">"2"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"cSus2"</span>&gt;</span>Suscrito <span class="hljs-tag">&lt;<span class="hljs-name">u</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">u</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>
+          Plagio 3:<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tPla3"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"20"</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"cSus3"</span> <span class="hljs-attr">checked</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">accesskey</span>=<span class="hljs-string">"3"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"cSus3"</span>&gt;</span>Suscrito <span class="hljs-tag">&lt;<span class="hljs-name">u</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">u</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+
+  <div class="fve bor red mr1"><div class="s01">
+  <div class="gra neg">Observador</div>
+    Puedes probar la clase <b>Observable</b> escribiendo...<br>
+    <label accesskey="o" for="tOrig"><u>O</u>riginal:</label><br>
+    <input id="tOrig" type="text" size="20" placeholder="Escribe aquí...">
+    <table>
+      <tr>
+        <td>
+          Plagio 1:<br>
+          <input id="tPla1" type="text" size="20"> <br>
+          <input type="checkbox" id="cSus1" checked>
+          <label accesskey="1" for="cSus1">Suscrito <u>1</u></label>
+        </td>
+        <td>
+          Plagio 2:<br>
+          <input id="tPla2" type="text" size="20"> <br>
+          <input type="checkbox" id="cSus2" checked>
+          <label accesskey="2" for="cSus2">Suscrito <u>2</u></label>
+        </td>
+        <td>
+          Plagio 3:<br>
+          <input id="tPla3" type="text" size="20"> <br>
+          <input type="checkbox" id="cSus3" checked>
+          <label accesskey="3" for="cSus3">Suscrito <u>3</u></label>
+        </td>
+      </tr>
+    </table>
+  </div></div>
+  <br>
+
+</div></div>
+
+<div id="otros" class="fma"><div class="s01">
+  <p class="tf7 neg"><br>Otros artículos/ejemplos</p>
+
+  <div class="f02">
+    <a href="https://anexsoft.com/patron-observador-con-javascript-observer-pattern"><img class="icc" data-src="ico_anexsoft"> Patrón Observador con Javascript (Observer Pattern) | anexsoft</a><br>
+    <span class="tf8 roj">📎</span>
+    <b data-adj=""
+      class="adj" onclick="adj(this)" title="descarga">
+      <i class="r06"><img class="icc" data-src="logo_html5"> <b class="peq">patron-observador-js.htm</b></i>
+    </b> 3 KB  <i class="peq gri">7/11/2021: He corregido Observable.unsubscribe(c)</i><br>
+    <br>
+  </div>
+
+  <div class="f02">
+    <a href="https://ichi.pro/es/introduccion-al-patron-observable-en-javascript-4289297562658"><img class="icc" data-src="ico_ichi"> Introducción al patrón observable en JavaScript | ichi.pro</a><br>
+    <br>
+  </div>
+
+  <div class="f02">
+    <a href="https://www.stackchief.com/tutorials/JavaScript%20Observables%20in%205%20Minutes"><img class="icc" data-src="ico_stackchief"> JavaScript Observables in 5 Minutes | StackChief</a><br>
+    <br>
+  </div>
+
+  <div class="f02">
+    <a href="https://www.dofactory.com/javascript/design-patterns/observer"><img class="icc" data-src="ico_dofactory"> JavaScript Observer Design Pattern | Dofactory</a><br>
+    <i class="peq gri">Implementado sin usar class (usando prototype)</i><br>
+    <br>
+  </div>
+
+  <div class="f02">
+    <a href="https://auth0.com/blog/javascript-promises-vs-rxjs-observables/"><img class="icc" data-src="ico_auth0"> JavaScript Promises vs. RxJS Observables | auth0.com</a><br>
+    <br>
+  </div>
+
+  <div class="f04">
+    <a class="neg gra" href="https://rxjs.dev/"><img class="ic3" data-src="logo_rxjs"> RxJS </a> Reactive Extensions Library for JavaScript<br>
+	<div>
+      <div class="f02">
+        <a href="https://github.com/ReactiveX/rxjs"><img class="icc" data-src="logo_github"> ReactiveX / <b>rxjs</b></a>: A reactive programming library for JavaScript<br>
+      </div>
+	  <div class="f02">
+	    <a href="https://www.youtube.com/watch?v=zV0NywULR_4"><img class="icc" data-src="logo_youtube"> RxJS - ¿Qué es y Para qué usarlo?</a>
+	  </div>
+	  <div class="f02">
+	    <a href="http://blog.enriqueoriol.com/2019/03/aprende-rxjs-1.html"><img class="icc" data-src="ico_enroriol"> Aprende RxJS desde cero - p1</a> /
+	    <a href="http://blog.enriqueoriol.com/2019/04/aprende-rxjs-2.html">p2</a> /
+	    <a href="http://blog.enriqueoriol.com/2019/04/aprende-rxjs-3.html">p3</a> /
+	    <a href="http://blog.enriqueoriol.com/2019/09/aprende-rxjs-4.html">p4</a>
+	  </div>
+	</div>
+  </div>
+
+  <br>
+
+  <div class="f02">
+    <a href="https://github.com/gpuente/observables"><img class="icc" data-src="logo_github"> gpuente / <b>observables</b></a>: Ejemplo sobre programación reactiva y observables (js)<br>
+    <span class="tf8 roj">📎</span>
+    <b data-adj="data:application/x-zip-compressed;base64,UEsDBAoAAAAAABJgokoAAAAAAAAAAAAAAAATAAkAb2JzZXJ2YWJsZXMtbWFzdGVyL1VUBQABVNcIWVBLAwQKAAAACAASYKJK9yaRay4CAAA7BwAAIwAJAG9ic2VydmFibGVzLW1hc3Rlci9vYnNlcnZhYmxlcy5odG1sVVQFAAFU1whZvVVNj9owEL3zK+YWEFJoORa2UqX+gErtbbUHJwyJV46NbGc5rPjvnbFDYqcsHCqtLwHP55v3Jtm72sqT/74AOpsN6L6DN2HB4smiQ+0dCDgIL0Bq8C3CUZkzOG9RdCGGnTnoCb7sFnSGPH/ItVbCOTCVQ/smKoVZUp0aTPWKtR/zJZYnOPa69tLo5eo9OPDxrXRl9ELryOn5ZcdluUElnQdzBNdXEZshD29C8wwkTxKgZfHhxlEUHgY4A6QfiqFTptA7N3ytUSFfh8C6FbpBd53WhCQvOwUmAJOOE6x8EkvJ+FCncVx4FjAPGmDyY5c5XrJ/+VzLU+/arKsp9pKN5rfseiU8wnUATMB1mCWJQTqoTa8OUAUfoVQYJJwxFJP1bD4N+p+x5Vv0Z+zFLguLDQ8mirGANT9XOVa6Wa93/2YhWRrrl2PGD2FGBUT30D/BGMYTVHZuUY+wh0ksbpR6QN7R2CWvgQxLRY/9nBiFuvEtmdbrG8Tnzs/yZdDMcgYu5z/+IsALJtQLavNkTWNpz5PFfKWeNJ4TYS9XO5pNvAtLMdM8xyUaovj3QosOC/gGRWogekr4Wlxm6RKXW/m2DxJuHyak62kfc7lT4Kgr5nU0WjNt+Aw0C4PkS3bisRNM8k1huPvFt59VfVi1SOO0yZxkfF3mfv93VRvtjMJSmSbFWzKFsYdfVmofGqavRa/oa5G8TRh5ZXybvd/vJk5U/4HLdih+32fIs98Mn8y/UEsDBAoAAAAIABJgokr8D66tAQEAAMwBAAAcAAkAb2JzZXJ2YWJsZXMtbWFzdGVyL3JlYWRtZS5tZFVUBQABVNcIWW2QO27DMBBEe55i4drQDVIFboIAKXKCJbl2aFBcgR8Bzm1yBndpdbEMZTsqEhYEKc3OG86bLZJntlGKefp/GXMoVUgKtURylnGKSl7ILddR6diSC5o4UdRCutnRhSLTlPWUeWQXlmuiLOxqmHkwh/hrJaUuX9hdDhW3RC888ztuUx3ABnPTFmBh0pOoPQv0uw252xNHcg0bdKV1Rws/H0oNqa7x+kwZ6Llx8tqdt/EOca0yTE7LdzKORxvWQP1lnjG472GFQjpqHiEkx54fSW7AflCbBVT3oXQzGeh1o9+FU9WMllAIAodPFIjvZsX0N/yN1zt9kD1+3fOhjj7udfgBUEsBAgAACgAAAAAAEmCiSgAAAAAAAAAAAAAAABMACQAAAAAAAAAQAAAAAAAAAG9ic2VydmFibGVzLW1hc3Rlci9VVAUAAVTXCFlQSwECAAAKAAAACAASYKJK9yaRay4CAAA7BwAAIwAJAAAAAAABAAAAAAA6AAAAb2JzZXJ2YWJsZXMtbWFzdGVyL29ic2VydmFibGVzLmh0bWxVVAUAAVTXCFlQSwECAAAKAAAACAASYKJK/A+urQEBAADMAQAAHAAJAAAAAAABAAAAAACyAgAAb2JzZXJ2YWJsZXMtbWFzdGVyL3JlYWRtZS5tZFVUBQABVNcIWVBLBQYAAAAAAwADAPcAAAD2AwAAKAA5ZmJlODIwYjExMDg4MmExZGZiZThmZjdjNzUzZmUxOTgzYmM4NGM4"
+      class="adj" onclick="adj(this)" title="descarga">
+      <i class="r06"><img class="icc" data-src="carp_zip"> <b class="peq">observables-master.zip</b></i>
+    </b> 2 KB<br>
+    <br>
+  </div>
+
+  <div class="f02">
+    <a href="https://github.com/PronabM/State.js"><img class="icc" data-src="logo_github"> PronabM / <b>State.js</b></a>: JS library (State) which is useful in converting JS objects into observable(s) and has handy API to manipulate the state<br>
+    <span class="tf8 roj">📎</span>
+    <b data-adj="data:application/x-zip-compressed;base64,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KvvgLXglCBbwHm+82qeK9ZBOcIXzg1f+aVCuUKqLOFLvhWoaEFmM/FHfvMGL3pNsXirM+QuVkkt8sMHxPZGDmIsUC3VIyfOB0P4GAqWkKkO4qK/gNJzi5Wl0zj876F5sNcQ+nzZQbfsI2TLSNhHafo+GbjoV6cY60iM109cUpWQNJJ12TYt17TwXiEGi6lZOu3ZaurPhEN5qjDKoxLMoFuZPK1AsId+a1QBTuyISgdXh78CBQD0CsUz1167J008pkdAt0H8swLrtLjUXHPvhCLQmJYl1z0pR4QPuoTdxoMS0IA7UHPk2xiDD0hB+r8Y5mY3bM6EGcltgzzjUznbOK4qVzUo23P4/XndqmBJdRVZRCv/C3ilcIXhxlM8J/3uMvUw1uEtES/yP3UdD1U2aaDaW0jFt9dWuuq3k07Yym/ZgLxqahjVWEkEKCaVIpl33Y9SdKW3Dr4kaazLwlxVLJOEM/F5dxzUSwGmqmraR4aQpVd8ztbWmkKrC6JB13q8p1uSr7dvU9xTC6x10GnaUUu00x2WJMtzwrR+yBF+XhC/BAmA6BY/HH3EivUdg/ezDCQhjWLz58O53eD4F/7e72/fw7BnoMyilUMuQLLfwyyNGHUMIB/I5eOq6YTjzJk1fD4BVA7Tz7yL/mqnD4O5nxNeX9c2t8XhjnNwWTzdFY0uc3BBuO7Rp6m9thb/ZCP/Ny5Mt0NZO2+lvMfntXJrRbAzc0PwD2fkCUEsBAgAACgAAAAAA4TZ+SwAAAAAAAAAAAAAAABAACQAAAAAAAAAQAAAAAAAAAFN0YXRlLmpzLW1hc3Rlci9VVAUAAcYbIFpQSwECAAAKAAAACADhNn5LnBZFzXgCAAAxBAAAFwAJAAAAAAABAAAAAAA3AAAAU3RhdGUuanMtbWFzdGVyL0xJQ0VOU0VVVAUAAcYbIFpQSwECAAAKAAAACADhNn5LtNzBZg8CAABsAwAAGQAJAAAAAAABAAAAAADtAgAAU3RhdGUuanMtbWFzdGVyL1JFQURNRS5tZFVUBQABxhsgWlBLAQIAAAoAAAAIAOE2fksDftPMDAMAAAEIAAAYAAkAAAAAAAEAAAAAADwFAABTdGF0ZS5qcy1tYXN0ZXIvU3RhdGUuanNVVAUAAcYbIFpQSwECAAAKAAAACADhNn5L2TZWrhkAAAAaAAAAGwAJAAAAAAABAAAAAACHCAAAU3RhdGUuanMtbWFzdGVyL19jb25maWcueW1sVVQFAAHGGyBaUEsBAgAACgAAAAgA4TZ+SyPkDv2QAwAAWgoAABsACQAAAAAAAQAAAAAA4ggAAFN0YXRlLmpzLW1hc3Rlci9zYW1wbGUuaHRtbFVUBQABxhsgWlBLBQYAAAAABgAGANgBAAC0DAAAKABjZjgwZmRlYTFhZDExNWRlNWYzZWE5NDcwMmYxMWNmZDc4Zjg2YzFl"
+      class="adj" onclick="adj(this)" title="descarga">
+      <i class="r06"><img class="icc" data-src="carp_zip"> <b class="peq">State.js-master.zip</b></i>
+    </b> 4 KB<br>
+    <br>
+  </div>
+
+  <div class="f02">
+    <a href="https://github.com/asaadsaad/es6-demo"><img class="icc" data-src="logo_github"> asaadsaad / <b>es6-demo</b></a>: Demo for ES6 features: classes, promise, observables, destructuring, spread and rest operators, template string, for-in vs for-of<br>
+	<span class="tf8 roj">📎</span>
+    <b data-adj="data:application/x-zip-compressed;base64,UEsDBAoAAAAAACU6I1EAAAAAAAAAAAAAAAAQAAkAZXM2LWRlbW8tbWFzdGVyL1VUBQAB5vpQX1BLAwQKAAAACAAlOiNRpW5nq/AAAABhAgAAHgAJAGVzNi1kZW1vLW1hc3Rlci9jb25zdHJ1Y3Rvci5qc1VUBQAB5vpQX4VRTYvCMBC9z68YirAtlXrzUvawB+8L/gFLjG6gJiWZskjJf3fSJGIXXdtDHsP7yJucRi1IGY3f0jqjy5OyjnR3kWvsu4gqnAD5E0Y708umN+eSfpSr2nkcYHOX4SfecftWliNYleG/os0GraTR6lneoroMvRKKEDwECeEw12A/LX9zp+LLdd2xWGOxDyd7waN/lFQAkd4M1pCh6yCbs5WSQqO8pPLVLh4WUOMH//WyIGd6gJgUbUsO5Dq7/TYcgoku3ZcjeJJTyI6CjH31MIn57iH+0p4uPpF8BumeOC3qHlbTMsljmmQnf6ja6OIRblBLAwQKAAAACAAlOiNRf0X7FBMCAADXAwAAGAAJAGVzNi1kZW1vLW1hc3Rlci9pbmRleC5qc1VUBQAB5vpQX4VSTW/bMAy9+1fwMMAJ4CZNimxA0g3IMmwYtqzYXGCHIkAVibbVyJIhy01Tw/99lD+6rj3MB0mk+fgeP4LpFASWzlbcVVbqFNbWslMZcKNLBzea5RiBFBEccV9Khzt4DzfhumRMhBHM5hcRhHmVT1BU4W7VwozCiTLpqIZXaGjGQfCK8mp/h9wNnDUcpXAZ8czOzyPIUKaZGyxulLFkhHtVIQlIjHaxfERyzRfQ0NXDl3DxFL/04YwfQmheKmxjn0h6db+QqbOjsUoAPrC8UNhLM/u7loEJYbEsl1Bz6U6U/jOTNpGofE9KxxyS7+uajEdZcCPIXMwXi7cNNEFSae6k0VBQ7W5D+FH9b76mGdcB0GeRGqTB+1ZBE/wFkI7xqpUaFxaZgKsCLXPUmV6oQ55pKj2VWLYD+0EiSA7d8c/v/rHWaaWYDXc9ImVSo/imzVGhSLEFbY1OzaePPvz6VGDMrSwcWZPJ5DnBbtV3jdIMQob9SZjL0EaQm+4mKM+konJ1t0lf0NgUe0Wo/GPLBGsd/ZKFW3nA18s15Bmmdo00KWo9xM5vVa/Ad9/vyyZevJuHq96bM3uoCvLfto2+zGYffqPiJkdwBt7UHtXAxlS2xMsp/Q1uX7D3GXruxNgzqeG+bF8mCe6ZBZeRjK79bT17f3BfSEBRMFLoQALBusAxdFN/ziPHfvBdeKdcgkn+B4DgD1BLAwQKAAAACAAlOiNRxpyVkO0FAACcEgAAIAAJAGVzNi1kZW1vLW1hc3Rlci9vYnNlcnZhYmxlcy5odG1sVVQFAAHm+lBfpVhtb9s2EP6eX3ExOohGbClJVwxIbANr2n0Y2rWAuxXDMCy0dbaZSKRKUa6NIP99R1K29ZbG3QTDlqi7490990aPTt98uPn058e3sDJpMjkZ+R+A0Qp5bG/oNkXD6b3JhvilEOtx70ZJg9IMp2ab4PDTNsMezP3auGdwY6J5nvcgmoAXYIRJcKJmOeo1nyWYh3abUeTXPU0i5D2sNC7GvSgRM831NsrvhYyMUsk/M55j6IQa2q26icZk3MutIvkK0fQgxVjwcY8nidXgGeGp0tkKi3wY44IXiXG7/Y+N8rkWmany3vE196s9yPW8osBdHlkn+5d5eJf3JqPIP+2k2d0mMxVv4QEyHsdCLq/gVbaBU5FmShsuzTU8EpcjtLBFO9xGlo0ALTVyW1sM86soKmR2vwznKo30hrSYFTImq9xDWKRxmArZUGd0OhzCKJtkXPOl5tlqFGUTGA73G3iNo8jGQW5I3Q97tAegFgNYaJXCI4zB7nLdpE55RiQiMaj3RKHKUHOj9IF8zTVQGBHBQXw418gNskUh50YoCcwHGuo+POwY7bVQGliCBgTxn1/Tzwguzu3N2VmD1F47KaEkGJnoX1cJHqsPdcrgZvrqp8ugTp+j+SRSVIVhrA/jyXPbkZAfW0JqZKi10iyYKsrOFcUFfKXsg89ayWXQf5KLMM/IBcga5gzg5fn5+WHxsV/zeV7MPMzWv2MrLiyXZshqPt6DsCGXOngVQZSoJbv9gycFXsGLh83jbZ/CdtDNSIZVWb2ddvFpliq9kAvFbt8oiW4TsqPk6bh20tSCXQzgkpxQ81yYiaxunr0oVBmTDkQJZ8QyaFL4OD4QTcZwWRNc36Xbk/ayTiQJVS9u2tvJIklai6zFGcTkk3po7EHudE49R2NOTWAMf1X5H0DEV3A+AMlTQjZ4h1xLG4u/qRiDARiViTmt20f4dUordQQ9/0Wb/z1FsXrzuiLisNIl4rItwnalqYvZipTa4uPfexNtcWLWwmPxV7M752BGpSunmnz74oGWQqvEI4gc+FfMKTNPbykCj4J+L7EKmRVJ4vcSupF5cOq/Xdv8PxTYOo0vmns6Fqt5kdLNAIJ5Iub3lUpTT26GLa2w/z3EoeF6iabfGWt7LW1ZTrcfST+RI2kq8SuUT4xp8mWypj6i8Q7npl0/K9W1XhRKTtabFvM55vlpz1URuHyq2NFnr0ZoViifcEAtcPYc/eccN2gna0ei/iKkyFdBt8tqhWsXAJrLJXaA79ZdbTs/IrLLurWxCm3gB7iE8XgMF+2KY1OgpDqDzVHxvWkXsi7zmoZNi5mFvD042K6Ubg9TQBkzJX2lvVWJKvqsbTNq6uQW+4eW0dG26/LqDb/SRk8Oo9OJH55ORrPCGCUnNzbfaHgcReXCySgWa5q17LcbqVozlTXWE5OZu9QNvxSot1NMyF47CXiCoN64SeY3WOht0G+Wir3TB/AaV3wtlP5eFBp8jBqAAVdnMA5qyfY8jM/gWGJmsSFrQjtyl6cTEuXfHWR4F4U0SLsq+E7kREgRX9bAQZmMXRB75U9dUlaw9XOxkFlhom/Pw101ukHihmCz0srQscjG3QBinCmqaOWT4ff0nSUFBVDXlFyFxenUWfObUeAoA6pNu7uDILdwXEuMHQSha6KdBaMkMOr3jDS+oQMdO7I1frMCH6miTeYEMXOnACr/1LaByxgwFdQdJfpYAb6wJxCz4hT9np4vuZBNaVWQ2IVN+U6T0eFNurubshOGPiqPsfyZIvX9LvhMHQ2kAjr2olcqJ9mpnZeENIrsQjgc03e+IleRDm+tpyyBU6BDeDVW2csun9g0fsYtLR4X7SzwRJSigaML2oQ2ORgN8P/Zsbc3K6TEEgsoyAOAGyoPuT2vOGo6szTreqNQ79KYPGkdmNhzbyPZ68fdhJv39iZFsu1nmgucDU9n9k6wjbi+c2Z+srO+AnnNIRc7GBoY+EpXOfh0kJVqsX7tTam27+htAf0yLhse7+7/J9U/PKgh+r8sIv8n1L9QSwMECgAAAAgAJTojUQB5h6/lAAAAlwEAABoACQBlczYtZGVtby1tYXN0ZXIvcHJvbWlzZS5qc1VUBQAB5vpQX3WQwWoCMRCG73mKKRSSUJG99GJp7z0o0vYBDHFWp2QTSSbKKvvuTVYtleJcAv/3z8yfabO3TMHDhvY4xyUdj0ZpOAkoFZFz9ODxAMsYOkqo2qtfRUzB7XFSXN9o+dpTKyF/UYchsyqzXt/+oPPYsVPJBZpdcMTGS/3rGCbw3DSNfhmVobyDEDfpRjDlLXql1obNuGL1gSk7TjN4PFVxWN3xXfDDHW6DL+lw6sLmLF5s1rDdKoUx/rPJzxBjPwMJT1C5FuIGv8OBnKstTD4jdD04asvlchEclACwqz8DSuU2Zt1L/QNQSwECAAAKAAAAAAAlOiNRAAAAAAAAAAAAAAAAEAAJAAAAAAAAABAAAAAAAAAAZXM2LWRlbW8tbWFzdGVyL1VUBQAB5vpQX1BLAQIAAAoAAAAIACU6I1Glbmer8AAAAGECAAAeAAkAAAAAAAEAAAAAADcAAABlczYtZGVtby1tYXN0ZXIvY29uc3RydWN0b3IuanNVVAUAAeb6UF9QSwECAAAKAAAACAAlOiNRf0X7FBMCAADXAwAAGAAJAAAAAAABAAAAAABsAQAAZXM2LWRlbW8tbWFzdGVyL2luZGV4LmpzVVQFAAHm+lBfUEsBAgAACgAAAAgAJTojUcaclZDtBQAAnBIAACAACQAAAAAAAQAAAAAAvgMAAGVzNi1kZW1vLW1hc3Rlci9vYnNlcnZhYmxlcy5odG1sVVQFAAHm+lBfUEsBAgAACgAAAAgAJTojUQB5h6/lAAAAlwEAABoACQAAAAAAAQAAAAAA8gkAAGVzNi1kZW1vLW1hc3Rlci9wcm9taXNlLmpzVVQFAAHm+lBfUEsFBgAAAAAFAAUAkwEAABgLAAAoADhlMWViMTZkNDVmYmM4MTc1MDc5ZDgxNGViYWU1NjFkYTUyZDBjMmM="
+      class="adj" onclick="adj(this)" title="descarga">
+      <i class="r06"><img class="icc" data-src="carp_zip"> <b class="peq">es6-demo-master.zip</b></i>
+    </b> 4 KB<br>
+    <br>
+  </div>
+
+</div></div>
+
+<div>&nbsp;</div>
+
+</main>
+
+
+<footer class="clf">
+  <span id="ori2"></span><br>
+  <span class="peq fma fld red">
+    He incluido '<a target="_self" href="#ltema">temas</a>' <i class="peq">(estilos para resaltar el código)</i>,<br>
+	mis archivos de <a target="_self" href="#pruebas">pruebas</a> <i class="peq">5/11/2021</i><br>
+	y referencias a <a target="_self" href="#otros">otros artículos/ejemplos</a>. ™
+  </span>
+</footer>
+
+<script>
+/* script añadido para adjuntos */
+function blobData(dataURI) {
+  var sByte = atob(dataURI.split(',')[1]);
+  var sMime = dataURI.split(',')[0].split(':')[1].split(';')[0];
+  var ab = new ArrayBuffer(sByte.length);
+  var ia = new Uint8Array(ab);
+  for (var i = 0; i < sByte.length; i++)
+    ia[i] = sByte.charCodeAt(i);
+  return new Blob([ab], {type: sMime});
+}
+function saveDlg (data, filename, mimetype) {
+  if (!data) return;
+  var blob = data.constructor !== Blob
+    ? new Blob([data], {type: mimetype || 'application/octet-stream'})
+    : data ;
+  if (navigator.msSaveBlob) {
+    navigator.msSaveBlob(blob, filename);
+    return;
+  }
+  var lnk = document.createElement('a'),
+      url = window.URL,
+      objectURL;
+  if (mimetype)
+    lnk.type = mimetype;
+  lnk.download = filename || 'untitled';
+  lnk.href = objectURL = url.createObjectURL(blob);
+  lnk.dispatchEvent(new MouseEvent('click'));
+  setTimeout(url.revokeObjectURL.bind(url, objectURL));
+}
+function adj (e, s) {
+  if (!s) s = e.innerText.trim();
+  if (!s) s = e.title;
+  if (!s) s = 'adjunto';
+  saveDlg (blobData(e.dataset.adj), s);
+}
+
+
+ori2.innerHTML = ori1.innerHTML;
+imgData({
+  ico_origen         :'data:image/png;base64,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',
+  carp_zip           :'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0iI0ZGRiI+Cgk8cGF0aCBmaWxsPSIjRkZCOTAwIiBkPSJNNDUsMjRsLTQuMjQyNi00LjI0MjZDMzkuNjMyMSwxOC42MzIxLDM4LjEwNiwxOCwzNi41MTQ3LDE4SDljLTEuNjU2OSwwLTMsMS4zNDMxLTMsM3Y1NiBjMCwwLjU1MjMsMC40NDc3LDEsMSwxaDgyYzAuNTUyMywwLDEtMC40NDc3LDEtMVYyN2MwLTEuNjU2OS0xLjM0MzEtMy0zLTNINDV6Ii8+Cgk8cGF0aCBmaWxsPSIjRkZENzVFIiBkPSJNNDUsMjRsLTQuMjQyNiw0LjI0MjZDMzkuNjMyMSwyOS4zNjc5LDM4LjEwNiwzMCwzNi41MTQ3LDMwSDZ2NDdjMCwwLjU1MjMsMC40NDc3LDEsMSwxaDgyIGMwLjU1MjMsMCwxLTAuNDQ3NywxLTFWMjdjMC0xLjY1NjktMS4zNDMxLTMtMy0zSDQ1eiIvPgoJPGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iNDgiIHgyPSI0OCIgeTE9IjI0IiB5Mj0iNzgiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KCQk8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgoJCTxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmZDc1ZSIgc3RvcC1vcGFjaXR5PSIuMyIvPgoJPC9saW5lYXJHcmFkaWVudD4KCTxwYXRoIGZpbGw9InVybCgjYSkiIGQ9Ik00NSwyNGwtNC4yNDI2LDQuMjQyNkMzOS42MzIxLDI5LjM2NzksMzguMTA2LDMwLDM2LjUxNDcsMzBINnY0N2MwLDAuNTUyMywwLjQ0NzcsMSwxLDFoODIgYzAuNTUyMywwLDEtMC40NDc3LDEtMVYyN2MwLTEuNjU2OS0xLjM0MzEtMy0zLTNINDV6Ii8+Cgk8cGF0aCBvcGFjaXR5PSIuNCIgZD0iTTYsMzB2MWgzMC42MDA1YzEuODU2NSwwLDMuNjM3LTAuNzM3NSw0Ljk0OTctMi4wNTAzTDQ2LjUsMjRINDVsLTQuMjQyNiw0LjI0MjYgQzM5LjYzMjEsMjkuMzY3OSwzOC4xMDYsMzAsMzYuNTE0NywzMEg2eiIvPgoJPHBhdGggZmlsbD0iI0RBN0IxNiIgZD0iTTg5LDc4SDdjLTAuNTUyMywwLTEtMC40NDc3LTEtMWwwLDBoODRsMCwwQzkwLDc3LjU1MjMsODkuNTUyMyw3OCw4OSw3OHoiLz4KCTxwYXRoIGZpbGw9IiNFOTlFMEMiIGQ9Ik00NCA1OUw0NCA1OWMtLjU1MjMgMC0xLS40NDc3LTEtMXYtOGMwLS41NTIzLjQ0NzctMSAxLTFsMCAwYy41NTIzIDAgMSAuNDQ3NyAxIDF2OEM0NSA1OC41NTIzIDQ0LjU1MjMgNTkgNDQgNTl6TTQ5IDU5TDQ5IDU5Yy0uNTUyMyAwLTEtLjQ0NzctMS0xdi04YzAtLjU1MjMuNDQ3Ny0xIDEtMWwwIDBjLjU1MjMgMCAxIC40NDc3IDEgMXY4QzUwIDU4LjU1MjMgNDkuNTUyMyA1OSA0OSA1OXpNNTQgNTlMNTQgNTljLS41NTIzIDAtMS0uNDQ3Ny0xLTF2LThjMC0uNTUyMy40NDc3LTEgMS0xbDAgMGMuNTUyMyAwIDEgLjQ0NzcgMSAxdjhDNTUgNTguNTUyMyA1NC41NTIzIDU5IDU0IDU5ek01OSA1OUw1OSA1OWMtLjU1MjMgMC0xLS40NDc3LTEtMXYtOGMwLS41NTIzLjQ0NzctMSAxLTFsMCAwYy41NTIzIDAgMSAuNDQ3NyAxIDF2OEM2MCA1OC41NTIzIDU5LjU1MjMgNTkgNTkgNTl6TTY0IDU5TDY0IDU5Yy0uNTUyMyAwLTEtLjQ0NzctMS0xdi04YzAtLjU1MjMuNDQ3Ny0xIDEtMWwwIDBjLjU1MjMgMCAxIC40NDc3IDEgMXY4QzY1IDU4LjU1MjMgNjQuNTUyMyA1OSA2NCA1OXpNNjkgNTlMNjkgNTljLS41NTIzIDAtMS0uNDQ3Ny0xLTF2LThjMC0uNTUyMy40NDc3LTEgMS0xbDAgMGMuNTUyMyAwIDEgLjQ0NzcgMSAxdjhDNzAgNTguNTUyMyA2OS41NTIzIDU5IDY5IDU5ek03NCA1OUw3NCA1OWMtLjU1MjMgMC0xLS40NDc3LTEtMXYtOGMwLS41NTIzLjQ0NzctMSAxLTFsMCAwYy41NTIzIDAgMSAuNDQ3NyAxIDF2OEM3NSA1OC41NTIzIDc0LjU1MjMgNTkgNzQgNTl6TTc5IDU5TDc5IDU5Yy0uNTUyMyAwLTEtLjQ0NzctMS0xdi04YzAtLjU1MjMuNDQ3Ny0xIDEtMWwwIDBjLjU1MjMgMCAxIC40NDc3IDEgMXY4QzgwIDU4LjU1MjMgNzkuNTUyMyA1OSA3OSA1OXpNODQgNTlMODQgNTljLS41NTIzIDAtMS0uNDQ3Ny0xLTF2LThjMC0uNTUyMy40NDc3LTEgMS0xbDAgMGMuNTUyMyAwIDEgLjQ0NzcgMSAxdjhDODUgNTguNTUyMyA4NC41NTIzIDU5IDg0IDU5ek04OSA1OUw4OSA1OWMtLjU1MjMgMC0xLS40NDc3LTEtMXYtOGMwLS41NTIzLjQ0NzctMSAxLTFsMCAwYy41NTIzIDAgMSAuNDQ3NyAxIDF2OEM5MCA1OC41NTIzIDg5LjU1MjMgNTkgODkgNTl6TTM4IDQ3SDExYy0xLjEwNDYgMC0yIC44OTU0LTIgMmgyYy41NTIzIDAgMSAuNDQ3NyAxIDF2OGMwIC41NTIzLS40NDc3IDEtMSAxSDljMCAxLjEwNDYuODk1NCAyIDIgMmgyN2MxLjEwNDYgMCAyLS44OTU0IDItMlY0OUM0MCA0Ny44OTU0IDM5LjEwNDUgNDcgMzggNDd6TTM3IDU4YzAgLjU1MjMtLjQ0NzcgMS0xIDFoLThjLS41NTIzIDAtMS0uNDQ3Ny0xLTF2LThjMC0uNTUyMy40NDc3LTEgMS0xaDhjLjU1MjMgMCAxIC40NDc3IDEgMVY1OHpNOCA1OUg2VjQ5aDJjLjU1MjMgMCAxIC40NDc3IDEgMXY4QzkgNTguNTUyMyA4LjU1MjMgNTkgOCA1OXoiLz4KPC9zdmc+',
+  logo_7z            :'data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDQgNDQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnPgogPHJlY3QgeD0iMCIgeT0iNSIgd2lkdGg9IjQyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjZmZmIi8+CiA8cGF0aCBkPSJtMjgsMThsMCwzbDUuMywwbC01LjMsNy43bDAsMy4zbDksMGwwLC0zbC01LjMsMGw1LjMsLTcuN2wwLC0zLjNsLTksMHptLTE3LC0zbDAsM2w3LjUsMGwtNC41LDQuNWwwLDYuNWw0LDBsMCwtNi41bDQsLTRsMCwtMy41bS0xNSwtM2wxOCwwbDAsMjBsLTE4LDBsMCwtMjB6bS03LC03bDAsMzRsNDQsMGwwLC0zNGwtNDQsMHptMywzbDM4LDBsMCwyOGwtMzgsMCIvPgo8L2c+Cjwvc3ZnPg==',
+  logo_html5         :'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KCTxwYXRoIGQ9Ik0xMDguNCAwaDIzdjIyLjhoMjEuMlYwaDIzdjY5aC0yM1Y0NmgtMjF2MjNoLTIzLjJNMjA2IDIzaC0yMC4zVjBoNjMuN3YyM0gyMjl2NDZoLTIzTTI1OS41IDBoMjQuMWwxNC44IDI0LjNMMzEzLjIgMGgyNC4xdjY5aC0yM1YzNC44bC0xNi4xIDI0LjhsLTE2LjEtMjQuOHYzNC4yaC0yMi42TTM0OC43IDBoMjN2NDYuMmgzMi42VjY5aC01NS42Ii8+Cgk8cGF0aCBmaWxsPSIjZTQ0ZDI2IiBkPSJNMTA3LjYgNDcxbC0zMy0zNzAuNGgzNjIuOGwtMzMgMzcwLjJMMjU1LjcgNTEyIi8+Cgk8cGF0aCBmaWxsPSIjZjE2NTI5IiBkPSJNMjU2IDQ4MC41VjEzMUg0MDQuM0wzNzYgNDQ3Ii8+Cgk8cGF0aCBmaWxsPSIjZWJlYmViIiBkPSJNMTQyIDE3Ni4zaDExNHY0NS40aC02NC4ybDQuMiA0Ni41aDYwdjQ1LjNIMTU0LjRNMTU2LjQgMzM2LjNIMjAybDMuMiAzNi4zIDUwLjggMTMuNnY0Ny40bC05My4yLTI2Ii8+Cgk8cGF0aCBmaWxsPSIjZmZmIiBkPSJNMzY5LjYgMTc2LjNIMjU1Ljh2NDUuNGgxMDkuNk0zNjEuMyAyNjguMkgyNTUuOHY0NS40aDU2bC01LjMgNTktNTAuNyAxMy42djQ3LjJsOTMtMjUuOCIvPgo8L3N2Zz4=',
+  logo_github        :'data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzAgMzAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTE1IDBjLTguMyAwLTE1IDYuNy0xNSAxNSAwIDYuNiA0LjMgMTIuMiAxMC4zIDE0LjIgMC44IDAuMSAxLTAuMyAxLTAuN3YtMi42Yy00LjIgMC45LTUuMS0yLTUuMS0yLTAuNy0xLjctMS43LTIuMi0xLjctMi4yLTEuNC0wLjkgMC4xLTAuOSAwLjEtMC45IDEuNSAwLjEgMi4zIDEuNSAyLjMgMS41IDEuMyAyLjMgMy41IDEuNiA0LjQgMS4yIDAuMS0xIDAuNS0xLjYgMS0yLTMuMy0wLjQtNi44LTEuNy02LjgtNy40IDAtMS42IDAuNi0zIDEuNS00LTAuMi0wLjQtMC43LTEuOSAwLjEtNCAwIDAgMS4zLTAuNCA0LjEgMS41IDEuMi0wLjMgMi41LTAuNSAzLjgtMC41czIuNiAwLjIgMy44IDAuNWMyLjktMS45IDQuMS0xLjUgNC4xLTEuNSAwLjggMi4xIDAuMyAzLjYgMC4xIDQgMSAxIDEuNSAyLjQgMS41IDQgMCA1LjgtMy41IDctNi44IDcuNCAwLjUgMC41IDEgMS40IDEgMi44djQuMWMwIDAuNCAwLjMgMC45IDEgMC43IDYtMiAxMC4yLTcuNiAxMC4yLTE0LjIgMC4xLTguMi02LjYtMTQuOS0xNC45LTE0Ljl6Ii8+Cjwvc3ZnPg==',
+  logo_wikipedia     :'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+CjxwYXRoIGQ9Ik0xMS4xNCA0SDE0YS42OS42OSAwIDAgMSAwIC42NWMtMSAuMTYtMS4zNi45MS0xLjgxIDEuODNsLTEuNCAyLjc1IDIuMzUgNS4yMWguMDdsMy41Mi04LjFjLjQ0LTEuMDcuNC0xLjU5LS43OS0xLjdhLjY4LjY4IDAgMCAxIDAtLjY1aDMuNDVhLjY4LjY4IDAgMCAxIDAgLjY1Yy0xLjIxLjE2LTEuNDIuOTEtMS44MSAxLjgzbC00LjM3IDEwLjA4Yy0uMTMuMy0uMjQuNDUtLjQ0LjQ1cy0uMzMtLjE2LS40Mi0uNDVsLTIuNDgtNS43My0yLjcyIDUuNzNjLS4xMS4zLS4yNC40NS0uNDQuNDVzLS4zMS0uMTYtLjQyLS40NWwtNC0xMC4wOWMtLjU3LTEuNC0uNi0xLjctMS42NS0xLjhBLjY4LjY4IDAgMCAxIC42MiA0aDMuOTFhLjY4LjY4IDAgMCAxIDAgLjY1Yy0xLjE2LjEzLTEuMjEuNDUtLjc0IDEuNThsMy40MSA4LjE5aC4wNUw5LjMgMTAgNy43OCA2LjQ1QzcuMTcgNS4wNSA3IDQuNzcgNi4yNCA0LjY2YS42OS42OSAwIDAgMSAwLS42NWgzLjMyYS42OC42OCAwIDAgMSAwIC42NWMtLjc0LjEyLS43LjQ1LS4xOSAxLjU4bC44NyAyIC4wOC4wOSAxLTJjLjU3LTEuMTQuNjQtMS41OC0uMTUtMS43YS42OS42OSAwIDAgMS0uMDMtLjYzeiIvPgo8L3N2Zz4=',
+  logo_youtube       :'data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzIgMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMxLjY3LDkuMTc5YzAsMC0wLjMxMi0yLjM1My0xLjI3MS0zLjM4OWMtMS4yMTctMS4zNTgtMi41OC0xLjM2Ni0zLjIwNS0xLjQ0M0MyMi43MTcsNCwxNi4wMDIsNCwxNi4wMDIsNCAgIGgtMC4wMTVjMCwwLTYuNzE1LDAtMTEuMTkxLDAuMzQ3QzQuMTcxLDQuNDI0LDIuODA5LDQuNDMyLDEuNTkxLDUuNzlDMC42MzMsNi44MjYsMC4zMiw5LjE3OSwwLjMyLDkuMTc5UzAsMTEuOTQsMCwxNC43MDF2Mi41ODggICBjMCwyLjc2MywwLjMyLDUuNTIzLDAuMzIsNS41MjNzMC4zMTIsMi4zNTIsMS4yNzEsMy4zODZjMS4yMTgsMS4zNTgsMi44MTUsMS4zMTcsMy41MjcsMS40NTlDNy42NzcsMjcuOTE5LDE1Ljk5NSwyOCwxNS45OTUsMjggICBzNi43MjItMC4wMTIsMTEuMTk5LTAuMzU1YzAuNjI1LTAuMDgsMS45ODgtMC4wODgsMy4yMDUtMS40NDZjMC45NTgtMS4wMzQsMS4yNzEtMy4zODYsMS4yNzEtMy4zODZzMC4zMi0yLjc2MSwwLjMyLTUuNTIzdi0yLjU4OCAgIEMzMS45OSwxMS45NCwzMS42Nyw5LjE3OSwzMS42Nyw5LjE3OXoiIGZpbGw9IiNFMDJGMkYiLz48cG9seWdvbiBmaWxsPSIjRkZGRkZGIiBwb2ludHM9IjEyLDEwIDEyLDIyIDIyLDE2ICAiLz48L3N2Zz4=',
+  logo_rxjs          :'data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDYgMjc0IDI3NCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48bGluZWFyR3JhZGllbnQgaWQ9ImEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iNTMuNDk2IiB4Mj0iMTc3LjkzMiIgeTE9IjI0Ny43MDEiIHkyPSIxMTUuMzIzIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNlMDFkODQiLz48c3RvcCBvZmZzZXQ9Ii40MDEiIHN0b3AtY29sb3I9IiNkZjFkODUiLz48c3RvcCBvZmZzZXQ9Ii43NyIgc3RvcC1jb2xvcj0iIzkzMmM4NyIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzVkMmY4OCIvPjwvbGluZWFyR3JhZGllbnQ+PHJhZGlhbEdyYWRpZW50IGlkPSJiIiBjeD0iMTkwLjQ1NiIgY3k9IjgwLjIiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMSAuMDAyMzkgLS4wMDIgLjgzNjIgLjE2IDEyLjY4NSkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiByPSIxMjEuNTgyIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNlMDFkODQiLz48c3RvcCBvZmZzZXQ9Ii4xMzkiIHN0b3AtY29sb3I9IiNkZTFlODUiLz48c3RvcCBvZmZzZXQ9Ii4yODUiIHN0b3AtY29sb3I9IiNkNjIwODUiLz48c3RvcCBvZmZzZXQ9Ii40MzQiIHN0b3AtY29sb3I9IiNjOTIzODYiLz48c3RvcCBvZmZzZXQ9Ii41ODYiIHN0b3AtY29sb3I9IiNiNzI3ODYiLz48c3RvcCBvZmZzZXQ9Ii43MzkiIHN0b3AtY29sb3I9IiM5ZDJiODciLz48c3RvcCBvZmZzZXQ9Ii44OTEiIHN0b3AtY29sb3I9IiM3YzJlODgiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM1ZDJmODgiLz48L3JhZGlhbEdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0iYyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSI4My4yMTIiIHgyPSIxMzcuMzcxIiB5MT0iNjIuMzM2IiB5Mj0iNjIuMzM2Ij48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNlMDFkODQiLz48c3RvcCBvZmZzZXQ9Ii4yMzgiIHN0b3AtY29sb3I9IiNkYTFlODUiLz48c3RvcCBvZmZzZXQ9Ii42NTgiIHN0b3AtY29sb3I9IiNjNzIwODUiLz48c3RvcCBvZmZzZXQ9Ii45OTkiIHN0b3AtY29sb3I9IiNiNTIyODQiLz48L2xpbmVhckdyYWRpZW50PjxwYXRoIGQ9Ik0yOS42IDE3NS4zYy01LjItMTYuMi02LjctMzMuMy0zLjctNTAuOSAxLjMtNy4zIDMuMy0xNC4zIDUuNS0yMS40IDAgMCAxMy44LTQ1LjMgNjAuNS02NiAwIDAgMTYuMS04LjUgNDAuMy05LjEgMCAwLTMuMy0zLjItNS40LTQuNi0xMS40LTcuNi0yOC40LTEwLjEtMzguNy42LTMuMSAzLjItNS43IDYuNy04LjYgOS45LTMuMyAzLjYtNy4zIDYuNi0xMS45IDguMy00IDEuNS04IDEuMi0xMi4xIDEuOS00LjIuNy04LjUgMi4yLTExLjkgNC45LTMuNyAzLTUuMiA3LTUuNiAxMS42LS40IDMuNi0uMyA3LjMtLjUgMTAuOUMzNyA4MiAzMy42IDg1IDI2IDkwLjljLTMuMiAyLjQtNS45IDUuNi03LjkgOS02IDEwLjYgMy42IDIxLjYgNC4xIDMyLjMuMSAyLjItLjEgNC40LS45IDYuNS0uOCAyLjMtMi40IDMuOC0zLjcgNS43LTEuOCAyLjUtMyA1LjUtMi41IDguNnMyLjEgNiAzLjYgOC43YzIuOSA0LjggNi41IDkuMSAxMC4zIDEzLjIuMiAwIC40LjIuNi40IiBmaWxsPSIjZTMyMjg2Ii8+PHBhdGggZD0iTTIyMC40IDIxMy43YzIzLTEwIDMyLjgtMjcuMyAzMi44LTI3LjMgMjEuNS0yOS4zIDE0LjItNjAuMiAxNC4yLTYwLjItMTMuNyAyOS44LTI2LjIgMzgtMjYuMiAzOCAzMy43LTUxLjMuMi04Mi4zLjItODIuMyAxMy43IDI5LjItNC41IDY0LjgtNC41IDY0LjgtMTUuMyAzMi4yLTM3IDQzLjctMzcgNDMuNyAyNC4yIDQuNSA0Mi0xMS44IDQyLTExLjgtMzQuNyAzNy41LTcyLjMgMzUuNy03Mi4zIDM1LjcgMTUuOCAxNy43IDM5LjUgMTYuMiAzOS41IDE2LjItMzEgNy4zLTYwLjEtMy04NC0yMi45LTQuNS0zLjctOC44LTcuNy0xMi44LTEyIDAgMC0zLjYtMy44LTQuMy00LjhsLS4xLS4xYy0uNSAxOC41IDE4LjggMzUuNyAxOC44IDM1LjctMjQuMi0xMC0zNS4zLTMxLjctMzUuMy0zMS43cy0xNi4zLTI3LjgtNC41LTU5LjUgNDcuNS0zOC41IDQ3LjUtMzguNWMyOS41IDE0LjMgNTQuNSAxOC44IDU0LjUgMTguOCA1Mi43IDguOCA0OS43LTE3IDQ5LjctMTcgLjUtMjIuMi0zMy00NS44LTMzLTQ1LjhDMTQ1LjkgOC40IDkxLjkgMzcgOTEuOSAzN2MtNDYuNyAyMC43LTYwLjUgNjYtNjAuNSA2Ni0yLjIgNy4xLTQuMiAxNC4xLTUuNSAyMS40LTUuMSAyOS43IDIuNiA1Ny44IDE5LjMgODIuOCAyNiAzOC44IDY4LjIgNTIuMiA2OC4yIDUyLjIgNjIuNSAyMS4yIDEwNS4yLTEwIDEwNS4yLTEwIDM5LjMtMjcgNDcuMi01OC4yIDQ3LjItNTguMi0zMS43IDI0LjgtNDUuNCAyMi41LTQ1LjQgMjIuNXpNMTcxLjYgNjcuOGMzIDAgNS40IDIuNCA1LjQgNS40cy0yLjQgNS40LTUuNCA1LjQtNS40LTIuNC01LjQtNS40IDIuNC01LjQgNS40LTUuNHoiIGZpbGw9InVybCgjYSkiLz48cGF0aCBkPSJNMjM4LjUgOTguNGMuNS0yMi4yLTMzLTQ1LjgtMzMtNDUuOEMxNDUuOCA4LjQgOTEuOCAzNyA5MS44IDM3Yy00Ni43IDIwLjctNjAuNSA2Ni02MC41IDY2LTIuNyA3LjctNS4xIDE5LjUtNS4xIDE5LjUtMi45IDE0LjgtMS42IDI4LjUtMS42IDI4LjUgMS4yIDEzLjEgNC4xIDIxLjkgNC4xIDIxLjkgMyA5LjQgNC40IDEyLjMgNC40IDEyLjMtLjEtLjMtLjYtMi41LS42LTIuNXMtNC4yLTIwLjItLjMtMzkuNmMwIDAgMy40LTIwLjIgMTcuMi0zNS44IDAgMCAyMi40LTMxLjkgNjQuMS0xOS40IDAgMCA5IDMuMiAxMi4xIDQuOCAzLjEgMS41IDguNSAzLjggOC41IDMuOCAyOS41IDE0LjMgNTQuNSAxOC44IDU0LjUgMTguOCA1Mi45IDguOSA0OS45LTE2LjkgNDkuOS0xNi45em0tNjYuOS0xOS43Yy0zIDAtNS40LTIuNC01LjQtNS40czIuNC01LjQgNS40LTUuNCA1LjQgMi40IDUuNCA1LjQtMi40IDUuNC01LjQgNS40eiIgZmlsbD0idXJsKCNiKSIvPjxwYXRoIGQ9Ik0xMzcuNCA1OC4ybC0zNC4xLTEwLjZjLS4yIDAtMS4yLS41LTMgMCAwIDAtMjAuMSA1LjEtMTYuNiAxNi4xIDAgMCAyLjEgNi45IDcuOCAxMy42bDM3LjUtMS44eiIgZmlsbD0idXJsKCNjKSIvPjwvc3ZnPg==',
+  ico_anexsoft       :'data:image/png;base64,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',
+  ico_ichi           :'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAu0lEQVR42u2WsQqEMBBEs42ffI1gZ6FwX3xITARxrU6xmMw6Y6GDzT6SZzSb+pyIYxWAlcACAmT3qv3uADjXwOoVbAtxRQ6g4xwQgADeDsAZnQPoHukc4IwcQPfIDhSkz4ie7zzs3KdjJXaAxAHwW5bUfYcrAO6pAOTyxszg9wPAj/7HgTZX4BwaB25soTYBtmGvSdzWd/7N5wBH9C+E7nIAHTmA7nIAHTmA7nIAHTmA7nIAnTgOoAd5khWKJ1YA90ilsQAAAABJRU5ErkJggg==',
+  ico_auth0          :'data:image/png;base64,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',
+  ico_enroriol       :'data:image/png;base64,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',
+  ico_dofactory      :'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADGElEQVR42u2WTUhUURTH7x0rk2agbyqqRV9IVvQ1LiVDaggRCXNRziYqYyAIFxExSQkGFS76ICKCQF2Eu1a5GiJqiJAIsRgloqyIdGMoJojeftc5M/Oceer0pQk+OJx3z7n/c//n3HPve1rN8KPnCMw6AgPBQAWqDulBTnubWmPTTaANtcfEh/W+ptbwdBPoYPECAV6lAuennQCqQM0kgX9aARbwoFYaowq1Vvm8r0I+K2M6lNaveY8YqYCegAAxljNnrzIqnxjrMQ0i3dhegomBGXIlAHAe6hRig65L2E1q4ifEBs9zqwD4BRaP/yz+jS74YRKLQOoCuFfjCEjmtqNrkRwHr2HEk2ZLPEkCQv4KUjMVHkJfWLgSbNRJYKctL7LExGd1wvQOb+2IDV6IHEUKHBk5CRQJPkf8naibxHnLwIutRMermydH+DnjA04CtTguy7AX2c8Z70jboqXMecHr5vQewNeILyhTP+Lbh+9DWoVDxphb9JJNcARVlCTQHwy0MDgiNXrkbW4td+vaiU5Bf1Wgi4BjxNjnel9z5gUF1ovqAr9a8GdSBKoCtjmKJcADAhyfiIByuQew207PkwROksB9F+xC1FPEL71w/bcIuFYgGBjClpsNAfB+wTc4tyDCoFgacMoKmMwesGc7d8w+GQFDBbTyC77hP6rAH/YABAYItuhXesDiU8ewKtBMTY7J8DFSSvDRbCuA3d4X24XADWLVpOOZsxj1DvwywVc774FzNqDszXdUOQGeZNsDVOAu42qx91LFEqrY7sDZe+AS/os6XuVhKl7obMItNM8z0CvkpvqG8yE6KlPWktlW/JX4fS4V2E3QKEFzhcRXVCNi73wvvkPYynDMF7+t8uH0j9EJZa/PxHme/BlBQhC458gwhFzLAv8GQhVUKDaOAI3oIYNSGIZ1qlGcX7PEwjHJ7jYEBh0J2G9GGRIGs0tn4n8gLUgduPdKufwP9AcPerTSNpsNsNwBoTXi6iFSNwh7lfYBHHVr0iQRozYxd9vY1ill7wi7YBv2Pk5IEjf7fsvnCMwR+NvPTy8SlcYos4aEAAAAAElFTkSuQmCC',
+  ico_stackchief     :'data:image/png;base64,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',
+  x                  :'',
+});
+
+const TEMA_DEF   = '(def claro)';           // Texto en el desplegable ltema por defecto
+const S0         = 'pre code.hljs{display:block;overflow-x:auto;padding:1em;}code.hljs{padding:3px 5px}';         // String Inicial. Todos los temas comienzan con este CSS
+class Dicc{constructor(){this.items={}}has(t){return this.items.hasOwnProperty(t)}set(t,s){let e=this.has(t);return this.items[t]=s,e}del(t){return!!this.has(t)&&(delete this.items[t],!0)}get(t){return this.has(t)?this.items[t]:void 0}values(){const t=[];for(let s in this.items)this.has(s)&&t.push(this.items[s]);return t}size(){return Object.keys(this.items).length}keys(){return Object.keys(this.items)}getItems(){return this.items}}
+const dTemas = new Dicc();
+dTemas.set(TEMA_DEF,                   S0+'.hljs{background:#eee;color:#000}.language-xml .hljs-meta,.language-xml .hljs-meta-string{font-weight:700;font-style:italic;color:#48b}.hljs-comment,.hljs-quote{font-style:italic;color:#0b0}.hljs-built_in,.hljs-keyword,.hljs-name{color:#ff1e00}.hljs-attr,.hljs-name{font-weight:700}.hljs-string{font-weight:400;color:#0f5fff}.hljs-number{color:#ff6f00}.hljs-title{color:#a8a500}.hljs-code,.hljs-link,.hljs-meta .hljs-string,.hljs-regexp{color:#00f}.hljs-bullet,.hljs-symbol,.hljs-template-variable,.hljs-variable{color:#f40}.hljs-class .hljs-title,.hljs-title.class_,.hljs-type{font-weight:700;color:#639}.hljs-attr,.hljs-function .hljs-title,.hljs-subst,.hljs-tag,.hljs-title.function_{color:#a8a500}.hljs-formula{background-color:#eee;font-style:italic}.hljs-addition{background-color:#beb}.hljs-deletion{background-color:#fbb}.hljs-meta{color:#269}.hljs-section,.hljs-selector-class,.hljs-selector-id,.hljs-selector-pseudo,.hljs-selector-tag{font-weight:700;color:#48b}.hljs-selector-pseudo{font-style:italic}.hljs-doctag,.hljs-strong{font-weight:700}.hljs-emphasis{font-style:italic}');
+dTemas.set('(def oscuro)',             S0+'.hljs{background:#333;color:#fff}.language-xml .hljs-meta,.language-xml .hljs-meta-string{font-weight:700;font-style:italic;color:#69f}.hljs-comment,.hljs-quote{font-style:italic;color:#9c6}.hljs-built_in,.hljs-keyword,.hljs-name{color:#ff1e00}.hljs-attr,.hljs-name{font-weight:700}.hljs-string{font-weight:400;color:#578fff}.hljs-number{color:#ff6f00}.hljs-title{color:#ffe600}.hljs-code,.hljs-link,.hljs-meta .hljs-string,.hljs-regexp{color:#bce}.hljs-bullet,.hljs-symbol,.hljs-template-variable,.hljs-variable{color:#d40}.hljs-class .hljs-title,.hljs-title.class_,.hljs-type{font-weight:700;color:#96c}.hljs-attr,.hljs-function .hljs-title,.hljs-subst,.hljs-tag,.hljs-title.function_{color:#ffe600}.hljs-formula{background-color:#eee;font-style:italic}.hljs-addition{background-color:#797}.hljs-deletion{background-color:#c99}.hljs-meta{color:#69f}.hljs-section,.hljs-selector-class,.hljs-selector-id,.hljs-selector-pseudo,.hljs-selector-tag{font-weight:700;color:#69f}.hljs-selector-pseudo{font-style:italic}.hljs-doctag,.hljs-strong{font-weight:700}.hljs-emphasis{font-style:italic}');
+dTemas.set('atom-one-dark-reasonable', S0+'.hljs{color:#abb2bf;background:#282c34}.hljs-keyword,.hljs-operator{color:#f92672}.hljs-pattern-match{color:#f92672}.hljs-pattern-match .hljs-constructor{color:#61aeee}.hljs-function{color:#61aeee}.hljs-function .hljs-params{color:#a6e22e}.hljs-function .hljs-params .hljs-typing{color:#fd971f}.hljs-module-access .hljs-module{color:#7e57c2}.hljs-constructor{color:#e2b93d}.hljs-constructor .hljs-string{color:#9ccc65}.hljs-comment,.hljs-quote{color:#b18eb1;font-style:italic}.hljs-doctag,.hljs-formula{color:#c678dd}.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#e06c75}.hljs-literal{color:#56b6c2}.hljs-addition,.hljs-attribute,.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#98c379}.hljs-built_in,.hljs-class .hljs-title,.hljs-title.class_{color:#e6c07b}.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#d19a66}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#61aeee}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.hljs-link{text-decoration:underline}');
+dTemas.set('devibeans',                S0+'.hljs{background:#000;color:#a39e9b}.hljs-attr,.hljs-template-tag{color:#8787d7}.hljs-comment,.hljs-doctag,.hljs-quote{color:#396}.hljs-params{color:#a39e9b}.hljs-regexp{color:#d700ff}.hljs-literal,.hljs-number,.hljs-selector-id,.hljs-tag{color:#ef5350}.hljs-meta,.hljs-meta .hljs-keyword{color:#0087ff}.hljs-code,.hljs-formula,.hljs-keyword,.hljs-link,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-variable{color:#64b5f6}.hljs-built_in,.hljs-deletion,.hljs-title{color:#ff8700}.hljs-attribute,.hljs-function,.hljs-name,.hljs-property,.hljs-section,.hljs-type{color:#ffd75f}.hljs-addition,.hljs-bullet,.hljs-meta .hljs-string,.hljs-string,.hljs-subst,.hljs-symbol{color:#558b2f}.hljs-selector-tag{color:#96f}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}');
+dTemas.set('far',                      S0+'.hljs{color:#0ff;background:navy}.hljs-addition,.hljs-attribute,.hljs-built_in,.hljs-bullet,.hljs-string,.hljs-symbol,.hljs-template-tag,.hljs-template-variable{color:#ff0}.hljs-keyword,.hljs-name,.hljs-section,.hljs-selector-class,.hljs-selector-id,.hljs-selector-tag,.hljs-type,.hljs-variable{color:#fff}.hljs-comment,.hljs-deletion,.hljs-doctag,.hljs-quote{color:#888}.hljs-link,.hljs-literal,.hljs-number,.hljs-regexp{color:#0f0}.hljs-meta{color:teal}.hljs-keyword,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-strong,.hljs-title{font-weight:700}.hljs-emphasis{font-style:italic}');
+dTemas.set('github',                   S0+'.hljs{color:#24292e;background:#fff}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#d73a49}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#6f42c1}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable{color:#005cc5}.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#032f62}.hljs-built_in,.hljs-symbol{color:#e36209}.hljs-code,.hljs-comment,.hljs-formula{color:#6a737d}.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag{color:#22863a}.hljs-subst{color:#24292e}.hljs-section{color:#005cc5;font-weight:700}.hljs-bullet{color:#735c0f}.hljs-emphasis{color:#24292e;font-style:italic}.hljs-strong{color:#24292e;font-weight:700}.hljs-addition{color:#22863a;background-color:#f0fff4}.hljs-deletion{color:#b31d28;background-color:#ffeef0}');
+dTemas.set('github-dark',              S0+'.hljs{color:#c9d1d9;background:#0d1117}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#ff7b72}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#d2a8ff}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable{color:#79c0ff}.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#a5d6ff}.hljs-built_in,.hljs-symbol{color:#ffa657}.hljs-code,.hljs-comment,.hljs-formula{color:#8b949e}.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag{color:#7ee787}.hljs-subst{color:#c9d1d9}.hljs-section{color:#1f6feb;font-weight:700}.hljs-bullet{color:#f2cc60}.hljs-emphasis{color:#c9d1d9;font-style:italic}.hljs-strong{color:#c9d1d9;font-weight:700}.hljs-addition{color:#aff5b4;background-color:#033a16}.hljs-deletion{color:#ffdcd7;background-color:#67060c}');
+dTemas.set('mono-blue',                S0+'.hljs{background:#eaeef3;color:#00193a}.hljs-doctag,.hljs-keyword,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-strong,.hljs-title{font-weight:700}.hljs-comment{color:#738191}.hljs-addition,.hljs-built_in,.hljs-literal,.hljs-name,.hljs-quote,.hljs-section,.hljs-selector-class,.hljs-selector-id,.hljs-string,.hljs-tag,.hljs-title,.hljs-type{color:#0048ab}.hljs-attribute,.hljs-bullet,.hljs-deletion,.hljs-link,.hljs-meta,.hljs-regexp,.hljs-subst,.hljs-symbol,.hljs-template-variable,.hljs-variable{color:#4c81c9}.hljs-emphasis{font-style:italic}');
+dTemas.set('monokai-sublime',          S0+'.hljs{background:#23241f;color:#f8f8f2}.hljs-subst,.hljs-tag{color:#f8f8f2}.hljs-emphasis,.hljs-strong{color:#a8a8a2}.hljs-bullet,.hljs-link,.hljs-literal,.hljs-number,.hljs-quote,.hljs-regexp{color:#ae81ff}.hljs-code,.hljs-section,.hljs-selector-class,.hljs-title{color:#a6e22e}.hljs-strong{font-weight:700}.hljs-emphasis{font-style:italic}.hljs-attr,.hljs-keyword,.hljs-name,.hljs-selector-tag{color:#f92672}.hljs-attribute,.hljs-symbol{color:#66d9ef}.hljs-class .hljs-title,.hljs-params,.hljs-title.class_{color:#f8f8f2}.hljs-addition,.hljs-built_in,.hljs-selector-attr,.hljs-selector-id,.hljs-selector-pseudo,.hljs-string,.hljs-template-variable,.hljs-type,.hljs-variable{color:#e6db74}.hljs-comment,.hljs-deletion,.hljs-meta{color:#75715e}');
+dTemas.set('paraiso-light',            S0+'.hljs{background:#e7e9db;color:#4f424c}.hljs-comment,.hljs-quote{color:#776e71}.hljs-link,.hljs-meta,.hljs-name,.hljs-regexp,.hljs-selector-class,.hljs-selector-id,.hljs-tag,.hljs-template-variable,.hljs-variable{color:#ef6155}.hljs-built_in,.hljs-deletion,.hljs-literal,.hljs-number,.hljs-params,.hljs-type{color:#f99b15}.hljs-attribute,.hljs-section,.hljs-title{color:#fec418}.hljs-addition,.hljs-bullet,.hljs-string,.hljs-symbol{color:#48b685}.hljs-keyword,.hljs-selector-tag{color:#815ba4}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}');
+dTemas.set('pojoaque',                 S0+'.hljs{color:#dccf8f;background:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAZABkAAD/7AARRHVja3kAAQAEAAAAMAAA/+4ADkFkb2JlAGTAAAAAAf/bAIQACQYGBgcGCQcHCQ0IBwgNDwsJCQsPEQ4ODw4OERENDg4ODg0RERQUFhQUERoaHBwaGiYmJiYmKysrKysrKysrKwEJCAgJCgkMCgoMDwwODA8TDg4ODhMVDg4PDg4VGhMRERERExoXGhYWFhoXHR0aGh0dJCQjJCQrKysrKysrKysr/8AAEQgAjACMAwEiAAIRAQMRAf/EAF4AAQEBAAAAAAAAAAAAAAAAAAABBwEBAQAAAAAAAAAAAAAAAAAAAAIQAAEDAwIHAQEAAAAAAAAAAADwAREhYaExkUFRcYGxwdHh8REBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AyGFEjHaBS2fDDs2zkhKmBKktb7km+ZwwCnXPkLVmCTMItj6AXFxRS465/BTnkAJvkLkJe+7AKKoi2AtRS2zuAWsCb5GOlBN8gKfmuGHZ8MFqIth3ALmFoFwbwKWyAlTAp17uKqBvgBD8sM4fTjhvAhkzhaRkBMKBrfs7jGPIpzy7gFrAqnC0C0gB0EWwBDW2cBVQwm+QtPpa3wBO3sVvszCnLAhkzgL5/RLf13cLQd8/AGlu0Cb5HTx9KuAEieGJEdcehS3eRTp2ATdt3CpIm+QtZwAhROXFeb7swp/ahaM3kBE/jSIUBc/AWrgBN8uNFAl+b7sAXFxFn2YLUU5Ns7gFX8C4ib+hN8gFWXwK3bZglxEJm+gKdciLPsFV/TClsgJUwKJ5FVA7tvIFrfZhVfGJDcsCKaYgAqv6YRbE+RWOWBtu7+AL3yRalXLyKqAIIfk+zARbDgFyEsncYwJvlgFRW+GEWntIi2P0BooyFxcNr8Ep3+ANLbMO+QyhvbiqdgC0kVvgUUiLYgBS2QtPbiVI1/sgOmG9uO+Y8DW+7jS2zAOnj6O2BndwuIAUtkdRN8gFoK3wwXMQyZwHVbClsuNLd4E3yAUR6FVDBR+BafQGt93LVMxJTv8ABts4CVLhcfYWsCb5kC9/BHdU8CLYFY5bMAd+eX9MGthhpbA1vu4B7+RKkaW2Yq4AQtVBBFsAJU/AuIXBhN8gGWnstefhiZyWvLAEnbYS1uzSFP6Jvn4Baxx70JKkQojLib5AVTey1jjgkKJGO0AKWyOm7N7cSpgSpAdPH0Tfd/gp1z5C1ZgKqN9J2wFxcUUuAFLZAm+QC0Fb4YUVRFsAOvj4KW2dwtYE3yAWk/wS/PLMKfmuGHZ8MAXF/Ja32Yi5haAKWz4Ydm2cSpgU693Atb7km+Zwwh+WGcPpxw3gAkzCLY+iYUDW/Z3Adc/gpzyFrAqnALkJe+7DoItgAtRS2zuKqGE3yAx0oJvkdvYrfZmALURbDuL5/RLf13cAuDeBS2RpbtAm+QFVA3wR+3fUtFHoBDJnC0jIXH0HWsgMY8inPLuOkd9chp4z20ALQLSA8cI9jYAIa2zjzjBd8gRafS1vgiUho/kAKcsCGTOGWvoOpkAtB3z8Hm8x2Ff5ADp4+lXAlIvcmwH/2Q==) left top #181914}.hljs-comment,.hljs-quote{color:#586e75;font-style:italic}.hljs-addition,.hljs-keyword,.hljs-literal,.hljs-selector-tag{color:#b64926}.hljs-doctag,.hljs-number,.hljs-regexp,.hljs-string{color:#468966}.hljs-built_in,.hljs-name,.hljs-section,.hljs-title{color:#ffb03b}.hljs-class .hljs-title,.hljs-tag,.hljs-template-variable,.hljs-title.class_,.hljs-type,.hljs-variable{color:#b58900}.hljs-attribute{color:#b89859}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-subst,.hljs-symbol{color:#cb4b16}.hljs-deletion{color:#dc322f}.hljs-selector-class,.hljs-selector-id{color:#d3a60c}.hljs-formula{background:#073642}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}');
+dTemas.set('purebasic',                S0+'.hljs{background:#ffffdf}.hljs,.hljs-attr,.hljs-function,.hljs-name,.hljs-number,.hljs-params,.hljs-subst,.hljs-type{color:#000}.hljs-addition,.hljs-comment,.hljs-regexp,.hljs-section,.hljs-selector-pseudo{color:#0aa}.hljs-built_in,.hljs-class,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-selector-class{color:#066;font-weight:700}.hljs-code,.hljs-tag,.hljs-title,.hljs-variable{color:#066}.hljs-selector-attr,.hljs-string{color:#0080ff}.hljs-attribute,.hljs-deletion,.hljs-link,.hljs-symbol{color:#924b72}.hljs-literal,.hljs-meta,.hljs-selector-id{color:#924b72;font-weight:700}.hljs-name,.hljs-strong{font-weight:700}.hljs-emphasis{font-style:italic}');
+dTemas.set('qtcreator-dark',           S0+'.hljs{color:#aaa;background:#000}.hljs-emphasis,.hljs-strong{color:#a8a8a2}.hljs-bullet,.hljs-literal,.hljs-number,.hljs-quote,.hljs-regexp{color:#f5f}.hljs-code .hljs-selector-class{color:#aaf}.hljs-emphasis,.hljs-stronge,.hljs-type{font-style:italic}.hljs-function,.hljs-keyword,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-symbol{color:#ff5}.hljs-subst,.hljs-tag,.hljs-title{color:#aaa}.hljs-attribute{color:#f55}.hljs-class .hljs-title,.hljs-params,.hljs-title.class_,.hljs-variable{color:#88f}.hljs-addition,.hljs-built_in,.hljs-link,.hljs-selector-attr,.hljs-selector-id,.hljs-selector-pseudo,.hljs-string,.hljs-template-tag,.hljs-template-variable,.hljs-type{color:#f5f}.hljs-comment,.hljs-deletion,.hljs-meta{color:#5ff}');
+dTemas.set('rainbow',                  S0+'.hljs{background:#474949;color:#d1d9e1}.hljs-comment,.hljs-quote{color:#969896;font-style:italic}.hljs-addition,.hljs-keyword,.hljs-literal,.hljs-selector-tag,.hljs-type{color:#c9c}.hljs-number,.hljs-selector-attr,.hljs-selector-pseudo{color:#f99157}.hljs-doctag,.hljs-regexp,.hljs-string{color:#8abeb7}.hljs-built_in,.hljs-name,.hljs-section,.hljs-title{color:#b5bd68}.hljs-class .hljs-title,.hljs-selector-id,.hljs-template-variable,.hljs-title.class_,.hljs-variable{color:#fc6}.hljs-name,.hljs-section,.hljs-strong{font-weight:700}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-subst,.hljs-symbol{color:#f99157}.hljs-deletion{color:#dc322f}.hljs-formula{background:#eee8d5}.hljs-attr,.hljs-attribute{color:#81a2be}.hljs-emphasis{font-style:italic}');
+dTemas.set('shades-of-purple',         S0+'.hljs{background:#2d2b57;color:#e3dfff;font-weight:400}.hljs-subst{color:#e3dfff}.hljs-title{color:#fad000;font-weight:400}.hljs-name{color:#a1feff}.hljs-tag{color:#fff}.hljs-attr{color:#f8d000;font-style:italic}.hljs-built_in,.hljs-keyword,.hljs-section,.hljs-selector-tag{color:#fb9e00}.hljs-addition,.hljs-attribute,.hljs-bullet,.hljs-code,.hljs-deletion,.hljs-quote,.hljs-regexp,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-string,.hljs-symbol,.hljs-template-tag{color:#4cd213}.hljs-meta,.hljs-meta .hljs-string{color:#fb9e00}.hljs-comment{color:#ac65ff}.hljs-keyword,.hljs-literal,.hljs-name,.hljs-selector-tag,.hljs-strong{font-weight:400}.hljs-literal,.hljs-number{color:#fa658d}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}');
+dTemas.set('stackoverflow-dark',       S0+'.hljs{color:#fff;background:#1c1b1b}.hljs-subst{color:#fff}.hljs-comment{color:#999}.hljs-attr,.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-section,.hljs-selector-tag{color:#88aece}.hljs-attribute{color:#c59bc1}.hljs-name,.hljs-number,.hljs-quote,.hljs-selector-id,.hljs-template-tag,.hljs-type{color:#f08d49}.hljs-selector-class{color:#88aece}.hljs-link,.hljs-regexp,.hljs-selector-attr,.hljs-string,.hljs-symbol,.hljs-template-variable,.hljs-variable{color:#b5bd68}.hljs-meta,.hljs-selector-pseudo{color:#88aece}.hljs-built_in,.hljs-literal,.hljs-title{color:#f08d49}.hljs-bullet,.hljs-code{color:#ccc}.hljs-meta .hljs-string{color:#b5bd68}.hljs-deletion{color:#de7176}.hljs-addition{color:#76c490}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}');
+dTemas.set('stackoverflow-light',      S0+'.hljs{color:#2f3337;background:#f6f6f6}.hljs-subst{color:#2f3337}.hljs-comment{color:#656e77}.hljs-attr,.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-section,.hljs-selector-tag{color:#015692}.hljs-attribute{color:#803378}.hljs-name,.hljs-number,.hljs-quote,.hljs-selector-id,.hljs-template-tag,.hljs-type{color:#b75501}.hljs-selector-class{color:#015692}.hljs-link,.hljs-regexp,.hljs-selector-attr,.hljs-string,.hljs-symbol,.hljs-template-variable,.hljs-variable{color:#54790d}.hljs-meta,.hljs-selector-pseudo{color:#015692}.hljs-built_in,.hljs-literal,.hljs-title{color:#b75501}.hljs-bullet,.hljs-code{color:#535a60}.hljs-meta .hljs-string{color:#54790d}.hljs-deletion{color:#c02d2e}.hljs-addition{color:#2f6f44}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}');
+dTemas.set('tomorrow-night-blue',      S0+'.hljs-comment,.hljs-quote{color:#7285b7}.hljs-deletion,.hljs-name,.hljs-regexp,.hljs-selector-class,.hljs-selector-id,.hljs-tag,.hljs-template-variable,.hljs-variable{color:#ff9da4}.hljs-built_in,.hljs-link,.hljs-literal,.hljs-meta,.hljs-number,.hljs-params,.hljs-type{color:#ffc58f}.hljs-attribute{color:#ffeead}.hljs-addition,.hljs-bullet,.hljs-string,.hljs-symbol{color:#d1f1a9}.hljs-section,.hljs-title{color:#bbdaff}.hljs-keyword,.hljs-selector-tag{color:#ebbbff}.hljs{background:#002451;color:#fff}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}');
+dTemas.set('vs',                       S0+'.hljs{background:#fff;color:#000}.hljs-comment,.hljs-quote,.hljs-variable{color:green}.hljs-built_in,.hljs-keyword,.hljs-name,.hljs-selector-tag,.hljs-tag{color:#00f}.hljs-addition,.hljs-attribute,.hljs-literal,.hljs-section,.hljs-string,.hljs-template-tag,.hljs-template-variable,.hljs-title,.hljs-type{color:#a31515}.hljs-deletion,.hljs-meta,.hljs-selector-attr,.hljs-selector-pseudo{color:#2b91af}.hljs-doctag{color:grey}.hljs-attr{color:red}.hljs-bullet,.hljs-link,.hljs-symbol{color:#00b0e8}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}');
+dTemas.set('vs2015',                   S0+'.hljs{background:#1e1e1e;color:#dcdcdc}.hljs-keyword,.hljs-literal,.hljs-name,.hljs-symbol{color:#569cd6}.hljs-link{color:#569cd6;text-decoration:underline}.hljs-built_in,.hljs-type{color:#4ec9b0}.hljs-class,.hljs-number{color:#b8d7a3}.hljs-meta .hljs-string,.hljs-string{color:#d69d85}.hljs-regexp,.hljs-template-tag{color:#9a5334}.hljs-formula,.hljs-function,.hljs-params,.hljs-subst,.hljs-title{color:#dcdcdc}.hljs-comment,.hljs-quote{color:#57a64a;font-style:italic}.hljs-doctag{color:#608b4e}.hljs-meta,.hljs-meta .hljs-keyword,.hljs-tag{color:#9b9b9b}.hljs-template-variable,.hljs-variable{color:#bd63c5}.hljs-attr,.hljs-attribute{color:#9cdcfe}.hljs-section{color:gold}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.hljs-bullet,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-selector-pseudo,.hljs-selector-tag{color:#d7ba7d}.hljs-addition{background-color:#144212;display:inline-block;width:100%}.hljs-deletion{background-color:#600;display:inline-block;width:100%}');
+dTemas.set('',                         S0+'.hljs{color:#d00;}');
+dTemas.keys().forEach(function(u) {
+  ltema.innerHTML += '<option>'+u+'</option>';
+});
+function cambioTema() {    // ⇐ Se ha cambiado el tema (CSS)
+  shl.innerText = dTemas.get(ltema.options[ltema.selectedIndex].text);
+}
+ltema.addEventListener('change', cambioTema);
+cambioTema();
+
+
+//vvv
+    class Observable{           // Definición de la clase Observable
+
+      constructor(){            // Crea array vacío que almacenará los observadores
+        this.observers = [];
+      }
+
+      subscribe( observer ){    // Añadir nuevos observadores
+        this.observers.push(observer);
+      }
+
+      unsubscribe( observer ){  // Eliminar observadores
+        this.observers = this.observers.filter( subscriber => subscriber != observer);
+      }
+
+      notify( data ){           // Notificar los cambios a los observadores
+        this.observers.forEach( observer => observer( data ) );
+      }
+    }
+
+
+      // Referenciamos los elementos del DOM con los que queremos trabajar
+      const tOrig = e('tOrig');
+      const tPla1 = e('tPla1');
+      const tPla2 = e('tPla2');
+      const tPla3 = e('tPla3');
+
+      // Funciones que se ejecutarán cuando se dispare el observable
+      // (En estos casos asignaríamos la data al valor del input 'Plagio N')
+      const actPla1 = (data) => tPla1.value = data;
+      const actPla2 = (data) => tPla2.value = data;
+      const actPla3 = (data) => tPla3.value = data;
+
+      // Instanciamos nuestra clase observable
+      const obs = new Observable();
+
+      // Suscribimos las funciones que se ejecutarán al dispararse el observable
+      obs.subscribe(actPla1);
+      obs.subscribe(actPla2);
+      obs.subscribe(actPla3);
+
+      // El evento keyup en input original (se ejecutará tras soltar cada tecla)
+      // llama a la función notify del observable con parámetro los datos a actualizar
+      tOrig.addEventListener('keyup', (event) => obs.notify(event.target.value));
+
+      // Uso casillas de verificación para suscribir/desuscribir cada plagio
+      cSus1.addEventListener('change', function(){
+        if (cSus1.checked)
+          obs.subscribe(actPla1);
+        else
+          obs.unsubscribe(actPla1);
+      });
+      cSus2.addEventListener('change', function(){
+        if (cSus2.checked)
+          obs.subscribe(actPla2);
+        else
+          obs.unsubscribe(actPla2);
+      });
+      cSus3.addEventListener('change', function(){
+        if (cSus3.checked)
+          obs.subscribe(actPla3);
+        else
+          obs.unsubscribe(actPla3);
+      });
+//^^^
+</script>
+</body></html>
