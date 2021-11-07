@@ -1,3 +1,3 @@
 git add .
-git commit -m "07-11-2021 Observer-js y rxjs-svg"
+git commit -m "07-11-2021 class-js mejora temas hljs"
 git push -u origin master
