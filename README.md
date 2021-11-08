@@ -24,10 +24,13 @@ Iconos **svg**
 Convertir **MD** → **HTML**  
 [md-htm/](https://fjfe.github.io/apt/md-htm/)
 
-Resaltar código **hljs**  
+Resaltar código con **hljs**  
 [hljs/clon-Usa-highlight-js-para-resaltar-codigo.htm](https://fjfe.github.io/apt/hljs/clon-Usa-highlight-js-para-resaltar-codigo.htm)  
 [hljs/tools/copiar-codigo-resaltado.htm](https://fjfe.github.io/apt/hljs/tools/copiar-codigo-resaltado.htm)  
 [hljs/tools/developer.html](https://fjfe.github.io/apt/hljs/tools/developer.html)
+
+Archivos **txt**  
+[archivos-txt/](https://fjfe.github.io/apt/archivos-txt/)
 
 **Pruebas**  
 [Web2Img](https://fjfe.github.io/apt/pru-Web2Img/) _Mal_

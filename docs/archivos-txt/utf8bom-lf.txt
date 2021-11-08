@@ -1,0 +1,2 @@
+﻿BOM+utf8 lf
+aeiou áéíóú
