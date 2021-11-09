@@ -2,13 +2,14 @@
 <!--
   Fuente: https://webdesign.tutsplus.com/es/tutorials/how-to-build-a-filterable-thumbnail-layout-with-css-grid-flexbox-and-javascript--cms-33242
 
-  Modif.: Paco Fdez. 22/07/2021 - 07/11/2021
+  Modif.: Paco Fdez. 22/07/2021 - 09/11/2021
 
       HTM autosuficiente, salvo por los archivos de imagen que se referencian en el código js. Por ej:
       l.a('./nombre_imagen.svg', 'etiq1 etiq2 etiq3');     // 'Camino del svg', 'etiquetas separadas por espacios'
 
       Le añadí etiquetas (almacenadas en el código js, junto a los nombres de los archivos).
       En los nombres de archivos.svg sólo he usado minúsculas y _ como separador. Nunca he usado el espacio.
+      Alt+B nos lleva al Buscardor
       La búsqueda es sensible a mayúsculas.
       La búsqueda se realiza en nombre y etiquetas (parcialmente) hasta el primer espacio (si existe)
         y en etiquetas (búsqueda completa de etiquetas separadas por espacios) a partir del mismo.
@@ -209,7 +210,8 @@ footer span {
   <div class="container">
     <div class="toolbar">
       <div class="search-wrapper">
-        <input type="search" placeholder="Buscar...">
+        <label accesskey="b" for="buscar"></label><!-- Alt+B nos lleva al Buscardor -->
+        <input id="buscar" type="search" placeholder="Buscar..." autofocus>
         <div class="counter">
           Imágenes: <span id="cont">x</span></div>
       </div>
@@ -601,7 +603,7 @@ l.a('./logo_atom_editor.svg'                   ,'logo atom txt');
 l.a('./logo_sublime_text.svg'                  ,'logo sublime naranja txt');
 l.a('./logo_visual_studio_code.svg'            ,'logo vscode azul txt');
 l.a('./logo_typora.svg'                        ,'logo typora md');
-l.a('./logo_sass_red.svg'                      ,'logo sass rojo');
+l.a('./logo_sass_red.svg'                      ,'logo sass css rojo');
 l.a('./logo_jekyll_00.svg'                     ,'logo jekyll 00');
 l.a('./logo_git.svg'                           ,'logo git rojo');
 l.a('./logo_github_00.svg'                     ,'logo github 00');
@@ -867,6 +869,9 @@ l.a('./fa_ext_carp_cerrada_trazo.svg'          ,'fontawesome ext carpeta cerrada
 l.a('./fa_ext_carp_abierta_solido.svg'         ,'fontawesome ext carpeta abierta 00');
 l.a('./fa_ext_carp_abierta_trazo.svg'          ,'fontawesome ext carpeta abierta 00');
 
+l.a('./fa_sticky_note_solid.svg'               ,'fontawesome nota 00');
+l.a('./fa_sticky_note_regular.svg'             ,'fontawesome nota 00');
+
 l.a('./fa_estrella_solido_00.svg'              ,'fontawesome estrella 00');
 l.a('./fa_libro_solido_00.svg'                 ,'fontawesome libro 00');
 
@@ -874,6 +879,16 @@ l.a('./fa_info_circ_00.svg'                    ,'fontawesome círculo informaci�
 l.a('./fa_inte_circ_00.svg'                    ,'fontawesome círculo interrogación 00');
 
 l.a('./fa_ojo_trazo_00.svg'                    ,'fontawesome ojo 00');
+
+l.a('./fa_cut_solid.svg'                       ,'fontawesome tijera corta 00');
+l.a('./fa_clipboard_solid.svg'                 ,'fontawesome portapapeles 00');
+l.a('./fa_clipboard_regular.svg'               ,'fontawesome portapapeles 00');
+l.a('./fa_paste_solid.svg'                     ,'fontawesome portapapeles pega 00');
+l.a('./fa_copy_solid.svg'                      ,'fontawesome clon copia 00');
+l.a('./fa_copy_regular.svg'                    ,'fontawesome clon copia 00');
+l.a('./fa_clone_solid.svg'                     ,'fontawesome clon copia 00');
+l.a('./fa_clone_regular.svg'                   ,'fontawesome clon copia 00');
+
 l.a('./fa_tux_linux_brands.svg'                ,'fontawesome tux logo linux 00');
 
 l.a('./llave_inglesa_der_00.svg'               ,'configuración herramienta 00');
@@ -1798,14 +1813,18 @@ l.a('./icons8_imagen.svg'                      ,'icons8 ext jpg imagen');
 l.a('./icons8_carp.svg'                        ,'icons8 carpeta');
 l.a('./icons8_carp_abierta.svg'                ,'icons8 carpeta abierta');
 l.a('./icons8_pqt.svg'                         ,'icons8 paquete');
+l.a('./icons8_sticky_notes_00.svg'             ,'icons8 nota 00');
+l.a('./icons8_sticky_notes_ama.svg'            ,'icons8 nota amarillo');
 l.a('./icons8_portapapeles.svg'                ,'icons8 portapapeles');
 l.a('./icons8_lupa.svg'                        ,'icons8 lupa');
 l.a('./icons8_engranaje_config.svg'            ,'icons8 engranaje configuración');
+l.a('./icons8_support.svg'                     ,'icons8 herramienta configuración');
 l.a('./icons8_info.svg'                        ,'icons8 información azul');
-l.a('./icons8_ok.svg'                          ,'icons8 ok');
+l.a('./icons8_ok.svg'                          ,'icons8 punteo ok verde');
+l.a('./icons8_checkmark.svg'                   ,'icons8 punteo ok verde');
 l.a('./icons8_android.svg'                     ,'icons8 android verde');
 l.a('./icons8_wikipedia_00.svg'                ,'icons8 wikipedia 00');
-l.a('./icons8_sass.svg'                        ,'icons8 sass rojo');
+l.a('./icons8_sass.svg'                        ,'icons8 sass css rojo');
 
 l.a('./tango_new_doc_1.svg'                    ,'tango hoja new doc vacío');
 l.a('./tango_new_doc_2.svg'                    ,'tango hoja new doc vacío');
