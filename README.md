@@ -3,6 +3,7 @@
 Apuntes
 
 **Git Github Ico Jekyll JS Markdown Netlify Svg WebStorage Web2Img**  
+[apuntes-API-HTTP.htm](https://fjfe.github.io/apt/apuntes-API-HTTP.htm)  
 [Cambiar-Icono-de-Carpeta.htm](https://fjfe.github.io/apt/Cambiar-Icono-de-Carpeta.htm)  
 [clon-151003-Publicar-pagina-web-en-GitHub-Pages.htm](https://fjfe.github.io/apt/clon-151003-Publicar-pagina-web-en-GitHub-Pages.htm)  
 [clon-Almacenamiento-para-la-Web.htm](https://fjfe.github.io/apt/clon-Almacenamiento-para-la-Web.htm) (WebStorage)  
