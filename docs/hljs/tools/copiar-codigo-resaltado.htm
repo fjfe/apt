@@ -5,10 +5,12 @@
                   (resultado = código HTML con etiquetas+clases"hljs" para resaltar).
     Normalmente bastará con pulsar Ctrl+V y Alt+V para tener un buen resultado en el portapapeles.
 
+    También permite arrastrar y soltar archivo con el código a resaltar.
+
     Origen:     highlight.js    https://highlightjs.org/
     Bondades:   (¿detecta y?) Resalta los 196 lenguajes conocidos por highlight.js
                 Sin dependencias externas.
-    Autor:      Paco Fdez    10/10/2021 - 28/10/2021
+    Autor:      Paco Fdez    10/10/2021 - 05/12/2021
 -->
 <style>
 body{
@@ -296,6 +298,15 @@ k(
   27  // Esc
 );
 
+function soltarArchivo(f) {
+  var fr = new FileReader();
+  fr.onload = function(e) {
+    co1.value = e.target.result;
+    cambios();
+  };
+  fr.readAsText(f, "UTF-8");
+}
+
 function inicia(){
   tit.innerHTML = document.title;
   ti2.innerHTML = document.title;
@@ -316,6 +327,12 @@ function inicia(){
   todo.addEventListener ('click',  clickTodo);
   cop.addEventListener  ('click',  copyres);
   gua.addEventListener  ('click',  guardarResaltadoHtm);
+
+  co1.ondrop = function(e) {
+    e.preventDefault();
+    var f = e.dataTransfer.files[0];
+    soltarArchivo(f);
+  };
 }
 
 // ----- MAIN -----
@@ -340,8 +357,8 @@ a c···ghij l nopqrst v xy +         0          Esc Ctrl+Supr
     <u>highlight.js</u></a> <span class="peq">11.2</span></span>
   </h2>
   <p>
-    Resalta el código fuente tecleado y guarda o copia fácilmente el resultado
-    <i class="peq">(código HTML con las clases CSS "hljs" definidas por highlight.js)</i> al portapapeles.<br>
+    Resalta el código fuente arrastrado/tecleado y guarda o copia al portapapeles fácilmente el resultado
+    <i class="peq">(código HTML con las clases CSS "hljs" definidas por highlight.js)</i>.<br>
     Si tienes copiado en el portapapeles el código fuente, normalmente bastará con pulsar
     <b class="tec">Ctrl+V</b> y <b class="tec">Alt+V</b> para obtener un buen resultado en el portapapeles,<br>
 	&emsp; &emsp; &emsp; &emsp; &emsp;  o <b class="tec">Alt+G</b> para guardar el resultado en un <i>archivo.htm</i>.<br>
@@ -370,7 +387,7 @@ a c···ghij l nopqrst v xy +         0          Esc Ctrl+Supr
     &emsp; <i class="peq">(He clonado aquí sus archivos imprescindibles.)</i>
   </p>
   <p>
-    <span class="peq">Desarrollo: 10/10/2021 - 28/10/2021</span>
+    <span class="peq">Desarrollo: 10/10/2021 - 05/12/2021</span>
     <span class="fld uni">
       <a target="_blank" href="../clon-Usa-highlight-js-para-resaltar-codigo.htm"><img class="icc" src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTk2LDBIMTZDNy4xNjQsMCwwLDcuMTY0LDAsMTZ2OTZjMCw4LjgzNiw3LjE2NCwxNiwxNiwxNmg0NHYtOCAgICBIMTZjLTQuNDA2LDAtOC0zLjU4Ni04LThWMTZjMC00LjQxNCwzLjU5NC04LDgtOGg4MGM0LjQxNCwwLDgsMy41ODYsOCw4djQ3LjAzMWw4LThWMTZDMTEyLDcuMTY0LDEwNC44MzYsMCw5NiwweiIgZmlsbD0iIzU0NkU3QSIvPjxwYXRoIGQ9Ik0xMjUuNjU2LDcyTDEyMCw2Ni4zNDRjLTEuNTYzLTEuNTYzLTMuNjA5LTIuMzQ0LTUuNjU2LTIuMzQ0cy00LjA5NCwwLjc4MS01LjY1NiwyLjM0NGwtMzQuMzQ0LDM0LjM0NCAgYy0xLjU2MywxLjU2My02LjM0Miw3LjYwNS02LjM0NCw5LjY1Mkw2NCwxMjhsMTcuNjU2LTRjMCwwLDguMDk0LTQuNzgxLDkuNjU2LTYuMzQ0bDM0LjM0NC0zNC4zNDQgIEMxMjguNzgxLDgwLjE4OCwxMjguNzgxLDc1LjEyMSwxMjUuNjU2LDcyeiIgZmlsbD0iIzAzQTlGNCIvPjxwYXRoIGQ9Ik04OCwzMkgyNHYtOGg2NFYzMnogTTg4LDQ4SDI0di04aDY0VjQ4eiBNODgsNjRIMjR2LThoNjRWNjR6IE01Niw4MEgyNHYtOGgzMlY4MHoiIGZpbGw9IiNCMEJFQzUiLz48L3N2Zz4=">
         Antecedentes y notas.
@@ -389,7 +406,7 @@ a c···ghij l nopqrst v xy +         0          Esc Ctrl+Supr
             title="Pegar desde el portapapeles el código fuente"><b class="tec">Ctrl+V</b> 📋<b class="fve">⤵</b></span>
     </span>
   </div>
-  <textarea id="co1" autofocus spellcheck="false" placeholder="Escribe aquí el código fuente…"></textarea>
+  <textarea id="co1" autofocus spellcheck="false" placeholder="Arrastra y suelta aquí un archivo o escribe el código fuente…"></textarea>
 
   <div>
     Código <b id="clase"></b> resaltado:
