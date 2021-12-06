@@ -8,6 +8,7 @@ Apuntes
 [clon-151003-Publicar-pagina-web-en-GitHub-Pages.htm](https://fjfe.github.io/apt/clon-151003-Publicar-pagina-web-en-GitHub-Pages.htm)  
 [clon-Almacenamiento-para-la-Web.htm](https://fjfe.github.io/apt/clon-Almacenamiento-para-la-Web.htm) (WebStorage)  
 [clon-API-Cache-Guia-rapida.htm](https://fjfe.github.io/apt/clon-API-Cache-Guia-rapida.htm)  
+[clon-Cargar-archivos-mediante-Arrastrar-y-Soltar-con-JavaScript.htm](https://fjfe.github.io/apt/clon-Cargar-archivos-mediante-Arrastrar-y-Soltar-con-JavaScript.htm)  
 [clon-Crea-sitio-web-con-Jekyll-y-GitHubPages.htm](https://fjfe.github.io/apt/clon-Crea-sitio-web-con-Jekyll-y-GitHubPages.htm)  
 [clon-Bootstrap4-Que-es-Como-instalar.htm](https://fjfe.github.io/apt/clon-Bootstrap4-Que-es-Como-instalar.htm)  
 [clon-Escalar-SVG.htm](https://fjfe.github.io/apt/clon-Escalar-SVG.htm)  

@@ -1,3 +1,3 @@
 git add .
-git commit -m "05-12-2021 +arrastrar copiar-codigo-resaltado"
+git commit -m "06-12-2021 +Cargar-archivos-arrastrando"
 git push -u origin master
