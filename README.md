@@ -17,6 +17,7 @@ Apuntes
 [clon-Usando-Clases-en-JavaScript.htm](https://fjfe.github.io/apt/clon-Usando-Clases-en-JavaScript.htm)  
 [clon-Observer-en-javascript.htm](https://fjfe.github.io/apt/clon-Observer-en-javascript.htm)  
 [clon-QOwnNotes-edita-notas-markdown.htm](https://fjfe.github.io/apt/clon-QOwnNotes-edita-notas-markdown.htm)  
+[clon-Truco-memoria-de-Nobel.htm](https://fjfe.github.io/apt/clon-Truco-memoria-de-Nobel.htm)  
 [clon-Web2Img-Camuflar-web-en-imagen-PNG.htm](https://fjfe.github.io/apt/clon-Web2Img-Camuflar-web-en-imagen-PNG.htm)  
 [nota_Markdown_Pygments.htm](https://fjfe.github.io/apt/nota_Markdown_Pygments.htm)  
 [tutorial-Git-GitHub.htm](https://fjfe.github.io/apt/tutorial-Git-GitHub.htm)
