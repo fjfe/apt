@@ -39,8 +39,8 @@ hr{width:30%;height:1px;border-top:1px solid #ccc;border-bottom:0;}
   font-style:  normal;
 }
 .gra{font-size:120%;}
-.ic2{display:inline;width:2em;height:auto;vertical-align:text-bottom;}
-.ic3{display:inline;width:3em;height:auto;vertical-align:text-bottom;}
+.ic2{display:inline;height:2em;width:auto;vertical-align:text-bottom;}
+.ic3{display:inline;height:3em;width:auto;vertical-align:text-bottom;}
 .e01{padding-right:0.1em}	/* Espacio  +relleno derecho 10% em */
 .e02{padding-right:0.2em}
 .e03{padding-right:0.3em}
@@ -183,6 +183,13 @@ blockquote {
       display: none;
    }
 }
+
+.clon {
+  margin:.5rem;
+  padding:1rem;
+  background-color:#fff;
+  color:#000;
+}
 </style>
 
 <style id="shl">
@@ -305,6 +312,7 @@ blockquote {
         <tr><td><code class="tec">Ctrl+U</code></td>          <td><u>Underline</u> (Subrayada)</td></tr>
         <tr><td><code class="tec">May+Ctrl+S</code></td>      <td><s>Strikethrough</s> (Tachada)</td></tr>
         <tr><td><code class="tec">Ctrl+N</code></td>          <td><b>N</b>ueva página</td></tr>
+        <tr><td><code class="tec">Ctrl+P</code></td>          <td>Buscar</td></tr>
         <tr><td><code class="tec">May+Ctrl+L</code></td>      <td>modo oscuro/cLaro</td></tr>
         <tr><td><code class="tec">Tab</code></td>             <td>Indentar anidando en bloque</td></tr>
         <tr><td><code class="tec">May+Tab</code></td>         <td>Quitar indentado y anidación</td></tr>
@@ -333,7 +341,10 @@ blockquote {
     </div>
   </div>
   <div class="a10">
-    Tenemos la referencia completa de atajos de teclado en la documentación de Notion:<br>
+    Tenemos una lista de atajos (segmentada en 5 bloques) en:<br>
+    ↪ <a class="uni" href="https://shortcuts.design/tools/toolspage-notion/"><img class="icc" data-src="ico_shortcuts_design"> Notion Shortcuts | shortcuts.design</a><br>
+    <br>
+    La referencia completa de atajos de teclado está en la documentación de Notion:<br>
     ↪ <a class="uni" href="https://www.notion.so/Learn-the-shortcuts-66e28cec810548c3a4061513126766b0"><img class="icc" data-src="logo_notion"> Learn the shortcuts</a><br>
     <br>
     Y el siguiente vídeo muestra algunos de los más interesantes:<br>
@@ -352,6 +363,60 @@ blockquote {
 <p>Cuando estés en esa posición, puedes hacer clic en los encabezados de las columnas y cambiar sus etiquetas. También obtendrás un menú que te permitirá cambiar el <em>tipo</em> de información almacenada en esa columna.</p>
 <figure><img data-src="i13_agr_arch" alt="Agregar archivos"></figure>
 <p>Configura todas tus columnas para Texto y podrás mostrar información básica como lo harías en Docs o Word.</p>
+
+<div class="tma">
+  <h4 id="peculiar_tablas">🚩 Notion es peculiar</h4>
+  <div class="s01">
+    <div>
+      Ya he visto algunas peculiaridades
+      <i class="peq">(y he comprobado que tienen la misma sensación por ahí afuera)</i>
+      <ul>
+        <li>tiene atajos raros (como Ctrl+P para buscar)</li>
+        <li>no tiene tablas html</li>
+      </ul>
+    </div>
+    <div id="mas_tab" class="sdc" onclick="sd(this)" title="des/plegar">
+      <i class="peq">Más…</i>   <img class="icc" data-src="ico_alexkehayias" alt=""> Notion como editor de texto es peculiar<img class="fld mdi icc" data-src="ico" title="Página clonada y traducida">
+    </div>
+    <div class="sem" hidden>
+      <div class="s01">
+        <p>
+          Copio aquí las notas
+          "<a href="https://notes.alexkehayias.com/notion-as-a-text-editor-is-quirky/"
+          ><b class="sve">Notion como editor de texto es peculiar</b></a>",
+          de Alex Kehayias,
+          que me han parecido un buen resumen.
+        </p>
+        <hr class="a05">
+      </div>
+
+      <div class="clon a20 fve tf4">
+        <div class="neg cen">Notion como editor de texto es peculiar</div>
+        <p>Notion es un wiki popular que comencé a usar más seriamente recientemente. Mirando a Notion a través de la lente de un editor de texto (la forma predominante en que los usuarios <em>crean</em> contenido) revela una serie de peculiaridades.</p>
+        <ul>
+        <li>Los atajos de teclado son inconsistentes. Por ejemplo, escribir `ctrl-p` podría mover el cursor una línea hacia abajo o hasta el final de la página.</li>
+        <li>Las tablas son difíciles de manejar. No puede crear o completar la tabla por completo con el teclado y hay múltiples modos al hacer clic en las celdas (abrir página vinculada, editar) que no se comportan igual que editar otros bloques de texto (por ejemplo, editar enlaces externos en una celda es difícil ).</li>
+        <li>Insertar un enlace funciona de manera diferente si es una página interna o un enlace externo. De manera relacionada, la sintaxis de enlace de rebajas no funciona.</li>
+        <li>La creación de una lista de verificación de Markdown requiere el uso de `[]` sin espacios, lo que creo que es exclusivo de Notion (podría estar equivocado).</li>
+        <li>No existen las tablas normales, solo 'bases de datos'</li>
+        </ul>
+        <p>Ver también:</p>
+        <ul>
+        <li><a href="https://notes.alexkehayias.com/text-files-are-a-universal-storage-medium/">Los archivos de texto sin formato son un medio de almacenamiento universal</a>.<br>
+        Notion amplía en gran medida el texto sin formato, lo que perjudica su portabilidad.</li>
+        <li><a href="https://notes.alexkehayias.com/ux/">UX (experiencia de usuario)</a></li>
+        </ul>
+      </div>
+      <div class="der noi"><a target="_self" href="#mas_tab" title="Volver al inicio de esta sección desplegable">⤴<br></a></div>
+    </div>
+  </div>
+  <div class="a10 s01">
+    Para incrustar una simple tabla HTML (en lugar de una tabla-BD) podemos recurrir a:<br>
+    <a class="uni" href="https://apption.co/apps/63"><small><img class="icc" data-src="ico_apption" alt=""> <img class="icc" data-src="ico_tabla_html" alt=""></small> Embed Notion HTML Table Widget | Apption</a>
+  </div>
+  <br>
+</div>
+
 <h3 id="mov_blo">Mover bloques en tu documento de Notion</h3>
 <p>Cuando quieres mover texto en un documento de Docs o Word, copia o corta el texto que quieres mover y luego pégalo donde quieras.</p>
 <p>En Notion es más simple. Para mover un párrafo, simplemente levántalo por el «<span class="mam">tirador</span>», el cuadrado junto al símbolo más al lado de cada bloque, y arrástralo y suéltalo.<br><img class="som" data-src="pan_tirador_de_bloque"></p>
@@ -380,7 +445,7 @@ blockquote {
 <p>Cuando lo haces, puedes acceder de inmediato a la versión guardada de la página en la que estabas, y Notion la convierte automáticamente en un documento de Notion, en el que puedes agregar y editar texto y otro contenido, mencionar personas, establecer recordatorios, mover texto e imágenes…</p>
 
 <div id="ext_alt" class="tma">
-  <h3 id="ext_alt">🚩 Extensión alternativa</h3>
+  <h3 id="ext_alt">🚩 Extensión alternativa "Save to Notion"</h3>
   <div class="s01">
       <p>
         Existen extensiones alternativas <small>(no oficiales, desarrolladas por la comunidad)</small> que pueden
@@ -552,7 +617,7 @@ blockquote {
      26 vídeos (8h 8' 13")
     <i class="fld"><a href="https://www.youtube.com/c/elenamadrigal"><img class="icc" data-src="av_elena_madrigal" title="Elena Madrigal"></a> </i>
     <br>
-    <i class="peq">Espacio de trabajo, nota, texto con estilo, bloque, página, subpágina, base de datos, propiedad, filtro, orden, vista, enlace, backlink, rollup, fórmula.<br>Ejemplos: Guía de viaje, repositorio de artículos, recetas…</i><br>
+    <i class="peq">Espacio de trabajo, nota, texto con estilo, bloque, página, subpágina, base de datos, propiedad, filtro, orden, vista, enlace, backlink, rollup, fórmula…<br>Ejemplos: Guía de viaje, repositorio de artículos, recetas…</i><br>
   </div>
   <div class="s01">
     <div id="mas_vid" class="sdc" onclick="sd(this)" title="Des/plegar">
@@ -584,13 +649,23 @@ blockquote {
       <tr><td>19 <a href="https://www.youtube.com/watch?v=6FLHs29zsUM&list=PL4L9rrm0U6CvC_HNEelpOM2Aqo-e5fKzg&index=19">Cómo hacer fórmulas en Notion desde 0</a></td><td class="der peq gri">17:27</td></tr>
       <tr><td>20 <a href="https://www.youtube.com/watch?v=kx8Ciyu7jzk&list=PL4L9rrm0U6CvC_HNEelpOM2Aqo-e5fKzg&index=20">Cómo hacer fórmulas en Notion desde 0. Parte II</a></td><td class="der peq gri">14:07</td></tr>
       <tr><td>21 <a href="https://www.youtube.com/watch?v=8ZuO7Va56Z0&list=PL4L9rrm0U6CvC_HNEelpOM2Aqo-e5fKzg&index=21">Construyendo una guía de viaje (Parte III)</a></td><td class="der peq gri">32:02</td></tr>
-      <tr><td>22 <a href="https://www.youtube.com/watch?v=32v0WZ3Laas&list=PL4L9rrm0U6CvC_HNEelpOM2Aqo-e5fKzg&index=22">Cómo Planificar Objetivos con Notion</a></td><td class="der peq gri">33:07</td></tr>
-      <tr><td>23 <a href="https://www.youtube.com/watch?v=h-PApoGccSo&list=PL4L9rrm0U6CvC_HNEelpOM2Aqo-e5fKzg&index=23">Notion Starter Pack. Las plantillas del curso de Notion</a></td><td class="der peq gri">12:35</td></tr>
+      <tr><td>22 <a href="https://www.youtube.com/watch?v=32v0WZ3Laas&list=PL4L9rrm0U6CvC_HNEelpOM2Aqo-e5fKzg&index=22">Cómo Planificar Objetivos con Notion</a><br>    <small>Un objetivo sin proyectos es un sueño, un proyecto sin objetivo es un pasatiempo.</small></td><td class="der peq gri" valign="top">33:07</td></tr>
+      <tr><td>23 <a href="https://www.youtube.com/watch?v=h-PApoGccSo&list=PL4L9rrm0U6CvC_HNEelpOM2Aqo-e5fKzg&index=23">Notion Starter Pack. Las plantillas del curso de Notion</a><br>    <small><a class="uni" href="https://elenamadrigal.gumroad.com/l/notion-starter-pack"><img class="icc" data-src="ico_notion_starter_pack"> Notion Starter Pack</a>  en <a class="uni" href="https://gumroad.com/"><img class="icc" data-src="ico_gumroad" alt=""> Gumroad</a></small></td><td class="der peq gri" valign="top">12:35</td></tr>
       <tr><td>24 <a href="https://www.youtube.com/watch?v=Bg-wlYGo_RI&list=PL4L9rrm0U6CvC_HNEelpOM2Aqo-e5fKzg&index=24">Nuevo en Notion: Agrupa bases de datos!!</a></td><td class="der peq gri">22:14</td></tr>
-      <tr><td colspan="2">  Otros:</td></tr>
-      <tr><td>  <a href="https://www.youtube.com/watch?v=gNcAJhuLrZU">Hacer barras de progreso en Notion</a></td><td class="der peq gri">22:14</td></tr>
+      <tr><td colspan="2">Otros:</td></tr>
       <tr><td>  <a href="https://www.youtube.com/watch?v=9keAMayMPkk">Control de gastos, ingresos y ahorro en Notion</a></td><td class="der peq gri">39:04</td></tr>
+      <tr><td>  <a href="https://www.youtube.com/watch?v=gNcAJhuLrZU">Hacer barras de progreso en Notion</a></td><td class="der peq gri">22:14</td></tr>
+      <tr><td>  <a href="https://www.youtube.com/watch?v=WYFFBQSjLMo">Crea TAGS <i class="peq">(multi-tabla)</i> en Notion</a></td><td class="der peq gri">12:58</td></tr>
       </table>
+      <hr>
+      <p class="f02">
+        Elena <a class="uni" href="https://elenamadrigal.gumroad.com/">vende <b>sus plantillas</b></a> más elaboradas y otras cosas en
+        <a class="uni" href="https://gumroad.com/"><img class="icc" data-src="ico_gumroad" alt=""> Gumroad</a>.
+        Por ej:<br>
+        <a class="uni" href="https://elenamadrigal.gumroad.com/l/notion-starter-pack">Notion Starter Pack</a> (Plantillas <small>para tareas, hábitos, gastos, enlaces, cocina…</small>)<br>
+        <a class="uni" href="https://elenamadrigal.gumroad.com/l/notion-travel">Notion Travel Planner</a> (Plantilla 'Planificador de viajes')<br>
+        <a class="uni" href="https://elenamadrigal.gumroad.com/l/pagina-en-notion">Curso: Tu Página En Notion</a> (Curso para diseñar web en Notion)<br>
+      </p>
       <div class="der noi"><a target="_self" href="#mas_vid" title="Volver al inicio de esta sección desplegable">⤴<br></a></div>
     </div>
   </div>
@@ -666,6 +741,10 @@ blockquote {
   </div>
 
   <div class="f01">
+    <a href="https://www.notion.so/help"><img class="icc" data-src="logo_notion"> <b>Help</b>, tutorials &amp; documentation | Notion</a><br>
+  </div>
+
+  <div class="f01">
     <a href="https://www.notion.so/Learn-the-shortcuts-66e28cec810548c3a4061513126766b0"><img class="icc" data-src="logo_notion"> Atajos de <b>teclado</b> | Notion</a> 
     <a href="https://www.youtube.com/watch?v=0IXgO10UTnI&t=631s"><img class="icc" data-src="logo_youtube"> 39 atajos…</a> 14:20<br>
   </div>
@@ -700,6 +779,10 @@ blockquote {
 
   <div class="f01">
     <a href="https://snackthis.co/presentations/"><img class="icc" data-src="ico_snackthis"> SnackThis Presentations</a> (Crea presentaciones desde Notion)<br>
+  </div>
+
+  <div class="f01">
+    <a href="https://www.xataka.com/basics/notion-trucos-funciones-para-exprimir-al-maximo-esta-navaja-suiza-productividad-personal"><img class="icc" data-src="ico_xataka"> Notion: 27 trucos y <small>funciones para exprimir al máximo esta navaja suiza de productividad personal</small></a><br>
   </div>
 
   <hr>
@@ -922,7 +1005,7 @@ blockquote {
   <div id="ori2" class="clf"></div>
   <span class="peq tma fld red">
     He corregido algunos gazapos; he incluido iconos, imágenes,<br>
-    notas y <a target="_self" href="#otros">otros enlaces</a>.<span class="fld"><i class="peq gri">23/1/2022 </i>™</span>
+    notas y <a target="_self" href="#otros">otros enlaces</a>.<span class="fld"><i class="peq gri">27/1/2022 </i>™</span>
   </span>
 </footer>
 
@@ -1155,6 +1238,12 @@ imgData({
   u_1f9fa_cesta_tw         :'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNiAzNiI+PHBhdGggZmlsbD0iI0MxNjk0RiIgZD0iTTIgMTUuMzc1UzAgMTEuNzUgMCA3Ljc1czMuNzg2LTMuNTQyIDUtMi40MzhjMS4yOTIgMS4xNzQgMyA0LjkzOCAzIDQuOTM4bC0xIC42ODhzLS44MzMtMS41MS0xLjgzMy0yLjgyMy0yLjc1LS45NDMtMi43NSAxLjA1N1M0IDE1IDQgMTVsLTIgLjM3NXptMzIgMHMyLTMuNjI1IDItNy42MjUtMy43ODYtMy41NDItNS0yLjQzOGMtMS4yOTIgMS4xNzQtMyA0LjkzOC0zIDQuOTM4bDEgLjY4OHMuODMzLTEuNTEgMS44MzMtMi44MjMgMi43NS0uOTQzIDIuNzUgMS4wNTdTMzIgMTUgMzIgMTVsMiAuMzc1eiIvPjxwYXRoIGZpbGw9IiNDMTY5NEYiIGQ9Ik0zMy4yMzggMTYuNzYyQzMzLjIzOCAyMS40OTYgMzAuMzgxIDMyIDE4IDMyUzIuNzYyIDIxLjQ5NiAyLjc2MiAxNi43NjJDMi43NjIgMTMuOTA1IDguNTMyIDEyIDE4IDEyczE1LjIzOCAxLjkwNSAxNS4yMzggNC43NjJ6Ii8+PHBhdGggZmlsbD0iI0Q5OUU4MiIgZD0iTTM1IDEzLjU1NkMzNSAyMCAyOC4wNDEgMjIgMTggMjJTMSAyMCAxIDEzLjU1NkMxIDEwLjIyMiA3LjQzOCA4IDE4IDhzMTcgMi4yMjIgMTcgNS41NTZ6Ii8+PGVsbGlwc2UgZmlsbD0iIzY2MjExMyIgY3g9IjE4IiBjeT0iMTMuNTU2IiByeD0iMTUuOTM4IiByeT0iNC40NDQiLz48cGF0aCBkPSJNMTcgMjcuOTljLTMuNjQ2LS4wNTEtNi44NTMtLjM4Ny05LjQxNS0xLjEzOGExMi4xODcgMTIuMTg3IDAgMCAwIDMuNzg0IDIuNzY1YzEuNzE3LjIyNiAzLjYwOC4zNDEgNS42MzEuMzdWMjcuOTl6bTIgMHYxLjk5OGMyLjAyMi0uMDI5IDMuOTEzLS4xNDMgNS42MzEtLjM3YTEyLjIwMyAxMi4yMDMgMCAwIDAgMy43ODQtMi43NjVjLTIuNTYyLjc0OS01Ljc2OSAxLjA4NS05LjQxNSAxLjEzN3ptLTkuODctNC43NjZjLTEuNzctLjM4LTMuMzEyLS45MDYtNC41NS0xLjYyOC4yODIuODYxLjY0OCAxLjcyOCAxLjExIDIuNTc2IDEuMjk5LjU3MiAyLjg0OC45ODQgNC41ODMgMS4yNzZhMTUuOTMgMTUuOTMgMCAwIDEtMS4xNDMtMi4yMjR6TTE4IDI2YzEuODc1IDAgMy42NC0uMDcxIDUuMjc1LS4yMjYuNDU4LS42OTcuODQ1LTEuNDE3IDEuMTczLTIuMTQxLTEuOTUzLjI0OS00LjExLjM2Ny02LjQ0OC4zNjctMi40NDIgMC00LjY4NC0uMTI5LTYuNzAzLS40MDMuMzI3LjcyNy43MTYgMS40NDggMS4xNzQgMi4xNDggMS43MDUuMTc0IDMuNTU1LjI1NSA1LjUyOS4yNTV6bTguNjEtMi43MjRhMTUuOTIgMTUuOTIgMCAwIDEtMS4xNDcgMi4yMTVjMS44NDQtLjI5MyAzLjQ4My0uNzE4IDQuODQ4LTEuMzIuNDYyLS44NDguODI4LTEuNzE1IDEuMTEtMi41NzYtMS4yOTkuNzU4LTIuOTMyIDEuMjk5LTQuODExIDEuNjgxeiIgZmlsbD0iI0Q5OUU4MiIvPjxwYXRoIGQ9Ik0xNyAxMi41OTRjLTMuNjQ2LjA1MS02Ljg1My4zODctOS40MTUgMS4xMzhhMTIuMTg3IDEyLjE4NyAwIDAgMSAzLjc4NC0yLjc2NWMxLjcxNy0uMjI2IDMuNjA4LS4zNDEgNS42MzEtLjM3djEuOTk3em0yIDB2LTEuOTk4YzIuMDIyLjAyOSAzLjkxMy4xNDMgNS42MzEuMzdhMTIuMjAzIDEyLjIwMyAwIDAgMSAzLjc4NCAyLjc2NWMtMi41NjItLjc1LTUuNzY5LTEuMDg2LTkuNDE1LTEuMTM3em0tOS44MjIgNC42NjJhMTUuODYgMTUuODYgMCAwIDEgMS4wOTUtMi4xMmMtMS43MTYuMjg4LTMuMjQ3LjY5NS00LjUzNyAxLjI1Ny45OS4zMzIgMi4xNS42MjMgMy40NDIuODYzek0xOCAxNC41ODRjMS44NzUgMCAzLjY0LjA3MSA1LjI3NS4yMjYuNDU4LjY5Ny44NDUgMS40MTcgMS4xNzMgMi4xNDEtMS45NTMtLjI0OS00LjEwOS0uMzY3LTYuNDQ4LS4zNjctMi40NDIgMC00LjY4NC4xMjktNi43MDMuNDAzLjMyNy0uNzI3LjcxNi0xLjQ0OCAxLjE3NC0yLjE0OCAxLjcwNS0uMTc1IDMuNTU1LS4yNTUgNS41MjktLjI1NXptNy40NjMuNTA4Yy40NDkuNzE5LjgyNSAxLjQ2IDEuMTQgMi4yMDEgMS4zNzgtLjI0NyAyLjYxNy0uNTUgMy42NjEtLjktMS4zNTYtLjU5MS0yLjk3Ny0xLjAxMS00LjgwMS0xLjMwMXoiIGZpbGw9IiM4QTQ2MzMiLz48L3N2Zz4=',
   u_1f31e_sol_cara_tw      :'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNiAzNiI+PHBhdGggZmlsbD0iI0Y0OTAwQyIgZD0iTTE4IDM1LjhjLS4zOSAwLS43NDUtLjIxOC0uOTIxLS41NjVsLTEuOC0zLjU1NC0zLjAyNCAyLjU5NmMtLjE5MS4xNjEtLjQzLjI0Ny0uNjcyLjI0Ny0uMTMzIDAtLjI2Ny0uMDI1LS4zOTQtLjA3OC0uMzU5LS4xNDgtLjYwNi0uNDg3LS42MzQtLjg3M2wtLjMwNC0zLjk3Ni0zLjc4OCAxLjI0MWMtLjEwNS4wMzQtLjIxMy4wNTEtLjMyMS4wNTEtLjI3IDAtLjUzMi0uMTA2LS43My0uMzAzLS4yNzQtLjI3My0uMzcxLS42ODEtLjI1LTEuMDUxbDEuMjQtMy43ODgtMy45NzItLjMwMWMtLjM4Ny0uMDMxLS43MjYtLjI3NS0uODc1LS42MzQtLjE0OC0uMzYxLS4wODMtLjc3Mi4xNy0xLjA2N2wyLjU5NC0zLjAyNC0zLjU1NC0xLjhDLjQxOCAxOC43NDUuMiAxOC4zODguMiAxOHMuMjE4LS43NDUuNTY1LS45MjFsMy41NTQtMS44LTIuNTk0LTMuMDI0Yy0uMjUyLS4yOTUtLjMxOC0uNzA4LS4xNy0xLjA2Ni4xNDktLjM1OS40ODctLjYwNi44NzUtLjYzNGwzLjk3Mi0uMzA0LTEuMjQtMy43ODhjLS4xMjEtLjM3LS4wMjQtLjc3NS4yNS0xLjA1MS4xOTgtLjE5Ni40Ni0uMzAxLjczLS4zMDEuMTA4IDAgLjIxNi4wMTcuMzIxLjA1MWwzLjc4OCAxLjI0LjMwNC0zLjk3MmMuMDI5LS4zODguMjc1LS43MjYuNjM0LS44NzUuMTI3LS4wNTIuMjYxLS4wNzguMzk0LS4wNzguMjQyIDAgLjQ4MS4wODQuNjcyLjI0OGwzLjAyNCAyLjU5NCAxLjgtMy41NTRDMTcuMjU1LjQxOCAxNy42MS4yIDE4IC4yYy4zODggMCAuNzQ1LjIxOC45Mi41NjVsMS44MDIgMy41NTQgMy4wMjQtMi41OTRjLjE5LS4xNjQuNDMxLS4yNDguNjcxLS4yNDguMTM1IDAgLjI2OC4wMjYuMzk2LjA3OC4zNTguMTQ5LjYwMy40ODcuNjM0Ljg3NWwuMzAzIDMuOTcyIDMuNzg1LTEuMjRjLjEwNS0uMDM1LjIxNS0uMDUxLjMyMS0uMDUxLjI3IDAgLjUzNC4xMDUuNzI5LjMwMS4yNzYuMjc2LjM3My42ODIuMjUyIDEuMDUxbC0xLjI0MSAzLjc4OCAzLjk3Ni4zMDRjLjM4Ni4wMjkuNzI1LjI3NS44NzMuNjM0LjE0OC4zNTguMDg0Ljc3MS0uMTY5IDEuMDY2bC0yLjU5NiAzLjAyNCAzLjU1NCAxLjhjLjM0OC4xNzcuNTY2LjUzMy41NjYuOTIxcy0uMjE4Ljc0NC0uNTY1LjkyMWwtMy41NTQgMS44IDIuNTk2IDMuMDI0Yy4yNTMuMjk1LjMxNy43MDYuMTY5IDEuMDY3LS4xNDguMzU4LS40ODcuNjAzLS44NzYuNjM0bC0zLjk3My4zMDEgMS4yNDEgMy43ODhjLjEyMS4zNzEuMDI0Ljc3Ny0uMjUyIDEuMDUxLS4xOTUuMTk3LS40Ni4zMDMtLjcyOS4zMDMtLjEwNiAwLS4yMTYtLjAxNy0uMzIxLS4wNTFsLTMuNzg1LTEuMjQxLS4zMDMgMy45NzNjLS4wMzEuMzg5LS4yNzUuNzI4LS42MzQuODc2LS4xMjkuMDUzLS4yNjIuMDc4LS4zOTYuMDc4LS4yNCAwLS40OC0uMDg2LS42NzEtLjI0N2wtMy4wMjQtMi41OTYtMS44MDIgMy41NTRjLS4xNzYuMzQ3LS41MzMuNTY1LS45MjEuNTY1eiIvPjxwYXRoIGZpbGw9IiNGRkNDNEQiIGQ9Ik0zMSAxOGMwIDcuMTc5LTUuODIxIDEzLTEzIDEzUzUgMjUuMTggNSAxOCAxMC44MjEgNSAxOCA1czEzIDUuODIxIDEzIDEzIi8+PHBhdGggZD0iTTE4IDIzLjQ3MWMtNi4yMjIgMC04LTIuMzI4LTgtMS4yMjggMCAxLjEwMiAzLjU1NiAzLjk4IDggMy45OHM4LTIuODc5IDgtMy45OGMwLTEuMS0xLjc3NyAxLjIyOC04IDEuMjI4bTgtOC44MDRjMCAxLjQ3My0xLjE5NCAyLjY2Ny0yLjY2NyAyLjY2Ny0xLjQ3MiAwLTIuNjY2LTEuMTk0LTIuNjY2LTIuNjY3UzIxLjg2MSAxMiAyMy4zMzMgMTJDMjQuODA2IDEyIDI2IDEzLjE5MyAyNiAxNC42NjdtLTEwLjY2NyAwYzAgMS40NzMtMS4xOTUgMi42NjctMi42NjcgMi42NjctMS40NzIgMC0yLjY2Ny0xLjE5NC0yLjY2Ny0yLjY2N1MxMS4xOTUgMTIgMTIuNjY3IDEyYzEuNDcyIDAgMi42NjYgMS4xOTMgMi42NjYgMi42NjciIGZpbGw9IiNGNDkwMEMiLz48L3N2Zz4=',
   u_2694_espadas_tw        :'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNiAzNiI+PHBhdGggZmlsbD0iI0NDRDZERCIgZD0iTTI0IDI5bDUtNUw2IDFIMXY1eiIvPjxwYXRoIGZpbGw9IiM5QUFBQjQiIGQ9Ik0xIDF2NWwyMyAyMyAyLjUtMi41eiIvPjxwYXRoIGZpbGw9IiNEOTlFODIiIGQ9Ik0zMy40MjQgMzIuODA4Yy4yODQtLjI4NC40NTgtLjYyNi41MzEtLjk2OGwtNS4yNDItNi4xOTUtLjcwMS0uNzAyYy0uNTY0LS41NjQtMS41Ny0uNDczLTIuMjQ4LjIwNWwtLjYxNC42MTJjLS42NzcuNjc3LS43NjggMS42ODMtLjIwNCAyLjI0N2wuNzQxLjc0MSA2LjE1IDUuMjA1Yy4zNDUtLjA3Mi42ODgtLjI0Ny45NzQtLjUzMmwuNjEzLS42MTN6Ii8+PHBhdGggZD0iTTMzLjQyNCAzMi44MDhjLjI4NC0uMjg0LjQ1OC0uNjI2LjUzMS0uOTY4bC0xLjM0Mi0xLjU4Ni0uNzM3IDMuNjg0Yy4zMzEtLjA3Ny42NjEtLjI0My45MzUtLjUxOGwuNjEzLS42MTJ6bS0zLjMxLTUuNTA2bC0uODg4IDQuNDQxIDEuMjYgMS4wNjYuODItNC4xem0tMS40MDEtMS42NTdsLS43MDEtLjcwMmMtLjA5Ni0uMDk2LS4yMDgtLjE2Ni0uMzI2LS4yMjRsLS45NzggNC44OTIgMS4yNiAxLjA2Ni45NTctNC43ODMtLjIxMi0uMjQ5em0tMi40MDEtLjg4OGMtLjE5NS4wOTUtLjM4Mi4yMjUtLjU0OC4zOTJsLS42MTQuNjExYy0uMjU0LjI1NC0uNDI1LjU1NC0uNTExLjg2LS4xNDIuNTEtLjA0NiAxLjAzNS4zMDcgMS4zODdsLjU5Ni41OTYuNzctMy44NDZjMC0uMDAxIDAtLjAwMSAwIDB6IiBmaWxsPSIjQkY2OTUyIi8+PGNpcmNsZSBmaWxsPSIjOEE0NjMzIiBjeD0iMzMuMjUiIGN5PSIzMy4yNSIgcj0iMi43NSIvPjxwYXRoIGZpbGw9IiNGRkFDMzMiIGQ9Ik0yOS42MjYgMjIuMzI0Yy40MDQuNDA0LjQwNCAxLjA1OSAwIDEuNDYybC02LjA5MiA2LjA5MmMtLjQwNC40MDQtMS4wNTguNDA0LTEuNDYyIDAtLjQwNC0uNDA0LS40MDQtMS4wNTggMC0xLjQ2Mmw2LjA5Mi02LjA5MmMuNDAyLS40MDQgMS4wNTgtLjQwNCAxLjQ2MiAweiIvPjxjaXJjbGUgZmlsbD0iI0ZGQUMzMyIgY3g9IjIyLjA3MiIgY3k9IjI5Ljg3NyIgcj0iMS43NSIvPjxjaXJjbGUgZmlsbD0iI0ZGQUMzMyIgY3g9IjI5LjYyNiIgY3k9IjIyLjMyMyIgcj0iMS43NSIvPjxjaXJjbGUgZmlsbD0iI0ZGQ0M0RCIgY3g9IjIyLjA3MiIgY3k9IjI5Ljg3NyIgcj0iMSIvPjxjaXJjbGUgZmlsbD0iI0ZGQ0M0RCIgY3g9IjI5LjYyNiIgY3k9IjIyLjMyMyIgcj0iMSIvPjxwYXRoIGZpbGw9IiNGRkFDMzMiIGQ9Ik0zMy45MDMgMjkuMzQyYy4yOTguMjk4LjI5OC43ODEgMCAxLjA3OGwtMy40NzYgMy40NzVjLS4yOTguMjk4LS43OC4yOTgtMS4wNzggMC0uMjk4LS4yOTgtLjI5OC0uNzggMC0xLjA3OGwzLjQ3Ni0zLjQ3NWMuMjk3LS4yOTguNzgtLjI5OCAxLjA3OCAweiIvPjxwYXRoIGZpbGw9IiNDQ0Q2REQiIGQ9Ik0xMiAyOWwtNS01TDMwIDFoNXY1eiIvPjxwYXRoIGZpbGw9IiM5QUFBQjQiIGQ9Ik0zNSAxdjVMMTIgMjlsLTIuNS0yLjV6Ii8+PHBhdGggZmlsbD0iI0Q5OUU4MiIgZD0iTTIuNTc2IDMyLjgwOGMtLjI4NC0uMjg0LS40NTgtLjYyNi0uNTMxLS45NjhsNS4yNDItNi4xOTUuNzAxLS43MDJjLjU2NC0uNTY0IDEuNTctLjQ3MyAyLjI0OC4yMDVsLjYxMy42MTJjLjY3Ny42NzcuNzY4IDEuNjgzLjIwNCAyLjI0N2wtLjc0MS43NDEtNi4xNSA1LjIwNWMtLjM0NS0uMDcyLS42ODgtLjI0Ny0uOTc0LS41MzJsLS42MTItLjYxM3oiLz48cGF0aCBkPSJNMi41NzYgMzIuODA4Yy0uMjg0LS4yODQtLjQ1OC0uNjI2LS41MzEtLjk2OGwxLjM0Mi0xLjU4Ni43MzcgMy42ODRjLS4zMzEtLjA3Ny0uNjYxLS4yNDMtLjkzNS0uNTE4bC0uNjEzLS42MTJ6bTMuMzEtNS41MDZsLjg4OCA0LjQ0MS0xLjI2IDEuMDY2LS44Mi00LjF6bTEuNDAxLTEuNjU3bC43MDEtLjcwMmMuMDk2LS4wOTYuMjA4LS4xNjYuMzI2LS4yMjRsLjk3OCA0Ljg5Mi0xLjI2IDEuMDY2LS45NTctNC43ODMuMjEyLS4yNDl6bTIuNDAxLS44ODhjLjE5NS4wOTUuMzgyLjIyNS41NDguMzkybC42MTMuNjEyYy4yNTQuMjU0LjQyNS41NTQuNTExLjg2LjE0Mi41MS4wNDYgMS4wMzUtLjMwNyAxLjM4N2wtLjU5Ni41OTYtLjc2OS0zLjg0N2MwLS4wMDEgMC0uMDAxIDAgMHoiIGZpbGw9IiNCRjY5NTIiLz48Y2lyY2xlIGZpbGw9IiM4QTQ2MzMiIGN4PSIyLjc1IiBjeT0iMzMuMjUiIHI9IjIuNzUiLz48cGF0aCBmaWxsPSIjRkZBQzMzIiBkPSJNNi4zNzQgMjIuMzI0Yy0uNDA0LjQwNC0uNDA0IDEuMDU5IDAgMS40NjJsNi4wOTIgNi4wOTJjLjQwNC40MDQgMS4wNTguNDA0IDEuNDYyIDAgLjQwNC0uNDA0LjQwNC0xLjA1OCAwLTEuNDYybC02LjA5Mi02LjA5MmMtLjQwMi0uNDA0LTEuMDU4LS40MDQtMS40NjIgMHoiLz48Y2lyY2xlIGZpbGw9IiNGRkFDMzMiIGN4PSIxMy45MjgiIGN5PSIyOS44NzciIHI9IjEuNzUiLz48Y2lyY2xlIGZpbGw9IiNGRkFDMzMiIGN4PSI2LjM3NCIgY3k9IjIyLjMyMyIgcj0iMS43NSIvPjxjaXJjbGUgZmlsbD0iI0ZGQ0M0RCIgY3g9IjEzLjkyOCIgY3k9IjI5Ljg3NyIgcj0iMSIvPjxjaXJjbGUgZmlsbD0iI0ZGQ0M0RCIgY3g9IjYuMzc0IiBjeT0iMjIuMzIzIiByPSIxIi8+PHBhdGggZmlsbD0iI0ZGQUMzMyIgZD0iTTIuMDk3IDI5LjM0MmMtLjI5OC4yOTgtLjI5OC43ODEgMCAxLjA3OGwzLjQ3NiAzLjQ3NWMuMjk4LjI5OC43OC4yOTggMS4wNzggMCAuMjk4LS4yOTguMjk4LS43OCAwLTEuMDc4bC0zLjQ3Ni0zLjQ3NWMtLjI5Ny0uMjk4LS43OC0uMjk4LTEuMDc4IDB6Ii8+PC9zdmc+',
+  ico_shortcuts_design     :'data:image/png;base64,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',
+  ico_alexkehayias         :'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACf0lEQVR42mNkYAhnGEyAcdRBow4addCog0YdRCMHpaQ4hYdbQtgxMVNevvw4wA5qb4+sqPCHsBUVcx88eE0FB5mZKcfG2kHYM2fuuXLlMYQtIyNcXOzNwsIMZG/ffmHbtvMUOigkxMLeXhPIAFoBtAing2JibBYvzoGwfXy6tm49B2EbGCgcP97MwcEKZDc2rmloWEOhgyZPTszJcQcytmw55+vbRRMHeXjo29trQdhdXZvev/86wA4iCdDKQYyMDMLCvJj2AYPn799/A+Agbm72O3cmYtpnZlb9+PHbAXAQDw/H588LMO2jSaJev/70vXsvIWxRUb6oKGtItkcLoRMnWiBsSUkBePTRxEG4AFWy/cSJCXl5HoPIQdXVgS0tIHsXLToUHz+NKAft33/12bP3ELaQEI+7ux4TExO1HJSY6DBvXgaQ0d29qaxsGVEOomlJ7elpsG1bBZBRVra0u3vzwDtIT09+zZpCVlbmwsJFGzacHngHMTMz8fJyAhlfv/74/fvvwDsIDyDfQYyMjOzsLHC9TU1hpaW+ELaGRuHDh28gbGAdghYGYItsnZ11gIyLFx9OmLCNOg4ClpYHDtTz8XFC1PDzc0JiAQhevPjw5w+0Llu9+kRR0SI0B9Gk6pCQELh+vU9AgAt/FCxYcDAxcTqZDvL2NoKUV0CQmzv/yJEbELa6utSiRdlsbKAIAjbwZszYDWQAK4r160t4eTnwO2jTprP19avQBCsqAiAN8EOHrufnL8DpIGDiB2ZFCPvXrz///v2HsJmYGCGuAQJgXPz58xczDeECWNMQ0BagXVhlh283aNRBow4aLGDUQaMOGnXQqIMGGow6iBAAAP2f8JBUGHeRAAAAAElFTkSuQmCC',
+  ico_tabla_html           :'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAA4SURBVDiNY3Rr2vKfgQLARInmwWEA4///FAUB5S5gkZ/IgNMJD/MZGBkYGBjwqRn4QBw1YFgYAADgqwpIiIttOQAAAABJRU5ErkJggg==',
+  ico_gumroad              :'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAARZSURBVHgBtVd9bFNVFL/bamSJsocIolP2ZjBLxGVdiLgQk71GMdXE2Jq4qYlZ94fLNMaJ8q92wz9MHLouISIjhKJRGQbYIIFCCGshfI1Au/ANC7wNFj4WtsfngJDA+b32ldvXe7sHg19y2nvvO++ec8/XPS+POYdCFCCqKJs+y/3q1JmK9WBwdEg/cuFEHw2jKTKcbprngEeb9szU4Ndv12varHnMXfwGUwonZzEZY1dZtH8X23xsu9Gx++8uWmoh0sfbPJcCKgleCcHfVTcIhcqgj5xlLZHFLNzb2ZxS5KEVqPvE/WGoo/Y35WEEixR5b2mNfmr4jIdJrJEvWAsGvQvDawLLJyQcUJ97hW39ao36VkllD6YiHrsF6iC82buQPU4YY1eY989P9X0D8SxL8AqoDfO+iC+raVXYEwDcMfd3b3T4+mWPUAFKrXik8T83zCZDtH83W9Xbaf5jQwvIDGRIU/WXLNf7XYc2M/+K+gU0DNkVCIQ/b19ZN7dW+CJSzL8iYArOBcQM3NdEWSPD/D9qjG0nd8AKCcwL8DN7RllbR+1iVSa8svUdlhg6krGOkyqFReZzC7fu3maR4z1sCilSpc4RKjBzSvEksmIVDZdhjixQ55dVa0yClkhrhrkhuOebdezMT/tNGv3lJAvagraZagCvGA+4ivZws2RVNS0QWFrzq3fG5OlZzBD82V+NWcLhcwuTnnra3HSAeC0rwRKFqXURwLt34KAKK7heePZ5zV08W8ho9zn8KwsyxA9vqXtMDigWii2HFTRXVcmcEhlj96FIxrxaciJrU42s4wQVDyzoc924M6bKGFFAeNhPD5PbeXjILi5urcL1svLiIxeeBet/zJmaCFKxAkXWUHVdvDasM0mdtp8YPubX2vw/py2AfyoyzAk4q6n5py8PSpsHe3CiCtqfm74nkqWdCPrIufQ4/8Sl/j7Zyx+Vv58xD8U6sgpScsPk/Z+rDPMYGBm0hgYKUSIxdFjIiA195d70HIp6lvhNYVAEghEDniUfm+OApJTb0fUgu3TcBQp1PKNt/kVCZvirsvXdjBwXAfUfLqn/tym9hiAUWaV00ZvWfmFYwPjnwNqozA2IWFS/XOZFEQpJDmAHtWn8YWLWbahRlesJjtOI4DqN9e9hlsugFIRbJddyiQUfxZA9DbnTI/hL0/0A1YPQzm83NDkNpEcBYgcXVQphonq+I1Jem1Ya7/1+izrRXlCEPrKam2IpBZ3IbM/4ptRA99rQ+YPjjwqngMl9mUWqPaVEVles/5/Y6Klq+0AfL+qdAie30pQTnm7JCgTvXBi6cr5709FtvvKXXlcmEhPtVLhwci7DVhE18jwFkneNkZtGO5XePGoetOStVsScwipOq+PdGfrYhQNOvg1VogClWhBVEXe5/ZrVU91QjASHe1fb7wXEFAKgi00QKkumzihLNjzjEfiaWfKrWgonFhDBR6QRVXDK6SnCZzpa7qiTje4DoTTYhM119aMAAAAASUVORK5CYII=',
+  ico_xataka               :'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAG1BMVEVx2jghKTRtzjtbpzk6YTVlvDoxTTRFeDZRkTj4x+PYAAABZklEQVQ4y43UTU+DQBAG4DdLqRxdvo9ba6pH8NJrt9HEI21MvBai1mPXyB1MjH/bZe3H0o5RTpAnYXhnZgH/5cKf8LqckhAKIKegYl+ZR0Ez4SkoEO09h6RAfZRCEVDkcYiSgI1Xzl2qRoALTMxdshyXdsAG7s+bMuDMhnCbL8W07oqdQOXxuMhPYYNhKjejEwiBkd8SUKEY6PoLC2IMuwY4EZMplD2oTOeLsIh1/53eBH20Bp+hb2wIMQigq/K1PJp5wxpWUssQAQN6SwQUCbFg9F5VwIIE4RReH8KbsTThVtY6wMyoG03h8sTk2EOCxxrShMscG3z9VDxkXTj/8MEaVsNUzYBL05ZJD6Jcg6nbuBac68rN1fu2Le0BAqbWu+fYBi6YcPdzzC0IDmemxthuydMucArsMvYP58x5eXMo0HuTbA9DH4T65EKSUNNgXkUWd28bsniC/XiP/iV3uP73T+b4+gbhMGnng2dZJwAAAABJRU5ErkJggg==',
+  ico_notion_starter_pack  :'data:image/png;base64,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',
 });
 /*
 const TEMA_DEF   = '(def claro)';           // Texto en el desplegable ltema por defecto
