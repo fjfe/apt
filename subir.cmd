@@ -1,3 +1,3 @@
 git add .
-git commit -m "27-01-2022 +svg +clon-Guia-de-Notion"
+git commit -m "05-02-2022 +svg +apuntes-Desarrollo-movil"
 git push -u origin master
