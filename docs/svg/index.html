@@ -2,7 +2,7 @@
 <!--
   Fuente: https://webdesign.tutsplus.com/es/tutorials/how-to-build-a-filterable-thumbnail-layout-with-css-grid-flexbox-and-javascript--cms-33242
 
-  Modif.: Paco Fdez. 22/07/2021 - 5/2/2022
+  Modif.: Paco Fdez. 22/07/2021 - 22/2/2022
 
       HTM autosuficiente, salvo por los archivos de imagen que se referencian en el código js. Por ej:
       l.a('./nombre_imagen.svg', 'etiq1 etiq2 etiq3');     // 'Camino del svg', 'etiquetas separadas por espacios'
@@ -248,7 +248,7 @@ footer span {
 
 <footer>
   <div class="container">
-    <small>5/2/2022
+    <small>22/2/2022
     </small>
   </div>
 </footer>
@@ -354,6 +354,7 @@ l.a('./apuntes_desa_movil.svg'                 ,'apuntes capuchón bolígrafo bi
 l.a('./apuntes_docker.svg'                     ,'apuntes capuchón bolígrafo bic azul sup docker');
 l.a('./apuntes_flutter.svg'                    ,'apuntes capuchón bolígrafo bic azul sup flutter');
 l.a('./apuntes_telefonica.svg'                 ,'apuntes capuchón bolígrafo bic azul sup telefónica');
+l.a('./apuntes_linux.svg'                      ,'apuntes capuchón bolígrafo bic negro sup linux');
 
 l.a('./boli06_negro.svg'                       ,'bolígrafo punta negro');
 l.a('./boli06_rojo.svg'                        ,'bolígrafo punta rojo');
@@ -490,6 +491,9 @@ l.a('./llave_asim_modern2.svg'                 ,'llave');
 l.a('./llave_dorada_hori.svg'                  ,'llave amarillo');
 l.a('./llave_dorada_equi.svg'                  ,'llave amarillo');
 
+l.a('./help_ayuda_interr_azul.svg'             ,'ayuda interrogación azul');
+l.a('./help_ayuda_salvavidas_rojo.svg'         ,'ayuda salvavidas rojo');
+
 l.a('./opciones_config_2_00.svg'               ,'configuración 00');
 l.a('./opciones_config_2_trazos_00.svg'        ,'configuración 00');
 l.a('./opciones_config_3_00.svg'               ,'configuración 00');
@@ -608,7 +612,25 @@ l.a('./logo_win7_00.svg'                       ,'logo windows 00');
 l.a('./logo_windows_cua.svg'                   ,'logo windows rojo verde azul amarillo');
 l.a('./logo_windows_cua_r.svg'                 ,'logo windows rojo verde azul amarillo');
 l.a('./logo_win10.svg'                         ,'logo windows azul');
-l.a('./logo_redhat.svg'                        ,'logo redhat sombrero rojo');
+
+l.a('./logo_gnu_00.svg'                        ,'logo gnu 00');
+
+l.a('./logo_linux_foundation.svg'              ,'logo linux foundation azul');
+l.a('./logo_redhat.svg'                        ,'logo linux redhat sombrero rojo');
+l.a('./logo_ubuntu.svg'                        ,'logo linux ubuntu rojo');
+l.a('./logo_centos.svg'                        ,'logo linux centos verde naranja morado azul');
+l.a('./logo_opensuse.svg'                      ,'logo linux opensuse verde');
+l.a('./logo_linux_mint.svg'                    ,'logo linux mint verde');
+l.a('./logo_kali_linux_00.svg'                 ,'logo linux kali 00');
+l.a('./logo_zorin_os.svg'                      ,'logo linux zorin azul');
+l.a('./logo_solus.svg'                         ,'logo linux solus azul');
+l.a('./logo_gentoo.svg'                        ,'logo linux gentoo azul');
+l.a('./logo_fedora.svg'                        ,'logo linux fedora azul');
+l.a('./logo_arch_linux.svg'                    ,'logo linux arch azul');
+
+l.a('./logo_gnome_00.svg'                      ,'logo gnome 00');
+l.a('./logo_kde_00.svg'                        ,'logo kde 00');
+
 l.a('./logo_android_00.svg'                    ,'logo android 00');
 l.a('./logo_android_verde.svg'                 ,'logo android verde');
 l.a('./logo_android_dev.svg'                   ,'logo android verde');
@@ -640,6 +662,7 @@ l.a('./logo_pdf_color_degrad.svg'              ,'logo pdf ext degradado rojo');
 l.a('./pdf_letrero_rojo.svg'                   ,'pdf ext rojo');
 l.a('./new_fino.svg'                           ,'hoja ext new nuevo vacío');
 l.a('./logo_terminal_00.svg'                   ,'logo terminal cmd desa 00');
+l.a('./logo_windows_terminal.svg'              ,'logo windows terminal cmd desa 00');
 l.a('./editor_texto.svg'                       ,'editor texto txt negro blanco gris');
 l.a('./logo_json.svg'                          ,'logo json ext desa gris');
 l.a('./logo_rxjs.svg'                          ,'logo rxjs desa');
@@ -691,6 +714,7 @@ l.a('./logo_google_developers.svg'             ,'logo google developers rojo nar
 l.a('./logo_google_drive.svg'                  ,'logo google drive rojo naranja verde azul');
 l.a('./logo_google_podcasts.svg'               ,'logo google podcasts rojo naranja verde azul');
 l.a('./logo_google_docs.svg'                   ,'logo google docs doc azul');
+l.a('./logo_google_translate.svg'              ,'logo google translate azul gris');
 l.a('./logo_chrome_00.svg'                     ,'logo google chrome 00');
 l.a('./logo_chrome_4c.svg'                     ,'logo google chrome rojo naranja verde azul');
 l.a('./logo_chrome_extension_00.svg'           ,'logo google chrome extension 00');
@@ -725,6 +749,7 @@ l.a('./logo_imdb_cuadrado.svg'                 ,'logo imdb amarillo negro');
 l.a('./logo_tmdb.svg'                          ,'logo tmdb azul');
 l.a('./logo_filmaffinity.svg'                  ,'logo filmaffinity azul amarillo blanco');
 l.a('./logo_edx_color.svg'                     ,'logo edx rojo gris azul');
+l.a('./logo_edx_bn.svg'                        ,'logo edx blanco negro');
 l.a('./logo_uam_color.svg'                     ,'logo uam verde azul');
 l.a('./logo_udemy.svg'                         ,'logo udemy negro morado');
 l.a('./logo_udacity.svg'                       ,'logo udacity azul');
@@ -1010,6 +1035,8 @@ l.a('./fa_floppy_disk_regular.svg'             ,'fontawesome disco guardar 00');
 l.a('./fa_check.svg'                           ,'fontawesome punteo ok 00');
 l.a('./fa_xmark.svg'                           ,'fontawesome punteo por ko 00');
 l.a('./fa_podcast_solid.svg'                   ,'fontawesome podcast 00');
+l.a('./fa_gear_solid.svg'                      ,'fontawesome engranaje configuración 00');
+l.a('./fa_power_off_solid.svg'                 ,'fontawesome encender apagar 00');
 
 l.a('./fa_tux_linux_brands.svg'                ,'fontawesome tux logo linux 00');
 
@@ -2148,9 +2175,11 @@ l.a('./ojo_reflejo.svg'                        ,'ojo reflejo gris');
 l.a('./ojo_azul.svg'                           ,'ojo azul');
 
 l.a('./tux_silueta_espalda_00.svg'             ,'tux animal 00');
-l.a('./tux_bn.svg'                             ,'tux blanco negro');
-l.a('./tux_plano.svg'                          ,'tux blanco negro naranja');
-l.a('./tux_abnd.svg'                           ,'tux blanco negro amarillo sombra');
+l.a('./tux_bn.svg'                             ,'tux blanco negro linux');
+l.a('./tux_plano.svg'                          ,'tux blanco negro naranja linux');
+l.a('./tux_abnd.svg'                           ,'tux blanco negro amarillo sombra linux');
+l.a('./tux_rel.svg'                            ,'tux blanco negro amarillo linux');
+l.a('./tux_enhanced.svg'                       ,'tux blanco negro amarillo linux');
 l.a('./tux_ovalado.svg'                        ,'tux blanco negro amarillo sombra');
 l.a('./tux_redondo.svg'                        ,'tux blanco negro amarillo sombra');
 l.a('./tux_peque.svg'                          ,'tux blanco negro amarillo');
