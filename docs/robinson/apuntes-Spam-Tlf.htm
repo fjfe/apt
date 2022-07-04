@@ -31,6 +31,58 @@ table.csq {
 .mac{background-color:#ffffd1;}
 .mvc{background-color:#deffc4;}
 
+.ysc {                  /* y scroll */
+	overflow-y: auto;
+}
+.mh0 {                                    /* máxima altura */
+	max-height: 100vh;
+}
+.mh5 {
+	max-height: 50vh;
+}
+.mh6 {
+	max-height: 60vh;
+}
+.mh7 {
+	max-height: 70vh;
+}
+.mh8 {
+	max-height: 80vh;
+}
+.mh9 {
+	max-height: 90vh;
+}
+.peg {                  /* pegajoso */
+  position: sticky;
+  z-index: 1;
+}
+.arr {                                    /* arriba */
+  top: 0;
+}
+.aba {                                    /* abajo */
+  bottom: 0;
+}
+.fij {                  /* fijo */
+  position: fixed;
+  z-index: 1;
+}
+.ari {                                                /* arriba izq */
+  top: 0;
+  left: 0;
+}
+.ard {                                                /* arriba der */
+  top: 0;
+  right: 0;
+}
+.abi {                                                /* abajo izq */
+  bottom: 0;
+  left: 0;
+}
+.abd {                                                /* abajo der */
+  bottom: 0;
+  right: 0;
+}
+
 .mbo{background-color:#c1c1c1;}
 .mcol{background-color:#b4c7dc;}
 .mlin{background-color:#ffe994;}
@@ -60,7 +112,7 @@ table.csq {
 .f_num{
   display: inline-block;
   text-align: right;
-  width: 7em;
+  width: 6.3em;
 }
 .f_xll{
   display: inline-block;
@@ -771,16 +823,18 @@ Conserva todo lo que envíes.</p>
   <div class="sem">
 
     <article>
-      <div class="a03 der">
-        <span class="gri">[<span class="peq">Tabla Ordenable <img class="peq icc" data-src="ico_orden"></span>]</span>
-      </div>
-      <div id="jtn" class="a03 jau">
-        <!-- *** En el futuro usaré .jau (Javascript AUto) para ocultar/cubrir al editar *** -->
-        <!-- Js ⇒ Tabla con los Números bloqueados -->
+      <div class="ysc mh9">
+        <div class="a03 der">
+          <span class="gri">[<span class="peq">Tabla Ordenable <img class="peq icc" data-src="ico_orden"></span>]</span>
+        </div>
+        <div id="jtn" class="a03 jau">
+          <!-- *** En el futuro usaré .jau (Javascript AUto) para ocultar/cubrir al editar *** -->
+          <!-- Js ⇒ Tabla con los Números bloqueados -->
+        </div>
       </div>
     </article>
 
-    <div class="a10 der noi"><a target="_self" href="#mas_tabla_num" title="Volver al inicio de esta sección desplegable">⤴<br></a></div>
+    <div class="der noi"><a target="_self" href="#mas_tabla_num" title="Volver al inicio de esta sección desplegable">⤴<br></a></div>
   </div>
 </div>
 
@@ -1036,7 +1090,7 @@ function mNumStr() {
               th('N° denun',      '.f_nde|N° de veces que ha sido denunciado') +
               th('Propietario',   '.f_pro') +
               th('Observaciones', '.f_obs');
-    cab = tr(cab, '.mgrisclaro');
+    cab = tr(cab, '.mgrisclaro peg arr');
     let s = '';
     for (let i=0; i<this.n; i++) {
         s +=tr(
