@@ -1,3 +1,3 @@
 git add .
-git commit -m "27-06-2022 +apuntes-Spam-Tlf"
+git commit -m "04-07-2022 +svg"
 git push -u origin master
