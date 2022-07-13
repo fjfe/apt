@@ -2,7 +2,7 @@
 <!--
   Fuente: https://webdesign.tutsplus.com/es/tutorials/how-to-build-a-filterable-thumbnail-layout-with-css-grid-flexbox-and-javascript--cms-33242
 
-  Modif.: Paco Fdez. 22/07/2021 - 4/7/2022
+  Modif.: Paco Fdez. 22/07/2021 - 13/7/2022
 
       HTM autosuficiente, salvo por los archivos de imagen que se referencian en el código js. Por ej:
       l.a('./nombre_imagen.svg', 'etiq1 etiq2 etiq3');     // 'Camino del svg', 'etiquetas separadas por espacios'
@@ -248,7 +248,7 @@ footer span {
 
 <footer>
   <div class="container">
-    <small>4/7/2022
+    <small>13/7/2022
     </small>
   </div>
 </footer>
@@ -544,6 +544,7 @@ l.a('./quimica_va02_00.svg'                    ,'química 00');
 l.a('./quimica_va03_00.svg'                    ,'química 00');
 
 l.a('./tooltip_00.svg'                         ,'tooltip 00');
+l.a('./tooltip_izq_00.svg'                     ,'tooltip 00');
 
 l.a('./pqt_00.svg'                             ,'paquete 00');
 l.a('./pqt_trazos.svg'                         ,'paquete 00');
@@ -708,6 +709,7 @@ l.a('./logo_pwa.svg'                           ,'logo pwa desa negro azul');
 l.a('./logo_glitch.svg'                        ,'logo glitch desa');
 
 l.a('./logo_api.svg'                           ,'logo api');
+l.a('./logo_demo.svg'                          ,'logo demo');
 
 l.a('./logo_pdf_00.svg'                        ,'logo pdf ext 00');
 l.a('./logo_pdf_color.svg'                     ,'logo pdf ext rojo');
@@ -792,6 +794,7 @@ l.a('./logo_google_play.svg'                   ,'logo google play rojo naranja v
 l.a('./logo_google_podcasts.svg'               ,'logo google podcasts podcast rojo naranja verde azul');
 l.a('./logo_google_discover.svg'               ,'logo google discover rojo naranja verde azul');
 l.a('./logo_google_cloud.svg'                  ,'logo google cloud nube rojo naranja verde azul');
+l.a('./logo_google_fonts.svg'                  ,'logo google fonts rojo naranja azul verde');
 l.a('./logo_google_docs.svg'                   ,'logo google docs doc azul');
 l.a('./logo_google_translate.svg'              ,'logo google translate azul gris');
 l.a('./logo_chrome_00.svg'                     ,'logo google chrome 00');
@@ -810,6 +813,8 @@ l.a('./logo_firefox.svg'                       ,'logo mozilla firefox naranja az
 l.a('./logo_librewolf.svg'                     ,'logo librewolf azul blanco');
 l.a('./logo_netscape.svg'                      ,'logo netscape');
 l.a('./logo_safari.svg'                        ,'logo safari azul rojo blanco');
+l.a('./logo_webkit.svg'                        ,'logo webkit azul naranja blanco');
+l.a('./logo_thunderbird_2018.svg'              ,'logo thunderbird sobre pájaro azul');
 l.a('./logo_zotero.svg'                        ,'logo zotero rojo gris');
 l.a('./logo_wikipedia_w_00.svg'                ,'logo wikipedia 00');
 l.a('./logo_notion.svg'                        ,'logo notion nota negro');
@@ -884,11 +889,16 @@ l.a('./birrete_azul.svg'                       ,'birrete azul rojo');
 
 l.a('./bandera_es.svg'                         ,'bandera España rojo amarillo');
 l.a('./bandera_fr.svg'                         ,'bandera Francia azul blanco rojo');
-l.a('./bandera_it.svg'                         ,'bandera Francia verde blanco rojo');
+l.a('./bandera_it.svg'                         ,'bandera Italia verde blanco rojo');
 l.a('./bandera_ge.svg'                         ,'bandera Alemania negro rojo amarillo');
 l.a('./bandera_uk.svg'                         ,'bandera UK rojo azul blanco');
 l.a('./bandera_usa.svg'                        ,'bandera USA rojo azul blanco');
 l.a('./bandera_ca.svg'                         ,'bandera Canadá rojo blanco');
+
+l.a('./band_cua_es.svg'                        ,'bandera España rojo amarillo');
+l.a('./band_cua_fr.svg'                        ,'bandera Francia azul blanco rojo');
+l.a('./band_cua_uk.svg'                        ,'bandera UK rojo azul blanco');
+l.a('./band_cua_usa.svg'                       ,'bandera USA rojo azul blanco');
 
 l.a('./portapapeles_01.svg'                    ,'portapapeles');
 l.a('./portapapeles_02.svg'                    ,'portapapeles');
@@ -959,6 +969,18 @@ l.a('./eml_od_00.svg'                          ,'ext eml 00');
 l.a('./msg_od_00.svg'                          ,'ext msg 00');
 l.a('./rss_od_00.svg'                          ,'ext rss 00');
 l.a('./json_od_00.svg'                         ,'ext json 00');
+
+l.a('./file_css.svg'                           ,'ext css');
+l.a('./file_csv.svg'                           ,'ext csv');
+l.a('./file_doc.svg'                           ,'ext doc');
+l.a('./file_html.svg'                          ,'ext html htm');
+l.a('./file_jpg.svg'                           ,'ext jpg');
+l.a('./file_js.svg'                            ,'ext js');
+l.a('./file_mp4.svg'                           ,'ext mp4');
+l.a('./file_pdf.svg'                           ,'ext pdf');
+l.a('./file_xml.svg'                           ,'ext xml');
+l.a('./file_zip.svg'                           ,'ext zip');
+
 l.a('./bin.svg'                                ,'ext bin');
 l.a('./7z.svg'                                 ,'ext zip 7z');
 
@@ -2124,6 +2146,8 @@ l.a('./etiqueta_cuerda.svg'                    ,'etiqueta cuerda amarillo');
 l.a('./etiqueta_hilo.svg'                      ,'etiqueta hilo amarillo');
 l.a('./etiqueta_roja_raya.svg'                 ,'etiqueta rojo');
 
+l.a('./logo_files.svg'                         ,'logo files carpeta');
+
 l.a('./icons8_new_doc.svg'                     ,'icons8 hoja new doc vacío');
 l.a('./icons8_imagen.svg'                      ,'icons8 ext jpg imagen');
 l.a('./icons8_carp.svg'                        ,'icons8 carpeta');
@@ -2278,6 +2302,8 @@ l.a('./boton_menu_3_00.svg'                    ,'botón menú hamburguesa 00');
 l.a('./menu_hamb_00.svg'                       ,'botón menú hamburguesa 00');
 l.a('./menu_trazos_00.svg'                     ,'botón menú hamburguesa 00');
 l.a('./menu_circ_00.svg'                       ,'botón menú hamburguesa 00');
+
+l.a('./lista_orden_00.svg'                     ,'lista orden 00');
 
 l.a('./bomba_antigua_00.svg'                   ,'peligro bomba 00');
 l.a('./bomba_antigua_01.svg'                   ,'peligro bomba');
