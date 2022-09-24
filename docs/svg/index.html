@@ -2,7 +2,7 @@
 <!--
   Fuente: https://webdesign.tutsplus.com/es/tutorials/how-to-build-a-filterable-thumbnail-layout-with-css-grid-flexbox-and-javascript--cms-33242
 
-  Modif.: Paco Fdez. 22/07/2021 - 13/09/2022
+  Modif.: Paco Fdez. 22/07/2021 - 24/09/2022
 
       HTM autosuficiente, salvo por los archivos de imagen que se referencian en el código js. Por ej:
       l.a('./nombre_imagen.svg', 'etiq1 etiq2 etiq3');     // 'Camino del svg', 'etiquetas separadas por espacios'
@@ -248,7 +248,7 @@ footer span {
 
 <footer>
   <div class="container">
-    <small>13/09/2022
+    <small>24/09/2022
     </small>
   </div>
 </footer>
@@ -553,6 +553,8 @@ l.a('./quimica_va04_00.svg'                    ,'química 00');
 
 l.a('./tooltip_00.svg'                         ,'tooltip 00');
 l.a('./tooltip_izq_00.svg'                     ,'tooltip 00');
+
+l.a('./termometro_digital_sin.svg'             ,'termómetro pistola 00');
 
 l.a('./pqt_00.svg'                             ,'paquete 00');
 l.a('./pqt_trazos.svg'                         ,'paquete 00');
@@ -1049,6 +1051,7 @@ l.a('./eml_od_00.svg'                          ,'ext eml 00');
 l.a('./msg_od_00.svg'                          ,'ext msg 00');
 l.a('./rss_od_00.svg'                          ,'ext rss 00');
 l.a('./json_od_00.svg'                         ,'ext json 00');
+l.a('./msi_od_00.svg'                          ,'ext msi 00');
 
 l.a('./file_css.svg'                           ,'ext css');
 l.a('./file_csv.svg'                           ,'ext csv');
@@ -1202,6 +1205,7 @@ l.a('./chincheta_mapa_rojo_red.svg'            ,'chincheta rojo mapa');
 l.a('./chincheta_mapa_bola_roja.svg'           ,'chincheta rojo mapa');
 l.a('./chincheta_mapa_alfiler_rojo.svg'        ,'chincheta rojo mapa');
 l.a('./mapa_spain_ca.svg'                      ,'mapa España');
+l.a('./euro_circ_00.svg'                       ,'dinero moneda euro círculo 00');
 l.a('./moneda_euro.svg'                        ,'dinero moneda euro naranja');
 l.a('./moneda_1euro.svg'                       ,'dinero moneda euro España');
 l.a('./moneda_2euro.svg'                       ,'dinero moneda euro España realista');
@@ -1212,8 +1216,12 @@ l.a('./clavo.svg'                              ,'clavo');
 l.a('./nota_prensa_00.svg'                     ,'nota prensa 00');
 l.a('./libreta_anillas_arriba_nota.svg'        ,'nota cuaderno espiral');
 
-l.a('./sello_borde_inclinado_00.svg'           ,'sello 00');
+l.a('./sello_borde_inclinado_00.svg'           ,'sello vacío 00');
 l.a('./sello_inclinado_original_00.svg'        ,'sello original 00');
+
+l.a('./banda_gris_vacia.svg'                   ,'banda vacío gris');
+l.a('./banda_gratis.svg'                       ,'banda gratis verde');
+l.a('./banda_nuevo.svg'                        ,'banda nuevo rojo');
 
 l.a('./punteo_ok_verde.svg'                    ,'punteo ok verde');
 l.a('./punteo_ko_rojo.svg'                     ,'punteo ko cerrar rojo');
@@ -1238,6 +1246,10 @@ l.a('./sombrero_simple_00.svg'                 ,'sombrero 00');
 l.a('./sombrero_bombin_00.svg'                 ,'sombrero 00');
 l.a('./sombrero_vaquero_00.svg'                ,'sombrero 00');
 l.a('./sombrero_gorra_beisbol_00.svg'          ,'sombrero gorra 00');
+
+l.a('./capa_mas_00.svg'                        ,'capa más 00');
+l.a('./capa_mas_verde.svg'                     ,'capa más verde');
+l.a('./circulo_incompleto_mas_00.svg'          ,'círculo más 00');
 
 l.a('./fa_persona_solido_00.svg'               ,'fontawesome símbolo persona monigote 00');
 l.a('./fa_interruptor_apagado_00.svg'          ,'fontawesome símbolo interruptor ko 00');
@@ -2281,7 +2293,9 @@ l.a('./etiqueta_cuerda.svg'                    ,'etiqueta cuerda amarillo');
 l.a('./etiqueta_hilo.svg'                      ,'etiqueta hilo amarillo');
 l.a('./etiqueta_roja_raya.svg'                 ,'etiqueta rojo');
 
-l.a('./logo_files.svg'                         ,'logo files carpeta');
+l.a('./logo_files.svg'                         ,'logo files carpeta tostada azul');
+l.a('./logo_proton_drive.svg'                  ,'logo proton drive carpeta azul morado');
+l.a('./logo_proton.svg'                        ,'logo proton azul morado');
 
 l.a('./icons8_new_doc.svg'                     ,'icons8 hoja new doc vacío');
 l.a('./icons8_imagen.svg'                      ,'icons8 ext jpg imagen');
@@ -2424,10 +2438,10 @@ l.a('./logo_1906_colorada.svg'                 ,'logo cerveza estrella galicia 1
 l.a('./logo_ing.svg'                           ,'logo ing dinero moneda euro naranja');
 l.a('./logo_bizum.svg'                         ,'logo bizum dinero moneda euro azul');
 l.a('./logo_agencia_tributaria.svg'            ,'logo aeat renta azul naranja rojo');
-l.a('./logo_bitcoin_btc.svg'                   ,'logo bitcoin dinero moneda naranja');
-l.a('./logo_bitcoincash_bch.svg'               ,'logo bitcoin dinero moneda verde');
-l.a('./logo_bitcoincashabc_bcha.svg'           ,'logo bitcoin dinero moneda naranja');
-l.a('./logo_bitcoincashsv_bsv.svg'             ,'logo bitcoin dinero moneda naranja');
+l.a('./logo_bitcoin_btc.svg'                   ,'logo bitcoin dinero moneda círculo naranja');
+l.a('./logo_bitcoincash_bch.svg'               ,'logo bitcoin dinero moneda círculo verde');
+l.a('./logo_bitcoincashabc_bcha.svg'           ,'logo bitcoin dinero moneda círculo naranja');
+l.a('./logo_bitcoincashsv_bsv.svg'             ,'logo bitcoin dinero moneda círculo naranja');
 
 l.a('./camara_cine_00.svg'                     ,'camara cine 00');
 l.a('./pelicula_cine_00.svg'                   ,'película cine 00');
