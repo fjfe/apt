@@ -2,7 +2,7 @@
 <!--
   Fuente: https://webdesign.tutsplus.com/es/tutorials/how-to-build-a-filterable-thumbnail-layout-with-css-grid-flexbox-and-javascript--cms-33242
 
-  Modif.: Paco Fdez. 22/07/2021 - 09/10/2022
+  Modif.: Paco Fdez. 22/07/2021 - 21/10/2022
 
       HTM autosuficiente, salvo por los archivos de imagen que se referencian en el código js. Por ej:
       l.a('./nombre_imagen.svg', 'etiq1 etiq2 etiq3');     // 'Camino del svg', 'etiquetas separadas por espacios'
@@ -248,7 +248,7 @@ footer span {
 
 <footer>
   <div class="container">
-    <small>09/10/2022
+    <small>21/10/2022
     </small>
   </div>
 </footer>
@@ -468,6 +468,7 @@ l.a('./noto_emoji_kitkat_2712.svg'             ,'pluma estilográfica oro naranj
 l.a('./pluma_estilografica.svg'                ,'pluma estilográfica punta realista');
 l.a('./fountain_pen.svg'                       ,'pluma estilográfica oro realista');
 
+l.a('./reloj_rojo_simp.svg'                    ,'reloj rojo blanco');
 l.a('./tijeras_der.svg'                        ,'tijera rojo gris');
 
 l.a('./bala_proyectil.svg'                     ,'bala proyectil oro');
@@ -548,6 +549,7 @@ l.a('./llave_dorada_equi.svg'                  ,'llave amarillo');
 l.a('./help_ayuda_interr_azul.svg'             ,'ayuda interrogación azul');
 l.a('./help_ayuda_salvavidas_rojo.svg'         ,'ayuda salvavidas rojo');
 
+l.a('./terminal_cmd_tr_00.svg'                 ,'terminal cmd 00');
 l.a('./opciones_config_2_00.svg'               ,'configuración 00');
 l.a('./opciones_config_2_trazos_00.svg'        ,'configuración 00');
 l.a('./opciones_config_3_00.svg'               ,'configuración 00');
@@ -582,6 +584,8 @@ l.a('./caja_roja.svg'                          ,'paquete caja rojo');
 l.a('./caja_abierta.svg'                       ,'paquete caja');
 l.a('./caja_libros.svg'                        ,'paquete caja libro');
 
+l.a('./drive_harddisk.svg'                     ,'harddisk disco sombra');
+l.a('./disco_externo_amarillo.svg'             ,'harddisk disco sombra amarillo');
 l.a('./impresora_iny.svg'                      ,'impresora');
 
 l.a('./carp_00.svg'                            ,'carpeta 00');
@@ -596,6 +600,7 @@ l.a('./carp_redondeada.svg'                    ,'carpeta redondeada');
 l.a('./carp_redondeada_vert.svg'               ,'carpeta redondeada vertical');
 l.a('./carp_regular.svg'                       ,'carpeta');
 l.a('./carp_tostada.svg'                       ,'carpeta naranja tostada');
+l.a('./carp_tostada_plana.svg'                 ,'carpeta naranja tostada');
 l.a('./carp_1doc.svg'                          ,'carpeta doc');
 l.a('./carp_1doc_abierta.svg'                  ,'carpeta doc abierta');
 l.a('./carp_1doc_lima.svg'                     ,'carpeta doc lima');
@@ -979,6 +984,7 @@ l.a('./logo_blender.svg'                       ,'logo blender naranja blanco azu
 l.a('./logo_winamp_1997.svg'                   ,'logo winamp negro blanco naranja');
 l.a('./logo_winamp_2022.svg'                   ,'logo winamp rojo');
 l.a('./logo_aimp.svg'                          ,'logo aimp negro naranja');
+l.a('./logo_veracrypt_hexa.svg'                ,'logo veracrypt blanco verde');
 
 l.a('./logo_uptodown.svg'                      ,'logo uptodown repo azul');
 
@@ -1278,6 +1284,8 @@ l.a('./punteo_ok_verde.svg'                    ,'punteo ok verde');
 l.a('./punteo_ko_rojo.svg'                     ,'punteo ko cerrar rojo');
 l.a('./punteo_ok_circ_verde.svg'               ,'punteo ok círculo verde');
 l.a('./punteo_ko_circ_rojo.svg'                ,'punteo ko cerrar círculo rojo');
+l.a('./punteo_ok_circ_verde_bla.svg'           ,'punteo ok círculo verde blanco');
+l.a('./punteo_ko_circ_rojo_bla.svg'            ,'punteo ko cerrar círculo rojo blanco');
 l.a('./punteo_curv_ok_00.svg'                  ,'punteo ok 00');
 l.a('./punteo_curv_ko_00.svg'                  ,'punteo ko 00');
 l.a('./punteo_ok_simple_00.svg'                ,'punteo ok 00');
@@ -1301,6 +1309,7 @@ l.a('./sombrero_gorra_beisbol_00.svg'          ,'sombrero gorra 00');
 l.a('./capa_mas_00.svg'                        ,'capa más 00');
 l.a('./capa_mas_verde.svg'                     ,'capa más verde');
 l.a('./circulo_incompleto_mas_00.svg'          ,'círculo más 00');
+l.a('./circulo_incognito_bla_neg.svg'          ,'círculo incógnito blanco negro');
 
 l.a('./fa_persona_solido_00.svg'               ,'fontawesome símbolo persona monigote 00');
 l.a('./fa_interruptor_apagado_00.svg'          ,'fontawesome símbolo interruptor ko 00');
@@ -1393,12 +1402,17 @@ l.a('./fa_tux_linux_brands.svg'                ,'fontawesome tux logo linux 00')
 l.a('./llave_inglesa_der_00.svg'               ,'configuración herramienta 00');
 
 l.a('./reloj_pendiente_00.svg'                 ,'reloj pendiente 00');
+l.a('./reloj_backup_00.svg'                    ,'reloj backup 00');
+l.a('./reloj_historial_backup_3.svg'           ,'reloj historial backup azul');
+l.a('./reloj_historial_backup_4.svg'           ,'reloj historial backup azul');
 
 l.a('./carga_nube_00.svg'                      ,'flecha carga nube 00');
 l.a('./descarga_nube_00.svg'                   ,'flecha descarga nube 00');
 l.a('./carga_cuenco_00.svg'                    ,'flecha carga cuenco 00');
 l.a('./descarga_cuenco_00.svg'                 ,'flecha descarga cuenco 00');
 l.a('./fuera_contexto_00.svg'                  ,'flecha fuera contexto 00');
+l.a('./flecha_abajo_00.svg'                    ,'flecha abajo 00');
+l.a('./descarga_circ_blanco_azul.svg'          ,'flecha abajo círculo descarga blanco azul');
 l.a('./carga_d2_00.svg'                        ,'flecha carga 00');
 l.a('./descarga_d2_00.svg'                     ,'flecha descarga 00');
 l.a('./flecha_curva_izq_arr_00.svg'            ,'flecha carga 00');
@@ -2344,6 +2358,8 @@ l.a('./etiqueta_cuerda.svg'                    ,'etiqueta cuerda amarillo');
 l.a('./etiqueta_hilo.svg'                      ,'etiqueta hilo amarillo');
 l.a('./etiqueta_roja_raya.svg'                 ,'etiqueta rojo');
 
+l.a('./explorer_10.svg'                        ,'explorer carpeta tostada azul');
+
 l.a('./logo_files.svg'                         ,'logo files carpeta tostada azul');
 l.a('./logo_proton_drive.svg'                  ,'logo proton drive carpeta azul morado');
 l.a('./logo_proton.svg'                        ,'logo proton azul morado');
@@ -2437,6 +2453,7 @@ l.a('./oxygen_hex.svg'                         ,'oxygen ext hex');
 l.a('./oxygen_carp.svg'                        ,'oxygen carpeta');
 l.a('./oxygen_libro.svg'                       ,'oxygen libro realista');
 l.a('./oxygen_pqt.svg'                         ,'oxygen paquete sombra realista');
+l.a('./oxygen_harddisk.svg'                    ,'oxygen harddisk disco sombra realista');
 l.a('./oxygen_cd.svg'                          ,'oxygen cd dvd disco sombra realista');
 l.a('./oxygen_boli.svg'                        ,'oxygen bolígrafo realista');
 l.a('./oxygen_pluma_estilog.svg'               ,'oxygen pluma estilográfica sombra realista');
