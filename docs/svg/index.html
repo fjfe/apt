@@ -2,7 +2,7 @@
 <!--
   Fuente: https://webdesign.tutsplus.com/es/tutorials/how-to-build-a-filterable-thumbnail-layout-with-css-grid-flexbox-and-javascript--cms-33242
 
-  Modif.: Paco Fdez. 22/07/2021 - 16/01/2023
+  Modif.: Paco Fdez. 22/07/2021 - 29/01/2023
 
       HTM autosuficiente, salvo por los archivos de imagen que se referencian en el código js. Por ej:
       l.a('./nombre_imagen.svg', 'etiq1 etiq2 etiq3');     // 'Camino del svg', 'etiquetas separadas por espacios'
@@ -248,7 +248,7 @@ footer span {
 
 <footer>
   <div class="container">
-    <small>16/01/2023
+    <small>29/01/2023
     </small>
   </div>
 </footer>
@@ -365,6 +365,7 @@ l.a('./apuntes_powershell.svg'                 ,'apuntes capuchón bolígrafo bi
 l.a('./apuntes_spam_tlf.svg'                   ,'apuntes capuchón bolígrafo bic negro sup spam tlf');
 l.a('./apuntes_alojamiento_nube.svg'           ,'apuntes capuchón bolígrafo bic negro sup alojamiento nube');
 l.a('./apuntes_utf8c.svg'                      ,'apuntes capuchón bolígrafo bic negro sup utf8 c desa');
+l.a('./apuntes_html.svg'                       ,'apuntes capuchón bolígrafo bic negro sup html desa');
 l.a('./apuntes_trucos_css.svg'                 ,'apuntes capuchón bolígrafo bic negro sup trucos css desa');
 l.a('./apuntes_javascript.svg'                 ,'apuntes capuchón bolígrafo bic negro sup javascript js desa');
 l.a('./apuntes_js.svg'                         ,'apuntes capuchón bolígrafo bic negro sup javascript js desa');
@@ -377,6 +378,7 @@ l.a('./apuntes_impresora.svg'                  ,'apuntes capuchón bolígrafo bi
 l.a('./apuntes_impresora_brother_png_256.svg'  ,'apuntes capuchón bolígrafo bic negro sup impresora brother');
 l.a('./apuntes_cacharritos.svg'                ,'apuntes capuchón bolígrafo bic negro sup cacharritos');
 l.a('./apuntes_videos.svg'                     ,'apuntes capuchón bolígrafo bic negro sup vídeo');
+l.a('./apuntes_articulos_web.svg'              ,'apuntes capuchón bolígrafo bic negro sup web www');
 
 l.a('./apuntes_htm.svg'                        ,'apuntes capuchón bolígrafo bic negro sup htm html');
 
@@ -581,6 +583,10 @@ l.a('./quimica_va01_00.svg'                    ,'química 00');
 l.a('./quimica_va02_00.svg'                    ,'química 00');
 l.a('./quimica_va03_00.svg'                    ,'química 00');
 l.a('./quimica_va04_00.svg'                    ,'química 00');
+l.a('./tubo_pruebas_inc.svg'                   ,'química tubo prueba 00');
+l.a('./tubo_pruebas.svg'                       ,'química tubo prueba 00');
+l.a('./tubo_pruebas_gota.svg'                  ,'química tubo prueba gota 00');
+l.a('./pru_algo.svg'                           ,'química tubo prueba');
 
 l.a('./tooltip_00.svg'                         ,'tooltip 00');
 l.a('./tooltip_izq_00.svg'                     ,'tooltip 00');
@@ -795,6 +801,8 @@ l.a('./logo_wmr_js.svg'                        ,'logo wmr web js desa blanco neg
 l.a('./logo_snowpack_00.svg'                   ,'logo snowpack web js desa 00');
 l.a('./logo_bun_sh.svg'                        ,'logo bun web js desa');
 l.a('./logo_electron_js.svg'                   ,'logo electron web js desa azul');
+l.a('./logo_jspdf.svg'                         ,'logo jspdf web js pdf desa morado gris verde');
+l.a('./logo_html2canvas.svg'                   ,'logo html2canvas web js html desa verde');
 
 l.a('./logo_demo.svg'                          ,'logo demo azul');
 
@@ -832,9 +840,12 @@ l.a('./logo_jsdelivr.svg'                      ,'logo jsdelivr desa naranja');
 l.a('./logo_ruby.svg'                          ,'logo ruby ext desa rojo');
 l.a('./logo_ruby_gems.svg'                     ,'logo ruby desa rojo');
 l.a('./logo_nodejs.svg'                        ,'logo node nodejs js desa verde');
+l.a('./logo_nodejs_sol.svg'                    ,'logo node nodejs js desa verde');
 l.a('./logo_nodemon.svg'                       ,'logo nodemon node nodejs js desa verde');
 l.a('./logo_express_js.svg'                    ,'logo express js desa negro');
 l.a('./logo_ejs.svg'                           ,'logo ejs js desa rojo verde');
+l.a('./logo_grunt.svg'                         ,'logo grunt js desa naranja negro');
+l.a('./logo_jitbit.svg'                        ,'logo jitbit js css desa rojo');
 l.a('./logo_jquery.svg'                        ,'logo jquery js desa azul');
 l.a('./logo_axios.svg'                         ,'logo axios js desa azul');
 l.a('./logo_immer.svg'                         ,'logo immer js desa verde');
@@ -971,9 +982,12 @@ l.a('./logo_indify.svg'                        ,'logo indify notion nota negro')
 l.a('./logo_coda.svg'                          ,'logo coda rojo');
 l.a('./logo_trello.svg'                        ,'logo trello azul');
 l.a('./logo_jira.svg'                          ,'logo jira azul');
+l.a('./logo_rss.svg'                           ,'logo rss naranja blanco');
+l.a('./logo_feedly.svg'                        ,'logo feedly rss verde');
 l.a('./logo_evernote.svg'                      ,'logo evernote nota elefante verde');
 l.a('./logo_instapaper.svg'                    ,'logo instapaper negro');
 l.a('./logo_pocket.svg'                        ,'logo pocket rojo');
+l.a('./logo_raindrop.svg'                      ,'logo raindrop azul');
 l.a('./logo_todoist.svg'                       ,'logo todoist rojo');
 
 l.a('./logo_docker.svg'                        ,'logo docker azul');
@@ -1001,12 +1015,14 @@ l.a('./logo_vistacreate.svg'                   ,'logo vistacreate azul');
 
 l.a('./logo_virustotal.svg'                    ,'logo virustotal azul');
 
-l.a('./logo_spotify_00.svg'                    ,'logo spotify podcast 00');
-l.a('./logo_spotify_verde.svg'                 ,'logo spotify podcast verde');
-l.a('./logo_spotify_verde_negro.svg'           ,'logo spotify podcast verde negro');
+l.a('./logo_dittytoy.svg'                      ,'logo dittytoy música js 00');
+
+l.a('./logo_spotify_00.svg'                    ,'logo spotify música podcast 00');
+l.a('./logo_spotify_verde.svg'                 ,'logo spotify música podcast verde');
+l.a('./logo_spotify_verde_negro.svg'           ,'logo spotify música podcast verde negro');
 l.a('./logo_spreaker.svg'                      ,'logo spreaker podcast amarillo');
-l.a('./logo_iheart_radio.svg'                  ,'logo iheart radio podcast rojo');
-l.a('./logo_deezer.svg'                        ,'logo deezer podcast naranja morado verde');
+l.a('./logo_iheart_radio.svg'                  ,'logo iheart radio música podcast rojo');
+l.a('./logo_deezer.svg'                        ,'logo deezer música podcast naranja morado verde');
 l.a('./logo_castbox.svg'                       ,'logo castbox podcast naranja');
 l.a('./logo_youtube.svg'                       ,'logo youtube vídeo podcast rojo blanco');
 l.a('./logo_playlist_youtube.svg'              ,'logo youtube vídeo playlist rojo blanco');
@@ -1370,6 +1386,8 @@ l.a('./punteo_ok_circ_verde_bla.svg'           ,'punteo ok círculo verde blanco
 l.a('./punteo_ko_circ_rojo_bla.svg'            ,'punteo ko cerrar círculo rojo blanco');
 l.a('./punteo_curv_ok_00.svg'                  ,'punteo ok 00');
 l.a('./punteo_curv_ko_00.svg'                  ,'punteo ko 00');
+l.a('./check_ok_verde.svg'                     ,'punteo ok verde');
+l.a('./check_ko_rojo.svg'                      ,'punteo ko rojo');
 l.a('./punteo_ok_24_00.svg'                    ,'punteo ok 00');
 l.a('./punteo_ok_24_verde.svg'                 ,'punteo ok verde');
 l.a('./casilla_punteo_ko.svg'                  ,'punteo cuadro ko 00');
