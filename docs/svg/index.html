@@ -2,7 +2,7 @@
 <!--
   Fuente: https://webdesign.tutsplus.com/es/tutorials/how-to-build-a-filterable-thumbnail-layout-with-css-grid-flexbox-and-javascript--cms-33242
 
-  Modif.: Paco Fdez. 22/07/2021 - 29/01/2023
+  Modif.: Paco Fdez. 22/07/2021 - 02/02/2023
 
       HTM autosuficiente, salvo por los archivos de imagen que se referencian en el código js. Por ej:
       l.a('./nombre_imagen.svg', 'etiq1 etiq2 etiq3');     // 'Camino del svg', 'etiquetas separadas por espacios'
@@ -248,7 +248,7 @@ footer span {
 
 <footer>
   <div class="container">
-    <small>29/01/2023
+    <small>02/02/2023
     </small>
   </div>
 </footer>
@@ -473,6 +473,7 @@ l.a('./casa_home.svg'                          ,'casa home amarillo');
 
 l.a('./pantalla_video_00.svg'                  ,'pantalla vídeo 00');
 l.a('./pantalla_video_gri_roj.svg'             ,'pantalla vídeo gris rojo');
+l.a('./webinar_verde_rojo.svg'                 ,'webinar pantalla vídeo verde rojo');
 
 l.a('./huella_digital_00.svg'                  ,'huella 00');
 
@@ -577,6 +578,7 @@ l.a('./engranaje_config_6_fino_00.svg'         ,'engranaje configuración 00');
 l.a('./engranaje_config_8_00.svg'              ,'engranaje configuración 00');
 l.a('./engranaje_config_8_rectas_00.svg'       ,'engranaje configuración 00');
 l.a('./engranajes_2_sol.svg'                   ,'engranaje configuración 00');
+l.a('./engranajes_2_sep.svg'                   ,'engranaje configuración 00');
 l.a('./engranaje_config_8_trazos_00.svg'       ,'engranaje configuración 00');
 
 l.a('./quimica_va01_00.svg'                    ,'química 00');
@@ -804,6 +806,7 @@ l.a('./logo_electron_js.svg'                   ,'logo electron web js desa azul'
 l.a('./logo_jspdf.svg'                         ,'logo jspdf web js pdf desa morado gris verde');
 l.a('./logo_html2canvas.svg'                   ,'logo html2canvas web js html desa verde');
 
+l.a('./logo_frontendmentor.svg'                ,'logo frontendmentor desa azul');
 l.a('./logo_demo.svg'                          ,'logo demo azul');
 
 l.a('./logo_adobe.svg'                         ,'logo adobe rojo');
@@ -878,6 +881,7 @@ l.a('./logo_smashingmagazine.svg'              ,'logo smashingmagazine');
 l.a('./logo_css_tricks.svg'                    ,'logo css tricks desa');
 l.a('./logo_bootstrap.svg'                     ,'logo bootstrap css desa azul');
 l.a('./logo_tailwind_css.svg'                  ,'logo tailwind css desa azul');
+l.a('./logo_tailwindcomponents.svg'            ,'logo tailwind css tailwindcomponents desa verde');
 l.a('./logo_bulma_css.svg'                     ,'logo bulma css desa verde');
 l.a('./logo_notepadpp_ic8.svg'                 ,'logo notepad++ verde txt desa');
 l.a('./logo_notepadpp_hoja.svg'                ,'logo notepad++ verde txt desa');
@@ -896,6 +900,11 @@ l.a('./logo_pcloud.svg'                        ,'logo pcloud nube');
 l.a('./logo_pcloud_llave.svg'                  ,'logo pcloud nube llave');
 l.a('./logo_bem_00.svg'                        ,'logo bem css desa 00');
 l.a('./logo_sass_red.svg'                      ,'logo sass desa css rosa blanco');
+l.a('./logo_postcss.svg'                       ,'logo postcss desa css rojo');
+l.a('./logo_autoprefixer.svg'                  ,'logo autoprefixer postcss desa css rojo');
+l.a('./logo_cssnano.svg'                       ,'logo cssnano postcss desa css verde');
+l.a('./logo_stylelint.svg'                     ,'logo stylelint postcss desa css negro');
+l.a('./logo_browserslist.svg'                  ,'logo browserslist desa js css amarillo negro blanco');
 
 l.a('./logo_jamstack.svg'                      ,'logo jamstack desa rosa blanco');
 l.a('./logo_jekyll_00.svg'                     ,'logo jekyll desa 00');
@@ -958,6 +967,7 @@ l.a('./logo_webdev.svg'                        ,'logo google web dev desa azul')
 l.a('./logo_chrome_00.svg'                     ,'logo browser google chrome 00');
 l.a('./logo_chrome_4c.svg'                     ,'logo browser google chrome rojo naranja verde azul');
 l.a('./logo_chrome_feb22.svg'                  ,'logo browser google chrome rojo naranja verde azul blanco');
+l.a('./logo_chromium.svg'                      ,'logo browser chromium azul blanco');
 l.a('./logo_chrome_extension_00.svg'           ,'logo google chrome extension 00');
 l.a('./logo_chrome_extension_az.svg'           ,'logo google chrome extension azul');
 l.a('./logo_chrome_web_store.svg'              ,'logo google chrome web store rojo naranja verde azul');
@@ -968,9 +978,14 @@ l.a('./logo_edge_chromium_00.svg'              ,'logo browser ms edge 00');
 l.a('./logo_edge_chromium.svg'                 ,'logo browser ms edge verde azul');
 l.a('./logo_firefox_00.svg'                    ,'logo browser mozilla firefox 00');
 l.a('./logo_firefox.svg'                       ,'logo browser mozilla firefox naranja azul');
+l.a('./logo_slimjet.svg'                       ,'logo browser slimjet azul blanco');
 l.a('./logo_librewolf.svg'                     ,'logo browser librewolf azul blanco');
 l.a('./logo_opera_2015.svg'                    ,'logo browser opera rojo');
 l.a('./logo_otter_browser.svg'                 ,'logo browser other azul marrón');
+l.a('./logo_vivaldi.svg'                       ,'logo browser vivaldi rojo blanco');
+l.a('./logo_brave.svg'                         ,'logo browser brave rojo blanco');
+l.a('./logo_maxthon.svg'                       ,'logo browser maxthon azul blanco');
+l.a('./logo_tor_browser.svg'                   ,'logo browser tor morado blanco');
 l.a('./logo_netscape.svg'                      ,'logo browser netscape');
 l.a('./logo_safari.svg'                        ,'logo browser safari azul rojo blanco');
 l.a('./logo_webkit.svg'                        ,'logo browser webkit azul naranja blanco');
@@ -1418,6 +1433,14 @@ l.a('./circulo_incognito_bla_neg.svg'          ,'círculo incógnito blanco negr
 l.a('./fa_persona_solido_00.svg'               ,'fontawesome símbolo persona monigote 00');
 l.a('./fa_interruptor_apagado_00.svg'          ,'fontawesome símbolo interruptor ko 00');
 l.a('./fa_interruptor_encendido_00.svg'        ,'fontawesome símbolo interruptor ok 00');
+l.a('./fa_interruptor_apag_00.svg'             ,'fontawesome símbolo interruptor ko 00');
+l.a('./fa_interruptor_ence_00.svg'             ,'fontawesome símbolo interruptor ok 00');
+
+l.a('./fa_sol_00.svg'                          ,'fontawesome símbolo sol 00');
+l.a('./fa_luna_00.svg'                         ,'fontawesome símbolo luna 00');
+l.a('./fa_lupa_izq_00.svg'                     ,'fontawesome símbolo lupa 00');
+l.a('./fa_lupa_der_00.svg'                     ,'fontawesome símbolo lupa 00');
+
 l.a('./fa_flecha_compartir_00.svg'             ,'fontawesome símbolo flecha derecha compartir 00');
 l.a('./fa_flecha_contestar_00.svg'             ,'fontawesome símbolo flecha izquierda contestar 00');
 l.a('./fa_flecha_circ_00.svg'                  ,'fontawesome símbolo círculo flecha 00');
@@ -1500,6 +1523,10 @@ l.a('./fa_xmark.svg'                           ,'fontawesome punteo por ko 00');
 l.a('./fa_podcast_solid.svg'                   ,'fontawesome podcast 00');
 l.a('./fa_gear_solid.svg'                      ,'fontawesome engranaje configuración 00');
 l.a('./fa_power_off_solid.svg'                 ,'fontawesome encender apagar 00');
+l.a('./fa_casa_00.svg'                         ,'fontawesome casa 00');
+l.a('./fa_chincheta_00.svg'                    ,'fontawesome chincheta 00');
+l.a('./fa_link_00.svg'                         ,'fontawesome enlace html 00');
+l.a('./fa_twitter_00.svg'                      ,'fontawesome twitter 00');
 
 l.a('./fa_tux_linux_brands.svg'                ,'fontawesome tux logo linux 00');
 
@@ -2593,6 +2620,7 @@ l.a('./diana_perspectiva_dardo.svg'            ,'diana rojo negro blanco dardo')
 l.a('./caballo_00.svg'                         ,'caballo animal 00');
 l.a('./cabeza_caballo_00.svg'                  ,'caballo animal 00');
 l.a('./cabeza_caballo_crin_par_00.svg'         ,'caballo animal 00');
+l.a('./bici_mon_00.svg'                        ,'bicicleta monigote 00');
 l.a('./bici_00.svg'                            ,'bicicleta 00');
 l.a('./bici_bas_00.svg'                        ,'bicicleta 00');
 l.a('./bici_mtb_00.svg'                        ,'bicicleta mtb btt 00');
@@ -2612,6 +2640,7 @@ l.a('./logo_estrella_galicia.svg'              ,'logo cerveza estrella galicia n
 l.a('./logo_1906.svg'                          ,'logo cerveza estrella galicia 1906 rojo');
 l.a('./logo_1906_colorada.svg'                 ,'logo cerveza estrella galicia 1906 colorada rojo');
 
+l.a('./logo_xiaomi_mi_2021.svg'                ,'logo xiaomi mi naranja blanco');
 l.a('./logo_ing.svg'                           ,'logo ing dinero moneda euro naranja');
 l.a('./logo_bizum.svg'                         ,'logo bizum dinero moneda euro azul');
 l.a('./logo_agencia_tributaria.svg'            ,'logo aeat renta azul naranja rojo');
