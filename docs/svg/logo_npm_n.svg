@@ -1,1 +1,1 @@
-<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><polygon fill="#C12127" points="0 256 0 0 256 0 256 256"></polygon><polygon fill="#FFFFFF" points="48 48 208 48 208 208 176 208 176 80 128 80 128 208 48 208"></polygon></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#C12127" d="M0 512V0H512V512Z"/><path fill="#FFF" d="M96 96H416V416H352V160H256V416H96Z"/></svg>

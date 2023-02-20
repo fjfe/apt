@@ -1,0 +1,15 @@
+<svg clip-rule="evenodd" fill-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 466 466" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <style>
+    .s1{fill:#434242;fill-rule:nonzero}
+    .s2{fill:#FAE900;fill-rule:nonzero}
+   </style>
+ </defs>
+ <g transform="rotate(-24 102.31 161.3)">
+  <polygon class="s2" points="186 501 215 501 215 544 186 532"/>
+  <path class="s2" d="m263 437v-350c0-16-14-30-31-30h-65c-16 0-30 14-30 30l1 350z"/>
+  <path class="s1" d="m264 175v-99c0-17-14-30-31-30h-66c-17 0-31 13-31 30v99z"/>
+  <path class="s1" d="m138 437v22s48 3 48 52h30c0-49 47-52 47-52v-22z"/>
+  <path class="s2" d="m171 46v89c0 16 13 29 29 29s29-13 29-29v-89z"/>
+ </g>
+</svg>
