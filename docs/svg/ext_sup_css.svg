@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
  <g transform="matrix(.60491 0 0 .65882 101.52 125.34)">
   <polygon points="107.01 470.88 74.003 100.62 436.74 100.62 403.69 470.82 255.15 512" fill="#264de4"/>
   <polygon points="255.37 480.52 375.4 447.25 403.64 130.89 255.37 130.89" fill="#2965f1"/>
