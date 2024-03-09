@@ -1,0 +1,38 @@
+<!DOCTYPE html><!-- Origen: https://www.makeuseof.com/display-xml-on-webpage-using-xslt/ -->
+<html>
+  <head>
+    <title>Ejemplo XML con XSLT</title>
+    <link rel="icon" href="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M24 14V2h-2v14h8v-2zM18 2l-1.52 5L16 8.98 15.54 7 14 2h-2v14h2V8l-.16-2 .58 2L16 12.63 17.58 8l.58-2L18 8v8h2V2zm-8 0H8L6 8 4 2H2l2.75 7L2 16h2l2-6 2 6h2L7.25 9z'/%3E%3Cpath fill='%23ffa' stroke='%233f8' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 22h26v6H3z'/%3E%3C/svg%3E">
+    <style>
+      html,
+      body {
+        font-family: Verdana,Arial,snas-serif;
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      p {
+        margin-bottom: 24px;
+      }
+      .nota { background-color: #ffffc199; margin: 1em 0; padding: .5rem 1rem; }
+    </style>
+  </head>
+  <body>
+
+    <h1>Ejemplo XML con XSLT</h1>
+    <p>El siguiente contenido se genera a partir de un archivo de datos XML con estilo XSL.</p>
+    <iframe src="pru-xls-datos.xml" xslt="pru-xls-estilo.xsl"></iframe>
+    <div class="nota">
+      En <em>Firefox</em> funciona desde <em>file://...</em><br>
+      Otros navegadores necesitan cargarlo desde servidor <em>http://...</em>
+    </div>
+
+  </body>
+</html>
