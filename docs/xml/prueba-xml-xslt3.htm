@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>XML con XSLT (Prueba 3)</title>
+    <link id="ico" rel="icon" href="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M24 14V2h-2v14h8v-2zM18 2l-2 5v2-2l-2-5h-2v14h2V6v2l2 5 2-5V6v10h2V2zm-8 0H8L6 8 4 2H2l3 7-3 7h2l2-6 2 6h2L7 9z'/%3E%3Cpath fill='%23ffa' stroke='%2355d' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 22h17v6H3z'/%3E%3Ctext x='32' y='31' style='fill:%2300d;font:700 18px sans-serif;text-anchor:end'%3E3%3C/text%3E%3C/svg%3E">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: Verdana,Arial,snas-serif;
+        height: 100%;
+        margin: 0 1em;
+      }
+      h1   { margin: 0; }
+      p    { margin: 1em 0; }
+      .xml {
+        width:  100%;
+        height: 74vh;
+        overflow: auto;
+      }
+      a    { text-decoration: none; cursor: pointer; color: #11f; }
+      z-ni {
+        font-weight: bolder;
+        font-style:  italic;
+      }
+      .icc  { height: 1em; width: auto; vertical-align: middle; border: none; }
+      .ocu  { display: none; }
+      .peq  { font-size: 80%; }
+      .roj  { color: #d00; }
+      .ver  { color: #0b0; }
+      .mam  { background-color: #ffffc199; }
+      .nota { background-color: #ffffc199; margin: 1em 0; padding: 1em; border-radius: .5em; font-size: 80%; }
+      .sigu { position: absolute; top: 0; right: 1rem; font-size: 2rem; font-weight: bolder; }
+    </style>
+  </head>
+  <body>
+
+    <h1 id="tit"> <!-- Lo rellena JS --></h1>
+    <p class="peq">
+      El siguiente cuadro muestra un archivo [u otra fuente, por ej. fetch(…)] de datos
+      <a target="_blank" href="./prueba-xml-datos.xml"><b>XML</b></a>
+      <small>del que se desprecia su estilo XSL enlazado, si lo tuviera.</small>
+      Puedes forzar el estilo:
+      <a onclick="cambiaXSL(3)">3</a> o
+      <a onclick="cambiaXSL(4)">4</a>.<br>
+      <span class="mam">
+        En este escenario, <small>al no contar con el aislamiento de iframe,</small>
+        necesitamos algna técnica de aislamiento de CSS+JS.
+        Compruébalo forzando los anteriores estilos:
+        <a onclick="cambiaXSL(1)"><b class="roj">1</b></a> o
+        <a onclick="cambiaXSL(2)"><b class="roj">2</b></a>. 🙃
+      </span>
+    </p>
+    <div id="destino_xml">
+      <div id="xml" class="xml">
+      </div>
+    </div>
+    <div class="nota">
+      <span class="roj">No funciona en local <z-ni>file://...</z-ni></span> 
+      Es necesario cargarlo desde servidor <z-ni class="ver">http://...</z-ni> o <z-ni class="ver">https://...</z-ni><br>
+      <span class="roj"><em>Firefox</em> no muestra los iconos.</span> 
+      Es preferible un navegador basado en <em class="ver">Chromium</em>.
+    </div>
+    <div class="sigu ocu">
+      <a target="_blank" href="prueba-xml-xslt4.htm" title="Siguiente prueba">▶</a>
+    </div>
+
+  </body>
+
+<script>
+function e(s){return document.getElementById(s);}
+function removeAllChildNodes(e) {       // Borrar todos sus nodos hijo
+  while (e.firstChild) {
+    e.removeChild(e.firstChild);
+  }
+}
+/*
+function clonar(idTemplate, idDestino) {
+  let t = e(idTemplate);
+  if (t) {
+    let cont = t.content;               // Clono la plantilla
+    let clon = cont.cloneNode(true);
+    let d = e(idDestino);
+    removeAllChildNodes(d);    // <== d.innerHTML='';  Esto provocaría id's repetidos
+    d.appendChild(clon);
+  }
+}
+*/
+</script>
+
+<!--
+<template id="tpt_xml">
+
+  <div id="xml" class="xml">
+  </div>
+
+  <script>
+  function load_XML(filename) {
+    const xhttp = new XMLHttpRequest();
+    xhttp.open('GET', filename, false);
+    xhttp.send('');
+    return xhttp.responseXML;
+  }
+
+  function show_XML_XSL(file_xml, file_xsl) {
+    const xml = load_XML(file_xml);             // Aquí podríamos usar otro método para obtener el XML
+    const xsl = load_XML(file_xsl);
+    if (document.implementation && document.implementation.createDocument) {
+      const xsltProcessor = new XSLTProcessor();
+      xsltProcessor.importStylesheet(xsl);
+      const resultDocument = xsltProcessor.transformToFragment(xml, document);
+      e('xml').appendChild(resultDocument);
+    }
+  }
+  show_XML_XSL('prueba-xml-datos.xml', 'prueba-xml-estilo3.xsl');
+  </script>
+</template>
+-->
+
+<script>
+e('tit').innerHTML = '<img class="icc" src="'+e('ico').href+'"> ' + document.title;
+//clonar('tpt_xml', 'destino_xml');
+  function load_XML(filename) {
+    const xhttp = new XMLHttpRequest();
+    xhttp.open('GET', filename, false);
+    xhttp.send('');
+    return xhttp.responseXML;
+  }
+
+  function show_XML_XSL(file_xml, file_xsl) {
+    const xml = load_XML(file_xml);             // Aquí podríamos usar otro método para obtener el XML
+    const xsl = load_XML(file_xsl);
+    if (document.implementation && document.implementation.createDocument) {
+      const xsltProcessor = new XSLTProcessor();
+      xsltProcessor.importStylesheet(xsl);
+      const resultDocument = xsltProcessor.transformToFragment(xml, document);
+      e('xml').appendChild(resultDocument);
+    }
+  }
+  
+  let aXML = 'prueba-xml-datos.xml';
+  let aXSL = 'prueba-xml-estilo3.xsl';
+  function cambiaXSL(n) {
+    aXSL = `prueba-xml-estilo${n}.xsl`;
+    removeAllChildNodes(e('xml'));
+    show_XML_XSL(aXML, aXSL);
+  }
+  show_XML_XSL(aXML, aXSL);
+</script>
+</html>
