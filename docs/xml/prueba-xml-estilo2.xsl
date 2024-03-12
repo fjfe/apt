@@ -143,7 +143,7 @@
           e('ifr').setAttribute('src', url);
         }
         function main(){  // ----------------------------------------------------------------------
-          e('tit').innerHTML = document.title +
+          e('ti2').innerHTML = document.title +
                                '<div class="fli peq">' +
                                '  <a id="vacio" title="vacío"><svg class="icg"><use href="#ico_hoja_vacia" /></svg></a>' +
                                '</div>' +
